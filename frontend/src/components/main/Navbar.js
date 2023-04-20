@@ -51,24 +51,24 @@ const Navbar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/main/Login">
-              Login
+            <NavLink className="nav-link" to="#">
+              Course
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/main/Signup">
-              Signup
+            <NavLink className="nav-link" to="#">
+              
             </NavLink>
           </li>
         </ul>
         {/* Left links */}
         <div className="d-flex align-items-center">
-          <button type="button" className="btn btn-link px-3 me-2">
+          <NavLink type="button" className="btn btn-link px-3 me-2" to="/main/Login">
             Login
-          </button>
-          <button type="button" className="btn btn-primary me-3">
+          </NavLink>
+          <NavLink type="button" className="btn btn-primary me-3" to="/main/Signup">
             Sign up for free
-          </button>
+          </NavLink>
           <a
             className="btn btn-dark px-3"
             href="https://github.com/mdbootstrap/mdb-ui-kit"

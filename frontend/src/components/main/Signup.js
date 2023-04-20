@@ -1,204 +1,204 @@
-import { useFormik } from 'formik'
-import React from 'react';
-import Swal from 'sweetalert2';
-import * as Yup from 'yup';
+import React from 'react'
 
 const Signup = () => {
   return (
-    <>
-  {/* Pills navs */}
-  <ul className="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
-    <li className="nav-item" role="presentation">
-      <a
-        className="nav-link active"
-        id="tab-login"
-        data-mdb-toggle="pill"
-        href="#pills-login"
-        role="tab"
-        aria-controls="pills-login"
-        aria-selected="true"
-      >
-        Login
-      </a>
-    </li>
-    <li className="nav-item" role="presentation">
-      <a
-        className="nav-link"
-        id="tab-register"
-        data-mdb-toggle="pill"
-        href="#pills-register"
-        role="tab"
-        aria-controls="pills-register"
-        aria-selected="false"
-      >
-        Register
-      </a>
-    </li>
-  </ul>
-  {/* Pills navs */}
-  {/* Pills content */}
-  <div className="tab-content">
-    <div
-      className="tab-pane fade show active"
-      id="pills-login"
-      role="tabpanel"
-      aria-labelledby="tab-login"
-    >
-      <form>
-        <div className="text-center mb-3">
-          <p>Sign in with:</p>
-          <button type="button" className="btn btn-secondary btn-floating mx-1">
-            <i className="fab fa-facebook-f" />
-          </button>
-          <button type="button" className="btn btn-secondary btn-floating mx-1">
-            <i className="fab fa-google" />
-          </button>
-          <button type="button" className="btn btn-secondary btn-floating mx-1">
-            <i className="fab fa-twitter" />
-          </button>
-          <button type="button" className="btn btn-secondary btn-floating mx-1">
-            <i className="fab fa-github" />
-          </button>
-        </div>
-        <p className="text-center">or:</p>
-        {/* Email input */}
-        <div className="form-outline mb-4">
-          <input type="email" id="loginName" className="form-control" />
-          <label className="form-label" htmlFor="loginName">
-            Email or username
-          </label>
-        </div>
-        {/* Password input */}
-        <div className="form-outline mb-4">
-          <input type="password" id="loginPassword" className="form-control" />
-          <label className="form-label" htmlFor="loginPassword">
-            Password
-          </label>
-        </div>
-        {/* 2 column grid layout */}
-        <div className="row mb-4">
-          <div className="col-md-6 d-flex justify-content-center">
-            {/* Checkbox */}
-            <div className="form-check mb-3 mb-md-0">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                defaultValue=""
-                id="loginCheck"
-                defaultChecked=""
+    <section className="h-100 bg-dark">
+  <div className="container py-5 h-100">
+    <div className="row d-flex justify-content-center align-items-center h-100">
+      <div className="col">
+        <div className="card card-registration my-4">
+          <div className="row g-0">
+            <div className="col-xl-6 d-none d-xl-block">
+              <img
+                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                alt="Sample photo"
+                className="img-fluid"
+                style={{
+                  borderTopLeftRadius: ".25rem",
+                  borderBottomLeftRadius: ".25rem"
+                }}
               />
-              <label className="form-check-label" htmlFor="loginCheck">
-                {" "}
-                Remember me{" "}
-              </label>
+            </div>
+            <div className="col-xl-6">
+              <div className="card-body p-md-5 text-black">
+                <h3 className="mb-5 text-uppercase">
+                  Student registration form
+                </h3>
+                <div className="row">
+                  <div className="col-md-6 mb-4">
+                    <div className="form-outline">
+                      <input
+                        type="text"
+                        id="form3Example1m"
+                        className="form-control form-control-lg"
+                      />
+                      <label className="form-label" htmlFor="form3Example1m">
+                        First name
+                      </label>
+                    </div>
+                  </div>
+                  <div className="col-md-6 mb-4">
+                    <div className="form-outline">
+                      <input
+                        type="text"
+                        id="form3Example1n"
+                        className="form-control form-control-lg"
+                      />
+                      <label className="form-label" htmlFor="form3Example1n">
+                        Last name
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-md-6 mb-4">
+                    <div className="form-outline">
+                      <input
+                        type="text"
+                        id="form3Example1m1"
+                        className="form-control form-control-lg"
+                      />
+                      <label className="form-label" htmlFor="form3Example1m1">
+                        Mother's name
+                      </label>
+                    </div>
+                  </div>
+                  <div className="col-md-6 mb-4">
+                    <div className="form-outline">
+                      <input
+                        type="text"
+                        id="form3Example1n1"
+                        className="form-control form-control-lg"
+                      />
+                      <label className="form-label" htmlFor="form3Example1n1">
+                        Father's name
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div className="form-outline mb-4">
+                  <input
+                    type="text"
+                    id="form3Example8"
+                    className="form-control form-control-lg"
+                  />
+                  <label className="form-label" htmlFor="form3Example8">
+                    Address
+                  </label>
+                </div>
+                <div className="d-md-flex justify-content-start align-items-center mb-4 py-2">
+                  <h6 className="mb-0 me-4">Gender: </h6>
+                  <div className="form-check form-check-inline mb-0 me-4">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="femaleGender"
+                      defaultValue="option1"
+                    />
+                    <label className="form-check-label" htmlFor="femaleGender">
+                      Female
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline mb-0 me-4">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="maleGender"
+                      defaultValue="option2"
+                    />
+                    <label className="form-check-label" htmlFor="maleGender">
+                      Male
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline mb-0">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="otherGender"
+                      defaultValue="option3"
+                    />
+                    <label className="form-check-label" htmlFor="otherGender">
+                      Other
+                    </label>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-md-6 mb-4">
+                    <select className="select">
+                      <option value={1}>State</option>
+                      <option value={2}>Option 1</option>
+                      <option value={3}>Option 2</option>
+                      <option value={4}>Option 3</option>
+                    </select>
+                  </div>
+                  <div className="col-md-6 mb-4">
+                    <select className="select">
+                      <option value={1}>City</option>
+                      <option value={2}>Option 1</option>
+                      <option value={3}>Option 2</option>
+                      <option value={4}>Option 3</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="form-outline mb-4">
+                  <input
+                    type="text"
+                    id="form3Example9"
+                    className="form-control form-control-lg"
+                  />
+                  <label className="form-label" htmlFor="form3Example9">
+                    DOB
+                  </label>
+                </div>
+                <div className="form-outline mb-4">
+                  <input
+                    type="text"
+                    id="form3Example90"
+                    className="form-control form-control-lg"
+                  />
+                  <label className="form-label" htmlFor="form3Example90">
+                    Pincode
+                  </label>
+                </div>
+                <div className="form-outline mb-4">
+                  <input
+                    type="text"
+                    id="form3Example99"
+                    className="form-control form-control-lg"
+                  />
+                  <label className="form-label" htmlFor="form3Example99">
+                    Course
+                  </label>
+                </div>
+                <div className="form-outline mb-4">
+                  <input
+                    type="text"
+                    id="form3Example97"
+                    className="form-control form-control-lg"
+                  />
+                  <label className="form-label" htmlFor="form3Example97">
+                    Email ID
+                  </label>
+                </div>
+                <div className="d-flex justify-content-end pt-3">
+                  <button type="button" className="btn btn-light btn-lg">
+                    Reset all
+                  </button>
+                  <button type="button" className="btn btn-warning btn-lg ms-2">
+                    Submit form
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="col-md-6 d-flex justify-content-center">
-            {/* Simple link */}
-            <a href="#!">Forgot password?</a>
-          </div>
         </div>
-        {/* Submit button */}
-        <button type="submit" className="btn btn-primary btn-block mb-4">
-          Sign in
-        </button>
-        {/* Register buttons */}
-        <div className="text-center">
-          <p>
-            Not a member? <a href="#!">Register</a>
-          </p>
-        </div>
-      </form>
-    </div>
-    <div
-      className="tab-pane fade"
-      id="pills-register"
-      role="tabpanel"
-      aria-labelledby="tab-register"
-    >
-      <form>
-        <div className="text-center mb-3">
-          <p>Sign up with:</p>
-          <button type="button" className="btn btn-secondary btn-floating mx-1">
-            <i className="fab fa-facebook-f" />
-          </button>
-          <button type="button" className="btn btn-secondary btn-floating mx-1">
-            <i className="fab fa-google" />
-          </button>
-          <button type="button" className="btn btn-secondary btn-floating mx-1">
-            <i className="fab fa-twitter" />
-          </button>
-          <button type="button" className="btn btn-secondary btn-floating mx-1">
-            <i className="fab fa-github" />
-          </button>
-        </div>
-        <p className="text-center">or:</p>
-        {/* Name input */}
-        <div className="form-outline mb-4">
-          <input type="text" id="registerName" className="form-control" />
-          <label className="form-label" htmlFor="registerName">
-            Name
-          </label>
-        </div>
-        {/* Username input */}
-        <div className="form-outline mb-4">
-          <input type="text" id="registerUsername" className="form-control" />
-          <label className="form-label" htmlFor="registerUsername">
-            Username
-          </label>
-        </div>
-        {/* Email input */}
-        <div className="form-outline mb-4">
-          <input type="email" id="registerEmail" className="form-control" />
-          <label className="form-label" htmlFor="registerEmail">
-            Email
-          </label>
-        </div>
-        {/* Password input */}
-        <div className="form-outline mb-4">
-          <input
-            type="password"
-            id="registerPassword"
-            className="form-control"
-          />
-          <label className="form-label" htmlFor="registerPassword">
-            Password
-          </label>
-        </div>
-        {/* Repeat Password input */}
-        <div className="form-outline mb-4">
-          <input
-            type="password"
-            id="registerRepeatPassword"
-            className="form-control"
-          />
-          <label className="form-label" htmlFor="registerRepeatPassword">
-            Repeat password
-          </label>
-        </div>
-        {/* Checkbox */}
-        <div className="form-check d-flex justify-content-center mb-4">
-          <input
-            className="form-check-input me-2"
-            type="checkbox"
-            defaultValue=""
-            id="registerCheck"
-            defaultChecked=""
-            aria-describedby="registerCheckHelpText"
-          />
-          <label className="form-check-label" htmlFor="registerCheck">
-            I have read and agree to the terms
-          </label>
-        </div>
-        {/* Submit button */}
-        <button type="submit" className="btn btn-primary btn-block mb-3">
-          Sign in
-        </button>
-      </form>
+      </div>
     </div>
   </div>
-  {/* Pills content */}
-</>
+</section>
 
   )
 }
