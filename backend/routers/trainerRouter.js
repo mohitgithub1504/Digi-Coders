@@ -1,11 +1,11 @@
-const Model = require('../models/userProduct');
+const Model = require('../models/userModel');
 const { Router } = require('express');
 const router = Router();
 
-//add product data
+//add user data
 router.post('/add', (req, res) => {
     console.log(req.body);
-    //res.send('Respond from add product from Product Router');
+   // res.send('Respond from User Router');
 
     new Model(req.body).save()
     .then((result) => {
@@ -27,5 +27,19 @@ router.get('/getall', (req, res) => {
         res.status(500).json(err);
     });
 });
+
+router.post('/authenticate', (req, res) => {
+    Model.findOne(req.body)
+    .then((result) => {
+
+        if(result) res.json(result);
+        else res.status(401).json({ message: 'Invalid Credentials'});
+        
+    }).catch((err) => {
+        console.error(err);
+        res.status(500).json(err);
+    });
+} );
+
 
 module.exports = router;

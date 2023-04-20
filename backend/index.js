@@ -3,7 +3,7 @@ const app = express();
 
 //importing routers
 const userRouter = require('./routers/userRouter');
-const productRouter = require('./routers/productRouter');
+const trainerRouter = require('./routers/trainerRouter');
 
 const cors = require( 'cors');
 
@@ -16,7 +16,7 @@ app.use(express.json());
 
 //adding routers
 app.use('/user', userRouter);
-app.use('/product', productRouter);
+app.use('/trainer', trainerRouter);
 
 const port = 5000;
 
