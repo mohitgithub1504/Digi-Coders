@@ -51,13 +51,13 @@ const Navbar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="#">
-              Course
+            <NavLink className="nav-link" to="/main/TrainerSignup">
+              Trainer Signup
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="#">
-              
+            <NavLink className="nav-link" to="/main/TrainerLogin">
+              Trainer Login
             </NavLink>
           </li>
         </ul>
