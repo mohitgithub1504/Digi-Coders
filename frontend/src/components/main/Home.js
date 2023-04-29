@@ -17,16 +17,16 @@ const Home = () => {
         <div
           className="p-5 text-center bg-image"
           style={{
-            backgroundImage:
-              'url("https://mdbootstrap.com/img/new/textures/full/142.jpg")',
+            backgroundImage:'url("/images/img1.jpg")',
             height: 500,
             backgroundSize: "cover",
-            backgroundPosition: "50% 50%",
+            backgroundPosition: "50% 40%",
             backgroundColor: "rgba(0, 0, 0, 0)"
           }}
           aria-controls="#picker-editor"
-        />{" "}
+        />
         {/* Background image */}
+
         <div className="container">
           <div
             className="card mx-4 mx-md-5 text-center shadow-5-strong"
@@ -36,182 +36,82 @@ const Home = () => {
               backdropFilter: "blur(30px)"
             }}
           >
-            <div className="card-body px-4 py-5 px-md-5">
-              <h1 className="display-3 fw-bold ls-tight mb-4">
-                {" "}
-                <span>The best offer on the market</span> <br />{" "}
-                <span className="text-primary">for your business</span>{" "}
-              </h1>{" "}
-              <a
-                className="btn  btn-primary btn-lg py-3 px-5 mb-2 mb-md-0 me-md-2"
-                href="#"
-                role="button"
-                aria-controls="#picker-editor"
-              >
-                Get started
-              </a>{" "}
-              <a
-                className="btn  btn-link btn-lg py-3 px-5 mb-2 mb-md-0"
-                data-ripple-color="primary"
-                href="#"
-                role="button"
-                aria-controls="#picker-editor"
-              >
-                Learn more
-              </a>
-            </div>
           </div>
         </div>
       </section>
     </section>
     {/**/}
   </div>
-  <div data-draggable="true" style={{ position: "relative" }}>
-    {/**/}
-    {/**/}
-    <section draggable="false" className="container pt-5" data-v-271253ee="">
-      <section className="mb-10">
-        <h2 className="fw-bold mb-5 text-center">Latest articles</h2>
-        <div className="row gx-lg-5 mb-5 align-items-center">
-          <div className="col-md-6 mb-4 mb-md-0">
+
+  <>
+  {/* Header Content */}
+
+  <div id="preview" className="preview">
+    <div style={{ display: "none" }} />
+    <div>
+      <div data-draggable="true" style={{ position: "relative" }}>
+        {/**/}
+        {/**/}
+        <section
+          draggable="false"
+          className="overflow-hidden pt-0"
+          data-v-271253ee=""
+        >
+          <section>
             {" "}
-            <img
-              src="https://mdbootstrap.com/img/new/standard/city/028.jpg"
-              className="w-100 shadow-4-strong rounded-4 mb-4"
-              alt=""
-              aria-controls="#picker-editor"
-            />{" "}
-          </div>
-          <div className="col-md-6 mb-4 mb-md-0">
-            <h3 className="fw-bold">Art</h3>
-            <div className="mb-2 text-danger small">
-              {" "}
-              <i
-                className="fas fa-money-bill me-2"
-                aria-controls="#picker-editor"
-              />
-              <span>Business</span>{" "}
-            </div>
-            <p className="text-muted">
-              Ut pretium ultricies dignissim. Sed sit amet mi eget urna placerat
-              vulputate. Ut vulputate est non quam dignissim elementum. Donec a
-              ullamcorper diam.
-            </p>
-            <p className="text-muted">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quae
-              nulla saepe rerum aspernatur odio amet perferendis tempora
-              mollitia? Ratione unde magni omnis quaerat blanditiis cumque
-              dolore placeat rem dignissimos?
-            </p>{" "}
-            <a
-              className="btn  btn-primary"
-              href="#"
-              role="button"
-              aria-controls="#picker-editor"
-            >
-              Read more
-            </a>
-          </div>
-        </div>
-        <div className="row gx-lg-5 mb-5 flex-lg-row-reverse align-items-center">
-          <div className="col-md-6 mb-4 mb-md-0">
-            {" "}
-            <img
-              src="https://mdbootstrap.com/img/new/standard/city/033.jpg"
-              className="w-100 shadow-4-strong rounded-4 mb-4"
-              alt=""
-              aria-controls="#picker-editor"
-            />{" "}
-          </div>
-          <div className="col-md-6 mb-4 mb-md-0">
-            <h3 className="fw-bold">Exhibition in Paris</h3>
-            <div className="mb-2 text-primary small">
-              {" "}
-              <i
-                className="fas fa-money-bill me-2"
-                aria-controls="#picker-editor"
-              />
-              <span>Art</span>{" "}
-            </div>
-            <p className="text-muted">
-              Duis sagittis, turpis in ullamcorper venenatis, ligula nibh porta
-              dui, sit amet rutrum enim massa in ante. Curabitur in justo at
-              lorem laoreet ultricies. Nunc ligula felis, sagittis eget nisi
-              vitae, sodales vestibulum purus. Vestibulum nibh ipsum, rhoncus
-              vel sagittis nec, placerat vel justo. Duis faucibus sapien eget
-              tortor finibus, a eleifend lectus dictum. Cras tempor convallis
-              magna id rhoncus. Suspendisse potenti. Nam mattis faucibus
-              imperdiet. Proin tempor lorem at neque tempus aliquet. Phasellus
-              at ex volutpat, varius arcu id, aliquam lectus. Vestibulum mattis
-              felis quis ex pharetra luctus. Etiam luctus sagittis massa, sed
-              iaculis est vehicula ut.
-            </p>{" "}
-            <a
-              className="btn  btn-primary"
-              href="#"
-              role="button"
-              aria-controls="#picker-editor"
-            >
-              Read more
-            </a>
-          </div>
-        </div>
-        <div className="row gx-lg-5 mb-5 align-items-center">
-          <div className="col-md-6 mb-4 mb-md-0">
-            {" "}
-            <img
-              src="https://mdbootstrap.com/img/new/standard/city/079.jpg"
-              className="w-100 shadow-4-strong rounded-4 mb-4"
-              alt=""
-              aria-controls="#picker-editor"
-            />{" "}
-          </div>
-          <div className="col-md-6 mb-4 mb-md-0">
-            <h3 className="fw-bold">Stock market boom</h3>
-            <div className="mb-2 text-warning small">
-              {" "}
-              <i
-                className="fas fa-money-bill me-2"
-                aria-controls="#picker-editor"
-              />
-              <span>Business</span>{" "}
-            </div>
-            <p className="text-muted">
-              Sed sollicitudin purus sed nulla dignissim ullamcorper. Aenean
-              tincidunt vulputate libero, nec imperdiet sapien pulvinar id.
-              Nullam scelerisque odio vel lacus faucibus, tincidunt feugiat
-              augue ornare. Proin ac dui vel lectus eleifend vestibulum et
-              lobortis risus. Nullam in commodo sapien. Curabitur ut erat congue
-              sem finibus eleifend egestas eu metus. Sed ut dolor id magna
-              rutrum ultrices ut eget libero. Duis vel porttitor odio. Ut
-              pulvinar sed turpis ornare tincidunt. Donec luctus, mi euismod
-              dignissim malesuada, lacus lorem commodo leo, tristique blandit
-              ante mi id metus. Integer et vehicula leo, vitae interdum lectus.
-              Praesent nulla purus, commodo at euismod nec, blandit ultrices
-              erat. Aliquam eros ipsum, interdum et mattis vitae, faucibus vitae
-              justo. Nulla condimentum hendrerit leo, in feugiat ipsum
-              condimentum ac. Maecenas sed blandit dolor.
-            </p>{" "}
-            <a
-              className="btn  btn-primary"
-              href="#"
-              role="button"
-              aria-controls="#picker-editor"
-            >
-              Read more
-            </a>
-          </div>
-        </div>
-      </section>
-    </section>
-    {/**/}
+            {/* Jumbotron */}
+            <div className="py-5 text-center bg-light">
+              <div className="container pb-md-5">
+                <div className="row d-flex justify-content-center">
+                  <div className="header-text col-lg-10">
+                    <h1 className="my-2 display-3">
+                      <span>Digi Coders</span>
+                    </h1>
+                    <h4 className="my-2">
+                      <span>Empowering Young Minds to Code with Fun and Creativity</span>
+                    </h4>
+                    <p className="mt-3 mb-5">
+                      <span>Empowering Young Minds to Code with Fun and Creativity Empowering Young Minds to Code with Fun and Creativity Empowering Young Minds to Code with Fun and Creativity Empowering Young Minds to Code with Fun and Creativity</span>
+                    </p>
+                    <a
+                      className="btn btn-link btn-lg py-3 px-5 mb-5 mb-md-0 me-md-5"
+                      href="#"
+                      role="button"
+                      aria-controls="#picker-editor"
+                      style={{ color: "#fff" }}
+                    >
+                      Get started
+                    </a>
+                    <a
+                      className="btn btn-link btn-lg py-3 px-5 mb-5 mb-md-0"
+                      data-ripple-color="primary"
+                      href="#"
+                      role="button"
+                      aria-controls="#picker-editor"
+                      style={{ color: "#fff" }}
+                    >
+                      Learn more
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>{" "}
+            {/* Jumbotron */}
+          </section>
+        </section>
+        {/**/}
+      </div>
+    </div>
   </div>
+  {/* Header Content */}
+</>
+
   <div data-draggable="true" style={{ position: "relative" }}>
     {/**/}
     {/**/}
-    <section draggable="false" className="container pt-5" data-v-271253ee="">
-      <section className="mb-10 text-center text-lg-start">
-        <h2 className="fw-bold mb-5 text-center">Projects we are proud of</h2>
+    <section draggable="false" className="container pt-2" data-v-271253ee="">
+      <section className="heading mb-10 text-center text-lg-start">
+        <h2 className="fw-bold my-5 text-center">Projects we are proud of</h2>
         <div className="row gx-lg-5">
           <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
             <div className="card">
@@ -422,11 +322,16 @@ const Home = () => {
     </section>
     {/**/}
   </div>
-  <div data-draggable="true" style={{ position: "relative" }}>
+  <div data-draggable="true"
+  style={{
+    backgroundImage:'url("/images/background-img.jpg")',
+    position: "relative"
+  }}
+  >
     {/**/}
     {/**/}
-    <section draggable="false" className="container pt-5" data-v-271253ee="">
-      <section className="mb-10 text-center">
+    <section draggable="false" className="container pt-5" data-v-271253ee="" >
+      <section className="heading mb-10 text-center">
         <h2 className="fw-bold mb-5">Photographer</h2> {/* Carousel wrapper */}
         <div
           id="carouselExampleControls"
@@ -602,7 +507,7 @@ const Home = () => {
     {/**/}
     {/**/}
     <section draggable="false" className="container pt-5" data-v-271253ee="">
-      <section className="mb-10 text-center">
+      <section className="heading mb-10 text-center">
         <h2 className="fw-bold mb-10">
           <span>Meet the</span> <u className="text-primary">team</u>
         </h2>
