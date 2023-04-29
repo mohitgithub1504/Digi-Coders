@@ -322,10 +322,12 @@ const Home = () => {
     </section>
     {/**/}
   </div>
-  <div data-draggable="true"
+  <div class="py-1" data-draggable="true"
   style={{
     backgroundImage:'url("/images/background-img.jpg")',
+    backgroundAttachment: "fixed",
     position: "relative"
+
   }}
   >
     {/**/}
