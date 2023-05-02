@@ -36,9 +36,9 @@ const Navbar = () => {
             {/* Left links */}
             <ul className="navbar-nav mb-2 mb-lg-0" style={{ fontSize: 18}}>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <NavLink className="nav-link" to="/main/home">
                   Home
-                </a>
+                </NavLink>
               </li>
 
               {/* Navbar dropdown */}
@@ -77,12 +77,12 @@ const Navbar = () => {
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="/main/about">
                   About
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="/main/contact">
                   Contact
                 </a>
               </li>

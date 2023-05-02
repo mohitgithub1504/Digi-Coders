@@ -19,13 +19,19 @@
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+.custom-link-hover:hover{
+  color: var(--second-color) !important;
+}
+.nav-item .active{
+  border-bottom: 3px solid var(--second-color);
+  color: var(--second-color) !important;
+}
 .nav-link{
   color: var(--main-color);
   margin-right: 30px;
 }
 .nav-link:hover{
   color: var(--second-color);
-  letter-spacing: 3px;
 }
 .nav-btn{
   color: var(--main-color);
@@ -69,4 +75,7 @@
 .content h1{
   letter-spacing: 5px;
   text-transform: uppercase;
+}
+.footer-icon{
+  color: var(--second-color);
 }

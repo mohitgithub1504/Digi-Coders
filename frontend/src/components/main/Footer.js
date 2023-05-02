@@ -77,22 +77,22 @@ export const Footer = () => {
               {/* Links */}
               <h6 className="text-uppercase fw-bold mb-4">Products</h6>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="#!" className="text-reset custom-link-hover">
                   Angular
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="#!" className="text-reset custom-link-hover">
                   React
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="#!" className="text-reset custom-link-hover">
                   Vue
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="#!" className="text-reset custom-link-hover">
                   Laravel
                 </a>
               </p>
@@ -103,22 +103,22 @@ export const Footer = () => {
               {/* Links */}
               <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="#!" className="text-reset custom-link-hover">
                   Pricing
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="#!" className="text-reset custom-link-hover">
                   Settings
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="#!" className="text-reset custom-link-hover">
                   Orders
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="#!" className="text-reset custom-link-hover">
                   Help
                 </a>
               </p>
@@ -129,17 +129,17 @@ export const Footer = () => {
               {/* Links */}
               <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
               <p>
-                <i className="fas fa-home me-3"/> New York, NY 10012, US
+                <i className="footer-icon fas fa-home me-3"/> New York, NY 10012, US
               </p>
               <p>
-                <i className="fas fa-envelope me-3" />
+                <i className="footer-icon fas fa-envelope me-3" />
                 info@example.com
               </p>
               <p>
-                <i className="fas fa-phone me-3" /> + 01 234 567 88
+                <i className="footer-icon fas fa-phone me-3" /> + 01 234 567 88
               </p>
               <p>
-                <i className="fas fa-print me-3" /> + 01 234 567 89
+                <i className="footer-icon fas fa-print me-3" /> + 01 234 567 89
               </p>
             </div>
             {/* Grid column */}
@@ -154,7 +154,7 @@ export const Footer = () => {
         style={{ backgroundColor: "#1b1b1b" }}
       >
         © 2023 Copyright :&nbsp;
-        <a className="text-reset fw-bold" href="https://mdbootstrap.com/"> 
+        <a className="text-reset fw-bold custom-link-hover" href="https://mdbootstrap.com/"> 
           DigiCoders.com
         </a>
       </div>
