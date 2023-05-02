@@ -12,7 +12,7 @@ const Navbar = () => {
           {/* Navbar brand */}
           <a className="navbar-brand me-2" href="#">
             <img
-              src="/logo/png/logo-no-background.png"
+              src="/logo/logo.png"
               height={50}
               alt="Digi Coders Logo"
               loading="lazy"
@@ -98,9 +98,9 @@ const Navbar = () => {
               href="/main/Signup"
             >
               <i
-                className="fa-solid fa-user fa-2xl"
-                style={{ color: "#fff" }}
+                className="fa-solid fa-user fa-lg px-2"
               />
+              Sign Up
             </a>
 
             <a
@@ -108,9 +108,9 @@ const Navbar = () => {
               href="/main/Login"
             >
               <i
-                className="fa-solid fa-right-to-bracket fa-2xl"
-                style={{ color: "#fff" }}
+                className="fa-solid fa-right-to-bracket fa-lg px-2"
               />
+              Login
             </a>
           </div>
 
