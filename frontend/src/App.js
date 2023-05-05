@@ -13,6 +13,7 @@ import Contact from './components/main/Contact';
 import Chapter from './components/main/Chapter';
 import Builder from './components/trainer/Builder';
 import DesignChapter from './components/trainer/DesignChapter';
+import Trainer from './components/trainer';
 
 function App() {
   return (
@@ -29,11 +30,15 @@ function App() {
           <Route path='chapter' element={<Chapter />} />
           <Route path='login' element={<Login />} />
           <Route path='signup' element={<Signup />} />
+
+        </Route>
+        <Route path='trainer' element={<Trainer />}>
           <Route path='trainerlogin' element={<TrainerLogin />} />
           <Route path='trainersignup' element={<TrainerSignup />} />
           <Route path='builder' element={<Builder />} />
           <Route path='designchapter' element={<DesignChapter />} />
-        </Route>
+        </ Route>
+
       </Routes>
     </BrowserRouter>
   );

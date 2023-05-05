@@ -10,7 +10,7 @@ const Home = () => {
         <header>
           {/* Background image */}
           <div
-            className="p-5 text-center bg-image"
+            className="p-5 mb-10 text-center bg-image"
             style={{
               backgroundImage: 'url("/images/banner.gif")',
               height: 600,
@@ -25,9 +25,93 @@ const Home = () => {
       </>
       {/* Header */}
 
+      {/* coding for kids */}
+      <>
+        <div className="container mb-8">
+          {/* Section */}
+          <section>
+            <div className='heading'>
+              <h2 className="mt-5 mb-3 text-center display-3">
+                <span>Why coding is important for kids?</span>
+              </h2>
+            </div>
+            <div className='sub-heading'>
+              <h4 className="mb-6 text-center">
+                <span>Coding : the language of the future</span>
+              </h4>
+            </div>
+            {/* Grid row */}
+            <div className="row">
+              {/* Grid column - 1 */}
+              <div className="col-lg-4 mb-lg-0">
+                <div className="card rounded-7 text-center text-white" style={{ backgroundColor: '#29c1fe' }}>
+                  <div className="card-body">
+                    <p className="mt-4 pt-2">
+                      <i className="far fa-clock fa-4x" />
+                    </p>
+                    <h5 className="font-weight-normal text-white my-4 py-2">
+                      Prepare Them For Future
+                    </h5>
+                    <p className="mb-4">
+                      In today's digital age, coding is becoming an essential skill for many jobs.
+                      By learning to code at a young age, kids are better prepared for the future
+                      and have a competitive edge in the job market.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              {/* Grid column -1 */}
+              {/* Grid column - 2 */}
+              <div className="col-lg-4 mb-lg-0 mb-4">
+                <div className="card rounded-7 text-center">
+                  <div className="card-body">
+                    <p className="mt-4 pt-2">
+                      <i className="fas fa-gears fa-4x grey-text" />
+                    </p>
+                    <div className='card-heading'>
+                      <h5 className="font-weight-normal my-4 py-2">
+                        Enhances Logical Thinking
+                      </h5>
+                    </div>
+                    <p className="text-muted mb-4">
+                      Coding helps kids to develop logical thinking skills. They learn to organize
+                      their thoughts and break down complex problems into simpler components. This
+                      skill is useful not only in coding but also in other areas of life.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              {/* Grid column - 2 */}
+              {/* Grid column - 3 */}
+              <div className="col-lg-4 mb-lg-0 mb-4">
+                <div className="card rounded-7 text-center text-white" style={{ backgroundColor: '#000' }}>
+                  <div className="card-body">
+                    <p className="mt-4 pt-2">
+                      <i className="far fa-lightbulb fa-4x" />
+                    </p>
+                    <h5 className="font-weight-normal text-white my-4 py-2">
+                      Develops Problem-Solving Skills
+                    </h5>
+                    <p className="mb-4">
+                      Learning to code helps kids to develop problem-solving skills, as they have
+                      to break down a problem into smaller components and then find a way to solve
+                      them using code.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              {/* Grid column - 3 */}
+            </div>
+            {/* Grid row */}
+          </section>
+          {/* Section */}
+        </div>
+      </>
+      {/* coding for kids */}
+
       {/* About Us */}
       <>
-        <div className='mb-8'>
+        <div className='mb-7'>
           <div style={{ display: "none" }} />
           <div>
             <div data-draggable="true" style={{ position: "relative" }}>
@@ -70,7 +154,7 @@ const Home = () => {
                             </p>
                           </div>
                           <a
-                            className="btn btn-primary py-3 px-5 mb-0 mb-md-0 me-md-2"
+                            className="btn btn-primary py-3 px-5 mb-5 mb-md-3 me-md-2"
                             href="/main/signup"
                             role="button"
                             aria-controls="#picker-editor"
@@ -78,7 +162,7 @@ const Home = () => {
                             Get Started
                           </a>{" "}
                           <a
-                            className="btn btn-primary py-3 px-5 mb-0 mb-md-0 me-md-2"
+                            className="btn btn-primary py-3 px-5 mb-5 mb-md-3 me-md-2"
                             href="/main/about"
                             role="button"
                             aria-controls="#picker-editor"
@@ -466,7 +550,7 @@ const Home = () => {
                     className="px-4 py-5 px-md-5 text-center bg-image"
                     style={{
                       backgroundImage: 'url("/images/background-img1.jpg")',
-                      height: 400,
+                      height: 450,
                       backgroundSize: "cover",
                       backgroundPosition: "50% 50%",
                       backgroundAttachment: "fixed",
@@ -476,13 +560,13 @@ const Home = () => {
                   >
                     <div
                       className="mask"
-                      style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
+                      style={{ backgroundColor: "rgba(35, 37, 45, 0.6)" }}
                     >
                       <div className="container h-100">
                         <div className="row d-flex justify-content-center align-items-center h-100">
                           <div className="col-lg-10">
                             <div className="content pb-5">
-                              <h1 className="my-md-5 mb-4 px-5 display-3">
+                              <h1 className="my-md-5 mb-5 px-5 display-3">
                                 {" "}
                                 <span>Start your coding journey today and make your dreams a reality!</span> <br />{" "}
                                 {/* <span className="">and</span> <br />{" "}
@@ -537,92 +621,160 @@ const Home = () => {
       </>
       {/*Grow With Us*/}
 
-      {/* coding for kids */}
-      <>
-        <div className="container mb-10">
-          {/* Section */}
-          <section>
-            <div className='heading'>
-              <h2 className="mt-5 mb-3 text-center display-3">
-                <span>Why coding is important for kids?</span>
-              </h2>
-            </div>
-            <div className='sub-heading'>
-              <h4 className="mb-6 text-center">
-                <span>Coding : the language of the future</span>
-              </h4>
-            </div>
-            {/* Grid row */}
-            <div className="row">
-              {/* Grid column - 1 */}
-              <div className="col-lg-4 mb-lg-0">
-                <div className="card rounded-7 text-center text-white" style={{ backgroundColor: '#29c1fe' }}>
-                  <div className="card-body">
-                    <p className="mt-4 pt-2">
-                      <i className="far fa-clock fa-4x" />
-                    </p>
-                    <h5 className="font-weight-normal text-white my-4 py-2">
-                      Prepare Them For Future
-                    </h5>
-                    <p className="mb-4">
-                      In today's digital age, coding is becoming an essential skill for many jobs.
-                      By learning to code at a young age, kids are better prepared for the future
-                      and have a competitive edge in the job market.
-                    </p>
-                  </div>
-                </div>
+      {/* Why Coding Is Important */}
+      <div data-draggable="true" style={{ position: "relative" }}>
+        {/**/}
+        {/**/}
+        <section
+          draggable="false"
+          className="container"
+          data-v-271253ee=""
+        >
+          <section className="heading mb-10">
+            <h2 className="fw-bold mb-5 text-center">Why coding is important for kids?</h2>
+            <div className="row gx-lg-5 mb-5 align-items-center">
+              <div className="col-md-6 mb-4 mb-md-0">
+                {" "}
+                <img
+                  src="/images/img4.jpg"
+                  className="w-100 shadow-4-strong rounded-4 mb-4"
+                  alt=""
+                  aria-controls="#picker-editor"
+                />{" "}
               </div>
-              {/* Grid column -1 */}
-              {/* Grid column - 2 */}
-              <div className="col-lg-4 mb-lg-0 mb-4">
-                <div className="card rounded-7 text-center">
-                  <div className="card-body">
-                    <p className="mt-4 pt-2">
-                      <i className="fas fa-gears fa-4x grey-text" />
-                    </p>
-                    <div className='card-heading'>
-                      <h5 className="font-weight-normal my-4 py-2">
-                        Enhances Logical Thinking
-                      </h5>
-                    </div>
-                    <p className="text-muted mb-4">
-                      Coding helps kids to develop logical thinking skills. They learn to organize
-                      their thoughts and break down complex problems into simpler components. This
-                      skill is useful not only in coding but also in other areas of life.
-                    </p>
-                  </div>
+              <div className="col-md-6 mb-4 mb-md-0">
+                <h3 className="fw-bold">Prepares Them for the Future</h3>
+                <div className="mb-2 text-danger small">
+                  {" "}
+                  <i
+                    className="fas fa-users me-2"
+                    aria-controls="#picker-editor"
+                  />
+                  <span>People</span>{" "}
                 </div>
+                <p className="text-muted align-items-justify">
+                  In today's digital age, coding is becoming an essential skill
+                  for many jobs. By learning to code at a young age, kids are
+                  better prepared for the future and have a competitive edge in
+                  the job market.
+                </p>
+                <p className="text-muted align-items-justify">
+                  Coding is a skill that is becoming increasingly important in the
+                  modern world. It is used in a wide range of industries, including
+                  technology, finance, healthcare, and more. As the world becomes more
+                  digital, the demand for individuals who can code is increasing, and
+                  this trend is only going to continue in the future.
+                </p>{" "}
+                <a
+                  className="btn btn-primary"
+                  href="#"
+                  role="button"
+                  aria-controls="#picker-editor"
+                >
+                  Read more
+                </a>
               </div>
-              {/* Grid column - 2 */}
-              {/* Grid column - 3 */}
-              <div className="col-lg-4 mb-lg-0 mb-4">
-                <div className="card rounded-7 text-center text-white" style={{ backgroundColor: '#000' }}>
-                  <div className="card-body">
-                    <p className="mt-4 pt-2">
-                      <i className="far fa-lightbulb fa-4x" />
-                    </p>
-                    <h5 className="font-weight-normal text-white my-4 py-2">
-                      Develops Problem-Solving Skills
-                    </h5>
-                    <p className="mb-4">
-                      Learning to code helps kids to develop problem-solving skills, as they have
-                      to break down a problem into smaller components and then find a way to solve
-                      them using code.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* Grid column - 3 */}
             </div>
-            {/* Grid row */}
+            <div className="row gx-lg-5 mb-5 flex-lg-row-reverse align-items-center">
+              <div className="col-md-6 mb-4 mb-md-0">
+                {" "}
+                <img
+                  src="/images/img7.jpg"
+                  className="w-100 shadow-4-strong rounded-4 mb-4"
+                  alt=""
+                  aria-controls="#picker-editor"
+                />{" "}
+              </div>
+              <div className="col-md-6 mb-4 mb-md-0">
+                <h3 className="fw-bold">Enhances Logical Thinking</h3>
+                <div className="mb-2 text-primary small">
+                  {" "}
+                  <i
+                    className="fas fa-users me-2"
+                    aria-controls="#picker-editor"
+                  />
+                  <span>Adventure</span>{" "}
+                </div>
+                <p className="text-muted align-items-justify">
+                  Coding helps kids to develop logical thinking skills. They learn
+                  to organize their thoughts and break down complex problems into
+                  simpler components. This skill is useful not only in coding but
+                  also in other areas of life.
+                </p>{" "}
+                <p className="text-muted align-items-justify">
+                  When kids learn to code, they are introduced to a new way of thinking
+                  that involves breaking down complex problems into smaller, more
+                  manageable components. They learn to analyze situations, identify
+                  patterns, and formulate solutions to problems. This logical thinking
+                  skill is crucial in many aspects of life, such as problem-solving,
+                  decision-making, and critical thinking.
+                </p>{" "}
+                <a
+                  className="btn btn-primary"
+                  href="#"
+                  role="button"
+                  aria-controls="#picker-editor"
+                >
+                  Read more
+                </a>
+              </div>
+            </div>
+            <div className="row gx-lg-5 mb-5 align-items-center">
+              <div className="col-md-6 mb-4 mb-md-0">
+                {" "}
+                <img
+                  src="/images/img3.jpg"
+                  className="w-100 shadow-4-strong rounded-4 mb-4"
+                  alt=""
+                  aria-controls="#picker-editor"
+                />{" "}
+              </div>
+              <div className="col-md-6 mb-4 mb-md-0">
+                <h3 className="fw-bold">Develops Problem-Solving Skills</h3>
+                <div className="mb-2 text-warning small">
+                  {" "}
+                  <i
+                    className="fas fa-users me-2"
+                    aria-controls="#picker-editor"
+                  />
+                  <span>People</span>{" "}
+                </div>
+                <p className="text-muted align-items-justify">
+                  Learning to code helps kids to develop problem-solving skills,
+                  as they have to break down a problem into smaller components
+                  and then find a way to solve them using code. This skill is
+                  useful in various aspects of life and can be helpful in many
+                  future careers.
+                </p>{" "}
+                <p className="text-muted align-items-justify">
+                  Problem-solving is a critical skill in today's world, and coding
+                  can help kids to develop it. As they work on coding projects, they
+                  encounter various problems, and they have to come up with solutions
+                  on their own. This process enhances their ability to identify
+                  problems, analyze them, and create solutions. In the long run,
+                  this skill can help them to navigate complex challenges in both
+                  their personal and professional lives. Moreover, problem-solving
+                  skills can be beneficial in many careers, such as software
+                  development, engineering, and business analysis.
+                </p>{" "}
+                <a
+                  className="btn btn-primary"
+                  href="#"
+                  role="button"
+                  aria-controls="#picker-editor"
+                >
+                  Read more
+                </a>
+              </div>
+            </div>
           </section>
-          {/* Section */}
-        </div>
-      </>
-      {/* coding for kids */}
+        </section>
+        {/**/}
+      </div>
+      {/* Why Coding Is Important */}
 
-      {/* Testimonials */}
-      <>
+{/* Testimonials */}
+<>
         <div class="py-1" data-draggable="true"
           style={{
             backgroundImage: 'url("/images/background-img2.jpeg")',
@@ -801,158 +953,6 @@ const Home = () => {
         </div>
       </>
       {/* Testimonials */}
-
-      {/* Why Coding Is Important */}
-      <div data-draggable="true" style={{ position: "relative" }}>
-        {/**/}
-        {/**/}
-        <section
-          draggable="false"
-          className="container"
-          data-v-271253ee=""
-        >
-          <section className="heading mb-10">
-            <h2 className="fw-bold mb-5 text-center">Why coding is important for kids?</h2>
-            <div className="row gx-lg-5 mb-5 align-items-center">
-              <div className="col-md-6 mb-4 mb-md-0">
-                {" "}
-                <img
-                  src="/images/img4.jpg"
-                  className="w-100 shadow-4-strong rounded-4 mb-4"
-                  alt=""
-                  aria-controls="#picker-editor"
-                />{" "}
-              </div>
-              <div className="col-md-6 mb-4 mb-md-0">
-                <h3 className="fw-bold">Prepares Them for the Future</h3>
-                <div className="mb-2 text-danger small">
-                  {" "}
-                  <i
-                    className="fas fa-users me-2"
-                    aria-controls="#picker-editor"
-                  />
-                  <span>People</span>{" "}
-                </div>
-                <p className="text-muted align-items-justify">
-                  In today's digital age, coding is becoming an essential skill
-                  for many jobs. By learning to code at a young age, kids are
-                  better prepared for the future and have a competitive edge in
-                  the job market.
-                </p>
-                <p className="text-muted align-items-justify">
-                  Coding is a skill that is becoming increasingly important in the
-                  modern world. It is used in a wide range of industries, including
-                  technology, finance, healthcare, and more. As the world becomes more
-                  digital, the demand for individuals who can code is increasing, and
-                  this trend is only going to continue in the future.
-                </p>{" "}
-                <a
-                  className="btn btn-primary"
-                  href="#"
-                  role="button"
-                  aria-controls="#picker-editor"
-                >
-                  Read more
-                </a>
-              </div>
-            </div>
-            <div className="row gx-lg-5 mb-5 flex-lg-row-reverse align-items-center">
-              <div className="col-md-6 mb-4 mb-md-0">
-                {" "}
-                <img
-                  src="/images/img7.jpg"
-                  className="w-100 shadow-4-strong rounded-4 mb-4"
-                  alt=""
-                  aria-controls="#picker-editor"
-                />{" "}
-              </div>
-              <div className="col-md-6 mb-4 mb-md-0">
-                <h3 className="fw-bold">Enhances Logical Thinking</h3>
-                <div className="mb-2 text-primary small">
-                  {" "}
-                  <i
-                    className="fas fa-users me-2"
-                    aria-controls="#picker-editor"
-                  />
-                  <span>Adventure</span>{" "}
-                </div>
-                <p className="text-muted align-items-justify">
-                  Coding helps kids to develop logical thinking skills. They learn
-                  to organize their thoughts and break down complex problems into
-                  simpler components. This skill is useful not only in coding but
-                  also in other areas of life.
-                </p>{" "}
-                <p className="text-muted align-items-justify">
-                  When kids learn to code, they are introduced to a new way of thinking
-                  that involves breaking down complex problems into smaller, more
-                  manageable components. They learn to analyze situations, identify
-                  patterns, and formulate solutions to problems. This logical thinking
-                  skill is crucial in many aspects of life, such as problem-solving,
-                  decision-making, and critical thinking.
-                </p>{" "}
-                <a
-                  className="btn btn-primary"
-                  href="#"
-                  role="button"
-                  aria-controls="#picker-editor"
-                >
-                  Read more
-                </a>
-              </div>
-            </div>
-            <div className="row gx-lg-5 mb-5 align-items-center">
-              <div className="col-md-6 mb-4 mb-md-0">
-                {" "}
-                <img
-                  src="/images/img3.jpg"
-                  className="w-100 shadow-4-strong rounded-4 mb-4"
-                  alt=""
-                  aria-controls="#picker-editor"
-                />{" "}
-              </div>
-              <div className="col-md-6 mb-4 mb-md-0">
-                <h3 className="fw-bold">Develops Problem-Solving Skills</h3>
-                <div className="mb-2 text-warning small">
-                  {" "}
-                  <i
-                    className="fas fa-users me-2"
-                    aria-controls="#picker-editor"
-                  />
-                  <span>People</span>{" "}
-                </div>
-                <p className="text-muted align-items-justify">
-                  Learning to code helps kids to develop problem-solving skills,
-                  as they have to break down a problem into smaller components
-                  and then find a way to solve them using code. This skill is
-                  useful in various aspects of life and can be helpful in many
-                  future careers.
-                </p>{" "}
-                <p className="text-muted align-items-justify">
-                  Problem-solving is a critical skill in today's world, and coding
-                  can help kids to develop it. As they work on coding projects, they
-                  encounter various problems, and they have to come up with solutions
-                  on their own. This process enhances their ability to identify
-                  problems, analyze them, and create solutions. In the long run,
-                  this skill can help them to navigate complex challenges in both
-                  their personal and professional lives. Moreover, problem-solving
-                  skills can be beneficial in many careers, such as software
-                  development, engineering, and business analysis.
-                </p>{" "}
-                <a
-                  className="btn btn-primary"
-                  href="#"
-                  role="button"
-                  aria-controls="#picker-editor"
-                >
-                  Read more
-                </a>
-              </div>
-            </div>
-          </section>
-        </section>
-        {/**/}
-      </div>
-      {/* Why Coding Is Important */}
 
       {/* Team Members */}
       <>

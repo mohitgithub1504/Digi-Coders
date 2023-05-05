@@ -22,7 +22,7 @@
  */
 
 import React from 'react';
-import './BlocklyComponent.css';
+// import './BlocklyComponent.css';
 import {useEffect, useRef} from 'react';
 
 import Blockly from 'blockly/core';

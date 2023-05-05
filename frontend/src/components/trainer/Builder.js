@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import BlocklyComponent, { Block, Value, Field, Shadow } from "../../Blockly";
 
-import "../../customBlocks";
+// import "../../customBlocks";
 import "../../generator";
 import { useParams } from "react-router-dom";
 import app_config from "../../config";
