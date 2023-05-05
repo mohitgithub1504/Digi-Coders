@@ -10,7 +10,7 @@ const Navbar = () => {
         {/* Container wrapper */}
         <div className="container">
           {/* Navbar brand */}
-          <a className="navbar-brand me-2" href="#">
+          <a className="navbar-brand me-2" to="/main/Home">
             <img
               src="/logo/logo.png"
               height={50}
