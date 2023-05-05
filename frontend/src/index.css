@@ -22,8 +22,21 @@
   font-size: 20px;
 }
 .content p{
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   color: var(--main-color);
+}
+.content h4{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--main-color);
+  font-size: 30px;
+}
+.content h1{
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--third-color);
+  font-size: 52px;
+  font-weight: 700;
 }
 /*Testimonial*/
 .main-heading h2{
@@ -67,6 +80,7 @@
   color: var(--main-color);
   font-weight: 500;
   text-transform: uppercase;
+  font-size: 15px;
 }
 .card-body h4{
   color: var(--main-color);
@@ -92,13 +106,6 @@
   text-transform: uppercase;
   font-size: 22px;
   color: var(--second-color);
-}
-.content h1{
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: var(--third-color);
-  font-size: 52px;
-  font-weight: 700;
 }
 .footer-icon{
   color: var(--second-color);

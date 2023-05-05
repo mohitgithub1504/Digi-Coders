@@ -185,6 +185,158 @@ const About = () => {
 
 
 
+{/* Why Coding Is Important */}
+<div data-draggable="true" style={{ position: "relative" }}>
+        {/**/}
+        {/**/}
+        <section
+          draggable="false"
+          className="container"
+          data-v-271253ee=""
+        >
+          <section className="heading mb-10">
+            <h2 className="fw-bold mb-5 text-center">Why coding is important for kids?</h2>
+            <div className="row gx-lg-5 mb-5 align-items-center">
+              <div className="col-md-6 mb-4 mb-md-0">
+                {" "}
+                <img
+                  src="/images/img4.jpg"
+                  className="w-100 shadow-4-strong rounded-4 mb-4"
+                  alt=""
+                  aria-controls="#picker-editor"
+                />{" "}
+              </div>
+              <div className="col-md-6 mb-4 mb-md-0">
+                <h3 className="fw-bold">Prepares Them for the Future</h3>
+                <div className="mb-2 text-danger small">
+                  {" "}
+                  <i
+                    className="fas fa-users me-2"
+                    aria-controls="#picker-editor"
+                  />
+                  <span>People</span>{" "}
+                </div>
+                <p className="text-muted align-items-justify">
+                  In today's digital age, coding is becoming an essential skill
+                  for many jobs. By learning to code at a young age, kids are
+                  better prepared for the future and have a competitive edge in
+                  the job market.
+                </p>
+                <p className="text-muted align-items-justify">
+                  Coding is a skill that is becoming increasingly important in the
+                  modern world. It is used in a wide range of industries, including
+                  technology, finance, healthcare, and more. As the world becomes more
+                  digital, the demand for individuals who can code is increasing, and
+                  this trend is only going to continue in the future.
+                </p>{" "}
+                <a
+                  className="btn btn-primary"
+                  href="#"
+                  role="button"
+                  aria-controls="#picker-editor"
+                >
+                  Read more
+                </a>
+              </div>
+            </div>
+            <div className="row gx-lg-5 mb-5 flex-lg-row-reverse align-items-center">
+              <div className="col-md-6 mb-4 mb-md-0">
+                {" "}
+                <img
+                  src="/images/img7.jpg"
+                  className="w-100 shadow-4-strong rounded-4 mb-4"
+                  alt=""
+                  aria-controls="#picker-editor"
+                />{" "}
+              </div>
+              <div className="col-md-6 mb-4 mb-md-0">
+                <h3 className="fw-bold">Enhances Logical Thinking</h3>
+                <div className="mb-2 text-primary small">
+                  {" "}
+                  <i
+                    className="fas fa-users me-2"
+                    aria-controls="#picker-editor"
+                  />
+                  <span>Adventure</span>{" "}
+                </div>
+                <p className="text-muted align-items-justify">
+                  Coding helps kids to develop logical thinking skills. They learn
+                  to organize their thoughts and break down complex problems into
+                  simpler components. This skill is useful not only in coding but
+                  also in other areas of life.
+                </p>{" "}
+                <p className="text-muted align-items-justify">
+                  When kids learn to code, they are introduced to a new way of thinking
+                  that involves breaking down complex problems into smaller, more
+                  manageable components. They learn to analyze situations, identify
+                  patterns, and formulate solutions to problems. This logical thinking
+                  skill is crucial in many aspects of life, such as problem-solving,
+                  decision-making, and critical thinking.
+                </p>{" "}
+                <a
+                  className="btn btn-primary"
+                  href="#"
+                  role="button"
+                  aria-controls="#picker-editor"
+                >
+                  Read more
+                </a>
+              </div>
+            </div>
+            <div className="row gx-lg-5 mb-5 align-items-center">
+              <div className="col-md-6 mb-4 mb-md-0">
+                {" "}
+                <img
+                  src="/images/img3.jpg"
+                  className="w-100 shadow-4-strong rounded-4 mb-4"
+                  alt=""
+                  aria-controls="#picker-editor"
+                />{" "}
+              </div>
+              <div className="col-md-6 mb-4 mb-md-0">
+                <h3 className="fw-bold">Develops Problem-Solving Skills</h3>
+                <div className="mb-2 text-warning small">
+                  {" "}
+                  <i
+                    className="fas fa-users me-2"
+                    aria-controls="#picker-editor"
+                  />
+                  <span>People</span>{" "}
+                </div>
+                <p className="text-muted align-items-justify">
+                  Learning to code helps kids to develop problem-solving skills,
+                  as they have to break down a problem into smaller components
+                  and then find a way to solve them using code. This skill is
+                  useful in various aspects of life and can be helpful in many
+                  future careers.
+                </p>{" "}
+                <p className="text-muted align-items-justify">
+                  Problem-solving is a critical skill in today's world, and coding
+                  can help kids to develop it. As they work on coding projects, they
+                  encounter various problems, and they have to come up with solutions
+                  on their own. This process enhances their ability to identify
+                  problems, analyze them, and create solutions. In the long run,
+                  this skill can help them to navigate complex challenges in both
+                  their personal and professional lives. Moreover, problem-solving
+                  skills can be beneficial in many careers, such as software
+                  development, engineering, and business analysis.
+                </p>{" "}
+                <a
+                  className="btn btn-primary"
+                  href="#"
+                  role="button"
+                  aria-controls="#picker-editor"
+                >
+                  Read more
+                </a>
+              </div>
+            </div>
+          </section>
+        </section>
+        {/**/}
+      </div>
+      {/* Why Coding Is Important */}
+
         </div>
     )
 }
