@@ -71,12 +71,12 @@ const Navbar = () => {
                   {/* Divider here */} 
                   <li><hr class="hr hr-blurry mt-2" /></li>
                   <li>
-                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="/trainer/builder">Action</a>
                   </li>
                   {/* Divider here */} 
                   <li><hr class="hr hr-blurry mt-2" /></li>
                   <li>
-                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="/trainer/designchapter">Another action</a>
                   </li>
                   <li><hr class="dropdown-divider" /></li>
                   <li>
