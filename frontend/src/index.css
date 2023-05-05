@@ -5,11 +5,17 @@
 :root{
   --main-color: #000;
   --second-color:#29c1fe;
+  --third-color: #fff;
 }
 .heading h2{
   text-transform: uppercase;
   font-size: 50px;
   color: var(--main-color);
+}
+.main-heading h2{
+  text-transform: uppercase;
+  font-size: 50px;
+  color: var(--third-color);
 }
 .navbar{
   display: flex;
@@ -69,13 +75,51 @@
   font-size: 25px;
 }
 .main-content p{
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   color: var(--main-color);
+}
+.card-heading h5{
+  color: var(--second-color);
+}
+.name p{
+  text-transform: uppercase;
+  font-size: 22px;
+  color: var(--second-color);
 }
 .content h1{
   letter-spacing: 5px;
   text-transform: uppercase;
+  color: var(--third-color);
+  font-size: 50px;
+  font-weight: 700;
 }
 .footer-icon{
   color: var(--second-color);
 }
+.page-heading h1{
+  text-transform: uppercase;
+  font-size: 50px;
+  color: var(--second-color);
+}
+.page-heading p{
+  letter-spacing: 3px;
+  color: var(--third-color);
+}
+.card-signup{
+  border-radius: 2.5rem !important;
+}
+.signup-link u{
+  color: var(--second-color);
+}
+.signup-link u:hover{
+  color: var(--main-color);
+}
+.signup-name p{
+  text-transform: uppercase;
+  font-size: 30px;
+  color: var(--second-color);
+}
+.signup-name p:hover{
+  color: var(--main-color);
+}
+@media (max-width: 767.98px) { .border-sm-start-none { border-left: none !important; } }

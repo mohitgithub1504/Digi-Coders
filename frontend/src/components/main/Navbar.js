@@ -34,18 +34,23 @@ const Navbar = () => {
           {/* Collapsible wrapper */}
           <div className="collapse navbar-collapse justify-content-center" id="navbarButtonsExample">
             {/* Left links */}
-            <ul className="navbar-nav mb-2 mb-lg-0" style={{ fontSize: 18}}>
+            <ul className="navbar-nav mb-2 mb-lg-0" style={{ fontSize: 18 }}>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/main/home">
                   Home
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/main/about">
+                  About
+                </NavLink>
+              </li>
 
               {/* Navbar dropdown */}
-              <li className="nav-item dropdown">
+              <li class="nav-item dropdown">
                 <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
+                  class="nav-link dropdown-toggle"
+                  href="/main/courses"
                   id="navbarDropdown"
                   role="button"
                   data-mdb-toggle="dropdown"
@@ -53,39 +58,39 @@ const Navbar = () => {
                 >
                   Courses
                 </a>
-                {/* Dropdown menu */}
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                {/* Dropdown menu */} 
+                <ul class="dropdown-menu mt-3 text-center" aria-labelledby="navbarDropdown">
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Action
-                    </a>
+                    <a class="dropdown-item" href="/main/course">Action</a>
                   </li>
+                  {/* Divider here */} 
+                  <li><hr class="hr hr-blurry mt-2" /></li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Another action
-                    </a>
+                    <a class="dropdown-item" href="/main/chapter">Another action</a>
                   </li>
+                  {/* Divider here */} 
+                  <li><hr class="hr hr-blurry mt-2" /></li>
                   <li>
-                    <hr className="dropdown-divider" />
+                    <a class="dropdown-item" href="#">Action</a>
                   </li>
+                  {/* Divider here */} 
+                  <li><hr class="hr hr-blurry mt-2" /></li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
                   </li>
                 </ul>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="/main/about">
-                  About
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/main/contact">
+                <NavLink className="nav-link" to="/main/contact">
                   Contact
-                </a>
+                </NavLink>
               </li>
+
             </ul>
 
           </div>
