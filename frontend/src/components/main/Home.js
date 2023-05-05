@@ -5,53 +5,29 @@ const Home = () => {
 
     <div>
 
-      {/* Header Image */}
+      {/* Header */}
       <>
-        <div data-draggable="true" style={{ position: "relative" }}>
-          {/**/}
-          {/**/}
-          <section
-            draggable="false"
-            className="overflow-hidden pt-0"
-            data-v-271253ee=""
+        <header>
+          {/* Background image */}
+          <div
+            className="p-5 text-center bg-image"
+            style={{
+              backgroundImage: 'url("/images/banner.gif")',
+              height: 600,
+              backgroundSize: "cover",
+              backgroundPosition: "50% 40%",
+              backgroundColor: "rgba(0, 0, 0, 0)"
+            }}
           >
-            <section className="mb-10">
-              {" "}
-              {/* Background image */}
-              <div
-                className="p-5 text-center bg-image"
-                style={{
-                  backgroundImage: 'url("/images/banner.gif")',
-                  height: 650,
-                  backgroundSize: "cover",
-                  backgroundPosition: "50% 40%",
-                  backgroundColor: "rgba(0, 0, 0, 0)"
-                }}
-                aria-controls="#picker-editor"
-              />
-              {/* Background image */}
-
-              <div className="container">
-                <div
-                  className="card mx-4 mx-md-5 text-center shadow-5-strong"
-                  style={{
-                    marginTop: "-170px",
-                    background: "hsla(0, 0%, 100%, 0.7)",
-                    backdropFilter: "blur(30px)"
-                  }}
-                >
-                </div>
-              </div>
-            </section>
-          </section>
-          {/**/}
-        </div>
+          </div>
+          {/* Background image */}
+        </header>
       </>
-      {/* Header Image */}
+      {/* Header */}
 
-      {/* Header Content */}
+      {/* About Us */}
       <>
-        <div id="main-content" className="main-content">
+        <div className='mb-8'>
           <div style={{ display: "none" }} />
           <div>
             <div data-draggable="true" style={{ position: "relative" }}>
@@ -65,39 +41,45 @@ const Home = () => {
                 <section>
                   {" "}
                   {/* Jumbotron */}
-                  <div className="py-5 text-center bg-light">
+                  <div className="py-2 text-center" style={{ backgroundColor: '#f6feff' }}>
                     <div className="container pb-md-5">
                       <div className="row d-flex justify-content-center">
                         <div className="header-text col-lg-10">
-                          <h1 className="my-2 display-3">
-                            <span>Why Choose Digi Coders?</span>
-                          </h1>
-                          <h4 className="my-2">
-                            <span>Empowering Young Minds to Code with Fun and Creativity</span>
-                          </h4>
-                          <p className="mt-3 mb-5">
-                            <span>At Digi Coders, we believe that every child has the potential
-                              to become a creator, innovator, and problem-solver. That's why
-                              we've created a fun and engaging platform for young coders to
-                              learn, create and explore the world of coding. Our program is
-                              designed to empower kids to unleash their creativity, build
-                              their own projects, and develop essential coding skills that
-                              will set them up for success in the future. With our experienced
-                              instructors, innovative curriculum, and supportive community,
-                              we're here to help kids discover their passion for coding and
-                              bring their ideas to life.</span>
-                          </p>
+                          <div className='heading'>
+                            <h2 className="mt-5 mb-3 display-3">
+                              <span>Why Choose Us?</span>
+                            </h2>
+                          </div>
+                          <div className='sub-heading'>
+                            <h4 className="mb-6">
+                              <span>Innovative Learning Approach</span>
+                            </h4>
+                          </div>
+                          <div className='content'>
+                            <p className="mb-6">
+                              <span>At Digi Coders, we believe that every child has the potential
+                                to become a creator, innovator, and problem-solver. That's why
+                                we've created a fun and engaging platform for young coders to
+                                learn, create and explore the world of coding. Our program is
+                                designed to empower kids to unleash their creativity, build
+                                their own projects, and develop essential coding skills that
+                                will set them up for success in the future. With our experienced
+                                instructors, innovative curriculum, and supportive community,
+                                we're here to help kids discover their passion for coding and
+                                bring their ideas to life.</span>
+                            </p>
+                          </div>
                           <a
-                            className="btn btn-primary py-3 px-5 mb-2 mb-md-0 me-md-2"
-                            href="#!"
+                            className="btn btn-primary py-3 px-5 mb-0 mb-md-0 me-md-2"
+                            href="/main/signup"
                             role="button"
                             aria-controls="#picker-editor"
                           >
                             Get Started
                           </a>{" "}
                           <a
-                            className="btn btn-primary py-3 px-5 mb-2 mb-md-0 me-md-2"
-                            href="#!"
+                            className="btn btn-primary py-3 px-5 mb-0 mb-md-0 me-md-2"
+                            href="/main/about"
                             role="button"
                             aria-controls="#picker-editor"
                           >
@@ -115,230 +97,358 @@ const Home = () => {
           </div>
         </div>
       </>
-      {/* Header Content */}
+      {/* About Us */}
 
-      {/* Why Coding Is Important */}
-      <div data-draggable="true" style={{ position: "relative" }}>
-        {/**/}
-        {/**/}
-        <section
-          draggable="false"
-          className="container pt-5"
-          data-v-271253ee=""
-        >
-          <section className="heading mb-10">
-            <h2 className="fw-bold mb-5 text-center">Why coding is important for kids?</h2>
-            <div className="row gx-lg-5 mb-5 align-items-center">
-              <div className="col-md-6 mb-4 mb-md-0">
-                {" "}
-                <img
-                  src="/images/img4.jpg"
-                  className="w-100 shadow-4-strong rounded-4 mb-4"
-                  alt=""
-                  aria-controls="#picker-editor"
-                />{" "}
+      {/* Our Course*/}
+      <div className='mb-10'>
+        <div data-draggable="true" style={{ position: "relative" }}>
+          {/**/}
+          {/**/}
+          <section draggable="false" className="container" data-v-271253ee="">
+            <section>
+              <div className='heading'>
+                <h2 className="mb-3 text-center display-3">
+                  <span>Our Courses</span>
+                </h2>
               </div>
-              <div className="col-md-6 mb-4 mb-md-0">
-                <h3 className="fw-bold">Prepares Them for the Future</h3>
-                <div className="mb-2 text-danger small">
-                  {" "}
-                  <i
-                    className="fas fa-users me-2"
-                    aria-controls="#picker-editor"
-                  />
-                  <span>People</span>{" "}
-                </div>
-                <p className="text-muted align-items-justify">
-                  In today's digital age, coding is becoming an essential skill
-                  for many jobs. By learning to code at a young age, kids are
-                  better prepared for the future and have a competitive edge in
-                  the job market.
-                </p>
-                <p className="text-muted align-items-justify">
-                  Coding is a skill that is becoming increasingly important in the
-                  modern world. It is used in a wide range of industries, including
-                  technology, finance, healthcare, and more. As the world becomes more
-                  digital, the demand for individuals who can code is increasing, and
-                  this trend is only going to continue in the future.
-                </p>{" "}
-                <a
-                  className="btn btn-primary"
-                  href="#"
-                  role="button"
-                  aria-controls="#picker-editor"
-                >
-                  Read more
-                </a>
+              <div className='sub-heading'>
+                <h4 className="mb-8 text-center">
+                  <span>Discover a world of coding with our courses!</span>
+                </h4>
               </div>
-            </div>
-            <div className="row gx-lg-5 mb-5 flex-lg-row-reverse align-items-center">
-              <div className="col-md-6 mb-4 mb-md-0">
-                {" "}
-                <img
-                  src="/images/img7.jpg"
-                  className="w-100 shadow-4-strong rounded-4 mb-4"
-                  alt=""
-                  aria-controls="#picker-editor"
-                />{" "}
-              </div>
-              <div className="col-md-6 mb-4 mb-md-0">
-                <h3 className="fw-bold">Enhances Logical Thinking</h3>
-                <div className="mb-2 text-primary small">
-                  {" "}
-                  <i
-                    className="fas fa-users me-2"
-                    aria-controls="#picker-editor"
-                  />
-                  <span>Adventure</span>{" "}
-                </div>
-                <p className="text-muted align-items-justify">
-                  Coding helps kids to develop logical thinking skills. They learn
-                  to organize their thoughts and break down complex problems into
-                  simpler components. This skill is useful not only in coding but
-                  also in other areas of life.
-                </p>{" "}
-                <p className="text-muted align-items-justify">
-                  When kids learn to code, they are introduced to a new way of thinking
-                  that involves breaking down complex problems into smaller, more
-                  manageable components. They learn to analyze situations, identify
-                  patterns, and formulate solutions to problems. This logical thinking
-                  skill is crucial in many aspects of life, such as problem-solving,
-                  decision-making, and critical thinking.
-                </p>{" "}
-                <a
-                  className="btn btn-primary"
-                  href="#"
-                  role="button"
-                  aria-controls="#picker-editor"
-                >
-                  Read more
-                </a>
-              </div>
-            </div>
-            <div className="row gx-lg-5 mb-5 align-items-center">
-              <div className="col-md-6 mb-4 mb-md-0">
-                {" "}
-                <img
-                  src="/images/img3.jpg"
-                  className="w-100 shadow-4-strong rounded-4 mb-4"
-                  alt=""
-                  aria-controls="#picker-editor"
-                />{" "}
-              </div>
-              <div className="col-md-6 mb-4 mb-md-0">
-                <h3 className="fw-bold">Develops Problem-Solving Skills</h3>
-                <div className="mb-2 text-warning small">
-                  {" "}
-                  <i
-                    className="fas fa-users me-2"
-                    aria-controls="#picker-editor"
-                  />
-                  <span>People</span>{" "}
-                </div>
-                <p className="text-muted align-items-justify">
-                  Learning to code helps kids to develop problem-solving skills,
-                  as they have to break down a problem into smaller components
-                  and then find a way to solve them using code. This skill is
-                  useful in various aspects of life and can be helpful in many
-                  future careers.
-                </p>{" "}
-                <p className="text-muted align-items-justify">
-                  Problem-solving is a critical skill in today's world, and coding
-                  can help kids to develop it. As they work on coding projects, they
-                  encounter various problems, and they have to come up with solutions
-                  on their own. This process enhances their ability to identify
-                  problems, analyze them, and create solutions. In the long run,
-                  this skill can help them to navigate complex challenges in both
-                  their personal and professional lives. Moreover, problem-solving
-                  skills can be beneficial in many careers, such as software
-                  development, engineering, and business analysis.
-                </p>{" "}
-                <a
-                  className="btn btn-primary"
-                  href="#"
-                  role="button"
-                  aria-controls="#picker-editor"
-                >
-                  Read more
-                </a>
-              </div>
-            </div>
-          </section>
-        </section>
-        {/**/}
-      </div>
-      {/* Why Coding Is Important */}
-
-      {/* coding for kids */}
-      <>
-        <div className="container my-5">
-          {/* Section */}
-          <section className="heading mb-10">
-            <h2 className="fw-bold mb-5 text-center">Why coding is important for kids?</h2>
-            <div className="row">
-              <div className="col-lg-4 mb-lg-0 mb-4">
-                <div className="card rounded-7 text-center text-white" style={{ backgroundColor: '#29c1fe' }}>
-                  <div className="card-body">
-                    <p className="mt-4 pt-2">
-                      <i className="far fa-clock fa-4x" />
-                    </p>
-                    <h5 className="font-weight-normal text-white my-4 py-2">
-                      Prepare Them For Future
-                    </h5>
-                    <p className="mb-4">
-                      In today's digital age, coding is becoming an essential skill for many jobs.
-                      By learning to code at a young age, kids are better prepared for the future
-                      and have a competitive edge in the job market.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 mb-lg-0 mb-4">
-                <div className="card rounded-7 text-center">
-                  <div className="card-body">
-                    <p className="mt-4 pt-2">
-                      <i className="fas fa-gears fa-4x grey-text" />
-                    </p>
-                    <div className='card-heading'>
-                      <h5 className="font-weight-normal my-4 py-2">
-                        Enhances Logical Thinking
-                      </h5>
+              <div className="row text-center gx-lg-5 mb-6">
+                {/* First column */}
+                <div className="col-lg-4 col-md-12 mb-lg-0">
+                  <div className="card">
+                    <div
+                      class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
+                      data-mdb-ripple-color="light"
+                    >
+                      <img
+                        src="/images/course1.jpg"
+                        className="img-fluid"
+                      />
+                      <a href="/main/chapter">
+                        <div
+                          className="mask"
+                          style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
+                        />
+                      </a>
                     </div>
-                    <p className="text-muted mb-4">
-                      Coding helps kids to develop logical thinking skills. They learn to organize
-                      their thoughts and break down complex problems into simpler components. This
-                      skill is useful not only in coding but also in other areas of life.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 mb-lg-0 mb-4">
-                <div className="card rounded-7 text-center text-white" style={{ backgroundColor: '#000' }}>
-                  <div className="card-body">
-                    <p className="mt-4 pt-2">
-                      <i className="far fa-lightbulb fa-4x" />
-                    </p>
-                    <h5 className="font-weight-normal text-white my-4 py-2">
-                      Develops Problem-Solving Skills
-                    </h5>
-                    <p className="mb-4">
-                      Learning to code helps kids to develop problem-solving skills, as they have
-                      to break down a problem into smaller components and then find a way to solve
-                      them using code.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </>
-      {/* coding for kids */}
+                    <div className="card-body">
+                      <h6 className="mb-3">
+                        Age 6+
+                      </h6>
+                      <h4 className="card-tittle mb-3">
+                        <strong>Game Development</strong>
+                      </h4>
+                      <ul className="list-unstyled d-flex justify-content-center text-warning">
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="far fa-star fa-sm" />
+                        </li>
+                      </ul>
 
-      {/* Website Content */}
+                      {/* Divider here */}
+                      <hr class="hr hr-blurry"></hr>
+
+                      <a href="#!" className="btn btn-primary">
+                        Read more
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                {/* First column */}
+                {/* Second column */}
+                <div className="col-lg-4 col-md-12 mb-lg-0">
+                  <div className="card">
+                    <div
+                      class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
+                      data-mdb-ripple-color="light"
+                    >
+                      <img
+                        src="/images/course2.jpg"
+                        className="img-fluid"
+                      />
+                      <a href="/main/chapter">
+                        <div
+                          className="mask"
+                          style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
+                        />
+                      </a>
+                    </div>
+                    <div className="card-body">
+                      <h6 className="mb-3">
+                        Age 6+
+                      </h6>
+                      <h4 className="card-tittle fw-bold mb-3">
+                        <strong>Web Development</strong>
+                      </h4>
+                      <ul className="list-unstyled d-flex justify-content-center text-warning">
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="far fa-star fa-sm" />
+                        </li>
+                      </ul>
+
+                      {/* Divider here */}
+                      <hr class="hr hr-blurry"></hr>
+
+                      <a href="#!" className="btn btn-primary">
+                        Read more
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                {/* Second column */}
+                {/* Third column */}
+                <div className="col-lg-4 col-md-12 mb-lg-0">
+                  <div className="card">
+                    <div
+                      class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
+                      data-mdb-ripple-color="light"
+                    >
+                      <img
+                        src="/images/course3.jpg"
+                        className="img-fluid"
+                      />
+                      <a href="/main/chapter">
+                        <div
+                          className="mask"
+                          style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
+                        />
+                      </a>
+                    </div>
+                    <div className="card-body">
+                      <h6 className="mb-3">
+                        Age 6+
+                      </h6>
+                      <h4 className="card-tittle fw-bold mb-3">
+                        <strong>Android Development</strong>
+                      </h4>
+                      <ul className="list-unstyled d-flex justify-content-center text-warning">
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="far fa-star fa-sm" />
+                        </li>
+                      </ul>
+
+                      {/* Divider here */}
+                      <hr class="hr hr-blurry"></hr>
+
+                      <a href="#!" className="btn btn-primary">
+                        Read more
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                {/* Third column */}
+              </div>
+
+              <div className="row text-center gx-lg-5">
+                {/* First column */}
+                <div className="col-lg-4 col-md-12 mb-lg-0">
+                  <div className="card">
+                    <div
+                      class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
+                      data-mdb-ripple-color="light"
+                    >
+                      <img
+                        src="/images/course4.jpg"
+                        className="img-fluid"
+                      />
+                      <a href="/main/chapter">
+                        <div
+                          className="mask"
+                          style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
+                        />
+                      </a>
+                    </div>
+                    <div className="card-body">
+                      <h6 className="mb-3">
+                        Age 6+
+                      </h6>
+                      <h4 className="card-tittle fw-bold mb-3">
+                        <strong>Artificial Intelligence</strong>
+                      </h4>
+                      <ul className="list-unstyled d-flex justify-content-center text-warning">
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="far fa-star fa-sm" />
+                        </li>
+                      </ul>
+
+                      {/* Divider here */}
+                      <hr class="hr hr-blurry"></hr>
+
+                      <a href="#!" className="btn btn-primary">
+                        Read more
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                {/* First column */}
+                {/* Second column */}
+                <div className="col-lg-4 col-md-12 mb-lg-0">
+                  <div className="card">
+                    <div
+                      class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
+                      data-mdb-ripple-color="light"
+                    >
+                      <img
+                        src="/images/course5.jpg"
+                        className="img-fluid"
+                      />
+                      <a href="/main/chapter">
+                        <div
+                          className="mask"
+                          style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
+                        />
+                      </a>
+                    </div>
+                    <div className="card-body">
+                      <h6 className="mb-3">
+                        Age 6+
+                      </h6>
+                      <h4 className="card-tittle fw-bold mb-3">
+                        <strong>Roblox</strong>
+                      </h4>
+                      <ul className="list-unstyled d-flex justify-content-center text-warning">
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="far fa-star fa-sm" />
+                        </li>
+                      </ul>
+
+                      {/* Divider here */}
+                      <hr class="hr hr-blurry"></hr>
+
+                      <a href="#!" className="btn btn-primary">
+                        Read more
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                {/* Second column */}
+                {/* Third column */}
+                <div className="col-lg-4 col-md-12 mb-lg-0">
+                  <div className="card">
+                    <div
+                      class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
+                      data-mdb-ripple-color="light"
+                    >
+                      <img
+                        src="/images/course6.jpg"
+                        className="img-fluid"
+                      />
+                      <a href="/main/chapter">
+                        <div
+                          className="mask"
+                          style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
+                        />
+                      </a>
+                    </div>
+                    <div className="card-body">
+                      <h6 className="mb-3">
+                        Age 6+
+                      </h6>
+                      <h4 className="card-tittle fw-bold mb-3">
+                        <strong>Python</strong>
+                      </h4>
+                      <ul className="list-unstyled d-flex justify-content-center text-warning">
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="fas fa-star fa-sm" />
+                        </li>
+                        <li>
+                          <i className="far fa-star fa-sm" />
+                        </li>
+                      </ul>
+
+                      {/* Divider here */}
+                      <hr class="hr hr-blurry"></hr>
+
+                      <a href="#!" className="btn btn-primary">
+                        Read more
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                {/* Third column */}
+              </div>
+            </section>
+          </section>
+          {/**/}
+        </div>
+      </div>
+      {/* Our Course*/}
+
+      {/* Startyour coding journey*/}
       <>
-        {/*Grow With Us*/}
-        <div>
+        <div className='mb-10'>
           <div style={{ display: "none" }} />
           <div>
             <div data-draggable="true" style={{ position: "relative" }}>
@@ -349,7 +459,7 @@ const Home = () => {
                 className="overflow-hidden pt-0"
                 data-v-271253ee=""
               >
-                <section className="mb-10 overflow-hidden">
+                <section className="overflow-hidden">
                   {" "}
                   {/* Background image */}
                   <div
@@ -375,7 +485,7 @@ const Home = () => {
                               <h1 className="my-md-5 mb-4 px-5 display-3">
                                 {" "}
                                 <span>Start your coding journey today and make your dreams a reality!</span> <br />{" "}
-                               {/* <span className="">and</span> <br />{" "}
+                                {/* <span className="">and</span> <br />{" "}
                                 <span className="">make your dreams a reality!&nbsp;</span>{" "} */}
                               </h1>{" "}
                               <a
@@ -422,397 +532,94 @@ const Home = () => {
               </section>
               {/**/}
             </div>
-            {/*Grow With Us*/}
-
-            {/* Our Course*/}
-            <div data-draggable="true" style={{ position: "relative" }}>
-              {/**/}
-              {/**/}
-              <section draggable="false" className="container pt-5" data-v-271253ee="">
-                <section className="heading mb-10 text-center">
-                  <h2 className="fw-bold mb-5">
-                    <span>Our Courses</span>
-                  </h2>
-                  <div className="row gx-lg-5 mb-8">
-                    {/* First column */}
-                    <div className="col-lg-4 col-md-12 mb-6 mb-lg-0">
-                      <div className="card">
-                        <div
-                          class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
-                          data-mdb-ripple-color="light"
-                        >
-                          <img
-                            src="/images/course1.jpg"
-                            className="img-fluid"
-                          />
-                          <a href="#!">
-                            <div
-                              className="mask"
-                              style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-                            />
-                          </a>
-                        </div>
-                        <div className="card-body">
-                          <h5 className="card-title mb-0">AI engine</h5>
-                          <p className="text-muted mb-2">
-                            <small>
-                              Finished <u>13.09.2021</u> for
-                              <a href="" className="text-dark">
-                                Techify
-                              </a>
-                            </small>
-                          </p>
-                          <ul className="list-unstyled d-flex justify-content-center text-warning mb-0">
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="far fa-star fa-sm" />
-                            </li>
-                          </ul>
-
-                          {/* Divider here */}
-                          <hr class="hr hr-blurry"></hr>
-
-                          <p className="card-text">
-                            Ut pretium ultricies dignissim. Sed sit amet mi eget urna placerat
-                            vulputate. Ut vulputate est non quam dignissim elementum. Donec a
-                            ullamcorper diam.
-                          </p>
-                          <a href="#!" className="btn btn-primary">
-                            Read more
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    {/* First column */}
-                    {/* Second column */}
-                    <div className="col-lg-4 mb-6 mb-lg-0">
-                      <div className="card">
-                        <div
-                          class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
-                          data-mdb-ripple-color="light"
-                        >
-                          <img
-                            src="/images/course2.jpg"
-                            className="img-fluid"
-                          />
-                          <a href="#!">
-                            <div
-                              className="mask"
-                              style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-                            />
-                          </a>
-                        </div>
-                        <div className="card-body">
-                          <h5 className="card-title mb-0">Balanced design</h5>
-                          <p className="text-muted mb-2">
-                            <small>
-                              Finished <u>12.01.2022</u> for
-                              <a href="" className="text-dark">
-                                Rubicon
-                              </a>
-                            </small>
-                          </p>
-                          <ul className="list-unstyled d-flex justify-content-center text-warning mb-0">
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="far fa-star fa-sm" />
-                            </li>
-                          </ul>
-
-                          {/* Divider here */}
-                          <hr class="hr hr-blurry"></hr>
-
-                          <p className="card-text">
-                            Ut pretium ultricies dignissim. Sed sit amet mi eget urna placerat
-                            vulputate. Ut vulputate est non quam dignissim elementum. Donec a
-                            ullamcorper diam.
-                          </p>
-                          <a href="#!" className="btn btn-primary">
-                            Read more
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    {/* Second column */}
-                    {/* Third column */}
-                    <div className="col-lg-4 mb-6 mb-lg-0">
-                      <div className="card">
-                        <div
-                          class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
-                          data-mdb-ripple-color="light"
-                        >
-                          <img
-                            src="/images/course3.jpg"
-                            className="img-fluid"
-                          />
-                          <a href="#!">
-                            <div
-                              className="mask"
-                              style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-                            />
-                          </a>
-                        </div>
-                        <div className="card-body">
-                          <h5 className="card-title mb-0">Metaverse 2.0</h5>
-                          <p className="text-muted mb-2">
-                            <small>
-                              Finished <u>10.11.2022</u> for
-                              <a href="" className="text-dark">
-                                Venom Tech
-                              </a>
-                            </small>
-                          </p>
-                          <ul className="list-unstyled d-flex justify-content-center text-warning mb-0">
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="far fa-star fa-sm" />
-                            </li>
-                          </ul>
-
-                          {/* Divider here */}
-                          <hr class="hr hr-blurry"></hr>
-
-                          <p className="card-text">
-                            Ut pretium ultricies dignissim. Sed sit amet mi eget urna placerat
-                            vulputate. Ut vulputate est non quam dignissim elementum. Donec a
-                            ullamcorper diam.
-                          </p>
-                          <a href="#!" className="btn btn-primary">
-                            Read more
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    {/* Third column */}
-                  </div>
-
-                  <div className="row gx-lg-5">
-                    {/* First column */}
-                    <div className="col-lg-4 col-md-12 mb-6 mb-lg-0">
-                      <div className="card">
-                        <div
-                          class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
-                          data-mdb-ripple-color="light"
-                        >
-                          <img
-                            src="/images/course4.jpg"
-                            className="img-fluid"
-                          />
-                          <a href="#!">
-                            <div
-                              className="mask"
-                              style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-                            />
-                          </a>
-                        </div>
-                        <div className="card-body">
-                          <h5 className="card-title mb-0">AI engine</h5>
-                          <p className="text-muted mb-2">
-                            <small>
-                              Finished <u>13.09.2021</u> for
-                              <a href="" className="text-dark">
-                                Techify
-                              </a>
-                            </small>
-                          </p>
-                          <ul className="list-unstyled d-flex justify-content-center text-warning mb-0">
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="far fa-star fa-sm" />
-                            </li>
-                          </ul>
-
-                          {/* Divider here */}
-                          <hr class="hr hr-blurry"></hr>
-
-                          <p className="card-text">
-                            Ut pretium ultricies dignissim. Sed sit amet mi eget urna placerat
-                            vulputate. Ut vulputate est non quam dignissim elementum. Donec a
-                            ullamcorper diam.
-                          </p>
-                          <a href="#!" className="btn btn-primary">
-                            Read more
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    {/* First column */}
-                    {/* Second column */}
-                    <div className="col-lg-4 mb-6 mb-lg-0">
-                      <div className="card">
-                        <div
-                          class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
-                          data-mdb-ripple-color="light"
-                        >
-                          <img
-                            src="/images/course5.jpg"
-                            className="img-fluid"
-                          />
-                          <a href="#!">
-                            <div
-                              className="mask"
-                              style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-                            />
-                          </a>
-                        </div>
-                        <div className="card-body">
-                          <h5 className="card-title mb-0">Balanced design</h5>
-                          <p className="text-muted mb-2">
-                            <small>
-                              Finished <u>12.01.2022</u> for
-                              <a href="" className="text-dark">
-                                Rubicon
-                              </a>
-                            </small>
-                          </p>
-                          <ul className="list-unstyled d-flex justify-content-center text-warning mb-0">
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="far fa-star fa-sm" />
-                            </li>
-                          </ul>
-
-                          {/* Divider here */}
-                          <hr class="hr hr-blurry"></hr>
-
-                          <p className="card-text">
-                            Ut pretium ultricies dignissim. Sed sit amet mi eget urna placerat
-                            vulputate. Ut vulputate est non quam dignissim elementum. Donec a
-                            ullamcorper diam.
-                          </p>
-                          <a href="#!" className="btn btn-primary">
-                            Read more
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    {/* Second column */}
-                    {/* Third column */}
-                    <div className="col-lg-4 mb-6 mb-lg-0">
-                      <div className="card">
-                        <div
-                          class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
-                          data-mdb-ripple-color="light"
-                        >
-                          <img
-                            src="/images/course6.jpg"
-                            className="img-fluid"
-                          />
-                          <a href="#!">
-                            <div
-                              className="mask"
-                              style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-                            />
-                          </a>
-                        </div>
-                        <div className="card-body">
-                          <h5 className="card-title mb-0">Metaverse 2.0</h5>
-                          <p className="text-muted mb-2">
-                            <small>
-                              Finished <u>10.11.2022</u> for
-                              <a href="" className="text-dark">
-                                Venom Tech
-                              </a>
-                            </small>
-                          </p>
-                          <ul className="list-unstyled d-flex justify-content-center text-warning mb-0">
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="fas fa-star fa-sm" />
-                            </li>
-                            <li>
-                              <i className="far fa-star fa-sm" />
-                            </li>
-                          </ul>
-
-                          {/* Divider here */}
-                          <hr class="hr hr-blurry"></hr>
-
-                          <p className="card-text">
-                            Ut pretium ultricies dignissim. Sed sit amet mi eget urna placerat
-                            vulputate. Ut vulputate est non quam dignissim elementum. Donec a
-                            ullamcorper diam.
-                          </p>
-                          <a href="#!" className="btn btn-primary">
-                            Read more
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    {/* Third column */}
-                  </div>
-                </section>
-              </section>
-              {/**/}
-            </div>
-            {/* Our Course*/}
           </div>
         </div>
       </>
-      {/* Website Content */}
+      {/*Grow With Us*/}
+
+      {/* coding for kids */}
+      <>
+        <div className="container mb-10">
+          {/* Section */}
+          <section>
+            <div className='heading'>
+              <h2 className="mt-5 mb-3 text-center display-3">
+                <span>Why coding is important for kids?</span>
+              </h2>
+            </div>
+            <div className='sub-heading'>
+              <h4 className="mb-6 text-center">
+                <span>Coding : the language of the future</span>
+              </h4>
+            </div>
+            {/* Grid row */}
+            <div className="row">
+              {/* Grid column - 1 */}
+              <div className="col-lg-4 mb-lg-0">
+                <div className="card rounded-7 text-center text-white" style={{ backgroundColor: '#29c1fe' }}>
+                  <div className="card-body">
+                    <p className="mt-4 pt-2">
+                      <i className="far fa-clock fa-4x" />
+                    </p>
+                    <h5 className="font-weight-normal text-white my-4 py-2">
+                      Prepare Them For Future
+                    </h5>
+                    <p className="mb-4">
+                      In today's digital age, coding is becoming an essential skill for many jobs.
+                      By learning to code at a young age, kids are better prepared for the future
+                      and have a competitive edge in the job market.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              {/* Grid column -1 */}
+              {/* Grid column - 2 */}
+              <div className="col-lg-4 mb-lg-0 mb-4">
+                <div className="card rounded-7 text-center">
+                  <div className="card-body">
+                    <p className="mt-4 pt-2">
+                      <i className="fas fa-gears fa-4x grey-text" />
+                    </p>
+                    <div className='card-heading'>
+                      <h5 className="font-weight-normal my-4 py-2">
+                        Enhances Logical Thinking
+                      </h5>
+                    </div>
+                    <p className="text-muted mb-4">
+                      Coding helps kids to develop logical thinking skills. They learn to organize
+                      their thoughts and break down complex problems into simpler components. This
+                      skill is useful not only in coding but also in other areas of life.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              {/* Grid column - 2 */}
+              {/* Grid column - 3 */}
+              <div className="col-lg-4 mb-lg-0 mb-4">
+                <div className="card rounded-7 text-center text-white" style={{ backgroundColor: '#000' }}>
+                  <div className="card-body">
+                    <p className="mt-4 pt-2">
+                      <i className="far fa-lightbulb fa-4x" />
+                    </p>
+                    <h5 className="font-weight-normal text-white my-4 py-2">
+                      Develops Problem-Solving Skills
+                    </h5>
+                    <p className="mb-4">
+                      Learning to code helps kids to develop problem-solving skills, as they have
+                      to break down a problem into smaller components and then find a way to solve
+                      them using code.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              {/* Grid column - 3 */}
+            </div>
+            {/* Grid row */}
+          </section>
+          {/* Section */}
+        </div>
+      </>
+      {/* coding for kids */}
 
       {/* Testimonials */}
       <>
@@ -994,6 +801,158 @@ const Home = () => {
         </div>
       </>
       {/* Testimonials */}
+
+      {/* Why Coding Is Important */}
+      <div data-draggable="true" style={{ position: "relative" }}>
+        {/**/}
+        {/**/}
+        <section
+          draggable="false"
+          className="container"
+          data-v-271253ee=""
+        >
+          <section className="heading mb-10">
+            <h2 className="fw-bold mb-5 text-center">Why coding is important for kids?</h2>
+            <div className="row gx-lg-5 mb-5 align-items-center">
+              <div className="col-md-6 mb-4 mb-md-0">
+                {" "}
+                <img
+                  src="/images/img4.jpg"
+                  className="w-100 shadow-4-strong rounded-4 mb-4"
+                  alt=""
+                  aria-controls="#picker-editor"
+                />{" "}
+              </div>
+              <div className="col-md-6 mb-4 mb-md-0">
+                <h3 className="fw-bold">Prepares Them for the Future</h3>
+                <div className="mb-2 text-danger small">
+                  {" "}
+                  <i
+                    className="fas fa-users me-2"
+                    aria-controls="#picker-editor"
+                  />
+                  <span>People</span>{" "}
+                </div>
+                <p className="text-muted align-items-justify">
+                  In today's digital age, coding is becoming an essential skill
+                  for many jobs. By learning to code at a young age, kids are
+                  better prepared for the future and have a competitive edge in
+                  the job market.
+                </p>
+                <p className="text-muted align-items-justify">
+                  Coding is a skill that is becoming increasingly important in the
+                  modern world. It is used in a wide range of industries, including
+                  technology, finance, healthcare, and more. As the world becomes more
+                  digital, the demand for individuals who can code is increasing, and
+                  this trend is only going to continue in the future.
+                </p>{" "}
+                <a
+                  className="btn btn-primary"
+                  href="#"
+                  role="button"
+                  aria-controls="#picker-editor"
+                >
+                  Read more
+                </a>
+              </div>
+            </div>
+            <div className="row gx-lg-5 mb-5 flex-lg-row-reverse align-items-center">
+              <div className="col-md-6 mb-4 mb-md-0">
+                {" "}
+                <img
+                  src="/images/img7.jpg"
+                  className="w-100 shadow-4-strong rounded-4 mb-4"
+                  alt=""
+                  aria-controls="#picker-editor"
+                />{" "}
+              </div>
+              <div className="col-md-6 mb-4 mb-md-0">
+                <h3 className="fw-bold">Enhances Logical Thinking</h3>
+                <div className="mb-2 text-primary small">
+                  {" "}
+                  <i
+                    className="fas fa-users me-2"
+                    aria-controls="#picker-editor"
+                  />
+                  <span>Adventure</span>{" "}
+                </div>
+                <p className="text-muted align-items-justify">
+                  Coding helps kids to develop logical thinking skills. They learn
+                  to organize their thoughts and break down complex problems into
+                  simpler components. This skill is useful not only in coding but
+                  also in other areas of life.
+                </p>{" "}
+                <p className="text-muted align-items-justify">
+                  When kids learn to code, they are introduced to a new way of thinking
+                  that involves breaking down complex problems into smaller, more
+                  manageable components. They learn to analyze situations, identify
+                  patterns, and formulate solutions to problems. This logical thinking
+                  skill is crucial in many aspects of life, such as problem-solving,
+                  decision-making, and critical thinking.
+                </p>{" "}
+                <a
+                  className="btn btn-primary"
+                  href="#"
+                  role="button"
+                  aria-controls="#picker-editor"
+                >
+                  Read more
+                </a>
+              </div>
+            </div>
+            <div className="row gx-lg-5 mb-5 align-items-center">
+              <div className="col-md-6 mb-4 mb-md-0">
+                {" "}
+                <img
+                  src="/images/img3.jpg"
+                  className="w-100 shadow-4-strong rounded-4 mb-4"
+                  alt=""
+                  aria-controls="#picker-editor"
+                />{" "}
+              </div>
+              <div className="col-md-6 mb-4 mb-md-0">
+                <h3 className="fw-bold">Develops Problem-Solving Skills</h3>
+                <div className="mb-2 text-warning small">
+                  {" "}
+                  <i
+                    className="fas fa-users me-2"
+                    aria-controls="#picker-editor"
+                  />
+                  <span>People</span>{" "}
+                </div>
+                <p className="text-muted align-items-justify">
+                  Learning to code helps kids to develop problem-solving skills,
+                  as they have to break down a problem into smaller components
+                  and then find a way to solve them using code. This skill is
+                  useful in various aspects of life and can be helpful in many
+                  future careers.
+                </p>{" "}
+                <p className="text-muted align-items-justify">
+                  Problem-solving is a critical skill in today's world, and coding
+                  can help kids to develop it. As they work on coding projects, they
+                  encounter various problems, and they have to come up with solutions
+                  on their own. This process enhances their ability to identify
+                  problems, analyze them, and create solutions. In the long run,
+                  this skill can help them to navigate complex challenges in both
+                  their personal and professional lives. Moreover, problem-solving
+                  skills can be beneficial in many careers, such as software
+                  development, engineering, and business analysis.
+                </p>{" "}
+                <a
+                  className="btn btn-primary"
+                  href="#"
+                  role="button"
+                  aria-controls="#picker-editor"
+                >
+                  Read more
+                </a>
+              </div>
+            </div>
+          </section>
+        </section>
+        {/**/}
+      </div>
+      {/* Why Coding Is Important */}
 
       {/* Team Members */}
       <>

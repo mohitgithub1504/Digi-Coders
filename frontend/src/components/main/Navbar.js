@@ -59,7 +59,7 @@ const Navbar = () => {
                   Courses
                 </a>
                 {/* Dropdown menu */} 
-                <ul class="dropdown-menu mt-3 text-center" aria-labelledby="navbarDropdown">
+                <ul class="dropdown-menu mt-2 text-center" aria-labelledby="navbarDropdown">
                   <li>
                     <a class="dropdown-item" href="/main/course">Action</a>
                   </li>
