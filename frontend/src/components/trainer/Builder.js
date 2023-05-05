@@ -20,7 +20,9 @@ const Builder = () => {
   const [addedBlocks, setAddedBlocks] = useState([]);
 
   const [xml, setXml] = useState(`<xml xmlns="http://www.w3.org/1999/xhtml">
-<block type="controls_ifelse" x="0" y="0"></block>
+<block type="controls_ifelse" x="10" y="10">
+
+</block>
 </xml>`);
 
   const fetchChapterData = async () => {
@@ -41,6 +43,7 @@ const Builder = () => {
 
   const addBlock = (blockname) => {
     setAddedBlocks([...addedBlocks, blockname]);
+    console.log(addedBlocks);
   };
 
   const updateChapter = async () => {
