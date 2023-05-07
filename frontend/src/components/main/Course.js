@@ -11,16 +11,16 @@ const Course = () => {
                         id="intro"
                         className="bg-image"
                         style={{
-                            backgroundImage: "url(/images/background-img1.jpg)",
+                            backgroundImage: "url(/images/background-img3.webp)",
                             height: 230,
                             backgroundSize: "cover",
-                            backgroundPosition: "50% 15%",
+                            backgroundPosition: "50% 65%",
                             position: "relative"
                         }}
                     >
                         <div
                             className="mask text-white"
-                            style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
+                            style={{ backgroundColor: "rgba(35, 37, 45, 0.6)" }}
                         >
                             <div className="container d-flex align-items-center text-center h-100">
                                 <div className='page-heading'>

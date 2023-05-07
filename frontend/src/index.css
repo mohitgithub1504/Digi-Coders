@@ -31,6 +31,27 @@
   color: var(--main-color);
   font-size: 30px;
 }
+.accordion-button{
+  letter-spacing: 2px;
+  color: var(--main-color);
+  background-color: var(--third-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+.accordion-button:hover{
+  color: var(--second-color);
+}
+.accordion-button:not(.collapsed){
+  color: var(--third-color);
+  background-color: var(--second-color);
+}
+.accordion-item{
+  letter-spacing: 2px;
+  color: var(--main-color);
+  background-color: #f6feff;
+  margin-bottom: 10px;
+}
 .content h1{
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -38,11 +59,12 @@
   font-size: 52px;
   font-weight: 700;
 }
-/*Testimonial*/
 .main-heading h2{
   text-transform: uppercase;
   font-size: 50px;
   color: var(--third-color);
+  letter-spacing: 3px;
+  font-weight: 700;
 }
 .navbar{
   display: flex;
@@ -96,7 +118,7 @@
   letter-spacing: 1px;
 }
 .btn:hover{
-  color: #fff;
+  color: var(--third-color);
   background: var(--main-color);
 }
 .card-heading h5{
