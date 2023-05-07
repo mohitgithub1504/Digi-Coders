@@ -32,75 +32,87 @@ const Home = () => {
           <section>
             <div className='heading'>
               <h2 className="mt-5 mb-3 text-center display-3">
-                <span>Services we Provide</span>
+                <span>Benefits of Choosing Us</span>
               </h2>
             </div>
             <div className='sub-heading'>
               <h4 className="mb-8 text-center">
-                <span>Let us unlock your coding potential</span>
+                <span>Empower your skills with us</span>
               </h4>
             </div>
             {/* Grid row */}
             <div className="row">
               {/* Grid column - 1 */}
-              <div className="col-lg-4 mb-lg-0">
+              <div className="col-md-6 col-xl-3">
                 <div className="card rounded-7 text-center text-white" style={{ backgroundColor: '#29c1fe' }}>
                   <div className="card-body">
                     <p className="mt-4 pt-2">
-                      <i className="far fa-clock fa-4x" />
+                      <i className="fas fa-chalkboard-user fa-4x" />
                     </p>
                     <h5 className="font-weight-normal text-white my-4 py-2">
-                      Prepare Them For Future
+                      Interactive Learning
                     </h5>
                     <p className="mb-4">
-                      In today's digital age, coding is becoming an essential skill for many jobs.
-                      By learning to code at a young age, kids are better prepared for the future
-                      and have a competitive edge in the job market.
+                      Hands-on approach to teaching kids coding concepts and encourages them to
+                      think critically and problem-solve.
                     </p>
                   </div>
                 </div>
               </div>
               {/* Grid column -1 */}
               {/* Grid column - 2 */}
-              <div className="col-lg-4 mb-lg-0 mb-4">
-                <div className="card rounded-7 text-center">
+              <div className="col-md-6 col-xl-3 mb-4">
+                <div className="card rounded-7 text-center text-white" style={{ backgroundColor: '#000' }}>
                   <div className="card-body">
                     <p className="mt-4 pt-2">
-                      <i className="fas fa-gears fa-4x grey-text" />
+                      <i className="fas fa-briefcase fa-4x" />
                     </p>
-                    <div className='card-heading'>
-                      <h5 className="font-weight-normal my-4 py-2">
-                        Enhances Logical Thinking
-                      </h5>
-                    </div>
-                    <p className="text-muted mb-4">
-                      Coding helps kids to develop logical thinking skills. They learn to organize
-                      their thoughts and break down complex problems into simpler components. This
-                      skill is useful not only in coding but also in other areas of life.
+                    <h5 className="font-weight-normal text-white my-4 py-2">
+                      Personalized Curriculum
+                    </h5>
+                    <p className="mb-4">
+                      Tailored learning program for children based on their individual learning
+                      styles, interests, and abilities.
                     </p>
                   </div>
                 </div>
               </div>
               {/* Grid column - 2 */}
               {/* Grid column - 3 */}
-              <div className="col-lg-4 mb-lg-0 mb-4">
-                <div className="card rounded-7 text-center text-white" style={{ backgroundColor: '#000' }}>
+              <div className="col-md-6 col-xl-3">
+                <div className="card rounded-7 text-center text-white" style={{ backgroundColor: '#29c1fe' }}>
                   <div className="card-body">
                     <p className="mt-4 pt-2">
-                      <i className="far fa-lightbulb fa-4x" />
+                      <i className="fas fa-gamepad fa-4x" />
                     </p>
                     <h5 className="font-weight-normal text-white my-4 py-2">
-                      Develops Problem-Solving Skills
+                      Game-Based Learning
                     </h5>
                     <p className="mb-4">
-                      Learning to code helps kids to develop problem-solving skills, as they have
-                      to break down a problem into smaller components and then find a way to solve
-                      them using code.
+                      Game-based learning is an educational approach that uses games to teach
+                      new concepts and skills.
                     </p>
                   </div>
                 </div>
               </div>
               {/* Grid column - 3 */}
+              {/* Grid column - 4 */}
+              <div className="col-md-6 col-xl-3 mb-4">
+                <div className="card rounded-7 text-center text-white" style={{ backgroundColor: '#000' }}>
+                  <div className="card-body">
+                    <p className="mt-4 pt-2">
+                      <i className="fas fa-award fa-4x" />
+                    </p>
+                    <h5 className="font-weight-normal text-white my-4 py-2">
+                      Certificate of Completion
+                    </h5>
+                    <p className="mb-4">
+                      Awarded to kids for their successfully completion of interactive learning course or program.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              {/* Grid column - 4 */}
             </div>
             {/* Grid row */}
           </section>

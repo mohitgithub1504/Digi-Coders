@@ -104,6 +104,10 @@
   text-transform: uppercase;
   font-size: 15px;
 }
+.card-body h5{
+  text-transform: uppercase;
+  font-size: 18px;
+}
 .card-body h4{
   color: var(--main-color);
   font-weight: 500;
