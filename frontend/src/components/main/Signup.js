@@ -1,8 +1,13 @@
+// import { useFromik } from 'formik'
 import React from 'react'
+// import { Navlink } from 'react-router-dom';
+// import * as Yup from 'yup';
+
+
 
 const Signup = () => {
+
   return (
-    <div>
 
       <>
         <div data-draggable="true" style={{ position: "relative" }}>
@@ -40,7 +45,7 @@ const Signup = () => {
                       style={{ backgroundColor: "hsl(218, 62.2%, 95%)" }}
                     >
                       <div className="signup-name">
-                        <a href="/main/login">
+                        <a href="/main/Studentsignup">
                           <p className="h5 fw-bold mt-5">Student</p>
                         </a>
                       </div>
@@ -54,7 +59,7 @@ const Signup = () => {
                 {/* second column */}
                 <div className="col-lg-4">
                   <div class="hover-zoom">
-                    <a href="/main/login">
+                    <a href="/trainer/TrainerSignup">
                       <img
                         src="/icons/teacher_icon.jpg"
                         className="card-signup w-100 mb-n5 shadow-5-strong"
@@ -67,7 +72,7 @@ const Signup = () => {
                       style={{ backgroundColor: "hsl(218, 62.2%, 95%)" }}
                     >
                       <div className="signup-name">
-                        <a href="/main/login">
+                        <a href="/trainer/TrainerSignup">
                           <p className="h5 fw-bold mt-5">Teacher</p>
                         </a>
                       </div>
@@ -87,10 +92,6 @@ const Signup = () => {
           {/**/}
         </div>
       </>
-
-
-
-    </div>
 
   )
 }

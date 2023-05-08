@@ -14,6 +14,7 @@ import Chapter from './components/main/Chapter';
 import Builder from './components/trainer/Builder';
 import DesignChapter from './components/trainer/DesignChapter';
 import Trainer from './components/trainer';
+import Studentsignup from './components/main/Studentsingup';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path='chapter' element={<Chapter />} />
           <Route path='login' element={<Login />} />
           <Route path='signup' element={<Signup />} />
+          <Route path='studentsignup' element={<Studentsignup />} />
 
         </Route>
         <Route path='trainer' element={<Trainer />}>

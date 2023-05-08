@@ -1,8 +1,14 @@
 import React from 'react'
 
+
+
+
 const Login = () => {
+
+
+
   return (
-    <section className="vh-100" style={{ backgroundColor: "#9A616D" }}>
+    <section className="vh-auto" style={{ backgroundColor: "#a3e7f7" }}>
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col col-xl-10">
@@ -59,7 +65,7 @@ const Login = () => {
                       </a>
                       <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>
                         Don't have an account?{" "}
-                        <a href="#!" style={{ color: "#393f81" }}>
+                        <a href="/main/signup" style={{ color: "#393f81" }}>
                           Register here
                         </a>
                       </p>
