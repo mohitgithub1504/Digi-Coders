@@ -42,6 +42,16 @@ const TrainerSignup = () => {
           text: "You have success full Register ",
         });
       }
+      else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
+      }
+    },
+    validationSchema: TrainerSignupSchema,
+
 
   });
 
