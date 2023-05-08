@@ -1,6 +1,21 @@
+import { useFormik } from 'formik';
 import React from 'react'
 
 const TrainerSignup = () => {
+
+  const TrainerSignup = useFormik({
+    initialValues: {
+      name: '',
+      skills: '',
+      certifications: '',
+      email: '',
+      password: '',
+      avatar: '',
+      createdAt: '',
+    },
+
+  });
+
 
   return (
     <section className="h-100 bg-light">
@@ -38,79 +53,85 @@ const TrainerSignup = () => {
                     >
                       Student registration form
                     </h3>
-                    <div className="row">
-                      <div className="mb-4">
-                        <div className="">
-                          <input
-                            type="text"
-                            id="firstname"
-                            className="form-control form-control-lg"
-                            placeholder='Full Name'
-                          />
+                    <form action="" onSubmit={TrainerSignup.handleSubmit}>
+                      <div className="row">
+                        <div className="mb-4">
+                          <div className="">
+                            <input
+                              type="text"
+                              id="firstname"
+                              name='name'
+                              autoComplete='off'
+                              className="form-control form-control-lg"
+                              placeholder='Full Name'
+                              value={TrainerSignup.values.name}
+                              onChange={TrainerSignup.handleChange}
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="mb-4">
-                      <input
-                        type="text"
-                        id="address"
-                        className="form-control form-control-lg"
-                        Placeholder='Enter Skills'
-                      />
-                    </div>
-                    <div className="mb-4">
-                      <input
-                        type="text"
-                        id="certificate"
-                        className="form-control form-control-lg"
-                        placeholder='Certificate'
-                      />
-                    </div>
+                      <div className="mb-4">
+                        <input
+                          type="text"
+                          id="address"
+                          className="form-control form-control-lg"
+                          Placeholder='Enter Skills'
+                        />
+                      </div>
+                      <div className="mb-4">
+                        <input
+                          type="text"
+                          id="certificate"
+                          className="form-control form-control-lg"
+                          placeholder='Certificate'
+                        />
+                      </div>
 
-                    <div className="mb-4">
-                      <input
-                        type="email"
-                        id="email"
-                        autoComplete='off'
-                        className="form-control form-control-lg"
-                        placeholder='Enter Your Email'
-                      />
-                    </div>
-                    <div className="mb-4">
-                      <input
-                        type="password"
-                        id="password"
-                        autoComplete='off'
-                        className="form-control form-control-lg"
-                        placeholder='Enter Password'
-                      />
-                    </div>
-                    <div className="mb-4">
-                      <input
-                        type="file"
-                        id="image"
-                        className="form-control form-control-lg"
-                        placeholder='Upload Image'
-                      />
-                    </div>
+                      <div className="mb-4">
+                        <input
+                          type="email"
+                          id="email"
+                          autoComplete='off'
+                          className="form-control form-control-lg"
+                          placeholder='Enter Your Email'
+                        />
+                      </div>
+                      <div className="mb-4">
+                        <input
+                          type="password"
+                          id="password"
+                          autoComplete='off'
+                          className="form-control form-control-lg"
+                          placeholder='Enter Password'
+                        />
+                      </div>
+                      <div className="mb-4">
+                        <input
+                          type="file"
+                          id="image"
+                          className="form-control form-control-lg"
+                          placeholder='Upload Image'
+                        />
+                      </div>
 
-                    <div className="mb-4">
-                      <input
-                        type="datetime"
-                        id="datetime"
-                        className="form-control form-control-lg"
-                        placeholder='Created Date'
-                      />
-                    </div>
+                      <div className="mb-4">
+                        <input
+                          type="datetime"
+                          id="datetime"
+                          className="form-control form-control-lg"
+                          placeholder='Created Date'
+                        />
+                      </div>
 
-                    <div className="d-flex justify-content-end pt-3">
-                      <button type="button" className="btn btn-warning btn-lg m-3 ms-2">
-                        Submit form
-                      </button>
-                      <button type="button" className="btn btn-warning btn-lg m-3">
-                        Reset
-                      </button>
-                    </div>
+                      <div className="d-flex justify-content-end pt-3">
+                        <button type="button" className="btn btn-warning btn-lg m-3 ms-2">
+                          Submit form
+                        </button>
+                        <button type="button" className="btn btn-warning btn-lg m-3">
+                          Reset
+                        </button>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
