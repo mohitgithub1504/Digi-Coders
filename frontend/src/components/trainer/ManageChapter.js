@@ -11,7 +11,7 @@ const ManageChapter = () => {
                     <div className="col-md-6">
                         {/* Default form contact */}
                         <form className="text-center" action="#!">
-                            <h3 className="font-weight-bold mb-4">Contact Us</h3>
+                            <h3 className="font-weight-bold mb-4">Manage Chapter</h3>
                             {/* Name */}
                             <input
                                 type="text"
@@ -33,7 +33,7 @@ const ManageChapter = () => {
                                 id="category"
                                 name='category'
                                 className="form-control mb-4"
-                                placeholder="Title"
+                                placeholder="Category"
                             />
                             <input
                                 type="file"
