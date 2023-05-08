@@ -1,7 +1,24 @@
-import { useFormik } from 'formik';
-import React from 'react'
+import { useFormik } from 'formik'
+import React from 'react';
+import Swal from 'sweetalert2';
+import * as Yup from 'yup';
 
 const TrainerSignup = () => {
+
+  const TrainerSignupSchema = Yup.object().shape({
+    name: Yup.string()
+      .min(4, 'Too Short!')
+      .max(20, 'Too Long!')
+      .required('Required'),
+    email: Yup.string()
+      .email('Invalid email').required('Required'),
+    password: Yup.string()
+      .required('Please Enter your password')
+      .matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+        "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+      ),
+  });
 
   const TrainerSignup = useFormik({
     initialValues: {
@@ -14,7 +31,30 @@ const TrainerSignup = () => {
       createdAt: '',
     },
 
+    onSubmit: async (values, { setSubmitting }) => {
+      //setSubmitting(true);
+      console.log(values);
+
+      const res = await fetch('http://localhost:5000/user/add', {
+        method: 'POST',
+        body: JSON.stringify(values),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+      console.log(res.status);
+      if (res.status === 200) {
+        Swal.fire({
+          icon: "success",
+          title: "Well done !!",
+          text: "You have successfully registered"
+        });
+      }
+    },
+    validationSchema: TrainerSignupSchema
   });
+
 
 
   return (
@@ -67,13 +107,14 @@ const TrainerSignup = () => {
                               value={TrainerSignup.values.name}
                               onChange={TrainerSignup.handleChange}
                             />
+                            <span className='text-danger'>{TrainerSignup.errors.name}</span>
                           </div>
                         </div>
                       </div>
                       <div className="mb-4">
                         <input
                           type="text"
-                          id="address"
+                          id="skills"
                           className="form-control form-control-lg"
                           Placeholder='Enter Skills'
                         />
@@ -94,7 +135,10 @@ const TrainerSignup = () => {
                           autoComplete='off'
                           className="form-control form-control-lg"
                           placeholder='Enter Your Email'
+                          value={TrainerSignup.values.email}
+                          onChange={TrainerSignup.handleChange}
                         />
+                        <span className='text-danger'>{TrainerSignup.errors.email}</span>
                       </div>
                       <div className="mb-4">
                         <input
@@ -103,7 +147,10 @@ const TrainerSignup = () => {
                           autoComplete='off'
                           className="form-control form-control-lg"
                           placeholder='Enter Password'
+                          value={TrainerSignup.values.password}
+                          onChange={TrainerSignup.handleChange}
                         />
+                        <span className='text-danger'>{TrainerSignup.errors.password}</span>
                       </div>
                       <div className="mb-4">
                         <input
@@ -124,10 +171,11 @@ const TrainerSignup = () => {
                       </div>
 
                       <div className="d-flex justify-content-end pt-3">
-                        <button type="button" className="btn btn-warning btn-lg m-3 ms-2">
+                        <button type="button" className="btn btn-primary btn-lg m-3 ms-2" disabled={TrainerSignup.isSubmitting}>
+                        { TrainerSignup.isSubmitting ? <span className='spinner-border spinner-border-sm'></span> : ''}
                           Submit form
                         </button>
-                        <button type="button" className="btn btn-warning btn-lg m-3">
+                        <button type="button" className="btn btn-primary btn-lg m-3">
                           Reset
                         </button>
                       </div>
