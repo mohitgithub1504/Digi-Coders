@@ -48,39 +48,31 @@ const Navbar = () => {
 
               {/* Navbar dropdown */}
               <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="/main/courses"
+                <NavLink
+                  className="nav-link dropdown"
+                  to="/main/course"
                   id="navbarDropdown"
                   role="button"
-                  data-mdb-toggle="dropdown"
                   aria-expanded="false"
                 >
                   Courses
-                </a>
+                </NavLink>
                 {/* Dropdown menu */} 
-                <ul class="dropdown-menu mt-2 text-center" aria-labelledby="navbarDropdown">
+                <ul className="dropdown-menu text-center" aria-labelledby="navbarDropdown">
                   <li>
-                    <a class="dropdown-item" href="/main/course">Action</a>
+                    <a className="dropdown-item" href="/main/course">Action</a>
                   </li>
-                  {/* Divider here */} 
-                  <li><hr class="hr hr-blurry mt-2" /></li>
                   <li>
-                    <a class="dropdown-item" href="/main/chapter">Another action</a>
+                    <a className="dropdown-item" href="/main/chapter">Another action</a>
                   </li>
-                  {/* Divider here */} 
-                  <li><hr class="hr hr-blurry mt-2" /></li>
                   <li>
-                    <a class="dropdown-item" href="/trainer/builder">Action</a>
+                    <a className="dropdown-item" href="/trainer/builder">Action</a>
                   </li>
-                  {/* Divider here */} 
-                  <li><hr class="hr hr-blurry mt-2" /></li>
                   <li>
-                    <a class="dropdown-item" href="/trainer/designchapter">Another action</a>
+                    <a className="dropdown-item" href="/trainer/designchapter">Another action</a>
                   </li>
-                  <li><hr class="dropdown-divider" /></li>
                   <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a className="dropdown-item" href="#">Something else here</a>
                   </li>
                 </ul>
               </li>
