@@ -1,97 +1,92 @@
-// import { useFromik } from 'formik'
-import React from 'react'
-// import { Navlink } from 'react-router-dom';
-// import * as Yup from 'yup';
-
-
+import { useFormik } from 'formik'
+import React from 'react';
 
 const Signup = () => {
-
   return (
 
-      <>
-        <div data-draggable="true" style={{ position: "relative" }}>
-          {/**/}
-          {/**/}
-          <section draggable="false" className="container pt-5" data-v-271253ee="">
-            <section className="heading mb-10 text-center">
-              <h2 className="fw-bold mb-5">
-                <span>Choose your account type to get started</span>
-              </h2>
+    <>
+      <div data-draggable="true" style={{ position: "relative" }}>
+        {/**/}
+        {/**/}
+        <section draggable="false" className="container pt-5" data-v-271253ee="">
+          <section className="heading mb-10 text-center">
+            <h2 className="fw-bold mb-5">
+              <span>Choose your account type to get started</span>
+            </h2>
 
-              <div className='signup-link'>
-                <p className="text-center fw-bold mb-8">
-                  Already have an account?{" "}
-                  <a href="/main/login" className="fw-bold text-body">
-                    <u>Login here</u>
+            <div className='signup-link'>
+              <p className="text-center fw-bold mb-8">
+                Already have an account?{" "}
+                <a href="/main/login" className="fw-bold text-body">
+                  <u>Login here</u>
+                </a>
+              </p>
+            </div>
+
+            <div className="row gx-lg-5 mb-8 d-flex justify-content-center">
+              {/* First column */}
+              <div className="col-lg-4">
+                <div class="hover-zoom">
+                  <a href="/main/StudentSignup">
+                    <img
+                      src="/icons/student_icon.jpg"
+                      className="card-signup w-100 mb-n5 shadow-5-strong"
+                      style={{ maxWidth: 100 }}
+                      alt="Avatar"
+                    />
                   </a>
-                </p>
-              </div>
-
-              <div className="row gx-lg-5 mb-8 d-flex justify-content-center">
-                {/* First column */}
-                <div className="col-lg-4">
-                  <div class="hover-zoom">
-                    <a href="/main/login">
-                      <img
-                        src="/icons/student_icon.jpg"
-                        className="card-signup w-100 mb-n5 shadow-5-strong"
-                        style={{ maxWidth: 100 }}
-                        alt="Avatar"
-                      />
-                    </a>
-                    <div
-                      className="card-signup p-4 shadow-3"
-                      style={{ backgroundColor: "hsl(218, 62.2%, 95%)" }}
-                    >
-                      <div className="signup-name">
-                        <a href="/main/Studentsignup">
-                          <p className="h5 fw-bold mt-5">Student</p>
-                        </a>
-                      </div>
-                      {/* Divider here */}
-                      <hr class="hr hr-blurry"></hr>
+                  <div
+                    className="card-signup p-4 shadow-3"
+                    style={{ backgroundColor: "hsl(218, 62.2%, 95%)" }}
+                  >
+                    <div className="signup-name">
+                      <a href="/main/StudentSignup">
+                        <p className="h5 fw-bold mt-5">Student</p>
+                      </a>
                     </div>
+                    {/* Divider here */}
+                    <hr class="hr hr-blurry"></hr>
                   </div>
                 </div>
-                {/* First column */}
+              </div>
+              {/* First column */}
 
-                {/* second column */}
-                <div className="col-lg-4">
-                  <div class="hover-zoom">
-                    <a href="/main/TrainerSignup">
-                      <img
-                        src="/icons/teacher_icon.jpg"
-                        className="card-signup w-100 mb-n5 shadow-5-strong"
-                        style={{ maxWidth: 100 }}
-                        alt="Avatar"
-                      />
-                    </a>
-                    <div
-                      className="card-signup p-4 shadow-3"
-                      style={{ backgroundColor: "hsl(218, 62.2%, 95%)" }}
-                    >
-                      <div className="signup-name">
-                        <a href="/main/TrainerSignup">
-                          <p className="h5 fw-bold mt-5">Teacher</p>
-                        </a>
-                      </div>
-
-                      {/* Divider here */}
-                      <hr class="hr hr-blurry"></hr>
+              {/* second column */}
+              <div className="col-lg-4">
+                <div class="hover-zoom">
+                  <a href="/main/TrainerSignup">
+                    <img
+                      src="/icons/teacher_icon.jpg"
+                      className="card-signup w-100 mb-n5 shadow-5-strong"
+                      style={{ maxWidth: 100 }}
+                      alt="Avatar"
+                    />
+                  </a>
+                  <div
+                    className="card-signup p-4 shadow-3"
+                    style={{ backgroundColor: "hsl(218, 62.2%, 95%)" }}
+                  >
+                    <div className="signup-name">
+                      <a href="/main/TrainerSignup">
+                        <p className="h5 fw-bold mt-5">Teacher</p>
+                      </a>
                     </div>
 
+                    {/* Divider here */}
+                    <hr class="hr hr-blurry"></hr>
                   </div>
-                </div>
 
-                {/* second column */}
+                </div>
               </div>
 
-            </section>
+              {/* second column */}
+            </div>
+
           </section>
-          {/**/}
-        </div>
-      </>
+        </section>
+        {/**/}
+      </div>
+    </>
 
   )
 }
