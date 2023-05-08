@@ -25,7 +25,7 @@ const TrainerSignup = () => {
                     }}>Grow with Digi Coder </h3>
                   <p style={{ textAlign: 'center', justifyContent: 'center', color: '#fff' }}>
                     Already have an account?
-                    <a href="/main/login" style={{ color: '#84c7fa', fontWeight:'900', fontSize:'20px', letterSpacing:'1px' }}>Login</a>
+                    <a href="/main/login" style={{ color: '#84c7fa', fontWeight: '900', fontSize: '20px', letterSpacing: '1px' }}>Login</a>
                   </p>
 
                   {/* add here logo and some content */}
@@ -102,8 +102,6 @@ const TrainerSignup = () => {
                         placeholder='Created Date'
                       />
                     </div>
-
-                    
 
                     <div className="d-flex justify-content-end pt-3">
                       <button type="button" className="btn btn-warning btn-lg m-3 ms-2">

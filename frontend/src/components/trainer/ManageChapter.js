@@ -15,39 +15,43 @@ const ManageChapter = () => {
                             {/* Name */}
                             <input
                                 type="text"
-                                id="defaultContactFormName"
+                                id="trainer"
+                                name = 'trainer'
                                 className="form-control mb-4"
-                                placeholder="Name"
+                                placeholder="Trainer Name"
                             />
                             {/* Email */}
                             <input
-                                type="email"
-                                id="defaultContactFormEmail"
+                                type="text"
+                                id="title"
+                                name  = 'title'
                                 className="form-control mb-4"
-                                placeholder="E-mail"
+                                placeholder="Title"
                             />
-                            {/* Subject */}
-                            <label>Subject</label>
-                            <select className="browser-default custom-select mb-4">
-                                <option value="" disabled="">
-                                    Choose option
-                                </option>
-                                <option value={1} selected="">
-                                    Feedback
-                                </option>
-                                <option value={2}>Report a bug</option>
-                                <option value={3}>Feature request</option>
-                                <option value={4}>Feature request</option>
-                            </select>
-                            {/* Message */}
+                            <input
+                                type="text"
+                                id="category"
+                                name='category'
+                                className="form-control mb-4"
+                                placeholder="Title"
+                            />
+                            <input
+                                type="file"
+                                id="icon"
+                                name='Icon'
+                                className="form-control mb-4"
+                                placeholder="Chapter Icone"
+                            />
+                            {/* Description */}
                             <div className="form-group">
                                 <textarea
                                     className="form-control rounded-0"
                                     id="exampleFormControlTextarea2"
                                     rows={3}
-                                    placeholder="Message"
+                                    placeholder="Description.."
                                     defaultValue={""}
                                 />
+
                             </div>
                             {/* Copy */}
                             <div className="custom-control custom-checkbox mb-4">
