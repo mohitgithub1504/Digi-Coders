@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Studentsingup = () => {
+const StudentSignup = () => {
     return (
         <section className="vh-auto" style={{ backgroundColor: "#a3e7f7" }}>
             <div className="container py-5 h-100">
@@ -110,4 +110,4 @@ const Studentsingup = () => {
     )
 }
 
-export default Studentsingup
+export default StudentSignup

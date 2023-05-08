@@ -14,9 +14,9 @@ import Chapter from './components/main/Chapter';
 import Builder from './components/trainer/Builder';
 import DesignChapter from './components/trainer/DesignChapter';
 import Trainer from './components/trainer';
-import Studentsignup from './components/main/Studentsingup';
 import ManageCourse from './components/trainer/ManageCourse';
 import ManageChapter from './components/trainer/ManageChapter';
+import StudentSignup from './components/main/StudentSignup';
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
           <Route path='chapter' element={<Chapter />} />
           <Route path='login' element={<Login />} />
           <Route path='signup' element={<Signup />} />
-          <Route path='studentsignup' element={<Studentsignup />} />
+          <Route path='studentsignup' element={<StudentSignup />} />
           <Route path='trainerlogin' element={<TrainerLogin />} />
           <Route path='trainersignup' element={<TrainerSignup />} />
 
