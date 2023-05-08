@@ -6,4 +6,4 @@ const ManageChapter = () => {
   )
 }
 
-export default ManageChapter
+export default ManageChapter;
