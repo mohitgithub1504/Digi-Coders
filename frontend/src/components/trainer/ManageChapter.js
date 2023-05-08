@@ -42,6 +42,27 @@ const ManageChapter = () => {
                                 className="form-control mb-4"
                                 placeholder="Chapter Icone"
                             />
+                            <input
+                                type="text"
+                                id="data"
+                                name='data'
+                                className="form-control mb-4"
+                                placeholder="Chapter Icone"
+                            />
+                            <input
+                                type="date"
+                                id="crated_at"
+                                name='crated_at'
+                                className="form-control mb-4"
+                                placeholder="Chapter Icone"
+                            />
+                            <input
+                                type="date"
+                                id="updated_at"
+                                name='updated_at'
+                                className="form-control mb-4"
+                                placeholder="Chapter Icone"
+                            />
                             {/* Description */}
                             <div className="form-group">
                                 <textarea
@@ -53,23 +74,9 @@ const ManageChapter = () => {
                                 />
 
                             </div>
-                            {/* Copy */}
-                            <div className="custom-control custom-checkbox mb-4">
-                                <input
-                                    type="checkbox"
-                                    className="custom-control-input"
-                                    id="defaultContactFormCopy"
-                                />
-                                <label
-                                    className="custom-control-label"
-                                    htmlFor="defaultContactFormCopy"
-                                >
-                                    Send me a copy of this message
-                                </label>
-                            </div>
                             {/* Send button */}
                             <button className="btn btn-info btn-block" type="submit">
-                                Send
+                                SUBMIT
                             </button>
                         </form>
                         {/* Default form contact */}
