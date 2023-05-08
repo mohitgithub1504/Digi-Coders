@@ -98,6 +98,17 @@
 .nav-btn:hover{
   color: var(--second-color);
 }
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-item{
+  color: var(--main-color);
+  font-size: 15px;
+}
+.dropdown-item:hover{
+  color: var(--third-color);
+  background-color: var(--second-color);
+}
 .card-body h6{
   color: var(--main-color);
   font-weight: 500;
