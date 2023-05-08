@@ -37,6 +37,7 @@ function App() {
           <Route path='trainerlogin' element={<TrainerLogin />} />
           <Route path='trainersignup' element={<TrainerSignup />} />
 
+
         </Route>
         <Route path='trainer' element={<Trainer />}>
           <Route path='builder' element={<Builder />} />

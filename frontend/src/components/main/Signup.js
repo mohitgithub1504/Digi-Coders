@@ -59,7 +59,7 @@ const Signup = () => {
                 {/* second column */}
                 <div className="col-lg-4">
                   <div class="hover-zoom">
-                    <a href="/trainer/TrainerSignup">
+                    <a href="/main/TrainerSignup">
                       <img
                         src="/icons/teacher_icon.jpg"
                         className="card-signup w-100 mb-n5 shadow-5-strong"
@@ -72,7 +72,7 @@ const Signup = () => {
                       style={{ backgroundColor: "hsl(218, 62.2%, 95%)" }}
                     >
                       <div className="signup-name">
-                        <a href="/trainer/TrainerSignup">
+                        <a href="/main/TrainerSignup">
                           <p className="h5 fw-bold mt-5">Teacher</p>
                         </a>
                       </div>
