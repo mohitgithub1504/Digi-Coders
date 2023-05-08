@@ -29,11 +29,12 @@ const TrainerSignup = () => {
   const trainersignupForm = useFormik({
     initialValues: {
       name: '',
+      skills : '',
+      certificate: '',
       email: '',
       password: '',
-      createdAt: '',
       avatar: '',
-      regid: '',
+      createdAt: '',
     },
     onSubmit: async (values, { setSubmitting }) => {
       console.log(values);

@@ -1,6 +1,71 @@
+import { useFormik } from 'formik';
 import React from 'react'
+import * as Yup from 'yup';
+import Swal from 'sweetalert2';
 
 const StudentSignup = () => {
+
+    const StudentsignupSchema = Yup.object().shape({
+        name: Yup.string() 
+            .min(2, 'Too Short!')
+            .max(50, 'Too Long!')
+            .required('Required'),
+        email: Yup.string().email('Invalid email').required('Required'),
+        password: Yup.string().required('Please Enter your password')
+        .matches(
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+          "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+        ),
+
+    });
+
+    const studentsignupForm = useFormik({
+        initialValues: {
+            name: '',
+            email: '',
+            password: '',
+            createdAt: '',
+            avatar: '',
+            regid: '',
+        },
+        onSubmit: async (values, { setSubmitting }) => {
+            console.log(values);
+
+            const res = await fetch('http://localhost:3000/user/add', {
+                method: 'POST',
+                body: JSON.stringify(values),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            console.log(res.status);
+
+            if (res.status === 201) {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Your work has been saved',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+            else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                })
+            }
+        },
+        validationSchema: StudentsignupSchema,
+
+    });
+
+
+
+
+
     return (
         <section className="vh-auto" style={{ backgroundColor: "#a3e7f7" }}>
             <div className="container py-5 h-100">
@@ -18,7 +83,7 @@ const StudentSignup = () => {
                                 </div>
                                 <div className="col-md-6 col-lg-7 d-flex align-items-center">
                                     <div className="card-body p-4 p-lg-5 text-black">
-                                        <form>
+                                        <form onSubmit={studentsignupForm.handleSubmit}>
                                             <div className="d-flex align-items-center mb-3 pb-1">
                                                 <img src="/logo/logo.png" alt="error"
                                                     style={{ height: "50px" }}
@@ -33,12 +98,15 @@ const StudentSignup = () => {
                                             <div className=" mb-3">
                                                 <input
                                                     type="text"
-                                                    id="form2Example17"
+                                                    id="name"
                                                     className="form-control form-control-lg"
                                                     placeholder='Full Name'
+                                                    value={studentsignupForm.values.name}
+                                                    onChange={studentsignupForm.handleChange}
                                                 />
+                                                <span className='text-danger'>{studentsignupForm.errors.name}</span>
                                             </div>
-                                            
+
                                             <div className=" mb-3">
                                                 <input
                                                     type="email"
@@ -46,7 +114,10 @@ const StudentSignup = () => {
                                                     autoComplete='off'
                                                     className="form-control form-control-lg"
                                                     placeholder='Email'
+                                                    value={studentsignupForm.values.email}
+                                                    onChange={studentsignupForm.handleChange}
                                                 />
+                                                <span className='text-danger' >{studentsignupForm.errors.email}</span>
                                             </div>
                                             <div className="mb-3">
                                                 <input
@@ -55,7 +126,10 @@ const StudentSignup = () => {
                                                     autoComplete='off'
                                                     className="form-control form-control-lg"
                                                     placeholder='Password'
+                                                    value={studentsignupForm.values.password}
+                                                    onChange={studentsignupForm.handleChange}
                                                 />
+                                                <span className='text-danger'>{studentsignupForm.errors.password}</span>
                                             </div>
                                             <div className="mb-3">
                                                 <input
@@ -78,7 +152,7 @@ const StudentSignup = () => {
                                                 <button
                                                     className="btn btn-dark btn-sm btn-block"
                                                     type="button"
-                                                    style={{ fontSize:"20px" }}
+                                                    style={{ fontSize: "20px" }}
                                                 >
                                                     Login
                                                 </button>
