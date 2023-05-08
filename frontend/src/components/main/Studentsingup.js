@@ -59,7 +59,7 @@ const Studentsingup = () => {
                                             </div>
                                             <div className="mb-3">
                                                 <input
-                                                    type="datetime-local"
+                                                    type="date"
                                                     id="createdAt"
                                                     className="form-control form-control-lg"
                                                     placeholder='Created Date'
