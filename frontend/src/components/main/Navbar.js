@@ -69,7 +69,7 @@ const Navbar = () => {
                     <a className="dropdown-item" href="/trainer/builder">Action</a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/trainer/designchapter">Another action</a>
+                    <a className="dropdown-item" href="/trainer/managechapter">Another action</a>
                   </li>
                   <li>
                     <a className="dropdown-item" href="#">Something else here</a>
