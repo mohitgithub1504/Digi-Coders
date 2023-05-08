@@ -43,155 +43,71 @@ const TrainerSignup = () => {
                       Student registration form
                     </h3>
                     <div className="row">
-                      <div className="col-md-6 mb-4">
+                      <div className="mb-4">
                         <div className="">
                           <input
                             type="text"
                             id="firstname"
                             className="form-control form-control-lg"
-                            placeholder='First Name'
+                            placeholder='Full Name'
                           />
                         </div>
-                      </div>
-                      <div className="col-md-6 mb-4">
-                        <div className="">
-                          <input
-                            type="text"
-                            id="lastname"
-                            className="form-control form-control-lg"
-                            placeholder='Last Name'
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-md-6 mb-4">
-                        <div className="">
-                          <input
-                            type="text"
-                            id="mothername"
-                            className="form-control form-control-lg"
-                            placeholder='Mother Name'
-                          />
-                        </div>
-                      </div>
-                      <div className="col-md-6 mb-4">
-                        <div className="">
-                          <input
-                            type="text"
-                            id="fathername"
-                            className="form-control form-control-lg"
-                            placeholder='Father Name'
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="e mb-4">
-                      <input
-                        type="text"
-                        id="address"
-                        className="form-control form-control-lg"
-                        Placeholder='Enter Your Address'
-                      />
-                    </div>
-                    <div className="d-md-flex justify-content-start align-items-center mb-4 py-2">
-                      <h6 className="mb-0 me-4">Gender: </h6>
-                      <div className="form-check form-check-inline mb-0 me-4">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="inlineRadioOptions"
-                          id="femaleGender"
-                          defaultValue="option1"
-                        />Female
-                      </div>
-                      <div className="form-check form-check-inline mb-0 me-4">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="inlineRadioOptions"
-                          id="maleGender"
-                          defaultValue="option2"
-                        />Male
-                      </div>
-                      <div className="form-check form-check-inline mb-0">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="inlineRadioOptions"
-                          id="otherGender"
-                          defaultValue="option3"
-                        />Other
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-md-6 mb-4">
-                        <select className="select form-control form-control-lg">
-                          <option value={1}>State</option>
-                          <option value={2}>Option 1</option>
-                          <option value={3}>Option 2</option>
-                          <option value={4}>Option 3</option>
-                        </select>
-                      </div>
-                      <div className="col-md-6 mb-4">
-                        <select className="select form-control form-control-lg">
-                          <option value={1}>City</option>
-                          <option value={2}>Option 1</option>
-                          <option value={3}>Option 2</option>
-                          <option value={4}>Option 3</option>
-                        </select>
                       </div>
                     </div>
                     <div className="mb-4">
                       <input
                         type="text"
-                        id="date"
+                        id="address"
                         className="form-control form-control-lg"
-                        placeholder='D.O.B'
+                        Placeholder='Enter Skills'
                       />
                     </div>
-
-                    <div className="row">
-                      <div className="col-md-6 mb-4">
-                        <div className="" >
-                          <input type="text" id="pincode" className="form-control form-control-lg"
-                            placeholder='Pincode' />
-
-                        </div>
-                      </div>
-                      <div className="col-md-6 mb-4">
-                        <div className="">
-                          <input type="text" id="course" className="form-control form-control-lg"
-                            placeholder='Course' />
-
-                        </div>
-                      </div>
+                    <div className="mb-4">
+                      <input
+                        type="text"
+                        id="certificate"
+                        className="form-control form-control-lg"
+                        placeholder='Certificate'
+                      />
                     </div>
 
                     <div className="mb-4">
                       <input
                         type="email"
                         id="email"
+                        autoComplete='off'
                         className="form-control form-control-lg"
                         placeholder='Enter Your Email'
                       />
                     </div>
                     <div className="mb-4">
                       <input
-                        type="email"
+                        type="password"
                         id="password"
+                        autoComplete='off'
                         className="form-control form-control-lg"
                         placeholder='Enter Password'
                       />
                     </div>
                     <div className="mb-4">
                       <input
-                        type="email"
-                        id="confirmpassword"
+                        type="file"
+                        id="image"
                         className="form-control form-control-lg"
-                        placeholder='Confirm Password'
+                        placeholder='Upload Image'
                       />
                     </div>
+
+                    <div className="mb-4">
+                      <input
+                        type="datetime"
+                        id="datetime"
+                        className="form-control form-control-lg"
+                        placeholder='Created Date'
+                      />
+                    </div>
+
+                    
 
                     <div className="d-flex justify-content-end pt-3">
                       <button type="button" className="btn btn-warning btn-lg m-3 ms-2">

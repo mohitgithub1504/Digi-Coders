@@ -35,21 +35,15 @@ const Studentsingup = () => {
                                                     type="text"
                                                     id="form2Example17"
                                                     className="form-control form-control-lg"
-                                                    placeholder='First Name'
+                                                    placeholder='Full Name'
                                                 />
                                             </div>
-                                            <div className=" mb-3">
-                                                <input
-                                                    type="text"
-                                                    id="form2Example17"
-                                                    className="form-control form-control-lg"
-                                                    placeholder='Last Name'
-                                                />
-                                            </div>
+                                            
                                             <div className=" mb-3">
                                                 <input
                                                     type="email"
-                                                    id="form2Example17"
+                                                    id="email"
+                                                    autoComplete='off'
                                                     className="form-control form-control-lg"
                                                     placeholder='Email'
                                                 />
@@ -57,17 +51,27 @@ const Studentsingup = () => {
                                             <div className="mb-3">
                                                 <input
                                                     type="password"
-                                                    id="form2Example27"
+                                                    id="password"
+                                                    autoComplete='off'
                                                     className="form-control form-control-lg"
                                                     placeholder='Password'
                                                 />
                                             </div>
                                             <div className="mb-3">
                                                 <input
-                                                    type="Confirmpassword"
-                                                    id="form2Example27"
+                                                    type="datetime-local"
+                                                    id="createdAt"
                                                     className="form-control form-control-lg"
-                                                    placeholder='Confirm Password'
+                                                    placeholder='Created Date'
+                                                />
+                                            </div>
+
+                                            <div className="mb-3">
+                                                <input
+                                                    type="file"
+                                                    id="avatar"
+                                                    className="form-control form-control-lg"
+                                                    placeholder='Uploal Photo'
                                                 />
                                             </div>
                                             <div className="pt-1 mb-2">
