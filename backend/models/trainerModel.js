@@ -2,12 +2,13 @@ const {Schema, model} = require('../connection');
 
 const myschema = new Schema({
     name : String,
-    course : String,
-    email : String,
+    skills : String,
+    certifications : String,
+    email: String,
     password : String,
-    createdAt: Date,
     avatar: String,
+    createdAt : Date,
 });
 
-module.exports = model('trainers', myschema);
+module.exports = model('trainer', myschema);
 
