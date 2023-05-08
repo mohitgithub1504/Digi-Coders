@@ -2,10 +2,6 @@ import React from 'react'
 
 const TrainerSignup = () => {
 
-  
-
-
-
   return (
     <section className="h-100 bg-light">
       <div className="container py-5 h-100">
