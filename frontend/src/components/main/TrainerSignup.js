@@ -19,12 +19,12 @@ const trainersignupSchema = Yup.object().shape({
     .required('Certificate is Required'),
   email: Yup.string().email('Invalid email').required('Email is Required'),
   password: Yup
-      .string()
-      .required('Please Enter your password')
-      .matches(
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-        "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
-      ),
+    .string()
+    .required('Please Enter your password')
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+      "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+    ),
   avatar: Yup.string()
     .required('Avatar is Required'),
   createdAt: Yup.date()
@@ -42,7 +42,7 @@ const TrainerSignup = () => {
   const trainersignupForm = useFormik({
     initialValues: {
       name: '',
-      skills : '',
+      skills: '',
       certificate: '',
       email: '',
       password: '',
