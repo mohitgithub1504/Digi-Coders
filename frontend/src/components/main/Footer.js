@@ -67,33 +67,33 @@ export const Footer = () => {
             />
           </a>
               <p>
-                Here you can use rows and columns to organize your footer content.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Digi Coders is a block-based coding program for kids, where they can learn the 
+                basics of coding in a fun and interactive way.
               </p>
             </div>
             {/* Grid column */}
             {/* Grid column */}
             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
               {/* Links */}
-              <h6 className="text-uppercase fw-bold mb-4">Products</h6>
+              <h6 className="text-uppercase fw-bold mb-4">Courses</h6>
               <p>
                 <a href="#!" className="text-reset custom-link-hover">
-                  Angular
+                  Game Development
                 </a>
               </p>
               <p>
                 <a href="#!" className="text-reset custom-link-hover">
-                  React
+                  Web Development
                 </a>
               </p>
               <p>
                 <a href="#!" className="text-reset custom-link-hover">
-                  Vue
+                  Internet Of Things
                 </a>
               </p>
               <p>
                 <a href="#!" className="text-reset custom-link-hover">
-                  Laravel
+                  Python
                 </a>
               </p>
             </div>
