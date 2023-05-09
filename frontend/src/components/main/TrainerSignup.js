@@ -1,9 +1,45 @@
 import { useFormik } from 'formik';
 import React from 'react'
+import * as Yup from 'yup';
+import Swal from 'sweetalert2';
+
+
+const trainersignupSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Name is Required'),
+  skills: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Skills is Required'),
+  certificate: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Certificate is Required'),
+  email: Yup.string().email('Invalid email').required('Email is Required'),
+  password: Yup
+      .string()
+      .required('Please Enter your password')
+      .matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+        "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+      ),
+  avatar: Yup.string()
+    .required('Avatar is Required'),
+  createdAt: Yup.date()
+    .default(function () {
+      return new Date();
+    }
+    ),
+
+});
+
+
 
 const TrainerSignup = () => {
 
-  const TrainerSignup = useFormik({
+  const trainersignupForm = useFormik({
     initialValues: {
       name: '',
       skills : '',
@@ -16,15 +52,6 @@ const TrainerSignup = () => {
     onSubmit: async (values, { setSubmitting }) => {
       console.log(values);
 
-
-      // making on request to backend 
-      // 1. URL
-      // 2. Request
-      // 3. data
-      // 4. data formate
-      // this is used to fetch(or stare in database) data from backend
-
-      //this code used to submit the in database
 
       const res = await fetch('http://localhost:3000/user/add', {
         method: 'POST',
@@ -50,7 +77,7 @@ const TrainerSignup = () => {
         });
       }
     },
-    validationSchema: TrainerSignupSchema,
+    validationSchema: trainersignupSchema,
 
 
   });
@@ -93,7 +120,7 @@ const TrainerSignup = () => {
                     >
                       Student registration form
                     </h3>
-                    <form action="" onSubmit={TrainerSignup.handleSubmit}>
+                    <form action="" onSubmit={trainersignupForm.handleSubmit}>
                       <div className="row">
                         <div className="mb-4">
                           <div className="">
@@ -107,6 +134,7 @@ const TrainerSignup = () => {
                               value={trainersignupForm.values.name}
                               onChange={trainersignupForm.handleChange}
                             />
+                            <span className='text-danger'>{trainersignupForm.errors.name}</span>
                           </div>
                         </div>
                       </div>
