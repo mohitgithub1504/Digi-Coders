@@ -3,41 +3,42 @@ import React from 'react'
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
 
-
-const trainersignupSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Name is Required'),
-  skills: Yup.string()
-    .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Skills is Required'),
-  certificate: Yup.string()
-    .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Certificate is Required'),
-  email: Yup.string().email('Invalid email').required('Email is Required'),
-  password: Yup
-    .string()
-    .required('Please Enter your password')
-    .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-      "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
-    ),
-  avatar: Yup.string()
-    .required('Avatar is Required'),
-  createdAt: Yup.date()
-    .default(function () {
-      return new Date();
-    }
-    ),
-
-});
-
-
-
 const TrainerSignup = () => {
+
+  const trainersignupSchema = Yup.object().shape({
+    name: Yup.string()
+      .min(2, 'Too Short!')
+      .max(50, 'Too Long!')
+      .required('Name is Required'),
+    skills: Yup.string()
+      .min(2, 'Too Short!')
+      .max(50, 'Too Long!')
+      .required('Skills is Required'),
+    certificate: Yup.string()
+      .min(5, 'Too Short!')
+      .max(50, 'Too Long!')
+      .required('Certificate is Required'),
+    email: Yup.string().email('Invalid email').required('Email is Required'),
+    password: Yup
+      .string()
+      .required('Please Enter your password')
+      .matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+        "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+      ),
+    avatar: Yup.string()
+      .required('Avatar is Required'),
+    createdAt: Yup.date()
+      .default(function () {
+        return new Date();
+      }
+      ),
+
+  });
+
+
+
+
 
   const trainersignupForm = useFormik({
     initialValues: {
@@ -141,11 +142,12 @@ const TrainerSignup = () => {
                       <div className="mb-4">
                         <input
                           type="text"
-                          id="skills"
+                          id="trainerskills"
+                          name='skills'
                           className="form-control form-control-lg"
                           Placeholder='Enter Skills'
                           value={trainersignupForm.values.skills}
-                          onchange={trainersignupForm.handleChange}
+                          onChange={trainersignupForm.handleChange}
                         />
                         <span className='text-danger'>{trainersignupForm.errors.skills}</span>
                       </div>
@@ -156,7 +158,7 @@ const TrainerSignup = () => {
                           className="form-control form-control-lg"
                           placeholder='Certificate'
                           value={trainersignupForm.values.certificate}
-                          onchange={trainersignupForm.handleChange}
+                          onChange={trainersignupForm.handleChange}
                         />
                         <span className='text-danger'>{trainersignupForm.errors.certificate}</span>
                       </div>
