@@ -670,14 +670,6 @@ const Home = () => {
                     better prepared for the future and have a competitive edge in
                     the job market.
                   </p>
-                  <a
-                    className="btn btn-primary"
-                    href="/main/about"
-                    role="button"
-                    aria-controls="#picker-editor"
-                  >
-                    Read more
-                  </a>
                 </div>
               </div>
               {/* row - 1 */}
@@ -703,14 +695,6 @@ const Home = () => {
                     simpler components. This skill is useful not only in coding but
                     also in other areas of life.
                   </p>{" "}
-                  <a
-                    className="btn btn-primary"
-                    href="/main/about"
-                    role="button"
-                    aria-controls="#picker-editor"
-                  >
-                    Read more
-                  </a>
                 </div>
               </div>
               {/* row - 2 */}
@@ -736,14 +720,6 @@ const Home = () => {
                     and then find a way to solve them using code. This skill is
                     useful in various aspects of life.
                   </p>{" "}
-                  <a
-                    className="btn btn-primary"
-                    href="/main/about"
-                    role="button"
-                    aria-controls="#picker-editor"
-                  >
-                    Read more
-                  </a>
                 </div>
               </div>
               {/* row - 3 */}

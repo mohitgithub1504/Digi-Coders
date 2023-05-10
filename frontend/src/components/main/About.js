@@ -1,192 +1,269 @@
 import React from 'react'
 
 const About = () => {
-    return (
-        <div>
-            <>
-                {/*Page Header*/}
-                <header className='mb-3'>
-                    {/* Background image */}
-                    <div
-                        id="intro"
-                        className="bg-image"
-                        style={{
-                            backgroundImage: "url(/images/background-img3.webp)",
-                            height: 230,
-                            backgroundSize: "cover",
-                            backgroundPosition: "50% 65%",
-                            position: "relative"
-                        }}
-                    >
-                        <div
-                            className="mask text-white"
-                            style={{ backgroundColor: "rgba(35, 37, 45, 0.6)" }}
-                        >
-                            <div className="container d-flex align-items-center text-center h-100">
-                                <div className='page-heading'>
-                                    <h1 className="fw-bold mb-3">About Us</h1>
-                                    <p className='paragraph'>
-                                        "Welcome to Digi Coders, where we believe that learning
-                                        to code should be fun and exciting! Our team of expert
-                                        educators and innovative teaching methods ensure that
-                                        kids not only gain essential coding skills but also have
-                                        a blast while doing it."
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {/* Background image */}
-                </header>
-                {/*Page Header*/}
-            </>
+  return (
+    <div>
+      <>
+        {/*Page Header*/}
+        <header className='mb-3'>
+          {/* Background image */}
+          <div
+            id="intro"
+            className="bg-image"
+            style={{
+              backgroundImage: "url(/images/background-img3.webp)",
+              height: 230,
+              backgroundSize: "cover",
+              backgroundPosition: "50% 65%",
+              position: "relative"
+            }}
+          >
+            <div
+              className="mask text-white"
+              style={{ backgroundColor: "rgba(35, 37, 45, 0.6)" }}
+            >
+              <div className="container d-flex align-items-center text-center h-100">
+                <div className='page-heading'>
+                  <h1 className="fw-bold mb-3">About Us</h1>
+                  <p className='paragraph'>
+                    "Welcome to Digi Coders, where we believe that learning
+                    to code should be fun and exciting! Our team of expert
+                    educators and innovative teaching methods ensure that
+                    kids not only gain essential coding skills but also have
+                    a blast while doing it."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Background image */}
+        </header>
+        {/*Page Header*/}
+      </>
 
-            <div className="container my-5">
-                {/* Section */}
+      {/* About Us */}
+      <>
+        <div className='mb-7'>
+          <div style={{ display: "none" }} />
+          <div>
+            <div data-draggable="true" style={{ position: "relative" }}>
+              {/**/}
+              {/**/}
+              <section
+                draggable="false"
+                className="overflow-hidden pt-0"
+                data-v-271253ee=""
+              >
                 <section>
-                    <h6 className="font-weight-bold text-center grey-text text-uppercase small mb-4">
-                        Services
-                    </h6>
-                    <h3 className="font-weight-bold text-center dark-grey-text pb-2">
-                        Our Services
-                    </h3>
-                    <hr className="w-header my-4" />
-                    <p className="lead text-center text-muted pt-2 mb-5">
-                        Join thousands of satisfied customers using our template globally.
-                    </p>
-                    <div className="row">
-                        <div className="col-lg-4 mb-lg-0 mb-4">
-                            <div className="card text-center bg-info text-white">
-                                <div className="card-body">
-                                    <p className="mt-4 pt-2">
-                                        <i className="far fa-object-ungroup fa-4x" />
-                                    </p>
-                                    <h5 className="font-weight-normal my-4 py-2">
-                                        <a className="text-white" href="#">
-                                            Web Design
-                                        </a>
-                                    </h5>
-                                    <p className="mb-4">
-                                        He polite be object change. Consider no overcame yourself sociable
-                                        children.
-                                    </p>
-                                </div>
-                            </div>
+                  {" "}
+                  {/* Jumbotron */}
+                  <div className="py-2 text-center" style={{ backgroundColor: '#f6feff' }}>
+                    <div className="container pb-md-5">
+                      <div className="row d-flex justify-content-center">
+                        <div className="header-text col-lg-10">
+                          <div className='heading'>
+                            <h2 className="mt-5 mb-3 display-3">
+                              <span>Why Choose Us?</span>
+                            </h2>
+                          </div>
+                          <div className='sub-heading'>
+                            <h4 className="mb-6">
+                              <span>Innovative Learning Approach</span>
+                            </h4>
+                          </div>
+                          <div className='content'>
+                            <p className="mb-6">
+                              <span>At Digi Coders, we believe that every child has the potential
+                                to become a creator, innovator, and problem-solver. That's why
+                                we've created a fun and engaging platform for young coders to
+                                learn, create and explore the world of coding. Our program is
+                                designed to empower kids to unleash their creativity, build
+                                their own projects, and develop essential coding skills that
+                                will set them up for success in the future. With our experienced
+                                instructors, innovative curriculum, and supportive community,
+                                we're here to help kids discover their passion for coding and
+                                bring their ideas to life.</span>
+                            </p>
+                          </div>
+                          <a
+                            className="btn btn-primary py-3 px-5 mb-5 mb-md-3 me-md-2"
+                            href="/main/signup"
+                            role="button"
+                            aria-controls="#picker-editor"
+                          >
+                            Get Started
+                          </a>{" "}
+                          <a
+                            className="btn btn-primary py-3 px-5 mb-5 mb-md-3 me-md-2"
+                            href="/main/about"
+                            role="button"
+                            aria-controls="#picker-editor"
+                          >
+                            Learn more
+                          </a>
                         </div>
-                        <div className="col-lg-4 mb-lg-0 mb-4">
-                            <div className="card text-center">
-                                <div className="card-body">
-                                    <p className="mt-4 pt-2">
-                                        <i className="fas fa-mobile-alt fa-4x grey-text" />
-                                    </p>
-                                    <h5 className="font-weight-normal my-4 py-2">
-                                        <a className="dark-grey-text" href="#">
-                                            Mobile App
-                                        </a>
-                                    </h5>
-                                    <p className="text-muted mb-4">
-                                        He polite be object change. Consider no overcame yourself sociable
-                                        children.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 mb-lg-0 mb-4">
-                            <div className="card text-center bg-dark text-white">
-                                <div className="card-body">
-                                    <p className="mt-4 pt-2">
-                                        <i className="fas fa-chart-line fa-4x" />
-                                    </p>
-                                    <h5 className="font-weight-normal my-4 py-2">
-                                        <a className="text-white" href="#">
-                                            Digital Marketing
-                                        </a>
-                                    </h5>
-                                    <p className="mb-4">
-                                        He polite be object change. Consider no overcame yourself sociable
-                                        children.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        
+                      </div>
                     </div>
+                  </div>{" "}
+                  {/* Jumbotron */}
                 </section>
-                {/* Section */}
+              </section>
+              {/**/}
+            </div>
+          </div>
+        </div>
+      </>
+      {/* About Us */}
+
+
+
+
+      <div className="container my-5">
+        {/* Section */}
+        <section>
+          <h6 className="font-weight-bold text-center grey-text text-uppercase small mb-4">
+            Services
+          </h6>
+          <h3 className="font-weight-bold text-center dark-grey-text pb-2">
+            Our Services
+          </h3>
+          <hr className="w-header my-4" />
+          <p className="lead text-center text-muted pt-2 mb-5">
+            Join thousands of satisfied customers using our template globally.
+          </p>
+          <div className="row">
+            <div className="col-lg-4 mb-lg-0 mb-4">
+              <div className="card text-center bg-info text-white">
+                <div className="card-body">
+                  <p className="mt-4 pt-2">
+                    <i className="far fa-object-ungroup fa-4x" />
+                  </p>
+                  <h5 className="font-weight-normal my-4 py-2">
+                    <a className="text-white" href="#">
+                      Web Design
+                    </a>
+                  </h5>
+                  <p className="mb-4">
+                    He polite be object change. Consider no overcame yourself sociable
+                    children.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 mb-lg-0 mb-4">
+              <div className="card text-center">
+                <div className="card-body">
+                  <p className="mt-4 pt-2">
+                    <i className="fas fa-mobile-alt fa-4x grey-text" />
+                  </p>
+                  <h5 className="font-weight-normal my-4 py-2">
+                    <a className="dark-grey-text" href="#">
+                      Mobile App
+                    </a>
+                  </h5>
+                  <p className="text-muted mb-4">
+                    He polite be object change. Consider no overcame yourself sociable
+                    children.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 mb-lg-0 mb-4">
+              <div className="card text-center bg-dark text-white">
+                <div className="card-body">
+                  <p className="mt-4 pt-2">
+                    <i className="fas fa-chart-line fa-4x" />
+                  </p>
+                  <h5 className="font-weight-normal my-4 py-2">
+                    <a className="text-white" href="#">
+                      Digital Marketing
+                    </a>
+                  </h5>
+                  <p className="mb-4">
+                    He polite be object change. Consider no overcame yourself sociable
+                    children.
+                  </p>
+                </div>
+              </div>
             </div>
 
-
-
-
-
-            <div className="container my-5 py-5 z-depth-1">
-  {/*Section: Content*/}
-  <section className="px-md-5 mx-md-5 text-center dark-grey-text">
-    {/*Grid row*/}
-    <div className="row d-flex justify-content-center">
-      {/*Grid column*/}
-      <div className="col-xl-6 col-md-8">
-        <h3 className="font-weight-bold">Call to action</h3>
-        <p className="text-muted">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam
-          sapiente molestiae numquam quas, voluptates omnis nulla ea odio.
-        </p>
-        <a className="btn btn-info btn-md ml-0 mb-5" href="#" role="button">
-          Start now
-          <i className="fa fa-magic ml-2" />
-        </a>
+          </div>
+        </section>
+        {/* Section */}
       </div>
-      {/*Grid column*/}
-    </div>
-    {/*Grid row*/}
-    {/*Grid row*/}
-    <div className="row">
-      {/*First column*/}
-      <div className="col-lg-3 col-md-6">
-        <i className="fas fa-gem fa-3x blue-text" />
-        <p className="font-weight-bold my-3">Feature One</p>
-        <p className="text-muted">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
-      </div>
-      {/*/First column*/}
-      {/*Second column*/}
-      <div className="col-lg-3 col-md-6">
-        <i className="fas fa-chart-area fa-3x teal-text" />
-        <p className="font-weight-bold my-3">Feature Two</p>
-        <p className="text-muted">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
-      </div>
-      {/*/Second column*/}
-      {/*Third column*/}
-      <div className="col-lg-3 col-md-6">
-        <i className="fas fa-cogs fa-3x indigo-text" />
-        <p className="font-weight-bold my-3">Feature Three</p>
-        <p className="text-muted">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
-      </div>
-      {/*/Third column*/}
-      {/*Fourth column*/}
-      <div className="col-lg-3 col-md-6">
-        <i className="fas fa-cloud-upload-alt fa-3x deep-purple-text" />
-        <p className="font-weight-bold my-3">Feature Four</p>
-        <p className="text-muted">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
-      </div>
-      {/*/Fourth column*/}
-    </div>
-    {/*/Grid row*/}
-  </section>
-  {/*Section: Content*/}
-</div>
 
 
 
-{/* Why Coding Is Important */}
-<div data-draggable="true" style={{ position: "relative" }}>
+
+
+      <div className="container my-5 py-5 z-depth-1">
+        {/*Section: Content*/}
+        <section className="px-md-5 mx-md-5 text-center dark-grey-text">
+          {/*Grid row*/}
+          <div className="row d-flex justify-content-center">
+            {/*Grid column*/}
+            <div className="col-xl-6 col-md-8">
+              <h3 className="font-weight-bold">Call to action</h3>
+              <p className="text-muted">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam
+                sapiente molestiae numquam quas, voluptates omnis nulla ea odio.
+              </p>
+              <a className="btn btn-info btn-md ml-0 mb-5" href="#" role="button">
+                Start now
+                <i className="fa fa-magic ml-2" />
+              </a>
+            </div>
+            {/*Grid column*/}
+          </div>
+          {/*Grid row*/}
+          {/*Grid row*/}
+          <div className="row">
+            {/*First column*/}
+            <div className="col-lg-3 col-md-6">
+              <i className="fas fa-gem fa-3x blue-text" />
+              <p className="font-weight-bold my-3">Feature One</p>
+              <p className="text-muted">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+            </div>
+            {/*/First column*/}
+            {/*Second column*/}
+            <div className="col-lg-3 col-md-6">
+              <i className="fas fa-chart-area fa-3x teal-text" />
+              <p className="font-weight-bold my-3">Feature Two</p>
+              <p className="text-muted">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+            </div>
+            {/*/Second column*/}
+            {/*Third column*/}
+            <div className="col-lg-3 col-md-6">
+              <i className="fas fa-cogs fa-3x indigo-text" />
+              <p className="font-weight-bold my-3">Feature Three</p>
+              <p className="text-muted">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+            </div>
+            {/*/Third column*/}
+            {/*Fourth column*/}
+            <div className="col-lg-3 col-md-6">
+              <i className="fas fa-cloud-upload-alt fa-3x deep-purple-text" />
+              <p className="font-weight-bold my-3">Feature Four</p>
+              <p className="text-muted">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+            </div>
+            {/*/Fourth column*/}
+          </div>
+          {/*/Grid row*/}
+        </section>
+        {/*Section: Content*/}
+      </div>
+
+
+
+      {/* Why Coding Is Important */}
+      <div data-draggable="true" style={{ position: "relative" }}>
         {/**/}
         {/**/}
         <section
@@ -337,8 +414,8 @@ const About = () => {
       </div>
       {/* Why Coding Is Important */}
 
-        </div>
-    )
+    </div>
+  )
 }
 
 export default About
