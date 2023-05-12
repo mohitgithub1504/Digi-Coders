@@ -21,18 +21,11 @@ const TrainerSignup = () => {
     email: Yup.string().email('Invalid email').required('Email is Required'),
     password: Yup
       .string()
-      .required('Please Enter your password')
-      .matches(
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-        "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
-      ),
-    avatar: Yup.string()
-      .required('Avatar is Required'),
-    createdAt: Yup.date()
-      .default(function () {
-        return new Date();
-      }
-      ),
+      .required('Please Enter your password'),
+      // .matches(
+      //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+      //   "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+      // ),
   });
 
   const trainersignupForm = useFormik({
@@ -49,7 +42,7 @@ const TrainerSignup = () => {
       console.log(values);
 
 
-      const res = await fetch('http://localhost:3000/user/add', {
+      const res = await fetch('http://localhost:5000/trainer/add', {
         method: 'POST',
         body: JSON.stringify(values),  // this is used to convert js data in json formate
         headers: {
@@ -58,20 +51,20 @@ const TrainerSignup = () => {
       });
 
       console.log(res.status);
-      // if (res.status === 200) {
-      //   Swal.fire({
-      //     icon: "success",
-      //     title: "Well Done",
-      //     text: "You have success full Register ",
-      //   });
-      // }
-      // else {
-      //   Swal.fire({
-      //     icon: "error",
-      //     title: "Oops...",
-      //     text: "Something went wrong!",
-      //   });
-      // }
+      if (res.status === 200) {
+        Swal.fire({
+          icon: "success",
+          title: "Well Done",
+          text: "You have success full Register ",
+        });
+      }
+      else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
+      }
     },
     validationSchema: trainersignupSchema,
 
@@ -116,7 +109,7 @@ const TrainerSignup = () => {
                     >
                       Trainer Registration
                     </h3>
-                    <form action="" onSubmit={trainersignupForm.handleSubmit}>
+                    <form onSubmit={trainersignupForm.handleSubmit}>
                       <div className="row">
                         <div className="mb-4">
                           <div className="">
@@ -162,6 +155,8 @@ const TrainerSignup = () => {
                         <input
                           type="email"
                           id="email"
+                          value={trainersignupForm.values.email}
+                          onChange={trainersignupForm.handleChange}
                           autoComplete='off'
                           className="form-control form-control-lg"
                           placeholder='Enter Your Email'
@@ -171,37 +166,18 @@ const TrainerSignup = () => {
                         <input
                           type="password"
                           id="password"
+                          value={trainersignupForm.values.password}
+                          onChange={trainersignupForm.handleChange}
                           autoComplete='off'
                           className="form-control form-control-lg"
                           placeholder='Enter Password'
                         />
+                          <span className='text-danger'>{trainersignupForm.errors.password}</span>
                       </div>
-                      <div className="mb-4">
-                        <input
-                          type="file"
-                          id="image"
-                          className="form-control form-control-lg"
-                          placeholder='Upload Image'
-                          value={trainersignupForm.values.image}
-                          onChange={trainersignupForm.handleChange}
-                        />
-                        <span className='text-danger'>{trainersignupForm.errors.image}</span>
-                      </div>
-
-                      <div className="mb-4">
-                        <input
-                          type="date"
-                          id="createdAt"
-                          className="form-control form-control-lg"
-                          placeholder='Created Date'
-                          value={trainersignupForm.values.createdAt}
-                          onChange={trainersignupForm.handleChange}
-                        />
-                        <span className='text-danger'>{trainersignupForm.errors.datetime}</span>
-                      </div>
+                      
 
                       <div className="d-flex justify-content-end pt-3">
-                        <button type="button" className="btn btn-warning btn-lg m-3 ms-2">
+                        <button type="submit" className="btn btn-warning btn-lg m-3 ms-2">
                           Submit form
                         </button>
                         <button type="button" className="btn btn-warning btn-lg m-3">

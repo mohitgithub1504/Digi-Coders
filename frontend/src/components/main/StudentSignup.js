@@ -25,13 +25,11 @@ const StudentSignup = () => {
             email: '',
             password: '',
             createdAt: '',
-            avatar: '',
-            regid: '',
         },
         onSubmit: async (values, { setSubmitting }) => {
             console.log(values);
 
-            const res = await fetch('http://localhost:3000/user/add', {
+            const res = await fetch('http://localhost:5000/user/add', {
                 method: 'POST',
                 body: JSON.stringify(values),
                 headers: {
@@ -41,22 +39,22 @@ const StudentSignup = () => {
 
             console.log(res.status);
 
-            // if (res.status === 201) {
-            //     Swal.fire({
-            //         position: 'top-end',
-            //         icon: 'success',
-            //         title: 'Your work has been saved',
-            //         showConfirmButton: false,
-            //         timer: 1500
-            //     })
-            // }
-            // else {
-            //     Swal.fire({
-            //         icon: 'error',
-            //         title: 'Oops...',
-            //         text: 'Something went wrong!',
-            //     })
-            // }
+            if (res.status === 200) {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Your work has been saved',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+            else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                })
+            }
         },
         validationSchema: StudentsignupSchema,
 
@@ -131,30 +129,14 @@ const StudentSignup = () => {
                                                 />
                                                 <span className='text-danger'>{studentsignupForm.errors.password}</span>
                                             </div>
-                                            <div className="mb-3">
-                                                <input
-                                                    type="date"
-                                                    id="createdAt"
-                                                    className="form-control form-control-lg"
-                                                    placeholder='Created Date'
-                                                />
-                                            </div>
-
-                                            <div className="mb-3">
-                                                <input
-                                                    type="file"
-                                                    id="avatar"
-                                                    className="form-control form-control-lg"
-                                                    placeholder='Uploal Photo'
-                                                />
-                                            </div>
+                                            
                                             <div className="pt-1 mb-2">
                                                 <button
                                                     className="btn btn-dark btn-sm btn-block"
-                                                    type="button"
+                                                    type="submit"
                                                     style={{ fontSize: "20px" }}
                                                 >
-                                                    Login
+                                                    Signup
                                                 </button>
                                             </div>
                                             <a className="small text-muted" href="#!">
