@@ -159,10 +159,7 @@ const Home = () => {
                                 learn, create and explore the world of coding. Our program is
                                 designed to empower kids to unleash their creativity, build
                                 their own projects, and develop essential coding skills that
-                                will set them up for success in the future. With our experienced
-                                instructors, innovative curriculum, and supportive community,
-                                we're here to help kids discover their passion for coding and
-                                bring their ideas to life.</span>
+                                will set them up for success in the future.</span>
                             </p>
                           </div>
                           <a
@@ -660,7 +657,7 @@ const Home = () => {
                     aria-controls="#picker-editor"
                   />{" "}
                 </div>
-                <div className="content col-md-6 mb-4 mb-md-0">
+                <div className="content text-center col-md-6 mb-4 mb-md-0">
                   <h4 className="fw-bold mb-3">
                     <strong>Prepares Them for the Future</strong>
                   </h4>
@@ -685,7 +682,7 @@ const Home = () => {
                     aria-controls="#picker-editor"
                   />{" "}
                 </div>
-                <div className="content col-md-6 mb-4 mb-md-0">
+                <div className="content text-center col-md-6 mb-4 mb-md-0">
                   <h4 className="fw-bold mb-3">
                     <strong>Enhances Logical Thinking</strong>
                   </h4>
@@ -710,7 +707,7 @@ const Home = () => {
                     aria-controls="#picker-editor"
                   />{" "}
                 </div>
-                <div className="content col-md-6 mb-4 mb-md-0">
+                <div className="content text-center col-md-6 mb-4 mb-md-0">
                   <h4 className="fw-bold mb-3">
                     <strong>Develops Problem-Solving Skills</strong>
                   </h4>
@@ -723,7 +720,6 @@ const Home = () => {
                 </div>
               </div>
               {/* row - 3 */}
-
             </section>
           </section>
           {/**/}
@@ -734,7 +730,7 @@ const Home = () => {
       {/* Testimonials */}
       <>
         <div className='mb-10'>
-          <div class="" data-draggable="true"
+          <div className="" data-draggable="true"
             style={{
               backgroundImage: 'url("/images/background-img2.jpeg")',
               backgroundAttachment: "fixed",
