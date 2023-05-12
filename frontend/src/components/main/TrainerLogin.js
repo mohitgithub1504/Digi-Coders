@@ -2,23 +2,23 @@ import * as Yup from 'yup';
 import Swal from 'sweetalert2';
 import { useFormik } from 'formik';
 import React from 'react'
-import StudentSignup from './StudentSignup';
 
 const TrainerLogin = () => {
 
   const trainerlogin = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Email is Required'),
     password: Yup.string()
-  .required('No password provided.') 
-  .min(8, 'Password is too short - should be 8 chars minimum.')
-  .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
+      .required('No password provided.')
+      .min(8, 'Password is too short - should be 8 chars minimum.')
+      .max(15, 'Password is too long - should be 20 chars maximum.')
+      .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
   });
   const Trainerlogin = useFormik({
     initialValues: {
       email: '',
       password: '',
     },
-    nSubmit: async (values, { setSubmitting }) => {
+    onSubmit: async (values, { setSubmitting }) => {
       console.log(values);
       const res = await fetch('http://localhost:5000/trainer/add', {
         method: 'POST',
@@ -92,7 +92,7 @@ const TrainerLogin = () => {
                           value={Trainerlogin.values.email}
                           onChange={Trainerlogin.handleChange}
                         />
-                        <span>{StudentSignup.errors.email}</span>
+                        <span className='text-danger'>{Trainerlogin.errors.email}</span>
                       </div>
                       <div className="mb-4">
                         <input
@@ -104,7 +104,7 @@ const TrainerLogin = () => {
                           value={Trainerlogin.values.password}
                           onChange={Trainerlogin.handleChange}
                         />
-                        <span>{Trainerlogin.errors.password}</span>
+                        <span className='text-danger'>{Trainerlogin.errors.password}</span>
                       </div>
                       <div className="pt-1 mb-4">
                         <button

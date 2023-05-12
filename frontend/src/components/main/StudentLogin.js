@@ -9,6 +9,7 @@ const StudentLogin = () => {
         email: Yup.string().email('Invalid email').required('Email is Required'),
         password: Yup.string()
             .required('No password provided.')
+            .max(15, 'Password is too long - should be 20 chars maximum.').required('Password is required')
             .min(8, 'Password is too short - should be 8 chars minimum.')
             .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
     });
@@ -22,7 +23,7 @@ const StudentLogin = () => {
             console.log(values);
 
 
-            const res = await fetch('http://localhost:5000/trainer/add', {
+            const res = await fetch('http://localhost:5000/user/add', {
                 method: 'POST',
                 body: JSON.stringify(values),  // this is used to convert js data in json formate
                 headers: {
