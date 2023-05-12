@@ -22,10 +22,10 @@ const TrainerSignup = () => {
     password: Yup
       .string()
       .required('Please Enter your password'),
-      // .matches(
-      //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-      //   "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
-      // ),
+    // .matches(
+    //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+    //   "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+    // ),
   });
 
   const trainersignupForm = useFormik({
@@ -105,7 +105,7 @@ const TrainerSignup = () => {
                 <div className="col-xl-6">
                   <div className="card-body p-md-5 text-black">
                     <h3 className="mb-3 text-uppercase"
-                      style={{ textAlign: 'center', fontWeight: '900', fontSize:'35px'}}
+                      style={{ textAlign: 'center', fontWeight: '900', fontSize: '35px' }}
                     >
                       Trainer Registration
                     </h3>
@@ -172,9 +172,9 @@ const TrainerSignup = () => {
                           className="form-control form-control-lg"
                           placeholder='Enter Password'
                         />
-                          <span className='text-danger'>{trainersignupForm.errors.password}</span>
+                        <span className='text-danger'>{trainersignupForm.errors.password}</span>
                       </div>
-                      
+
 
                       <div className="d-flex justify-content-end pt-3">
                         <button type="submit" className="btn btn-warning btn-lg m-3 ms-2">
