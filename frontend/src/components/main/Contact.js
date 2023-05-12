@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+
 const Contact = () => {
     return (
         <>
@@ -36,22 +37,37 @@ const Contact = () => {
             </header>
             {/*Page Header*/}
             <section className="h-100 gradient-form" style={{ backgroundColor: "#eee", textAlign: "center" }}>
-                <div className="container py-5 h-100">
-                    <div className="row d-flex justify-content-center align-items-center h-100">
+                <div className="container h-100">
+                    <div className="row d-flex align-items-center h-100">
                         <div className="col-xl-10">
                             <div className="card rounded-3 text-black">
                                 <div className="row g-0">
-                                    <div className="col-lg-6 d-flex align-items-center .bg-danger.bg-gradient" style={{ background: '#4fd6f7' }}>
-                                        <div className="text-dark px-1 py-1 p-md-5 mx-md-4">
-                                            {/* <FontAwesomeIcon icon="fa-thin fa-envelope-open-text" /> */}
-                                            <h1 className="mb-6 cont-title">Contact Us -</h1>
-                                            <h4 className="mb-4">We are more than just a company</h4>
-                                            <p className="small mb-0">
-                                                Location
+                                    <div className="col-lg-6 px-5" style={{ background: '#4fd6f7' }}>
+                                        <div className="text-center mb-5">
+                                            <img
+                                                src='/logo/logo.png'
+                                                style={{ width: '100%', marginTop: '0px' }}
+                                                alt="logo"
+                                            />
+                                        </div>
+                                        <div className="card-body d-block">
+                                            <div className='d-block p-2  text-dark' style={{borderColor:'#f0f', border:'2px'}}>
+                                                <img src="/logo/location.png" alt="errors" />
+                                                <span className='text-uppercase fw-bold '>Address</span>
+                                            </div>
+                                            <div className="mb-3 d-block p-2 text-white">
+                                                <i className="fas fa-map-marker-alt"></i> 
+                                                
+                                                <span className='text-uppercase fw-bold '>Address</span>
 
-                                            </p>
+                                            </div>
                                         </div>
                                     </div>
+
+
+
+
+
                                     <div className="col-lg-6">
                                         <div className="card-body p-md-5 mx-md-4">
                                             <div className="text-center mb-5">

@@ -41,22 +41,22 @@ const StudentSignup = () => {
 
             console.log(res.status);
 
-            if (res.status === 201) {
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'Your work has been saved',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-            }
-            else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Something went wrong!',
-                })
-            }
+            // if (res.status === 201) {
+            //     Swal.fire({
+            //         position: 'top-end',
+            //         icon: 'success',
+            //         title: 'Your work has been saved',
+            //         showConfirmButton: false,
+            //         timer: 1500
+            //     })
+            // }
+            // else {
+            //     Swal.fire({
+            //         icon: 'error',
+            //         title: 'Oops...',
+            //         text: 'Something went wrong!',
+            //     })
+            // }
         },
         validationSchema: StudentsignupSchema,
 

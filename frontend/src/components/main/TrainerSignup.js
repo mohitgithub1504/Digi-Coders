@@ -33,12 +33,7 @@ const TrainerSignup = () => {
         return new Date();
       }
       ),
-
   });
-
-
-
-
 
   const trainersignupForm = useFormik({
     initialValues: {
@@ -63,20 +58,20 @@ const TrainerSignup = () => {
       });
 
       console.log(res.status);
-      if (res.status === 200) {
-        Swal.fire({
-          icon: "success",
-          title: "Well Done",
-          text: "You have success full Register ",
-        });
-      }
-      else {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Something went wrong!",
-        });
-      }
+      // if (res.status === 200) {
+      //   Swal.fire({
+      //     icon: "success",
+      //     title: "Well Done",
+      //     text: "You have success full Register ",
+      //   });
+      // }
+      // else {
+      //   Swal.fire({
+      //     icon: "error",
+      //     title: "Oops...",
+      //     text: "Something went wrong!",
+      //   });
+      // }
     },
     validationSchema: trainersignupSchema,
 
@@ -117,9 +112,9 @@ const TrainerSignup = () => {
                 <div className="col-xl-6">
                   <div className="card-body p-md-5 text-black">
                     <h3 className="mb-3 text-uppercase"
-                      style={{ textAlign: 'center', fontWeight: '900' }}
+                      style={{ textAlign: 'center', fontWeight: '900', fontSize:'35px'}}
                     >
-                      Student registration form
+                      Trainer Registration
                     </h3>
                     <form action="" onSubmit={trainersignupForm.handleSubmit}>
                       <div className="row">
