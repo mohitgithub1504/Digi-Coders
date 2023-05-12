@@ -1,90 +1,93 @@
 import React from 'react'
 
-
-
-
 const Login = () => {
-
-
-
   return (
-    <section className="vh-auto" style={{ backgroundColor: "#a3e7f7" }}>
-      <div className="container py-5 h-100">
-        <div className="row d-flex justify-content-center align-items-center h-100">
-          <div className="col col-xl-10">
-            <div className="card" style={{ borderRadius: "1rem" }}>
-              <div className="row g-0">
-                <div className="col-md-6 col-lg-5 d-none d-md-block">
-                  <img
-                    src="/images/Altloginimg.jpg"
-                    alt="login form"
-                    className="img-fluid"
-                    style={{ borderRadius: "1rem 0 0 1rem" }}
-                  />
-                </div>
-                <div className="col-md-6 col-lg-7 d-flex align-items-center">
-                  <div className="card-body p-4 p-lg-5 text-black">
-                    <form>
-                      <div className="d-flex align-items-center mb-3 pb-1">
-                        <img src="/logo/logo.png" alt="error"
-                          style={{ height: "50px"}}
-                        />
-                      </div>
-                      <h5
-                        className="mb-3 pb-3"
-                        style={{ letterSpacing: 1, textAlign: "center", fontSize: "30px"}}
-                      >
-                        Sign into your account
-                      </h5>
-                      <div className=" mb-4">
-                        <input
-                          type="email"
-                          id="form2Example17"
-                          className="form-control form-control-lg"
-                          placeholder='Email'
-                        />
-                      </div>
-                      <div className="mb-4">
-                        <input
-                          type="password"
-                          id="form2Example27"
-                          className="form-control form-control-lg"
-                          placeholder='Password'
-                        />
-                      </div>
-                      <div className="pt-1 mb-4">
-                        <button
-                          className="btn btn-dark btn-lg btn-block"
-                          type="button"
-                        >
-                          Login
-                        </button>
-                      </div>
-                      <a className="small text-muted" href="#!">
-                        Forgot password?
-                      </a>
-                      <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>
-                        Don't have an account?{" "}
-                        <a href="/main/signup" style={{ color: "#393f81" }}>
-                          Register here
+    <div>
+      <>
+        <div data-draggable="true" style={{ position: "relative" }}>
+          {/**/}
+          {/**/}
+          <section draggable="false" className="container pt-5" data-v-271253ee="">
+            <section className="heading mb-10 text-center">
+              <h2 className="fw-bold mb-5">
+                <span>Choose your account type</span>
+              </h2>
+
+              <div className='signup-link'>
+                <p className="text-center fw-bold mb-8">
+                  Don't have an account?{" "}
+                  <a href="/main/signup" className="fw-bold text-body">
+                    <u>Register here</u>
+                  </a>
+                </p>
+              </div>
+
+              <div className="row gx-lg-5 mb-8 d-flex justify-content-center">
+                {/* First column */}
+                <div className="col-lg-4">
+                  <div class="hover-zoom">
+                    <a href="/main/StudentLogin">
+                      <img
+                        src="/icons/student_icon.jpg"
+                        className="card-signup w-100 mb-n5 shadow-5-strong"
+                        style={{ maxWidth: 100 }}
+                        alt="Avatar"
+                      />
+                    </a>
+                    <div
+                      className="card-signup p-4 shadow-3"
+                      style={{ backgroundColor: "hsl(218, 62.2%, 95%)" }}
+                    >
+                      <div className="signup-name">
+                        <a href="/main/StudentLogin">
+                          <p className="h5 fw-bold mt-5">Student</p>
                         </a>
-                      </p>
-                      <a href="#!" className="small text-muted">
-                        Terms of use.
-                      </a>
-                      <a href="#!" className="small text-muted">
-                        Privacy policy
-                      </a>
-                    </form>
+                      </div>
+                      {/* Divider here */}
+                      <hr class="hr hr-blurry"></hr>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+                {/* First column */}
 
+                {/* second column */}
+                <div className="col-lg-4">
+                  <div class="hover-zoom">
+                    <a href="/main/TrainerLogin">
+                      <img
+                        src="/icons/teacher_icon.jpg"
+                        className="card-signup w-100 mb-n5 shadow-5-strong"
+                        style={{ maxWidth: 100 }}
+                        alt="Avatar"
+                      />
+                    </a>
+                    <div
+                      className="card-signup p-4 shadow-3"
+                      style={{ backgroundColor: "hsl(218, 62.2%, 95%)" }}
+                    >
+                      <div className="signup-name">
+                        <a href="/main/TrainerLogin">
+                          <p className="h5 fw-bold mt-5">Teacher</p>
+                        </a>
+                      </div>
+
+                      {/* Divider here */}
+                      <hr class="hr hr-blurry"></hr>
+                    </div>
+
+                  </div>
+                </div>
+
+                {/* second column */}
+              </div>
+
+            </section>
+          </section>
+          {/**/}
+        </div>
+      </>
+
+    </div>
   )
 }
 

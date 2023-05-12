@@ -5,7 +5,7 @@ const Course = () => {
         <div>
             <>
                 {/*Page Header*/}
-                <header className='mb-3'>
+                <header className='mb-10'>
                     {/* Background image */}
                     <div
                         id="intro"
@@ -41,15 +41,15 @@ const Course = () => {
             </>
 
             {/* Our Course*/}
-            <>
+            <div className='mb-10'>
                 <div data-draggable="true" style={{ position: "relative" }}>
                     {/**/}
                     {/**/}
-                    <section draggable="false" className="container pt-5" data-v-271253ee="">
-                        <section className="heading mb-5 text-center">
-                            <div className="row gx-lg-5 mb-5">
+                    <section draggable="false" className="container" data-v-271253ee="">
+                        <section>
+                            <div className="row text-center gx-lg-5 mb-6">
                                 {/* First column */}
-                                <div className="col-lg-4 col-md-12 mb-6 mb-lg-0">
+                                <div className="col-lg-4 col-md-12 mb-lg-0 hover-zoom">
                                     <div className="card">
                                         <div
                                             class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
@@ -59,7 +59,7 @@ const Course = () => {
                                                 src="/images/course1.jpg"
                                                 className="img-fluid"
                                             />
-                                            <a href="#!">
+                                            <a href="/main/chapter">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -67,16 +67,13 @@ const Course = () => {
                                             </a>
                                         </div>
                                         <div className="card-body">
-                                            <h5 className="card-title mb-0">AI engine</h5>
-                                            <p className="text-muted mb-2">
-                                                <small>
-                                                    Finished <u>13.09.2021</u> for
-                                                    <a href="" className="text-dark">
-                                                        Techify
-                                                    </a>
-                                                </small>
-                                            </p>
-                                            <ul className="list-unstyled d-flex justify-content-center text-warning mb-0">
+                                            <h6 className="mb-3">
+                                                Age 6+
+                                            </h6>
+                                            <h4 className="card-tittle mb-3">
+                                                <strong>Game Development</strong>
+                                            </h4>
+                                            <ul className="list-unstyled d-flex justify-content-center text-warning">
                                                 <li>
                                                     <i className="fas fa-star fa-sm" />
                                                 </li>
@@ -97,11 +94,6 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <p className="card-text">
-                                                Ut pretium ultricies dignissim. Sed sit amet mi eget urna placerat
-                                                vulputate. Ut vulputate est non quam dignissim elementum. Donec a
-                                                ullamcorper diam.
-                                            </p>
                                             <a href="#!" className="btn btn-primary">
                                                 Read more
                                             </a>
@@ -110,7 +102,7 @@ const Course = () => {
                                 </div>
                                 {/* First column */}
                                 {/* Second column */}
-                                <div className="col-lg-4 mb-6 mb-lg-0">
+                                <div className="col-lg-4 col-md-12 mb-lg-0 hover-zoom">
                                     <div className="card">
                                         <div
                                             class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
@@ -120,7 +112,7 @@ const Course = () => {
                                                 src="/images/course2.jpg"
                                                 className="img-fluid"
                                             />
-                                            <a href="#!">
+                                            <a href="/main/chapter">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -128,16 +120,13 @@ const Course = () => {
                                             </a>
                                         </div>
                                         <div className="card-body">
-                                            <h5 className="card-title mb-0">Balanced design</h5>
-                                            <p className="text-muted mb-2">
-                                                <small>
-                                                    Finished <u>12.01.2022</u> for
-                                                    <a href="" className="text-dark">
-                                                        Rubicon
-                                                    </a>
-                                                </small>
-                                            </p>
-                                            <ul className="list-unstyled d-flex justify-content-center text-warning mb-0">
+                                            <h6 className="mb-3">
+                                                Age 6+
+                                            </h6>
+                                            <h4 className="card-tittle fw-bold mb-3">
+                                                <strong>Web Development</strong>
+                                            </h4>
+                                            <ul className="list-unstyled d-flex justify-content-center text-warning">
                                                 <li>
                                                     <i className="fas fa-star fa-sm" />
                                                 </li>
@@ -158,11 +147,6 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <p className="card-text">
-                                                Ut pretium ultricies dignissim. Sed sit amet mi eget urna placerat
-                                                vulputate. Ut vulputate est non quam dignissim elementum. Donec a
-                                                ullamcorper diam.
-                                            </p>
                                             <a href="#!" className="btn btn-primary">
                                                 Read more
                                             </a>
@@ -171,7 +155,7 @@ const Course = () => {
                                 </div>
                                 {/* Second column */}
                                 {/* Third column */}
-                                <div className="col-lg-4 mb-6 mb-lg-0">
+                                <div className="col-lg-4 col-md-12 mb-lg-0 hover-zoom">
                                     <div className="card">
                                         <div
                                             class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
@@ -181,7 +165,7 @@ const Course = () => {
                                                 src="/images/course3.jpg"
                                                 className="img-fluid"
                                             />
-                                            <a href="#!">
+                                            <a href="/main/chapter">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -189,16 +173,13 @@ const Course = () => {
                                             </a>
                                         </div>
                                         <div className="card-body">
-                                            <h5 className="card-title mb-0">Metaverse 2.0</h5>
-                                            <p className="text-muted mb-2">
-                                                <small>
-                                                    Finished <u>10.11.2022</u> for
-                                                    <a href="" className="text-dark">
-                                                        Venom Tech
-                                                    </a>
-                                                </small>
-                                            </p>
-                                            <ul className="list-unstyled d-flex justify-content-center text-warning mb-0">
+                                            <h6 className="mb-3">
+                                                Age 6+
+                                            </h6>
+                                            <h4 className="card-tittle fw-bold mb-3">
+                                                <strong>App Development</strong>
+                                            </h4>
+                                            <ul className="list-unstyled d-flex justify-content-center text-warning">
                                                 <li>
                                                     <i className="fas fa-star fa-sm" />
                                                 </li>
@@ -219,11 +200,6 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <p className="card-text">
-                                                Ut pretium ultricies dignissim. Sed sit amet mi eget urna placerat
-                                                vulputate. Ut vulputate est non quam dignissim elementum. Donec a
-                                                ullamcorper diam.
-                                            </p>
                                             <a href="#!" className="btn btn-primary">
                                                 Read more
                                             </a>
@@ -233,9 +209,9 @@ const Course = () => {
                                 {/* Third column */}
                             </div>
 
-                            <div className="row gx-lg-5">
+                            <div className="row text-center gx-lg-5">
                                 {/* First column */}
-                                <div className="col-lg-4 col-md-12 mb-6 mb-lg-0">
+                                <div className="col-lg-4 col-md-12 mb-lg-0 hover-zoom">
                                     <div className="card">
                                         <div
                                             class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
@@ -245,7 +221,7 @@ const Course = () => {
                                                 src="/images/course4.jpg"
                                                 className="img-fluid"
                                             />
-                                            <a href="#!">
+                                            <a href="/main/chapter">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -253,16 +229,13 @@ const Course = () => {
                                             </a>
                                         </div>
                                         <div className="card-body">
-                                            <h5 className="card-title mb-0">AI engine</h5>
-                                            <p className="text-muted mb-2">
-                                                <small>
-                                                    Finished <u>13.09.2021</u> for
-                                                    <a href="" className="text-dark">
-                                                        Techify
-                                                    </a>
-                                                </small>
-                                            </p>
-                                            <ul className="list-unstyled d-flex justify-content-center text-warning mb-0">
+                                            <h6 className="mb-3">
+                                                Age 6+
+                                            </h6>
+                                            <h4 className="card-tittle fw-bold mb-3">
+                                                <strong>Artificial Intelligence</strong>
+                                            </h4>
+                                            <ul className="list-unstyled d-flex justify-content-center text-warning">
                                                 <li>
                                                     <i className="fas fa-star fa-sm" />
                                                 </li>
@@ -283,11 +256,6 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <p className="card-text">
-                                                Ut pretium ultricies dignissim. Sed sit amet mi eget urna placerat
-                                                vulputate. Ut vulputate est non quam dignissim elementum. Donec a
-                                                ullamcorper diam.
-                                            </p>
                                             <a href="#!" className="btn btn-primary">
                                                 Read more
                                             </a>
@@ -296,7 +264,7 @@ const Course = () => {
                                 </div>
                                 {/* First column */}
                                 {/* Second column */}
-                                <div className="col-lg-4 mb-6 mb-lg-0">
+                                <div className="col-lg-4 col-md-12 mb-lg-0 hover-zoom">
                                     <div className="card">
                                         <div
                                             class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
@@ -306,7 +274,7 @@ const Course = () => {
                                                 src="/images/course5.jpg"
                                                 className="img-fluid"
                                             />
-                                            <a href="#!">
+                                            <a href="/main/chapter">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -314,16 +282,13 @@ const Course = () => {
                                             </a>
                                         </div>
                                         <div className="card-body">
-                                            <h5 className="card-title mb-0">Balanced design</h5>
-                                            <p className="text-muted mb-2">
-                                                <small>
-                                                    Finished <u>12.01.2022</u> for
-                                                    <a href="" className="text-dark">
-                                                        Rubicon
-                                                    </a>
-                                                </small>
-                                            </p>
-                                            <ul className="list-unstyled d-flex justify-content-center text-warning mb-0">
+                                            <h6 className="mb-3">
+                                                Age 6+
+                                            </h6>
+                                            <h4 className="card-tittle fw-bold mb-3">
+                                                <strong>Internet Of Things</strong>
+                                            </h4>
+                                            <ul className="list-unstyled d-flex justify-content-center text-warning">
                                                 <li>
                                                     <i className="fas fa-star fa-sm" />
                                                 </li>
@@ -344,11 +309,6 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <p className="card-text">
-                                                Ut pretium ultricies dignissim. Sed sit amet mi eget urna placerat
-                                                vulputate. Ut vulputate est non quam dignissim elementum. Donec a
-                                                ullamcorper diam.
-                                            </p>
                                             <a href="#!" className="btn btn-primary">
                                                 Read more
                                             </a>
@@ -357,7 +317,7 @@ const Course = () => {
                                 </div>
                                 {/* Second column */}
                                 {/* Third column */}
-                                <div className="col-lg-4 mb-6 mb-lg-0">
+                                <div className="col-lg-4 col-md-12 mb-lg-0 hover-zoom">
                                     <div className="card">
                                         <div
                                             class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
@@ -367,7 +327,7 @@ const Course = () => {
                                                 src="/images/course6.jpg"
                                                 className="img-fluid"
                                             />
-                                            <a href="#!">
+                                            <a href="/main/chapter">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -375,16 +335,13 @@ const Course = () => {
                                             </a>
                                         </div>
                                         <div className="card-body">
-                                            <h5 className="card-title mb-0">Metaverse 2.0</h5>
-                                            <p className="text-muted mb-2">
-                                                <small>
-                                                    Finished <u>10.11.2022</u> for
-                                                    <a href="" className="text-dark">
-                                                        Venom Tech
-                                                    </a>
-                                                </small>
-                                            </p>
-                                            <ul className="list-unstyled d-flex justify-content-center text-warning mb-0">
+                                            <h6 className="mb-3">
+                                                Age 6+
+                                            </h6>
+                                            <h4 className="card-tittle fw-bold mb-3">
+                                                <strong>Python</strong>
+                                            </h4>
+                                            <ul className="list-unstyled d-flex justify-content-center text-warning">
                                                 <li>
                                                     <i className="fas fa-star fa-sm" />
                                                 </li>
@@ -405,11 +362,6 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <p className="card-text">
-                                                Ut pretium ultricies dignissim. Sed sit amet mi eget urna placerat
-                                                vulputate. Ut vulputate est non quam dignissim elementum. Donec a
-                                                ullamcorper diam.
-                                            </p>
                                             <a href="#!" className="btn btn-primary">
                                                 Read more
                                             </a>
@@ -422,7 +374,7 @@ const Course = () => {
                     </section>
                     {/**/}
                 </div>
-            </>
+            </div>
             {/* Our Course*/}
         </div>
     )

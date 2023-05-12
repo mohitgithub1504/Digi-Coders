@@ -11,7 +11,7 @@ const Signup = () => {
         <section draggable="false" className="container pt-5" data-v-271253ee="">
           <section className="heading mb-10 text-center">
             <h2 className="fw-bold mb-5">
-              <span>Choose your account type to get started</span>
+              <span>Choose your account type</span>
             </h2>
 
             <div className='signup-link'>
