@@ -25,7 +25,7 @@ const Home = () => {
       </>
       {/* Header */}
 
-      {/* coding for kids */}
+      {/* Benefits */}
       <>
         <div className="container mb-8">
           {/* Section */}
@@ -44,7 +44,7 @@ const Home = () => {
             <div className="row">
               {/* Grid column - 1 */}
               <div className="col-md-6 col-xl-3">
-                <div className="card rounded-7 text-center text-white" style={{ backgroundColor: '#29c1fe' }}>
+                <div className="card rounded-7 shadow-4-strong text-center text-white" style={{ backgroundColor: '#29c1fe' }}>
                   <div className="card-body">
                     <p className="mt-4 pt-2">
                       <i className="fas fa-chalkboard-user fa-4x" />
@@ -62,7 +62,7 @@ const Home = () => {
               {/* Grid column -1 */}
               {/* Grid column - 2 */}
               <div className="col-md-6 col-xl-3 mb-4">
-                <div className="card rounded-7 text-center text-white" style={{ backgroundColor: '#000' }}>
+                <div className="card rounded-7 shadow-4-strong text-center text-white" style={{ backgroundColor: '#000' }}>
                   <div className="card-body">
                     <p className="mt-4 pt-2">
                       <i className="fas fa-briefcase fa-4x" />
@@ -80,7 +80,7 @@ const Home = () => {
               {/* Grid column - 2 */}
               {/* Grid column - 3 */}
               <div className="col-md-6 col-xl-3">
-                <div className="card rounded-7 text-center text-white" style={{ backgroundColor: '#29c1fe' }}>
+                <div className="card rounded-7 shadow-4-strong text-center text-white" style={{ backgroundColor: '#29c1fe' }}>
                   <div className="card-body">
                     <p className="mt-4 pt-2">
                       <i className="fas fa-gamepad fa-4x" />
@@ -98,7 +98,7 @@ const Home = () => {
               {/* Grid column - 3 */}
               {/* Grid column - 4 */}
               <div className="col-md-6 col-xl-3 mb-4">
-                <div className="card rounded-7 text-center text-white" style={{ backgroundColor: '#000' }}>
+                <div className="card rounded-7 shadow-4-strong text-center text-white" style={{ backgroundColor: '#000' }}>
                   <div className="card-body">
                     <p className="mt-4 pt-2">
                       <i className="fas fa-award fa-4x" />
@@ -119,7 +119,7 @@ const Home = () => {
           {/* Section */}
         </div>
       </>
-      {/* coding for kids */}
+      {/* Benefits */}
 
       {/* About Us */}
       <>

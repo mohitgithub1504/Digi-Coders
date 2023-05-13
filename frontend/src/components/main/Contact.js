@@ -57,7 +57,6 @@ const Contact = () => {
                                             </div>
                                             <div className="mb-3 d-block p-2 text-white">
                                                 <i className="fas fa-map-marker-alt"></i> 
-                                                
                                                 <span className='text-uppercase fw-bold '>Address</span>
 
                                             </div>

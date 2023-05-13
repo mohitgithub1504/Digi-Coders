@@ -1,37 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
+
+* {
   font-family: 'Poppins', sans-serif;
 }
-:root{
+
+:root {
   --main-color: #000;
-  --second-color:#29c1fe;
+  --second-color: #29c1fe;
   --third-color: #fff;
 }
-.heading h2{
+
+.heading h2 {
   text-transform: uppercase;
   font-size: 50px;
   color: var(--main-color);
   letter-spacing: 3px;
   font-weight: 700;
 }
-.sub-heading h4{
+
+.sub-heading h4 {
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--second-color);
   font-weight: 600;
   font-size: 20px;
 }
-.content p{
+
+.content p {
   letter-spacing: 2px;
   color: var(--main-color);
 }
-.content h4{
+
+.content h4 {
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--main-color);
   font-size: 30px;
 }
-.accordion-button{
+
+.accordion-button {
   letter-spacing: 2px;
   color: var(--main-color);
   background-color: var(--third-color);
@@ -39,141 +46,181 @@
   text-transform: uppercase;
   font-size: 18px;
 }
-.accordion-button:hover{
+
+.accordion-button:hover {
   color: var(--second-color);
 }
-.accordion-button:not(.collapsed){
+
+.accordion-button:not(.collapsed) {
   color: var(--third-color);
   background-color: var(--second-color);
 }
-.accordion-item{
+
+.accordion-item {
   letter-spacing: 2px;
   color: var(--main-color);
   background-color: #f6feff;
   margin-bottom: 10px;
 }
-.content h1{
+
+.content h1 {
   letter-spacing: 5px;
   text-transform: uppercase;
   color: var(--third-color);
   font-size: 52px;
   font-weight: 700;
 }
-.main-heading h2{
+
+.main-heading h2 {
   text-transform: uppercase;
   font-size: 50px;
   color: var(--third-color);
   letter-spacing: 3px;
   font-weight: 700;
 }
-.navbar{
+
+.navbar {
   display: flex;
 }
-.navbar a{
+
+.navbar a {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.custom-link-hover:hover{
+
+.custom-link-hover:hover {
   color: var(--second-color) !important;
 }
-.nav-item .active{
+
+.nav-item .active {
   border-bottom: 3px solid var(--second-color);
   color: var(--second-color) !important;
 }
-.nav-link{
+
+.nav-link {
   color: var(--main-color);
   margin-right: 30px;
 }
-.nav-link:hover{
+
+.nav-link:hover {
   color: var(--second-color);
 }
-.nav-btn{
+
+.nav-btn {
   color: var(--main-color);
   border: none;
   text-align: center;
   font-size: 15px;
   padding: 0 8px;
 }
-.nav-btn:hover{
+
+.nav-btn:hover {
   color: var(--second-color);
 }
+
 .dropdown:hover>.dropdown-menu {
   display: block;
 }
-.dropdown-item{
+
+.dropdown-item {
   color: var(--main-color);
   font-size: 15px;
 }
-.dropdown-item:hover{
+
+.dropdown-item:hover {
   color: var(--third-color);
   background-color: var(--second-color);
 }
-.card-body h6{
+
+.card-body h6 {
   color: var(--main-color);
   font-weight: 500;
   text-transform: uppercase;
   font-size: 15px;
 }
-.card-body h5{
+
+.card-body h5 {
   text-transform: uppercase;
   font-size: 18px;
 }
-.card-body h4{
+
+.card-body h4 {
   color: var(--main-color);
   font-weight: 500;
   text-transform: uppercase;
 }
-.btn{
+
+.btn {
   background: var(--second-color);
   border: none;
-  border-radius: 15px; 
+  border-radius: 15px;
   text-align: center;
   font-size: large;
   letter-spacing: 1px;
 }
-.btn:hover{
+
+.btn:hover {
   color: var(--third-color);
   background: var(--main-color);
 }
-.card-heading h5{
+
+.card-heading h5 {
   color: var(--second-color);
 }
-.name p{
+
+.name p {
   text-transform: uppercase;
   font-size: 22px;
   color: var(--second-color);
 }
-.footer-icon{
+
+.footer-icon {
   color: var(--second-color);
 }
-.page-heading h1{
+
+.text-justify {
+  text-align: justify;
+}
+
+.page-heading h1 {
   text-transform: uppercase;
   font-size: 50px;
   color: var(--second-color);
 }
-.page-heading p{
+
+.page-heading p {
   letter-spacing: 3px;
   color: var(--third-color);
 }
-.card-signup{
+
+.card-signup {
   border-radius: 2.5rem !important;
 }
-.signup-link u{
+
+.signup-link u {
   color: var(--second-color);
 }
-.signup-link u:hover{
+
+.signup-link u:hover {
   color: var(--main-color);
 }
-.signup-name p{
+
+.signup-name p {
   text-transform: uppercase;
   font-size: 30px;
   color: var(--second-color);
 }
-.signup-name p:hover{
+
+.signup-name p:hover {
   color: var(--main-color);
 }
-@media (max-width: 767.98px) { .border-sm-start-none { border-left: none !important; } }
+
+@media (max-width: 767.98px) {
+  .border-sm-start-none {
+    border-left: none !important;
+  }
+}
 
 .timeline {
   position: relative;
