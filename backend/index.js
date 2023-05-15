@@ -5,6 +5,7 @@ const app = express();
 const userRouter = require('./routers/userRouter');
 const trainerRouter = require('./routers/trainerRouter');
 
+
 const cors = require( 'cors');
 
 app.use(cors({

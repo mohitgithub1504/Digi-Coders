@@ -10,7 +10,7 @@ const Navbar = () => {
         {/* Container wrapper */}
         <div className="container">
           {/* Navbar brand */}
-          <a className="navbar-brand me-2" href="#">
+          <a className="navbar-brand me-2" to="/main/Home">
             <img
               src="/logo/logo.png"
               height={50}
@@ -34,58 +34,55 @@ const Navbar = () => {
           {/* Collapsible wrapper */}
           <div className="collapse navbar-collapse justify-content-center" id="navbarButtonsExample">
             {/* Left links */}
-            <ul className="navbar-nav mb-2 mb-lg-0" style={{ fontSize: 18}}>
+            <ul className="navbar-nav mb-2 mb-lg-0" style={{ fontSize: 18 }}>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <NavLink className="nav-link" to="/main/home">
                   Home
-                </a>
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/main/about">
+                  About
+                </NavLink>
               </li>
 
               {/* Navbar dropdown */}
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
+              <li class="nav-item dropdown">
+                <NavLink
+                  className="nav-link dropdown"
+                  to="/main/course"
                   id="navbarDropdown"
                   role="button"
-                  data-mdb-toggle="dropdown"
                   aria-expanded="false"
                 >
                   Courses
-                </a>
-                {/* Dropdown menu */}
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                </NavLink>
+                {/* Dropdown menu */} 
+                <ul className="dropdown-menu text-center" aria-labelledby="navbarDropdown">
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Action
-                    </a>
+                    <a className="dropdown-item" href="/main/course">Action</a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Another action
-                    </a>
+                    <a className="dropdown-item" href="/main/chapter">Another action</a>
                   </li>
                   <li>
-                    <hr className="dropdown-divider" />
+                    <a className="dropdown-item" href="/trainer/builder">Action</a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
+                    <a className="dropdown-item" href="/trainer/managechapter">Another action</a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">Something else here</a>
                   </li>
                 </ul>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  About
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
+                <NavLink className="nav-link" to="/main/contact">
                   Contact
-                </a>
+                </NavLink>
               </li>
+
             </ul>
 
           </div>
