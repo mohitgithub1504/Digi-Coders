@@ -111,7 +111,7 @@ const About = () => {
         {/* Section: Block Content */}
         <section className="text-center rounded-7 shadow-4-strong"
           style={{
-            backgroundImage: "url(/images/background-img-aboutus.jpg)",
+            backgroundImage: "url(/images/background-img4.jpg)",
             height: 350,
             backgroundSize: "cover",
             backgroundPosition: "50% 50%",
@@ -147,7 +147,7 @@ const About = () => {
         {/* Section: Block Content */}
         <section className="text-center rounded-7 shadow-4-strong"
           style={{
-            backgroundImage: "url(/images/background-img-aboutus1.jpg)",
+            backgroundImage: "url(/images/background-img5.jpg)",
             height: 350,
             backgroundSize: "cover",
             backgroundPosition: "50% 50%",

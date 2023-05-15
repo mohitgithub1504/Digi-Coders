@@ -4,7 +4,7 @@ const Contact = () => {
     return (
         <>
             {/*Page Header*/}
-            <header className='mb-3'>
+            <header className='mb-8'>
                 {/* Background image */}
                 <div
                     id="intro"
@@ -36,91 +36,163 @@ const Contact = () => {
                 {/* Background image */}
             </header>
             {/*Page Header*/}
-            <section className="h-100 gradient-form" style={{ backgroundColor: "#eee", textAlign: "center" }}>
-                <div className="container h-100">
-                    <div className="row d-flex align-items-center h-100">
-                        <div className="col-xl-10">
-                            <div className="card rounded-3 text-black">
-                                <div className="row g-0">
-                                    <div className="col-lg-6 px-5" style={{ background: '#4fd6f7' }}>
-                                        <div className="text-center mb-5">
-                                            <img
-                                                src='/logo/logo.png'
-                                                style={{ width: '100%', marginTop: '0px' }}
-                                                alt="logo"
-                                            />
-                                        </div>
-                                        <div className="card-body d-block">
-                                            <div className='d-block p-2  text-dark' style={{borderColor:'#f0f', border:'2px'}}>
-                                                <img src="/logo/location.png" alt="errors" />
-                                                <span className='text-uppercase fw-bold '>Address</span>
-                                            </div>
-                                            <div className="mb-3 d-block p-2 text-white">
-                                                <i className="fas fa-map-marker-alt"></i> 
-                                                
-                                                <span className='text-uppercase fw-bold '>Address</span>
 
+            {/*Contact Us*/}
+            <section className="h-100 form mb-8">
+                <div className="container py-5 h-100">
+                    <div className="row d-flex justify-content-center align-items-center h-100">
+                        <div className="col-xl-10">
+                            <div className="card rounded-7 shadow-4-strong">
+                                <div className="row g-0">
+                                    <div className="col-lg-6"
+                                        style={{
+                                            backgroundImage: 'url("/images/background-img6.jpg")',
+                                            height: 668,
+                                            backgroundSize: "cover",
+                                            backgroundPosition: "90% 50%",
+                                            position: "relative"
+                                        }}>
+                                        <div
+                                            className="mask"
+                                            style={{ backgroundColor: "rgba(92, 97, 115, 0.6)" }}
+                                        >
+                                            <div className="form px-3 py-4 p-md-5 mx-md-4">
+                                                <h2 className="my-5 text-center">Get In Touch</h2>
+
+                                                <div className="d-flex flex-row align-items-center mb-4">
+                                                    <i className="form-icon fas fa-map-marker-alt me-3 mb-4 fa-2x" />
+                                                    <div className="flex-fill">
+                                                        <p>
+                                                            Hazaratganj, Lucknow, Uttar Pradesh, India.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div className="d-flex flex-row align-items-center mb-4">
+                                                    <i className="form-icon fas fa-phone me-3 mb-4 fa-2x" />
+                                                    <div className="flex-fill">
+                                                        <p>
+                                                            +91 9458561512
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div className="d-flex flex-row align-items-center mb-8">
+                                                    <i className="form-icon fas fa-envelope me-3 mb-4 fa-2x" />
+                                                    <div className="flex-fill">
+                                                        <p>
+                                                            digicoders@gmail.com
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                {/* Divider here */}
+                                                <hr className="hr mb-4"></hr>
+                                                <div className='text-center'>
+                                                    <button type="button" className="btn btn-floating text-white mx-1">
+                                                        <a href="" className="me-4 text-reset">
+                                                            <i className="fab fa-facebook-f" />
+                                                        </a>
+                                                    </button>
+                                                    <button type="button" className="btn btn-floating text-white mx-1">
+                                                        <a href="" className="me-4 text-reset">
+                                                            <i className="fab fa-twitter" />
+                                                        </a>
+                                                    </button>
+                                                    <button type="button" className="btn btn-floating text-white mx-1">
+                                                        <a href="" className="me-4 text-reset">
+                                                            <i className="fab fa-google" />
+                                                        </a>
+                                                    </button>
+                                                    <button type="button" className="btn btn-floating text-white mx-1">
+                                                        <a href="" className="me-4 text-reset">
+                                                            <i className="fab fa-instagram" />
+                                                        </a>
+                                                    </button>
+                                                    <button type="button" className="btn btn-floating text-white mx-1">
+                                                        <a href="" className="me-4 text-reset">
+                                                            <i className="fab fa-linkedin" />
+                                                        </a>
+                                                    </button>
+                                                    <button type="button" className="btn btn-floating text-white mx-1">
+                                                        <a href="" className="me-4 text-reset">
+                                                            <i className="fab fa-github" />
+                                                        </a>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
-
-
-
-
                                     <div className="col-lg-6">
                                         <div className="card-body p-md-5 mx-md-4">
                                             <div className="text-center mb-5">
-                                                <img
-                                                    src='/logo/logo.png'
-                                                    style={{ width: '100%' }}
-                                                    alt="logo"
-                                                />
-                                                <h4 className="mt-5 pb-1">Contact Digi Coders</h4>
+                                                <h3 className="my-5">
+                                                    <i className="fas fa-envelope pr-2 mr-1" />&nbsp;
+                                                    Write to us
+                                                </h3>
                                             </div>
-                                            <form>
-                                                <div className="mb-4">
-                                                    <input
-                                                        type="text"
-                                                        id="name"
-                                                        className="form-control"
-                                                        placeholder="Enter Full Name"
-                                                    />
+                                            <form className="mx-1 mx-md-4 text-black">
+                                                <div className="d-flex flex-row align-items-center mb-4">
+                                                    <i className="fas fa-user fa-lg me-3 fa-fw" />
+                                                    <div className="flex-fill mb-0">
+                                                        <input
+                                                            type="text"
+                                                            id="name"
+                                                            className="form-control"
+                                                            placeholder="Enter Full Name"
+                                                        />
+                                                    </div>
                                                 </div>
-                                                <div className="mb-4">
-                                                    <input
-                                                        type="email"
-                                                        id="email"
-                                                        className="form-control"
-                                                        placeholder="Enter Email Address"
-                                                    />
+                                                <div className="d-flex flex-row align-items-center mb-4">
+                                                    <i className="fas fa-envelope fa-lg me-3 fa-fw" />
+                                                    <div className="flex-fill mb-0">
+                                                        <input
+                                                            type="email"
+                                                            id="email"
+                                                            className="form-control"
+                                                            placeholder="Enter Email Address"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div className="d-flex flex-row align-items-center mb-4">
+                                                    <i class="fas fa-tag fa-lg me-3 fa-fw"></i>
+                                                    <div className="flex-fill mb-0">
+                                                        <input
+                                                            type="text"
+                                                            id="subject"
+                                                            className="form-control"
+                                                            placeholder="Enter Subject"
+                                                        />
+                                                    </div>
                                                 </div>
                                                 {/* Text area fields */}
-                                                <div class="mb-4">
-                                                    <textarea class="form-control" id="textarea" rows="4"
-                                                        placeholder='Enter massege....'
-                                                    ></textarea>
+                                                <div className="d-flex flex-row align-items-center mb-5">
+                                                    <i class="fas fa-pencil-alt fa-lg me-3 mb-8 fa-fw"></i>
+                                                    <div className="flex-fill mb-0">
+                                                        <textarea class="form-control" id="textarea" rows="4"
+                                                            placeholder='Enter massege....'
+                                                        ></textarea>
+                                                    </div>
                                                 </div>
-
-                                                <div className="text-center pt-1 mb-5 pb-1 ">
+                                                <div className="pt-1 mx-4 mb-3 pb-1 ">
                                                     <button
-                                                        className="btn btn-primary btn-block text-center fa-lg gradient-custom-2 mb-3"
+                                                        className="btn btn-primary btn-block mb-3"
                                                         type="button"
-                                                        style={{ borderRadius: "0px", width: "100%" }}
+                                                        style={{ borderRadius: "10px" }}
                                                     >
-                                                        Send
+                                                        Send &nbsp;
+                                                        <i className="far fa-paper-plane ml-2" />
                                                     </button>
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+            {/*Contact Us*/}
         </>
     )
 }

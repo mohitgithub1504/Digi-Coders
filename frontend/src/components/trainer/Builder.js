@@ -17,7 +17,8 @@ const Builder = () => {
   const [chapterData, setChapterData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const [addedBlocks, setAddedBlocks] = useState([]);
+  const [addedBlocks, setAddedBlocks] = useState(["logic_negate",
+  "logic_boolean"]);
 
   const [xml, setXml] = useState(`<xml xmlns="http://www.w3.org/1999/xhtml">
 <block type="controls_ifelse" x="10" y="10">
@@ -82,7 +83,7 @@ const Builder = () => {
     ));
   };
 
-  const chapterUpdateForm = () => {};
+  const chapterUpdateForm = () => { };
 
   return (
     <div>
@@ -104,10 +105,9 @@ const Builder = () => {
           }}
           initialXml={xml}
           height="60vh"
+          blocks = {addedBlocks}
         >
-          {addedBlocks.map((type) => (
-            <Block type={type} />
-          ))}
+          
           <Block type="controls_repeat_ext">
             <Value name="TIMES">
               <Shadow type="math_number">

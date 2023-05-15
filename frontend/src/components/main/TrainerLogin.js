@@ -5,22 +5,21 @@ import React from 'react'
 
 const TrainerLogin = () => {
 
-  const studentsingup = Yup.object().shape({
+  const trainerlogin = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Email is Required'),
-    password: Yup
-      .string()
-      .required('Please Enter your password'),
+    password: Yup.string()
+      .required('No password provided.')
+      .min(8, 'Password is too short - should be 8 chars minimum.')
+      .max(15, 'Password is too long - should be 20 chars maximum.')
+      .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
   });
-
-  const Studentsingup = useFormik({
+  const Trainerlogin = useFormik({
     initialValues: {
       email: '',
       password: '',
     },
-    nSubmit: async (values, { setSubmitting }) => {
+    onSubmit: async (values, { setSubmitting }) => {
       console.log(values);
-
-
       const res = await fetch('http://localhost:5000/trainer/add', {
         method: 'POST',
         body: JSON.stringify(values),  // this is used to convert js data in json formate
@@ -28,7 +27,6 @@ const TrainerLogin = () => {
           'Content-Type': 'application/json' // this used to inform the data in send in the form of json
         }
       });
-
       console.log(res.status);
       if (res.status === 200) {
         Swal.fire({
@@ -45,7 +43,7 @@ const TrainerLogin = () => {
         });
       }
     },
-    validationSchema: studentsingup,
+    validationSchema: trainerlogin,
 
 
   });
@@ -70,7 +68,7 @@ const TrainerLogin = () => {
                 </div>
                 <div className="col-md-6 col-lg-7 d-flex align-items-center">
                   <div className="card-body p-4 p-lg-5 text-black">
-                    <form onSubmit={Studentsingup.handleSubmit}>
+                    <form onSubmit={Trainerlogin.handleSubmit}>
                       <div className="d-flex align-items-center mb-3 pb-1">
                         <i
                           className="fas fa-cubes fa-2x me-3"
@@ -91,7 +89,10 @@ const TrainerLogin = () => {
                           id="form2Example17"
                           className="form-control form-control-lg"
                           placeholder='Email Address'
+                          value={Trainerlogin.values.email}
+                          onChange={Trainerlogin.handleChange}
                         />
+                        <span className='text-danger'>{Trainerlogin.errors.email}</span>
                       </div>
                       <div className="mb-4">
                         <input
@@ -100,15 +101,15 @@ const TrainerLogin = () => {
                           id="form2Example27"
                           className="form-control form-control-lg"
                           placeholder='Password'
+                          value={Trainerlogin.values.password}
+                          onChange={Trainerlogin.handleChange}
                         />
-                        <label className="form-label" htmlFor="form2Example27">
-                          Password
-                        </label>
+                        <span className='text-danger'>{Trainerlogin.errors.password}</span>
                       </div>
                       <div className="pt-1 mb-4">
                         <button
                           className="btn btn-dark btn-lg btn-block"
-                          type="button"
+                          type="submit"
                         >
                           Login
                         </button>

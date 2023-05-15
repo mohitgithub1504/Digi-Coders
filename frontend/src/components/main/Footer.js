@@ -66,7 +66,7 @@ export const Footer = () => {
                     style={{ marginBottom: "25px" }}
                   />
                 </a>
-                <p>
+                <p className='text-justify'>
                   Digi Coders is a block-based coding program for kids, where
                   they can learn the basics of coding while having fun. Through
                   interactive and engaging activities, kids can develop logical
