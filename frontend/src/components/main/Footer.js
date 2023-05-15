@@ -99,6 +99,16 @@ export const Footer = () => {
                     Python
                   </a>
                 </p>
+                <p>
+                  <a href="#!" className="text-reset custom-link-hover">
+                    App Development
+                  </a>
+                </p>
+                <p>
+                  <a href="#!" className="text-reset custom-link-hover">
+                    Artificial Intelligence
+                  </a>
+                </p>
               </div>
               {/* Grid column */}
               {/* Grid column */}
