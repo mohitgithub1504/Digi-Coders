@@ -5,6 +5,7 @@ import BlocklyComponent, { Block, Value, Field, Shadow } from "../../Blockly";
 import "../../generator";
 import { useParams } from "react-router-dom";
 import app_config from "../../config";
+import { useBlockContext } from "../../context/BlockContext";
 
 const Builder = () => {
   const { chapter_id } = useParams();
@@ -17,8 +18,7 @@ const Builder = () => {
   const [chapterData, setChapterData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const [addedBlocks, setAddedBlocks] = useState(["logic_negate",
-  "logic_boolean"]);
+  const {addedBlocks, setAddedBlocks} = useBlockContext();
 
   const [xml, setXml] = useState(`<xml xmlns="http://www.w3.org/1999/xhtml">
 <block type="controls_ifelse" x="10" y="10">
@@ -35,7 +35,7 @@ const Builder = () => {
   };
 
   useEffect(() => {
-    fetchChapterData();
+    // fetchChapterData();
   }, []);
 
   const checkBlockAlreadyAdded = (blockname) => {
@@ -43,7 +43,8 @@ const Builder = () => {
   };
 
   const addBlock = (blockname) => {
-    setAddedBlocks([...addedBlocks, blockname]);
+    const blockToAdd = blockOptions[blockname];
+    setAddedBlocks([...addedBlocks, blockToAdd]);
     console.log(addedBlocks);
   };
 
@@ -64,8 +65,30 @@ const Builder = () => {
     console.log(data);
   };
 
+  const blockOptions = {
+    controls_repeat_ext: (
+      <Block type="controls_repeat_ext">
+        <Value name="TIMES">
+          <Shadow type="math_number">
+            <Field name="NUM">10</Field>
+          </Shadow>
+        </Value>
+      </Block>
+    ),
+    text_charAt: (
+      <Block type="text_charAt">
+        <Value name="VALUE">
+          <Block type="variables_get">
+            <Field name="VAR">text</Field>
+          </Block>
+        </Value>
+      </Block>
+    ),
+  };
+
+
   const displayBlockOptions = () => {
-    return blockData.blockTypes.map((block) => (
+    return Object.keys(blockOptions).map((block) => (
       <div className="row mb-3">
         <div className="col-8">
           <h5>{block}</h5>
@@ -83,7 +106,8 @@ const Builder = () => {
     ));
   };
 
-  const chapterUpdateForm = () => { };
+  
+  const chapterUpdateForm = () => {};
 
   return (
     <div>
@@ -105,9 +129,8 @@ const Builder = () => {
           }}
           initialXml={xml}
           height="60vh"
-          blocks = {addedBlocks}
+          // blocks={addedBlocks}
         >
-          
           <Block type="controls_repeat_ext">
             <Value name="TIMES">
               <Shadow type="math_number">

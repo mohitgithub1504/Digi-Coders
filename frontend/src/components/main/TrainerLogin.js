@@ -9,9 +9,9 @@ const TrainerLogin = () => {
     email: Yup.string().email('Invalid email').required('Email is Required'),
     password: Yup.string()
       .required('No password provided.')
-      .min(8, 'Password is too short - should be 8 chars minimum.')
-      .max(15, 'Password is too long - should be 20 chars maximum.')
-      .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
+      // .min(8, 'Password is too short - should be 8 chars minimum.')
+      // .max(15, 'Password is too long - should be 20 chars maximum.')
+      // .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
   });
   const Trainerlogin = useFormik({
     initialValues: {

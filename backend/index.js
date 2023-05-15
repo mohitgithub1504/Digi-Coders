@@ -4,6 +4,7 @@ const app = express();
 //importing routers
 const userRouter = require('./routers/userRouter');
 const trainerRouter = require('./routers/trainerRouter');
+const chapterRouter = require('./routers/chapterRouter');
 
 
 const cors = require( 'cors');
@@ -18,6 +19,7 @@ app.use(express.json());
 //adding routers
 app.use('/user', userRouter);
 app.use('/trainer', trainerRouter);
+app.use('/chapter', chapterRouter);
 
 const port = 5000;
 
