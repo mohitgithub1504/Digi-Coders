@@ -21,7 +21,7 @@
  * @author samelh@google.com (Sam El-Husseini)
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 // import './BlocklyComponent.css';
 import {useEffect, useRef} from 'react';
 
@@ -29,6 +29,7 @@ import Blockly from 'blockly/core';
 import {javascriptGenerator} from 'blockly/javascript';
 import locale from 'blockly/msg/en';
 import 'blockly/blocks';
+import { useBlockContext } from '../context/BlockContext';
 
 Blockly.setLocale(locale);
 
@@ -37,6 +38,9 @@ function BlocklyComponent(props) {
    const toolbox = useRef();
    let primaryWorkspace = useRef();
    const calledOnce = useRef(true);
+
+   const {addedBlocks, setAddedBlocks} = useBlockContext();
+
 
    const generateCode = () => {
        var code = javascriptGenerator.workspaceToCode(
@@ -62,13 +66,17 @@ function BlocklyComponent(props) {
            }
       }
        
-   }, [primaryWorkspace, toolbox, blocklyDiv, props]);
+   }, [primaryWorkspace, toolbox, blocklyDiv, props, addedBlocks]);
+
+   console.log(addedBlocks);
+   console.log(props.children);
 
    return (
    <React.Fragment>
        <button onClick={generateCode} className='btn btn-primary'>Convert</button>
        <div ref={blocklyDiv} id="blocklyDiv" style={{ height: props.height, width: '100%'}} />
        <div style={{ display: 'none' }} ref={toolbox} className='bg-danger'>
+           {addedBlocks}
            {props.children}
        </div>
    </React.Fragment>);

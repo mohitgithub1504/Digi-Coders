@@ -18,11 +18,12 @@ import ManageCourse from './components/trainer/ManageCourse';
 import ManageChapter from './components/trainer/ManageChapter';
 import StudentSignup from './components/main/StudentSignup';
 import StudentLogin from './components/main/StudentLogin';
+import BlockProvider from './context/BlockContext';
 
 function App() {
   return (
     <BrowserRouter>
-
+    <BlockProvider>
       <Routes>
         <Route path='/' element={<Navigate to="/main/home" />} />
         <Route path='main' element={<Main />} >
@@ -49,6 +50,7 @@ function App() {
         </ Route>
 
       </Routes>
+      </BlockProvider>
     </BrowserRouter>
   );
 }
