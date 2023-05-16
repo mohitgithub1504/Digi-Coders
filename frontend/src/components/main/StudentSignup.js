@@ -142,9 +142,9 @@ const StudentSignup = () => {
                                             <a className="small text-muted" href="#!">
                                                 Forgot password?
                                             </a>
-                                            <p className="mb-1 pb-lg-1" style={{ color: "#393f81" }}>
+                                            <p className="mb-1 pb-lg-1 mt-1" style={{ color: "#393f81", fontWeight: '600' }}>
                                                 Don't have an account?{" "}
-                                                <a href="/main/signup" style={{ color: "#393f81" }}>
+                                                <a href="/main/signup" style={{ color: "#393f81"}} className="studentregister">
                                                     Register here
                                                 </a>
                                             </p>

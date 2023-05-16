@@ -31,7 +31,6 @@ function App() {
       <Routes>
         <Route path='/' element={<Navigate to="/main/home" />} />
         <Route path='main' element={<Main />} >
-
           <Route path='home' element={<Home />} />
           <Route path='course' element={<Course />} />
           <Route path='about' element={<About />} />
