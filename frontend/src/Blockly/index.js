@@ -27,9 +27,10 @@ import BlocklyComponent from './BlocklyComponent';
 export default BlocklyComponent;
 
 const Block = (p) => {
+    console.log(p);
     const { children, ...props } = p;
     props.is = "blockly";
-    console.log(React.createElement("block", props, children));
+    // console.log(React.createElement("block", props, children));
     return React.createElement("block", props, children);
 };
 

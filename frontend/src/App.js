@@ -19,6 +19,10 @@ import ManageChapter from './components/trainer/ManageChapter';
 import StudentSignup from './components/main/StudentSignup';
 import StudentLogin from './components/main/StudentLogin';
 import BlockProvider from './context/BlockContext';
+import User from './components/user';
+import BrowseChapters from './components/user/BrowseChapters';
+import ViewChapter from './components/user/ViewChapter';
+import TrainerAuth from './auth/TrainerAuth';
 
 function App() {
   return (
@@ -42,11 +46,16 @@ function App() {
 
 
         </Route>
-        <Route path='trainer' element={<Trainer />}>
+        <Route path='trainer' element={<TrainerAuth><Trainer /> </TrainerAuth>}>
           <Route path='builder' element={<Builder />} />
           <Route path='designchapter' element={<DesignChapter />} />
           <Route path='managechapter' element={<ManageChapter />} />
           <Route path='managecourse' element={<ManageCourse />} />
+        </ Route>
+
+        <Route path='user' element={<User />}>
+          <Route path='viewchapter' element={<ViewChapter />} />
+          <Route path='browsechapter' element={<BrowseChapters />} />
         </ Route>
 
       </Routes>

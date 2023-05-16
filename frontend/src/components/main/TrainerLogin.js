@@ -34,6 +34,8 @@ const TrainerLogin = () => {
           title: "Well Done",
           text: "You have success full Register ",
         });
+        const data = sessionStorage.setItem('trainer', JSON.stringify(values));
+        console.log(data);
       }
       else {
         Swal.fire({

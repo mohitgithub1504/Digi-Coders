@@ -23,10 +23,10 @@
 
 import React, { useState } from 'react';
 // import './BlocklyComponent.css';
-import {useEffect, useRef} from 'react';
+import { useEffect, useRef } from 'react';
 
 import Blockly from 'blockly/core';
-import {javascriptGenerator} from 'blockly/javascript';
+import { javascriptGenerator } from 'blockly/javascript';
 import locale from 'blockly/msg/en';
 import 'blockly/blocks';
 import { useBlockContext } from '../context/BlockContext';
@@ -34,52 +34,58 @@ import { useBlockContext } from '../context/BlockContext';
 Blockly.setLocale(locale);
 
 function BlocklyComponent(props) {
-   const blocklyDiv = useRef();
-   const toolbox = useRef();
-   let primaryWorkspace = useRef();
-   const calledOnce = useRef(true);
+    const blocklyDiv = useRef();
+    const toolbox = useRef();
+    let primaryWorkspace = useRef();
+    const calledOnce = useRef(true);
 
-   const {addedBlocks, setAddedBlocks} = useBlockContext();
+    const { addedBlocks, setAddedBlocks } = useBlockContext();
 
 
-   const generateCode = () => {
-       var code = javascriptGenerator.workspaceToCode(
-         primaryWorkspace.current
-       );
-       console.log(code);
-   }
+    const generateCode = () => {
+        var code = javascriptGenerator.workspaceToCode(
+            primaryWorkspace.current
+        );
+        console.log(code);
+    }
 
-   useEffect(() => {
-    if(calledOnce.current){
-        calledOnce.current = false;
-        const { initialXml, children, ...rest } = props;
-           primaryWorkspace.current = Blockly.inject(
-               blocklyDiv.current,
-               {
-                   toolbox: toolbox.current,
-                   ...rest
-               },
-           );
+    useEffect(() => {
+        if (calledOnce.current) {
+            calledOnce.current = false;
+            const { initialXml, children, ...rest } = props;
+            primaryWorkspace.current = Blockly.inject(
+                blocklyDiv.current,
+                {
+                    toolbox: toolbox.current,
+                    ...rest
+                },
+            );
 
-           if (initialXml) {
-               Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(initialXml), primaryWorkspace.current);
-           }
-      }
-       
-   }, [primaryWorkspace, toolbox, blocklyDiv, props, addedBlocks]);
+            if (initialXml) {
+                Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(initialXml), primaryWorkspace.current);
+            }
+        }
 
-   console.log(addedBlocks);
-   console.log(props.children);
+    }, [primaryWorkspace, toolbox, blocklyDiv, props, addedBlocks]);
 
-   return (
-   <React.Fragment>
-       <button onClick={generateCode} className='btn btn-primary'>Convert</button>
-       <div ref={blocklyDiv} id="blocklyDiv" style={{ height: props.height, width: '100%'}} />
-       <div style={{ display: 'none' }} ref={toolbox} className='bg-danger'>
-           {addedBlocks}
-           {props.children}
-       </div>
-   </React.Fragment>);
+    console.log(addedBlocks);
+    console.log(props.children);
+
+    return (
+        <React.Fragment>
+            <button onClick={generateCode} className='btn btn-primary'>Convert</button>
+            <div ref={blocklyDiv} id="blocklyDiv" style={{ height: props.height, width: '100%' }} />
+            <div style={{ display: 'none' }} ref={toolbox} className='bg-danger'>
+                {addedBlocks.map((block) => {
+                    // console.log(p);
+                    const { children, ...props } = block;
+                    props.is = "blockly";
+                    // console.log(React.createElement("block", props, children));
+                    return React.createElement("block", props, children);
+                })}
+                {props.children}
+            </div>
+        </React.Fragment>);
 }
 
 export default BlocklyComponent;
