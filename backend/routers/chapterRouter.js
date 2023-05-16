@@ -17,16 +17,6 @@ router.post('/add', (req, res) => {
     });
 });
 
-router.get('/getall', (req, res) => {
-    Model.find({})
-    .then((result) => {
-        res.json(result);
-    })
-    .catch((err) => {
-        console.error(err);
-        res.status(500).json(err);
-    });
-});
 
 router.post('/authenticate', (req, res) => {
     Model.findOne(req.body)
@@ -42,8 +32,9 @@ router.post('/authenticate', (req, res) => {
 } );
 
 router.get('/getall', (req, res) => {
-    Model.find({})
+    Model.find({}).populate('trainer')
     .then((result) => {
+        console.log(result);
         if(result) res.json(result);
         else res.status(401).json({ message: 'Invalid Credentials'});
         

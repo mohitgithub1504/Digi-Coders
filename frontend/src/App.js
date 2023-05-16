@@ -22,6 +22,7 @@ import BlockProvider from './context/BlockContext';
 import User from './components/user';
 import BrowseChapters from './components/user/BrowseChapters';
 import ViewChapter from './components/user/ViewChapter';
+import ChapterDetails from './components/user/ChapterDetails';
 import TrainerAuth from './auth/TrainerAuth';
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
         <Route path='user' element={<User />}>
           <Route path='viewchapter' element={<ViewChapter />} />
           <Route path='browsechapter' element={<BrowseChapters />} />
+          <Route path='chapterdetails' element={<ChapterDetails />} />
         </ Route>
 
       </Routes>
