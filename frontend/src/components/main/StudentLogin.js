@@ -98,15 +98,19 @@ const StudentLogin = () => {
                                                     <span className='text-danger'>{StudentLogin.errors.email}</span>
                                                 </div>
                                                 <div className="mb-4">
+                                                    
                                                     <input
+                                                        
                                                         type="password"
                                                         name='password'
                                                         id="form2Example27"
                                                         className="form-control form-control-lg"
                                                         placeholder='Password'
+                                                        autoComplete='off'
                                                         value={StudentLogin.values.password}
                                                         onChange={StudentLogin.handleChange}
                                                     />
+                                                    
                                                     <span className='text-danger'>{StudentLogin.errors.email}</span>
                                                 </div>
                                                 <div className="pt-1 mb-4">
