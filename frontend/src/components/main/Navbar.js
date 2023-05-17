@@ -95,7 +95,7 @@ const Navbar = () => {
               href="/main/Signup"
             >
               <i
-                className="fa-solid fa-user fa-lg px-2"
+                className="fas fa-user fa-lg me-1 fa-fw"
               />
               Sign Up
             </a>
@@ -105,7 +105,7 @@ const Navbar = () => {
               href="/main/Login"
             >
               <i
-                className="fa-solid fa-right-to-bracket fa-lg px-2"
+                className="fas fa-right-to-bracket fa-lg me-1 fa-fw"
               />
               Login
             </a>
