@@ -44,5 +44,18 @@ router.get('/getall', (req, res) => {
     });
 } );
 
+router.get('/getbyid/:id', (req, res) => {
+    Model.findById(req.params.id).populate('trainer')
+    .then((result) => {
+        console.log(result);
+        if(result) res.json(result);
+        else res.status(401).json({ message: 'Invalid Credentials'});
+        
+    }).catch((err) => {
+        console.error(err);
+        res.status(500).json(err);
+    });
+} );
+
 
 module.exports = router;

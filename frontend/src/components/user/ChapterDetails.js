@@ -1,12 +1,15 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 const ChapterDetails = () => {
+
+  const { id } = useParams();
+
+
   return (
     <div>
-
-
       <section>
-        <div className="container py-5">
+        <div className="container my-3">
           <div className="card shadow-0 border-light rounded-3">
             <div className="card-body">
               <div className="row mb-5 d-flex align-items-center justify-content-center">
@@ -21,21 +24,47 @@ const ChapterDetails = () => {
                     />
                   </div>
                 </div>
-                <div className="col-lg-6 col-md-6">
-                  <div className="card">
-                    <div className="card-header">
-                      <h4 className="text-center mb-0">Feature 2</h4>
+                <div className="content col-md-6 mb-4 mb-md-0 ">
+
+                  <div class="row">
+                    <div class="col-4">
+                      <h5 className="fw-bold mx-3">
+                        <strong>Title - </strong>
+                      </h5>
                     </div>
-                    <div className="card-body">
-                      <p className="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                        enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu fugiat.
+                    <div class="col-6">
+                      <p className="">
+                        HTML
                       </p>
                     </div>
                   </div>
+
+                  <div class="row">
+                    <div class="col-4">
+                      <h5 className="fw-bold mx-3">
+                        <strong>category - </strong>
+                      </h5>
+                    </div>
+                    <div class="col-6">
+                      <p className="">
+                        Web
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-4">
+                      <h5 className="fw-bold mx-3">
+                        <strong>Description - </strong>
+                      </h5>
+                    </div>
+                    <div class="col-6">
+                      <p className="">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+                      </p>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
