@@ -34,7 +34,8 @@ const TrainerLogin = () => {
           title: "Well Done",
           text: "login successfully",
         });
-        const data = sessionStorage.setItem('trainer', JSON.stringify(values));
+        const data = await res.json();
+        sessionStorage.setItem('trainer', JSON.stringify(data));
         console.log(data);
       }
       else {

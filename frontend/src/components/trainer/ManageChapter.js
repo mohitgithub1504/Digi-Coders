@@ -116,7 +116,7 @@ const ManageChapter = () => {
                 {/*Grid row*/}
             </section>
             {/*Section: Content*/}
-        </div> 
+        </div>
 
     )
 }

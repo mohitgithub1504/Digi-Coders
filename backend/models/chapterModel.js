@@ -1,7 +1,7 @@
 const { Schema, model, Types } = require("../connection");
 
 const schema = new Schema({
-  trainer: { type: Types.ObjectId, ref: "user" },
+  trainer: { type: Types.ObjectId, ref: "trainer" },
   title: {type : String, required : true},
   description: {type : String, required : true},
   category : {type : String, required : true},
