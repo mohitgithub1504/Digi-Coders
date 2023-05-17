@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom';
 
 const BrowseChapters = () => {
 
@@ -57,9 +58,9 @@ const BrowseChapters = () => {
                                             </div>
                                             <h6 className="text-success">Free shipping</h6>
                                             <div className="d-flex flex-column mt-4">
-                                                <button className="btn btn-primary" type="button">
-                                                    Details
-                                                </button>
+                                                <NavLink className="btn btn-primary" to={"/user/chapterdetails/"+chapter._id}>
+                                                    View Details
+                                                </NavLink>
                                                 <button
                                                     className="btn btn-primary mt-2"
                                                     type="button"
