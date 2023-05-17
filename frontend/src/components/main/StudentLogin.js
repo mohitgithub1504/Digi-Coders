@@ -55,7 +55,7 @@ const StudentLogin = () => {
     return (
         <div>
 
-            <section className="vh-100" style={{ backgroundColor: "#9A616D" }}>
+            {/* <section className="vh-100" style={{ backgroundColor: "#9A616D" }}>
                 <div className="container py-5 h-100">
                     <div className="row d-flex justify-content-center align-items-center h-100">
                         <div className="col col-xl-10">
@@ -136,6 +136,147 @@ const StudentLogin = () => {
                                                 <a href="#!" className="small text-muted">
                                                     Privacy policy
                                                 </a>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> */}
+
+
+
+
+            <section className="h-100 form mb-1">
+                <div className="container py-5 h-100">
+                    <div className="row d-flex justify-content-center align-items-center h-100">
+                        <div className="col-xl-10">
+                            <div className="card shadow-4-strong rounded-left" >
+                                <div className="row g-0" style={{
+                                    borderRadius: "1rem 0 0 1rem",
+                                }}>
+                                    <div className="col-lg-6"
+                                        style={{
+                                            backgroundImage: 'url("/images/bg-img-9.jpg")',
+                                            height: 668,
+                                            backgroundSize: "cover",
+                                            backgroundPosition: "90% 50%",
+                                            position: "relative",
+                                            borderRadius: "1rem 0 0 1rem",
+                                        }}>
+                                        <div
+                                            className="mask"
+                                            style={{
+                                                backgroundColor: "rgba(92, 97, 115, 0.5)",
+                                                borderRadius: "1rem 0 0 1rem",
+                                            }}
+                                        >
+                                            <div className="py-4  mx-md-4 "
+                                                style={{ color: "#fff", marginTop: "25%", }}>
+
+                                                {/* <h3 className="text-center" style={{color:"#69d1fa"}}>Welcome Back....</h3> */}
+                                                <p className="text-center" style={{ fontSize: "40px", fontWeight: "bold",color:"#69d1fa" }}>
+                                                    Welcome back
+                                                </p>
+                                                <p className="text-center" style={{ fontSize: "40px", fontWeight: "bold", }}>
+                                                    Hello, Friends
+                                                </p>
+                                                <p className="text-center">
+                                                    Fill up personal information and start journey with us.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="col-lg-6 mt-1">
+
+                                        <div className="card-body mx-md-4 ">
+                                            <div className="text-center mb-5" >
+                                                <img
+                                                    src="\logo\logo.png"
+                                                    style={{ width: 185 }}
+                                                    alt="logo"
+                                                />
+                                            </div>
+                                            <div className="text-center mb-5 font-weight-bold">
+                                                <h4 className="text-capitalize mb-0">
+                                                    Sign in to Account
+                                                </h4>
+                                                <hr className='hr mt-1'
+                                                    style={{
+                                                        border: '3px solid #0289b0',
+                                                        alignItems: 'center',
+                                                        width: '25%',
+                                                        marginLeft: "38%"
+                                                    }} />
+
+                                            </div>
+                                            <form className="mx-1 mx-md-4 text-black" onSubmit={StudentLogin.handleSubmit}>
+                                                <div className="d-flex flex-row align-items-center mb-4">
+                                                    <i className="fas fa-user fa-lg me-3 fa-fw" />
+                                                    <div className="flex-fill mb-0">
+                                                        <input
+                                                            type="email"
+                                                            id="email"
+                                                            name='email'
+                                                            autoComplete='off'
+                                                            className="form-control form-control-lg"
+                                                            placeholder="User Id"
+                                                            value={StudentLogin.values.email}
+                                                            onChange={StudentLogin.handleChange}
+                                                        />
+                                                        <span className='text-danger'>{StudentLogin.errors.email}</span>
+                                                    </div>
+                                                </div>
+                                                <div className="d-flex flex-row align-items-center mb-4">
+                                                    <i className="fas fa-lock fa-lg me-3 fa-fw" />
+                                                    <div className="flex-fill mb-0">
+                                                        <input
+                                                            type="password"
+                                                            id="password"
+                                                            name='password'
+                                                            autoComplete='off'
+                                                            className="form-control form-control-lg"
+                                                            placeholder="Password"
+                                                            value={StudentLogin.values.password}
+                                                            onChange={StudentLogin.handleChange}
+                                                        />
+                                                        <span className='text-danger'>{StudentLogin.errors.password}</span>
+                                                    </div>
+                                                </div>
+
+                                                <div className="pt-1 mx-4 mb-2 pb-1 ">
+                                                    <button
+                                                        className="btn btn-primary btn-block mb-3"
+                                                        type="submit"
+                                                        style={{ borderRadius: "10px" }}
+                                                    >
+                                                        Login
+                                                    </button>
+                                                </div>
+                                                <a className="text-primary mb-3" href="#!">
+                                                    Forgot password?
+                                                </a>
+                                                <div className="text-center m-4">
+                                                    <p className='text-dark' style={{ letterSpacing: '0px' }}>
+                                                        Not a member? <a href="/main/StudentSignup">Register</a>
+                                                    </p>
+                                                    <p className='text-dark' style={{ letterSpacing: '0px' }}>or sign up with:</p>
+                                                    <button type="button" className="btn btn-link btn-floating mx-1" style={{ backgroundColor: "#dcf2fc" }}>
+                                                        <i className="fab fa-facebook-f" />
+                                                    </button>
+                                                    <button type="button" className="btn btn-link btn-floating mx-1" style={{ backgroundColor: "#dcf2fc" }}>
+                                                        <i className="fab fa-google" />
+                                                    </button>
+                                                    <button type="button" className="btn btn-link btn-floating mx-1" style={{ backgroundColor: "#dcf2fc" }}>
+                                                        <i className="fab fa-twitter" />
+                                                    </button>
+                                                    <button type="button" className="btn btn-link btn-floating mx-1" style={{ backgroundColor: "#dcf2fc" }}>
+                                                        <i className="fab fa-github" />
+                                                    </button>
+                                                </div>
                                             </form>
                                         </div>
                                     </div>
