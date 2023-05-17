@@ -159,48 +159,60 @@ const StudentLogin = () => {
                                 }}>
                                     <div className="col-lg-6"
                                         style={{
-                                            backgroundImage: 'url("/images/bg-img-9.jpg")',
+                                            backgroundImage: 'url("/images/bg-img-7.jpg")',
                                             height: 668,
                                             backgroundSize: "cover",
                                             backgroundPosition: "90% 50%",
                                             position: "relative",
-                                            borderRadius: "1rem 0 0 1rem",
                                         }}>
                                         <div
                                             className="mask"
                                             style={{
-                                                backgroundColor: "rgba(92, 97, 115, 0.5)",
-                                                borderRadius: "1rem 0 0 1rem",
+                                                backgroundColor: "rgba(92, 97, 115, 0.6)",
                                             }}
                                         >
                                             <div className="py-4  mx-md-4 "
                                                 style={{ color: "#fff", marginTop: "25%", }}>
 
                                                 {/* <h3 className="text-center" style={{color:"#69d1fa"}}>Welcome Back....</h3> */}
-                                                <p className="text-center" style={{ fontSize: "40px", fontWeight: "bold",color:"#69d1fa" }}>
+                                                <p className="text-center m-0" style={{ fontSize: "40px", fontWeight: "bold",color:"#69d1fa" }}>
                                                     Welcome back
                                                 </p>
-                                                <p className="text-center" style={{ fontSize: "40px", fontWeight: "bold", }}>
+                                                <p className="text-center m-0" style={{ fontSize: "40px", fontWeight: "bold", }}>
                                                     Hello, Friends
                                                 </p>
-                                                <p className="text-center">
+                                                <p className="text-center m-0">
                                                     Fill up personal information and start journey with us.
                                                 </p>
                                             </div>
+                                            <div className="text-center m-4" style={{color : '#fff'}}>
+                                                    <p className='text-light' style={{ letterSpacing: '0px' }}>
+                                                        Not a member? <a href="/main/StudentSignup"
+                                                        style={{color : '#53e0fc', fontWeight : 'bold'}}
+                                                        >Register</a>
+                                                    </p>
+                                                    <p className='text-light' style={{ letterSpacing: '0px' }}>or sign up with:</p>
+                                                    <button type="button" className="btn btn-link btn-floating mx-1" style={{ backgroundColor: "#03d6ff" }}>
+                                                        <i className="fab fa-facebook-f" />
+                                                    </button>
+                                                    <button type="button" className="btn btn-link btn-floating mx-1" style={{ backgroundColor: "#03d6ff" }}>
+                                                        <i className="fab fa-google" />
+                                                    </button>
+                                                    <button type="button" className="btn btn-link btn-floating mx-1" style={{ backgroundColor: "#03d6ff" }}>
+                                                        <i className="fab fa-twitter" />
+                                                    </button>
+                                                    <button type="button" className="btn btn-link btn-floating mx-1" style={{ backgroundColor: "#03d6ff" }}>
+                                                        <i className="fab fa-github" />
+                                                    </button>
+                                                </div>
                                         </div>
                                     </div>
 
                                     <div className="col-lg-6 mt-1">
 
-                                        <div className="card-body mx-md-4 ">
-                                            <div className="text-center mb-5" >
-                                                <img
-                                                    src="\logo\logo.png"
-                                                    style={{ width: 185 }}
-                                                    alt="logo"
-                                                />
-                                            </div>
-                                            <div className="text-center mb-5 font-weight-bold">
+                                        <div className="card-body mx-md-4 my-5">
+                                            
+                                            <div className="text-center mb-5 font-weight-bold my-5">
                                                 <h4 className="text-capitalize mb-0">
                                                     Sign in to Account
                                                 </h4>
@@ -213,7 +225,7 @@ const StudentLogin = () => {
                                                     }} />
 
                                             </div>
-                                            <form className="mx-1 mx-md-4 text-black" onSubmit={StudentLogin.handleSubmit}>
+                                            <form className="mx-1 mx-md-4 text-black mt-5" onSubmit={StudentLogin.handleSubmit}>
                                                 <div className="d-flex flex-row align-items-center mb-4">
                                                     <i className="fas fa-user fa-lg me-3 fa-fw" />
                                                     <div className="flex-fill mb-0">
@@ -259,7 +271,7 @@ const StudentLogin = () => {
                                                 <a className="text-primary mb-3" href="#!">
                                                     Forgot password?
                                                 </a>
-                                                <div className="text-center m-4">
+                                                {/* <div className="text-center m-4">
                                                     <p className='text-dark' style={{ letterSpacing: '0px' }}>
                                                         Not a member? <a href="/main/StudentSignup">Register</a>
                                                     </p>
@@ -276,7 +288,7 @@ const StudentLogin = () => {
                                                     <button type="button" className="btn btn-link btn-floating mx-1" style={{ backgroundColor: "#dcf2fc" }}>
                                                         <i className="fab fa-github" />
                                                     </button>
-                                                </div>
+                                                </div> */}
                                             </form>
                                         </div>
                                     </div>
