@@ -32,7 +32,7 @@ const TrainerLogin = () => {
         Swal.fire({
           icon: "success",
           title: "Well Done",
-          text: "You have success full Register ",
+          text: "login successfully",
         });
         const data = sessionStorage.setItem('trainer', JSON.stringify(values));
         console.log(data);

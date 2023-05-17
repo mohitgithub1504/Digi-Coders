@@ -36,7 +36,7 @@ const StudentLogin = () => {
                 Swal.fire({
                     icon: "success",
                     title: "Well Done",
-                    text: "You have success full Register ",
+                    text: "login successfully",
                 });
             }
             else {
