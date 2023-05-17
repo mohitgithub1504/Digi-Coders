@@ -19,7 +19,7 @@ const BrowseChapters = () => {
                                     <div className="row">
                                         <div className="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
                                             <div
-                                                class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
+                                                class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-7"
                                                 data-mdb-ripple-color="light"
                                             >
                                                 <img
