@@ -58,22 +58,26 @@ const Navbar = () => {
                   Courses
                 </NavLink>
                 {/* Dropdown menu */} 
-                <ul className="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a className="dropdown-item" href="/main/course">Action</a>
+                    <a className="dropdown-item" href="/trainer/managechapter">Game Development</a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/main/chapter">Another action</a>
+                    <a className="dropdown-item" href="">Web Development</a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/trainer/builder">Action</a>
+                    <a className="dropdown-item" href="">App Development</a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/trainer/managechapter">Another action</a>
+                    <a className="dropdown-item" href="">Artificial Intelligence</a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">Something else here</a>
+                    <a className="dropdown-item" href="">Internet Of Things</a>
                   </li>
+                  <li>
+                    <a className="dropdown-item" href="">Python</a>
+                  </li>
+                  
                 </ul>
               </li>
 

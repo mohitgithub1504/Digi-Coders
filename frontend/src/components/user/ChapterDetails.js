@@ -1,10 +1,17 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useParams } from 'react-router-dom';
+import BlocklyComponent, { Block, Value, Field, Shadow } from "../../Blockly";
+
 
 const ChapterDetails = () => {
 
   const { id } = useParams();
 
+  const [xml, setXml] = useState(`<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="controls_ifelse" x="10" y="10">
+  
+  </block>
+  </xml>`);
 
   return (
     <div>
@@ -32,7 +39,7 @@ const ChapterDetails = () => {
                         <strong>Title - </strong>
                       </h5>
                     </div>
-                    <div class="col-6">
+                    <div class="col-8">
                       <p className="">
                         HTML
                       </p>
@@ -45,7 +52,7 @@ const ChapterDetails = () => {
                         <strong>category - </strong>
                       </h5>
                     </div>
-                    <div class="col-6">
+                    <div class="col-8">
                       <p className="">
                         Web
                       </p>
@@ -58,7 +65,7 @@ const ChapterDetails = () => {
                         <strong>Description - </strong>
                       </h5>
                     </div>
-                    <div class="col-6">
+                    <div class="col-8">
                       <p className="">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
                       </p>
@@ -70,6 +77,37 @@ const ChapterDetails = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      <section>
+        <BlocklyComponent
+          readOnly={false}
+          trashcan={true}
+          media={"media/"}
+          move={{
+            scrollbars: true,
+            drag: true,
+            wheel: true,
+          }}
+          initialXml={xml}
+          height="60vh"
+        // blocks={addedBlocks}
+        >
+          <Block type="controls_repeat_ext">
+            <Value name="TIMES">
+              <Shadow type="math_number">
+                <Field name="NUM">10</Field>
+              </Shadow>
+            </Value>
+          </Block>
+          <Block type="text_charAt">
+            <Value name="VALUE">
+              <Block type="variables_get">
+                <Field name="VAR">text</Field>
+              </Block>
+            </Value>
+          </Block>
+        </BlocklyComponent>
       </section>
 
     </div>
