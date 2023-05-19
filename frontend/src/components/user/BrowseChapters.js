@@ -47,10 +47,7 @@ const BrowseChapters = () => {
                                                 
                                             </div>
                                             <p className="text-truncate mb-4 mb-md-0">
-                                                There are many variations of passages of Lorem Ipsum
-                                                available, but the majority have suffered alteration in some
-                                                form, by injected humour, or randomised words which don't look
-                                                even slightly believable.
+                                                {chapter.description}
                                             </p>
                                         </div>
                                         <div className="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">

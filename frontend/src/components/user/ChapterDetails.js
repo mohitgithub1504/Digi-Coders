@@ -43,7 +43,7 @@ const ChapterDetails = () => {
                   data-mdb-ripple-color="light"
                 >
                   <img
-                    src="/images/course6.jpg"
+                    src={apiUrl+'/'+chapterDetails.icon}
                     className="img-fluid"
                   />
                 </div>
@@ -71,7 +71,7 @@ const ChapterDetails = () => {
                   </div>
                   <div class="col-8">
                     <p className="">
-                      Web
+                      {chapterDetails.category}
                     </p>
                   </div>
                 </div>
@@ -84,7 +84,7 @@ const ChapterDetails = () => {
                   </div>
                   <div class="col-8">
                     <p className="">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+                      {chapterDetails.description}
                     </p>
                   </div>
                 </div>
