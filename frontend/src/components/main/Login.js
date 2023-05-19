@@ -26,7 +26,7 @@ const Login = () => {
                 {/* First column */}
                 <div className="col-lg-4">
                   <div class="hover-zoom">
-                    <a href="/main/StudentLogin">
+                    <a href="/main/studentlogin">
                       <img
                         src="/icons/student_icon.jpg"
                         className="card-signup w-100 mb-n5 shadow-5-strong"
@@ -39,7 +39,7 @@ const Login = () => {
                       style={{ backgroundColor: "hsl(218, 62.2%, 95%)" }}
                     >
                       <div className="signup-name">
-                        <a href="/main/StudentLogin">
+                        <a href="/main/studentlogin">
                           <p className="h5 fw-bold mt-5">Student</p>
                         </a>
                       </div>
@@ -53,7 +53,7 @@ const Login = () => {
                 {/* second column */}
                 <div className="col-lg-4">
                   <div class="hover-zoom">
-                    <a href="/main/TrainerLogin">
+                    <a href="/main/trainerlogin">
                       <img
                         src="/icons/teacher_icon.jpg"
                         className="card-signup w-100 mb-n5 shadow-5-strong"
@@ -66,7 +66,7 @@ const Login = () => {
                       style={{ backgroundColor: "hsl(218, 62.2%, 95%)" }}
                     >
                       <div className="signup-name">
-                        <a href="/main/TrainerLogin">
+                        <a href="/main/trainerlogin">
                           <p className="h5 fw-bold mt-5">Teacher</p>
                         </a>
                       </div>
