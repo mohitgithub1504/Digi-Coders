@@ -320,7 +320,7 @@ const Home = () => {
 
       {/* Our Course*/}
       <div className='mb-10'>
-        <div data-draggable="true" style={{ position: "relative" }}>
+        <div data-draggable="true">
           {/**/}
           {/**/}
           <section draggable="false" className="container" data-v-271253ee="">
@@ -752,7 +752,7 @@ const Home = () => {
 
       {/* Why Coding Is Important */}
       <div className='mb-10'>
-        <div data-draggable="true" style={{ position: "relative" }}>
+        <div data-draggable="true">
           {/**/}
           {/**/}
           <section
