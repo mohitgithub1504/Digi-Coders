@@ -2,8 +2,11 @@ import * as Yup from 'yup';
 import Swal from 'sweetalert2';
 import { useFormik } from 'formik';
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const TrainerLogin = () => {
+
+  const navigate = useNavigate();
 
   const trainerlogin = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Email is Required'),
@@ -37,6 +40,7 @@ const TrainerLogin = () => {
         const data = await res.json();
         sessionStorage.setItem('trainer', JSON.stringify(data));
         console.log(data);
+        navigate('/trainer/managechapter');
       }
       else {
         Swal.fire({

@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
+import app_config from '../../config';
 
 const BrowseChapters = () => {
+
+    const {apiUrl} = app_config;
 
     const [chapterList, setChapterList] = useState([]);
 
@@ -24,8 +27,9 @@ const BrowseChapters = () => {
                                                 data-mdb-ripple-color="light"
                                             >
                                                 <img
-                                                    src="/images/course6.jpg"
+                                                    src={apiUrl+'/'+chapter.icon}
                                                     className="img-fluid"
+                                                    alt=""
                                                 />
                                                 <a href="#!">
                                                     <div
