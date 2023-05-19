@@ -10,7 +10,7 @@ const Navbar = () => {
         {/* Container wrapper */}
         <div className="container">
           {/* Navbar brand */}
-          <a className="navbar-brand me-2" to="/main/Home">
+          <a className="navbar-brand me-2" to="/main/home">
             <img
               src="/logo/logo.png"
               height={50}
@@ -96,7 +96,7 @@ const Navbar = () => {
           <div className="d-flex align-items-center">
             <a
               class="nav-btn btn-link"
-              href="/main/Signup"
+              href="/main/signup"
             >
               <i
                 className="fas fa-user fa-lg me-1 fa-fw"
@@ -106,7 +106,7 @@ const Navbar = () => {
 
             <a
               class="nav-btn btn-link"
-              href="/main/Login"
+              href="/main/login"
             >
               <i
                 className="fas fa-right-to-bracket fa-lg me-1 fa-fw"

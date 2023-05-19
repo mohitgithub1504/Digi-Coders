@@ -39,7 +39,7 @@ const BrowseChapters = () => {
                                                 </a>
                                             </div>
                                         </div>
-                                        <div className="col-md-6 col-lg-6 col-xl-6">
+                                        <div className="content col-md-6 col-lg-6 col-xl-6">
                                             <h5>{chapter.title}</h5>
                                             
                                             <div className="mt-1 mb-0 text-muted small">
