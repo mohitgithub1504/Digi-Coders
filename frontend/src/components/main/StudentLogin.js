@@ -2,6 +2,7 @@ import React from 'react'
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
 import { useFormik } from 'formik';
+import { NavLink } from 'react-router-dom';
 
 const StudentLogin = () => {
 
@@ -78,10 +79,10 @@ const StudentLogin = () => {
                                                 Welcome back
                                             </p>
                                             <p className="text-center m-0" style={{ fontSize: "40px", fontWeight: "bold", }}>
-                                                Hello, Friends
+                                                Hello, Student
                                             </p>
                                             <p className="text-center m-0">
-                                                Fill up personal information and start journey with us.
+                                                Fill up personal information and start learning with us.
                                             </p>
                                         </div>
                                         <div className="text-center m-4" style={{ color: '#fff' }}>
@@ -186,9 +187,11 @@ const StudentLogin = () => {
                                                     Login
                                                 </button>
                                             </div>
-                                            <a className="text-primary mb-3" href="#!">
-                                                Forgot password?
-                                            </a>
+                                            <div className='text-center'>
+                                                <NavLink className="text-primary mb-3" to='/main/forgetpassword'>
+                                                    Forgot password?
+                                                </NavLink>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
