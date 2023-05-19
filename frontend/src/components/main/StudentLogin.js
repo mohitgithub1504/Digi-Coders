@@ -81,7 +81,7 @@ const StudentLogin = () => {
                                             <p className="text-center m-0" style={{ fontSize: "40px", fontWeight: "bold", }}>
                                                 Hello, Student
                                             </p>
-                                            <p className="text-center m-0">
+                                            <p className="text-center m-0 px-md-5">
                                                 Fill up personal information and start learning with us.
                                             </p>
                                         </div>

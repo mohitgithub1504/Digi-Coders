@@ -8,7 +8,7 @@ const ForgetPassword = () => {
                     <div className="col-12 col-md-8 col-lg-6 col-xl-5">
                         <div className="card shadow-5-strong">
                             <div className="card-body p-5 text-center mx-5">
-                                <form action="" className=''>
+                                <form>
                                     <h3 className="mb-2">Forget password</h3>
                                     <p className='text-center'>Create New Password</p>
                                     <div className="mb-4">
@@ -41,9 +41,13 @@ const ForgetPassword = () => {
                                             placeholder='Confirm your password'
                                         />
                                     </div>
-                                    <button className="btn btn-primary btn-block mx-auto" type="submit">
-                                        Change
-                                    </button>
+                                    <div>
+                                        <button type="button" class="btn btn-primary btn-lg btn-block mx-auto"
+                                        style={{borderRadius:'5px'}}
+                                        >
+                                            Change
+                                        </button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
