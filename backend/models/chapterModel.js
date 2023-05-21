@@ -11,5 +11,4 @@ const schema = new Schema({
   updated_at: Date,
 });
 
-
 module.exports = model("chapters", schema);
