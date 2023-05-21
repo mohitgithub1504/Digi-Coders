@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import BlocklyComponent, { Block, Value, Field, Shadow } from "../../Blockly";
-import app_config from '../../config';
-
+import app_config from "../../config";
 
 const ChapterDetails = () => {
-
   const { id } = useParams();
-  const {apiUrl} = app_config;
+  const { apiUrl } = app_config;
 
   const [chapterDetails, setChapterDetails] = useState(null);
 
@@ -18,94 +16,85 @@ const ChapterDetails = () => {
   </xml>`);
 
   const fetchChapterData = async () => {
-    const res = await fetch(apiUrl+'/chapter/getbyid/'+id);
+    const res = await fetch(apiUrl + "/chapter/getbyid/" + id);
     console.log(res.status);
     const data = await res.json();
     console.log(data);
     setChapterDetails(data);
     // setXml(data.data);
-  }
+  };
 
   useEffect(() => {
     fetchChapterData();
-  }, [])
-  
+  }, []);
+
   const displayChapterDetails = () => {
-    if(chapterDetails !== null){
-      return <section>
-      <div className="container my-3">
-        <div className="card shadow-0 border-light rounded-3">
-          <div className="card-body">
-            <div className="row mb-5 d-flex align-items-center justify-content-center">
-              <div className="col-md-6 col-lg-4 mt-4">
-                <div
-                  class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-7"
-                  data-mdb-ripple-color="light"
-                >
-                  <img
-                    src="/images/course6.jpg"
-                    className="img-fluid"
-                  />
-                </div>
-              </div>
-              <div className="content col-md-6 mb-4 mb-md-0 ">
+    if (chapterDetails !== null) {
+      return (
+        <section>
+          <div className="container my-3">
+            <div className="card shadow-0 border-light rounded-3">
+              <div className="card-body">
+                <div className="row mb-5 d-flex align-items-center justify-content-center">
+                  <div className="col-md-6 col-lg-4 mt-4">
+                    <div
+                      class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-7"
+                      data-mdb-ripple-color="light"
+                    >
+                      <img src="/images/course6.jpg" className="img-fluid" />
+                    </div>
+                  </div>
+                  <div className="content col-md-6 mb-4 mb-md-0 ">
+                    <div class="row">
+                      <div class="col-4">
+                        <h5 className="fw-bold mx-3">
+                          <strong>Title - </strong>
+                        </h5>
+                      </div>
+                      <div class="col-8">
+                        <p className="">{chapterDetails.title}</p>
+                      </div>
+                    </div>
 
-                <div class="row">
-                  <div class="col-4">
-                    <h5 className="fw-bold mx-3">
-                      <strong>Title - </strong>
-                    </h5>
-                  </div>
-                  <div class="col-8">
-                    <p className="">
-                      {chapterDetails.title}
-                    </p>
-                  </div>
-                </div>
+                    <div class="row">
+                      <div class="col-4">
+                        <h5 className="fw-bold mx-3">
+                          <strong>category - </strong>
+                        </h5>
+                      </div>
+                      <div class="col-8">
+                        <p className="">Web</p>
+                      </div>
+                    </div>
 
-                <div class="row">
-                  <div class="col-4">
-                    <h5 className="fw-bold mx-3">
-                      <strong>category - </strong>
-                    </h5>
-                  </div>
-                  <div class="col-8">
-                    <p className="">
-                      Web
-                    </p>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-4">
-                    <h5 className="fw-bold mx-3">
-                      <strong>Description - </strong>
-                    </h5>
-                  </div>
-                  <div class="col-8">
-                    <p className="">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
-                    </p>
+                    <div class="row">
+                      <div class="col-4">
+                        <h5 className="fw-bold mx-3">
+                          <strong>Description - </strong>
+                        </h5>
+                      </div>
+                      <div class="col-8">
+                        <p className="">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Quisquam, voluptatum.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-    }else{
-      return <div>Loading...</div>
+        </section>
+      );
+    } else {
+      return <div>Loading...</div>;
     }
-  }
+  };
 
   return (
     <div>
-      
-    {
-      displayChapterDetails()
-    }
+      {displayChapterDetails()}
       <section>
         <BlocklyComponent
           readOnly={false}
@@ -118,7 +107,7 @@ const ChapterDetails = () => {
           }}
           initialXml={xml}
           height="60vh"
-        // blocks={addedBlocks}
+          // blocks={addedBlocks}
         >
           <Block type="controls_repeat_ext">
             <Value name="TIMES">
@@ -136,9 +125,8 @@ const ChapterDetails = () => {
           </Block>
         </BlocklyComponent>
       </section>
-
     </div>
-  )
-}
+  );
+};
 
-export default ChapterDetails
+export default ChapterDetails;
