@@ -4,7 +4,7 @@ const Contact = () => {
     return (
         <>
             {/*Page Header*/}
-            <header className='mb-8'>
+            <header>
                 {/* Background image */}
                 <div
                     id="intro"
@@ -38,7 +38,7 @@ const Contact = () => {
             {/*Page Header*/}
 
             {/*Contact Us*/}
-            <section className="h-100 form mb-8">
+            <section className="h-100 form my-5">
                 <div className="container py-5 h-100">
                     <div className="row d-flex justify-content-center align-items-center h-100">
                         <div className="col-xl-10">
