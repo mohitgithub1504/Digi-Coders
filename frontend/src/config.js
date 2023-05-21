@@ -11,6 +11,9 @@ const app_config = {
     },
   
     blockData: {
+      html: {
+         
+      },
       blockTypes: [
         "test_react_field",
         "test_react_date_field",
