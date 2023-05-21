@@ -22,10 +22,6 @@ const TrainerSignup = () => {
     password: Yup
       .string()
       .required('Please Enter your password'),
-    // .matches(
-    //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-    //   "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
-    // ),
   });
 
   const trainersignupForm = useFormik({
@@ -44,9 +40,9 @@ const TrainerSignup = () => {
 
       const res = await fetch('http://localhost:5000/trainer/add', {
         method: 'POST',
-        body: JSON.stringify(values),  // this is used to convert js data in json formate
+        body: JSON.stringify(values),  
         headers: {
-          'Content-Type': 'application/json' // this used to inform the data in send in the form of json
+          'Content-Type': 'application/json' 
         }
       });
 

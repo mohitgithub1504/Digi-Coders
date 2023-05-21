@@ -192,9 +192,180 @@ const Home = () => {
       </>
       {/* About Us */}
 
+      {/* Feedback Form */}
+      <div id="feedback-form-wrapper">
+        <div id="floating-icon">
+          <button
+            type="button"
+            className="btn btn-sm rounded-4"
+            data-mdb-toggle="modal"
+            data-mdb-target="#exampleModal"
+          >
+            Feedback
+          </button>
+        </div>
+        <div id="feedback-form-modal">
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog modal-dialog-centered">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="exampleModalLabel">
+                    Feedback Form
+                  </h5>
+                  {/* <button
+                    type="button"
+                    className="close"
+                    data-mdb-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">×</span>
+                  </button> */}
+                  <button
+                    type="button"
+                    className="btn-close"
+                    data-mdb-dismiss="modal"
+                    aria-label="Close"
+                  />
+                </div>
+                <div className="modal-body">
+                  <form>
+                    <div className="form-group">
+                      <label htmlFor="exampleFormControlTextarea1">
+                        How likely you would like to recommand us to your friends?
+                      </label>
+                      <div className="rating-input-wrapper d-flex justify-content-between mt-2">
+                        <label>
+                          <input type="radio" name="rating" />
+                          <span className="border rounded px-3 py-2">1</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="rating" />
+                          <span className="border rounded px-3 py-2">2</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="rating" />
+                          <span className="border rounded px-3 py-2">3</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="rating" />
+                          <span className="border rounded px-3 py-2">4</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="rating" />
+                          <span className="border rounded px-3 py-2">5</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="rating" />
+                          <span className="border rounded px-3 py-2">6</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="rating" />
+                          <span className="border rounded px-3 py-2">7</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="rating" />
+                          <span className="border rounded px-3 py-2">8</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="rating" />
+                          <span className="border rounded px-3 py-2">9</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="rating" />
+                          <span className="border rounded px-3 py-2">10</span>
+                        </label>
+                      </div>
+                      <div className="rating-labels d-flex justify-content-between mt-1">
+                        <label>Very unlikely</label>
+                        <label>Very likely</label>
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="input-one">
+                        What made you leave us so early?
+                      </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="input-one"
+                        placeholder=""
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="input-two">
+                        Would you like to say something?
+                      </label>
+                      <textarea
+                        className="form-control"
+                        id="input-two"
+                        rows={3}
+                        defaultValue={""}
+                      />
+                    </div>
+                  </form>
+                </div>
+                <div className="modal-footer">
+                  <button
+                    type="button"
+                    className="btn btn-secondary"
+                    data-mdb-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="button" className="btn btn-primary" data-mdb-toggle="modal"
+                    data-mdb-target="#exampleModal1">
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className="modal fade"
+        id="exampleModal1"
+        tabIndex={-1}
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">
+                Modal title
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-mdb-dismiss="modal"
+                aria-label="Close"
+              />
+            </div>
+            <div className="modal-body">...</div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                data-mdb-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" className="btn btn-primary">
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Feedback Form */}
+
+
       {/* Our Course*/}
       <div className='mb-10'>
-        <div data-draggable="true" style={{ position: "relative" }}>
+        <div data-draggable="true">
           {/**/}
           {/**/}
           <section draggable="false" className="container" data-v-271253ee="">
@@ -626,7 +797,7 @@ const Home = () => {
 
       {/* Why Coding Is Important */}
       <div className='mb-10'>
-        <div data-draggable="true" style={{ position: "relative" }}>
+        <div data-draggable="true">
           {/**/}
           {/**/}
           <section
