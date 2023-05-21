@@ -40,9 +40,9 @@ const TrainerSignup = () => {
 
       const res = await fetch('http://localhost:5000/trainer/add', {
         method: 'POST',
-        body: JSON.stringify(values),  // this is used to convert js data in json formate
+        body: JSON.stringify(values),  
         headers: {
-          'Content-Type': 'application/json' // this used to inform the data in send in the form of json
+          'Content-Type': 'application/json' 
         }
       });
 
