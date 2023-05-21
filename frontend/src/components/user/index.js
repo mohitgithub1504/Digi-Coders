@@ -8,7 +8,7 @@ const index = () => {
         <div>
             <Navbar />
             <Outlet />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }
