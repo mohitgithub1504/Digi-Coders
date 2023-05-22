@@ -210,8 +210,7 @@ const ManageChapter = () => {
                       </a>
                     </li>
                   ))}
-                {Math.ceil(chapterList.length / itemPerPage) -
-                  currentPage >
+                {Math.ceil(chapterList.length / itemPerPage) - currentPage >
                   0 && (
                   <li className="page-item">
                     <a
@@ -225,7 +224,6 @@ const ManageChapter = () => {
                 )}
               </ul>
             </nav>
-            
           </section>
           {/*Section: Content*/}
         </div>
