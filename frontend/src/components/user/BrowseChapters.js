@@ -156,6 +156,7 @@ const BrowseChapters = () => {
                                 />
                             </div>
                         </div>
+                        
                         {/* Drop down Buttons */}
                         <div className="d-flex justify-content-center">
                             <div className="dropdown mx-2">
