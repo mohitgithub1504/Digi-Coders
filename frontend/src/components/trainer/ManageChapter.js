@@ -21,8 +21,108 @@ const ManageChapter = () => {
   const displayChapters = () => {
     return (
       <div>
-        <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-          <thead className="table-dark text-center">
+        <div className="container" style={{ backgroundColor: '#aedff3' }}>
+          {/*Section: Content*/}
+          <section className="d-md-flex justify-content-md-end p-4">
+            {/* <h3 className="font-weight-bold text-white text-uppercase">
+            Chapter Manager
+          </h3> */}
+            <button
+              type="button"
+              className="btn btn-primary btn-rounded"
+              data-mdb-toggle="modal"
+              data-mdb-target="#staticBackdrop1"
+            >
+              <i className="fas fa-plus me-2" />
+              Add New Chapters
+            </button>
+          </section>
+          {/*Section: Content*/}
+        </div>
+
+        {/* Modal */}
+        <div
+          className="modal fade"
+          id="staticBackdrop1"
+          tabIndex={-1}
+          aria-labelledby="exampleModalLabel1"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog modal-dialog-centered modal-lg">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLabel1">
+                  Manage Chapter
+                </h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-mdb-dismiss="modal"
+                  aria-label="Close"
+                />
+              </div>
+              <div className="modal-body p-4">
+                <form
+                  className="text-center"
+                  action="#!"
+                  onSubmit={managechapterForm.handleSubmit}
+                >
+                  {/* Name */}
+                  <input
+                    type="text"
+                    id="title"
+                    className="form-control mb-4"
+                    placeholder="Title"
+                    value={managechapterForm.values.title}
+                    onChange={managechapterForm.handleChange}
+                  />
+                  <input
+                    type="text"
+                    id="category"
+                    className="form-control mb-4"
+                    placeholder="Category"
+                    value={managechapterForm.values.category}
+                    onChange={managechapterForm.handleChange}
+                  />
+                  {/* <input
+                                type="file"
+                                id="icon"
+                                className="form-control mb-4"
+                                placeholder="Chapter Icone"
+                                value={managechapterForm.values.icon}
+                                onChange={managechapterForm.handleChange}
+                            /> */}
+                  {/* Description */}
+                  <div className="form-group">
+                    <textarea
+                      className="form-control rounded-0 mb-4"
+                      id="description"
+                      rows={3}
+                      placeholder="Description.."
+                      defaultValue={""}
+                      value={managechapterForm.values.description}
+                      onChange={managechapterForm.handleChange}
+                    />
+                  </div>
+
+                  <label htmlFor="chapter-img" className="btn btn-dark"> <i class="fas fa-upload"></i> Upload Chapter Image</label>
+                  <input type="file" id="chapter-img" hidden onChange={uploadFile} />
+                  {/* Send button */}
+                  <button className="btn btn-primary btn-block mt-5" type="submit">
+                    SUBMIT
+                  </button>
+                </form>
+                {/* Default form contact */}
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Modal */}
+
+
+
+        <table id="dtBasicExample" class="table table-striped table-bordered table-sm table-info border-light text-center" cellspacing="0" width="100%">
+          <thead className="table-dark border-light text-center">
             <tr>
               <th class="th-sm">Title</th>
               <th class="th-sm">Icon</th>
@@ -37,27 +137,24 @@ const ManageChapter = () => {
             {
               chapterList.map((chapter) => (
                 <tr>
-                  <td>{chapter.title}</td>
-                  <td>{chapter.icon}</td>
-                  <td>{chapter.category}</td>
-                  <td>{chapter.description}</td>
-                  <td>{chapter.created_at}</td>
-                  <td>{chapter.updated_at}</td>
-                  <td>
+                  <td className="align-middle">{chapter.title}</td>
+                  <td className="align-middle">{chapter.icon}</td>
+                  <td className="align-middle">{chapter.category}</td>
+                  <td className="align-middle">{chapter.description}</td>
+                  <td className="align-middle">{chapter.created_at}</td>
+                  <td className="align-middle">{chapter.updated_at}</td>
+                  <td className="align-middle">
                     <button
                       type="button"
-                      class="btn btn-link btn-rounded btn-sm fw-bold"
-                      data-mdb-ripple-color="dark"
+                      class="table-btn info"
                     >
-                      <i className="far fa-pen-to-square" />
+                      <i className="fas fa-pen" />
                     </button>
-
                   </td>
-                  <td>
+                  <td className="align-middle">
                     <button
                       type="button"
-                      class="btn btn-link btn-rounded btn-sm fw-bold"
-                      data-mdb-ripple-color="dark"
+                      class="table-btn danger"
                     >
                       <i className="far fa-trash-can" />
                     </button>
@@ -155,7 +252,7 @@ const ManageChapter = () => {
         {/* Background image */}
         <div
           id="intro"
-          className="bg-image"
+          className="bg-image mb-5"
           style={{
             backgroundImage: "url(/images/background-img3.webp)",
             height: 230,
@@ -168,14 +265,14 @@ const ManageChapter = () => {
             className="mask text-white"
             style={{ backgroundColor: "rgba(35, 37, 45, 0.6)" }}
           >
-            <div className="container d-flex align-items-center text-center h-100">
+            <div className="container d-flex align-items-center justify-content-center h-100">
               <div className='page-heading'>
                 <h1 className="fw-bold mb-3">Manage Chapters</h1>
-                <p className='paragraph'>
+                {/* <p className='paragraph'>
                   "We'd love to hear from you! Drop us a line and let's start
                   a conversation about how we can help you and your child learn
                   to code."
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -183,99 +280,6 @@ const ManageChapter = () => {
         {/* Background image */}
       </header>
       {/*Page Header*/}
-
-
-
-      <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button
-          type="button"
-          className="btn btn-primary"
-          data-mdb-toggle="modal"
-          data-mdb-target="#staticBackdrop1"
-        >
-          Add
-        </button>
-      </div>
-
-
-      {/* Modal */}
-      <div
-        className="modal fade"
-        id="staticBackdrop1"
-        tabIndex={-1}
-        aria-labelledby="exampleModalLabel1"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered modal-lg">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel1">
-                Manage Chapter
-              </h5>
-              <button
-                type="button"
-                className="btn-close"
-                data-mdb-dismiss="modal"
-                aria-label="Close"
-              />
-            </div>
-            <div className="modal-body p-4">
-              <form
-                className="text-center"
-                action="#!"
-                onSubmit={managechapterForm.handleSubmit}
-              >
-                {/* Name */}
-                <input
-                  type="text"
-                  id="title"
-                  className="form-control mb-4"
-                  placeholder="Title"
-                  value={managechapterForm.values.title}
-                  onChange={managechapterForm.handleChange}
-                />
-                <input
-                  type="text"
-                  id="category"
-                  className="form-control mb-4"
-                  placeholder="Category"
-                  value={managechapterForm.values.category}
-                  onChange={managechapterForm.handleChange}
-                />
-                {/* <input
-                                type="file"
-                                id="icon"
-                                className="form-control mb-4"
-                                placeholder="Chapter Icone"
-                                value={managechapterForm.values.icon}
-                                onChange={managechapterForm.handleChange}
-                            /> */}
-                {/* Description */}
-                <div className="form-group">
-                  <textarea
-                    className="form-control rounded-0 mb-4"
-                    id="description"
-                    rows={3}
-                    placeholder="Description.."
-                    defaultValue={""}
-                    value={managechapterForm.values.description}
-                    onChange={managechapterForm.handleChange}
-                  />
-                </div>
-
-                <label htmlFor="chapter-img" className="btn btn-dark"> <i class="fas fa-upload"></i> Upload Chapter Image</label>
-                <input type="file" id="chapter-img" hidden onChange={uploadFile} />
-                {/* Send button */}
-                <button className="btn btn-primary btn-block mt-5" type="submit">
-                  SUBMIT
-                </button>
-              </form>
-              {/* Default form contact */}
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Modal */}
 
 
       <section>
