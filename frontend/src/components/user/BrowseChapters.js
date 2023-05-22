@@ -12,7 +12,7 @@ const BrowseChapters = () => {
 
   const maxElements = 3;
 
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const trainerList = [
     "Prince Prajapati",
@@ -20,7 +20,7 @@ const BrowseChapters = () => {
     "Rishabh Agnihotri"
   ];
 
-    const categoryList = [ "HTML5", "Python", "CSS", "Web" ];
+  const categoryList = ["HTML5", "Python", "CSS", "Web"];
 
   const fetchUserData = async () => {
     const res = await fetch(apiUrl+"/chapter/getall");
@@ -32,7 +32,7 @@ const BrowseChapters = () => {
   };
 
   const displayChapters = () => {
-    return chapterList.slice(currentPage*maxElements, currentPage*maxElements+maxElements).map((chapter) => (
+    return chapterList.slice(currentPage * maxElements, currentPage * maxElements + maxElements).map((chapter) => (
       <div className="card shadow-0 border-light rounded-3">
         <div className="card-body">
           <div className="row">
@@ -97,19 +97,19 @@ const BrowseChapters = () => {
   const searchChapterByName = (e) => {
     const val = e.target.value;
     setChapterList(
-        masterList.filter((chapter) => ( chapter.title.toLowerCase().includes(val.toLowerCase()) ))
+      masterList.filter((chapter) => (chapter.title.toLowerCase().includes(val.toLowerCase())))
     )
   }
   const searchChapterByTrainer = (e) => {
     const val = e.target.value;
     setChapterList(
-        masterList.filter((chapter) => ( chapter.trainer.name.toLowerCase().includes(val.toLowerCase()) ))
+      masterList.filter((chapter) => (chapter.trainer.name.toLowerCase().includes(val.toLowerCase())))
     )
   }
   const searchChapterByCategory = (e) => {
     const val = e.target.value;
     setChapterList(
-        masterList.filter((chapter) => ( chapter.category.toLowerCase().includes(val.toLowerCase()) ))
+      masterList.filter((chapter) => (chapter.category.toLowerCase().includes(val.toLowerCase())))
     )
   }
 
@@ -158,103 +158,42 @@ const BrowseChapters = () => {
             </div>
             {/* Drop down Buttons */}
             <div className="d-flex justify-content-center">
-                <select onChange={searchChapterByCategory} className="form-control form-control-lg">
-                    {
-                        categoryList.map((category) => (
-                            <option value={category}>{category}</option>
-                        ))
-                    }
+              <div className="dropdown mx-2">
+                <select onChange={searchChapterByCategory} className=" select form-control-lg" style={{ border: "3px solid #29c1fe" }}>
+                  {
+                    categoryList.map((category) => (
+                      <option value={category}>{category}</option>
+
+                    ))
+                  }
                 </select>
-              <div className="dropdown mx-2">
-                <button
-                  className="btn btn-primary dropdown-toggle"
-                  type="button"
-                  id="dropdownMenu2"
-                  data-mdb-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Course
-                </button>
-                <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <li>
-                    <button className="dropdown-item" type="button">
-                      HTML5
-                    </button>
-                  </li>
-                  <li>
-                    <button className="dropdown-item" type="button">
-                      Python
-                    </button>
-                  </li>
-                  <li>
-                    <button className="dropdown-item" type="button">
-                      CSS
-                    </button>
-                  </li>
-                </ul>
               </div>
 
               <div className="dropdown mx-2">
-                <button
-                  className="btn btn-primary dropdown-toggle"
-                  type="button"
-                  id="dropdownMenu2"
-                  data-mdb-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Trainer
-                </button>
-                <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <li>
-                    <button className="dropdown-item" type="button">
-                      Prince Prajapati
-                    </button>
-                  </li>
-                  <li>
-                    <button className="dropdown-item" type="button">
-                      Mohit Mishra
-                    </button>
-                  </li>
-                  <li>
-                    <button className="dropdown-item" type="button">
-                      Rishabh Agnihotri
-                    </button>
-                  </li>
-                </ul>
+                <select onChange={searchChapterByName} className="select form-control-lg" style={{ border: "3px solid #29c1fe" }}>
+                  {
+                    trainerList.map((trainer) => (
+                      <option value={trainer}>{trainer}</option>
+                    ))
+                  }
+                </select>
               </div>
 
               <div className="dropdown mx-2">
-                <button
-                  className="btn btn-primary dropdown-toggle"
-                  type="button"
-                  id="dropdownMenu2"
-                  data-mdb-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Sort A-Z
-                </button>
-                <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <li>
-                    <button className="dropdown-item" type="button" onClick={e => setChapterList(chapterList.sort())}>
-                      A to Z
-                    </button>
-                  </li>
-                  <li>
-                    <button className="dropdown-item" type="button" onClick={e => setChapterList(chapterList.reverse())}>
-                      Z to A
-                    </button>
-                  </li>
-                </ul>
+                <select className="select form-control-lg" style={{ border: "3px solid #29c1fe" }}>
+                  <option value="" >A to Z</option>
+                </select>
+
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       <section>
         <div className="container py-5">{displayChapters()}</div>
       </section>
-    </div>
+    </div >
   );
 };
 

@@ -8,6 +8,12 @@ const ManageChapter = () => {
 
   const { apiUrl } = app_config;
 
+  const itemPerPage = 3;
+
+  const [currentPage, setCurrentPage] = useState(0);
+
+
+
   const [chapterList, setChapterList] = useState([]);
 
   const fetchUserData = async () => {
@@ -164,6 +170,39 @@ const ManageChapter = () => {
             }
           </tbody>
         </table>
+
+
+        <div className="container" style={{ backgroundColor: '#fff' }}>
+          {/*Section: Content*/}
+          <section className="d-md-flex justify-content-md-end">
+            <nav aria-label="...">
+              <ul className="pagination mt-3">
+                <li className="page-item me-2">
+                  <a className="page-link">
+                    <i className="fas fa-angles-left" />
+                  </a>
+                </li>
+                {
+                  Array(Math.ceil(chapterList.length / itemPerPage)).fill(1).map((item, index) => (
+
+                <li className={`page-item ${currentPage === index+1 ?  'active' : ''}`} aria-current="page">
+                  <a className="page-link" href="#">
+                    {index+1} <span className="visually-hidden">(current)</span>
+                  </a>
+                </li>
+                  ))
+                }
+                
+                <li className="page-item">
+                  <a className="page-link" href="#">
+                    <i className="fas fa-angles-right" />
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </section>
+          {/*Section: Content*/}
+        </div>
 
       </div>
     );
