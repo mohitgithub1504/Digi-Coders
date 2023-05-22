@@ -8,6 +8,12 @@ const ManageChapter = () => {
 
   const { apiUrl } = app_config;
 
+  const itemPerPage = 3;
+
+  const [currentPage, setCurrentPage] = useState(0);
+
+
+
   const [chapterList, setChapterList] = useState([]);
 
   const fetchUserData = async () => {
@@ -176,21 +182,17 @@ const ManageChapter = () => {
                     <i className="fas fa-angles-left" />
                   </a>
                 </li>
-                <li className="page-item active" aria-current="page">
+                {
+                  Array(Math.ceil(chapterList.length / itemPerPage)).fill(1).map((item, index) => (
+
+                <li className={`page-item ${currentPage === index+1 ?  'active' : ''}`} aria-current="page">
                   <a className="page-link" href="#">
-                    1 <span className="visually-hidden">(current)</span>
+                    {index+1} <span className="visually-hidden">(current)</span>
                   </a>
                 </li>
-                <li className="page-item">
-                  <a className="page-link" href="#">
-                    2
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#">
-                    3
-                  </a>
-                </li>
+                  ))
+                }
+                
                 <li className="page-item">
                   <a className="page-link" href="#">
                     <i className="fas fa-angles-right" />
