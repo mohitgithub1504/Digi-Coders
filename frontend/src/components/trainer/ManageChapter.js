@@ -165,6 +165,43 @@ const ManageChapter = () => {
           </tbody>
         </table>
 
+
+        <div className="container" style={{ backgroundColor: '#fff' }}>
+          {/*Section: Content*/}
+          <section className="d-md-flex justify-content-md-end">
+            <nav aria-label="...">
+              <ul className="pagination mt-3">
+                <li className="page-item me-2">
+                  <a className="page-link">
+                    <i className="fas fa-angles-left" />
+                  </a>
+                </li>
+                <li className="page-item active" aria-current="page">
+                  <a className="page-link" href="#">
+                    1 <span className="visually-hidden">(current)</span>
+                  </a>
+                </li>
+                <li className="page-item">
+                  <a className="page-link" href="#">
+                    2
+                  </a>
+                </li>
+                <li className="page-item">
+                  <a className="page-link" href="#">
+                    3
+                  </a>
+                </li>
+                <li className="page-item">
+                  <a className="page-link" href="#">
+                    <i className="fas fa-angles-right" />
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </section>
+          {/*Section: Content*/}
+        </div>
+
       </div>
     );
   };
