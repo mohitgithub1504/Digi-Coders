@@ -55,8 +55,7 @@ function App() {
         </ Route>
 
         <Route path='user' element={<User />}>
-          <Route path='viewchapter' element={<ViewChapter />} />
-          <Route path='browsechapter' element={<BrowseChapters />} />
+          <Route path='browsechapters' element={<BrowseChapters />} />
           <Route path='chapterdetails/:id' element={<ChapterDetails />} />
         </ Route>
 
