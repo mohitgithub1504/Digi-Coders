@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { useFormik } from 'formik';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { motion } from "framer-motion";
 
 const TrainerLogin = () => {
 
@@ -292,7 +293,14 @@ const TrainerLogin = () => {
     //   </div>
     // </section>
 
-    <>
+    <motion.div
+      initial={{ opacity: 0, x: 300 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0.5, x: -300 }}
+      transition={{ type: "spring" }}
+      className="vid-manage-bg"
+      style={{ backgroundImage: `url('https://assets-global.website-files.com/5eff9c5e4dba181f8aa2d1e0/644fdb0444461008ee1907ee_Workflow%20Automation%20Statistics%20You%20Need%20to%20Know%20Header.jpg')`, minHeight: '100vh' }}
+    >
       {/*Student Login Form*/}
       <section className="h-100 form my-5 ">
         <div className="container py-5 h-100">
@@ -420,7 +428,7 @@ const TrainerLogin = () => {
         </div>
       </section>
       {/*Trainer Login Form*/}
-    </>
+    </motion.div>
   )
 }
 
