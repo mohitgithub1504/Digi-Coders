@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Course = () => {
     return (
@@ -59,12 +60,12 @@ const Course = () => {
                                                 src="/images/course1.jpg"
                                                 className="img-fluid"
                                             />
-                                            <a href="/user/browsechapters">
+                                            <NavLink to="/user/browsechapters">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                                                 />
-                                            </a>
+                                            </NavLink>
                                         </div>
                                         <div className="card-body">
                                             <h6 className="mb-3">
@@ -94,9 +95,9 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <a href="/user/browsechapters" className="btn btn-primary">
-                                                Read more
-                                            </a>
+                                            <NavLink to="/user/browsechapters" className="btn btn-primary">
+                                                Learn More
+                                            </NavLink>
                                         </div>
                                     </div>
                                 </div>
@@ -112,12 +113,12 @@ const Course = () => {
                                                 src="/images/course2.jpg"
                                                 className="img-fluid"
                                             />
-                                            <a href="/user/browsechapters">
+                                            <NavLink to="/user/browsechapters">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                                                 />
-                                            </a>
+                                            </NavLink>
                                         </div>
                                         <div className="card-body">
                                             <h6 className="mb-3">
@@ -147,9 +148,9 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <a href="/user/browsechapters" className="btn btn-primary">
-                                                Read more
-                                            </a>
+                                            <NavLink to="/user/browsechapters" className="btn btn-primary">
+                                                Learn More
+                                            </NavLink>
                                         </div>
                                     </div>
                                 </div>
@@ -165,12 +166,12 @@ const Course = () => {
                                                 src="/images/course3.jpg"
                                                 className="img-fluid"
                                             />
-                                            <a href="/user/browsechapters">
+                                            <NavLink to="/user/browsechapters">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                                                 />
-                                            </a>
+                                            </NavLink>
                                         </div>
                                         <div className="card-body">
                                             <h6 className="mb-3">
@@ -200,9 +201,9 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <a href="/user/browsechapters" className="btn btn-primary">
+                                            <NavLink to="/user/browsechapters" className="btn btn-primary">
                                                 Read more
-                                            </a>
+                                            </NavLink>
                                         </div>
                                     </div>
                                 </div>
@@ -221,12 +222,12 @@ const Course = () => {
                                                 src="/images/course4.jpg"
                                                 className="img-fluid"
                                             />
-                                            <a href="/user/browsechapters">
+                                            <NavLink to="/user/browsechapters">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                                                 />
-                                            </a>
+                                            </NavLink>
                                         </div>
                                         <div className="card-body">
                                             <h6 className="mb-3">
@@ -256,9 +257,9 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <a href="/user/browsechapters" className="btn btn-primary">
-                                                Read more
-                                            </a>
+                                            <NavLink to="/user/browsechapters" className="btn btn-primary">
+                                                Learn more
+                                            </NavLink>
                                         </div>
                                     </div>
                                 </div>
@@ -274,12 +275,12 @@ const Course = () => {
                                                 src="/images/course5.jpg"
                                                 className="img-fluid"
                                             />
-                                            <a href="/user/browsechapters">
+                                            <NavLink to="/user/browsechapters">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                                                 />
-                                            </a>
+                                            </NavLink>
                                         </div>
                                         <div className="card-body">
                                             <h6 className="mb-3">
@@ -309,9 +310,9 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <a href="/user/browsechapters" className="btn btn-primary">
-                                                Read more
-                                            </a>
+                                            <NavLink to="/user/browsechapters" className="btn btn-primary">
+                                                Learn more
+                                            </NavLink>
                                         </div>
                                     </div>
                                 </div>
@@ -327,12 +328,12 @@ const Course = () => {
                                                 src="/images/course6.jpg"
                                                 className="img-fluid"
                                             />
-                                            <a href="/user/browsechapters">
+                                            <NavLink to="/user/browsechapters">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                                                 />
-                                            </a>
+                                            </NavLink>
                                         </div>
                                         <div className="card-body">
                                             <h6 className="mb-3">
@@ -362,9 +363,9 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <a href="/user/browsechapters" className="btn btn-primary">
-                                                Read more
-                                            </a>
+                                            <NavLink to="/user/browsechapters" className="btn btn-primary">
+                                                Learn more
+                                            </NavLink>
                                         </div>
                                     </div>
                                 </div>
