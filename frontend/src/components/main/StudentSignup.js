@@ -3,8 +3,11 @@ import React from 'react'
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
 import { motion } from "framer-motion";
+import app_config from '../../config';
 
 const StudentSignup = () => {
+
+    const { apiUrl } = app_config;
 
     const StudentsignupSchema = Yup.object().shape({
         name: Yup.string()
@@ -30,7 +33,7 @@ const StudentSignup = () => {
         onSubmit: async (values, { setSubmitting }) => {
             console.log(values);
 
-            const res = await fetch('http://localhost:5000/user/add', {
+            const res = await fetch(apiUrl +'/user/add', {
                 method: 'POST',
                 body: JSON.stringify(values),
                 headers: {
