@@ -3,9 +3,13 @@ import React from 'react'
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
 import { motion } from "framer-motion";
+import { NavLink } from 'react-router-dom';
+import app_config from '../../config';
 
 const TrainerSignup = () => {
 
+  const { apiUrl } = app_config;
+  
   const trainersignupSchema = Yup.object().shape({
     name: Yup.string()
       .min(2, 'Too Short!')
@@ -39,7 +43,7 @@ const TrainerSignup = () => {
       console.log(values);
 
 
-      const res = await fetch('http://localhost:5000/trainer/add', {
+      const res = await fetch(apiUrl + '/trainer/add', {
         method: 'POST',
         body: JSON.stringify(values),
         headers: {
@@ -97,7 +101,6 @@ const TrainerSignup = () => {
                       className="col-lg-6 "
                       style={{
                         backgroundColor: "#aedff3",
-                        height: 668,
                         backgroundSize: "cover",
                         backgroundPosition: "90% 50%",
                         position: "relative",

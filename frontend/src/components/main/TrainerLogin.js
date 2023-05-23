@@ -5,10 +5,12 @@ import { useFormik } from 'formik';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { motion } from "framer-motion";
+import app_config from '../../config';
 
 const TrainerLogin = () => {
 
   const navigate = useNavigate();
+  const { apiUrl } = app_config;
 
   const trainerlogin = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Email is Required'),
@@ -22,7 +24,7 @@ const TrainerLogin = () => {
     },
     onSubmit: async (values, { setSubmitting }) => {
       console.log(values);
-      const res = await fetch('http://localhost:5000/trainer/add', {
+      const res = await fetch(apiUrl + '/trainer/add', {
         method: 'POST',
         body: JSON.stringify(values),  // this is used to convert js data in json formate
         headers: {
