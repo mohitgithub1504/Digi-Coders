@@ -209,7 +209,7 @@ const Home = () => {
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered">
               <div className="modal-content ">
-                <div className="modal-header bg-primary">
+                <div className="modal-header" style={{backgroundColor:'#2db9fa'}}>
                   <h3 className="modal-title text-center text-white" id="">
                     Online Learning Feedback
                   </h3>
@@ -222,7 +222,7 @@ const Home = () => {
                 </div>
                 <div className="modal-body">
                   <form className='m-0'>
-                    <p className='text-center fw-bold'>Share your learning experience and help us improve forthe next course. </p>
+                    <p className='text-center fw-bold'>Share your learning experience and help us improve for the next course. </p>
                     <div className="form-group">
                       <div className="mb-3">
                         <input

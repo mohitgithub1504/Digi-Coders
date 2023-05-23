@@ -167,14 +167,12 @@ const ManageChapter = () => {
                   <td className="align-middle">{chapter.created_at}</td>
                   <td className="align-middle">{chapter.updated_at}</td>
                   <td className="align-middle">
-                    <button type="button" class="table-btn info"
-                    style={{backgroundColor:'transparent'}}>
+                    <button type="button" class="table-btn info">
                       <i className="fas fa-pen" />
                     </button>
                   </td>
                   <td className="align-middle">
                     <button type="button" class="table-btn danger"
-                    style={{backgroundColor:'transparent'}}
                     >
                       <i className="far fa-trash-can" />
                     </button>
