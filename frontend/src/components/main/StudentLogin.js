@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import Swal from "sweetalert2";
 import { useFormik } from "formik";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const StudentLogin = () => {
   const studentLogin = Yup.object().shape({
@@ -30,8 +31,10 @@ const StudentLogin = () => {
       if (res.status === 200) {
         Swal.fire({
           icon: "success",
-          title: "Well Done",
+          title: "Well Done!!",
           text: "login successfully",
+          showConfirmButton: false,
+          timer: 1500
         });
       } else {
         Swal.fire({
@@ -45,7 +48,18 @@ const StudentLogin = () => {
   });
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, x: 300 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0.5, x: -300 }}
+      transition={{ type: "spring" }}
+      className="vid-manage-bg"
+    // style={{
+    //   backgroundImage: `url('/images/bg-animation-img1.jpg`,
+    //   height: 1000,
+    //   backgroundSize: "cover",
+    // }}
+    >
       {/*Student Login Form*/}
       <section className="h-100 form my-5 ">
         <div className="container py-5 h-100">
@@ -210,7 +224,7 @@ const StudentLogin = () => {
         </div>
       </section>
       {/*Student Login Form*/}
-    </>
+    </motion.div>
   );
 };
 

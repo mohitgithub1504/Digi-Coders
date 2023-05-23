@@ -2,6 +2,7 @@ import { useFormik } from 'formik';
 import React from 'react'
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
+import { motion } from "framer-motion";
 
 const TrainerSignup = () => {
 
@@ -40,9 +41,9 @@ const TrainerSignup = () => {
 
       const res = await fetch('http://localhost:5000/trainer/add', {
         method: 'POST',
-        body: JSON.stringify(values),  
+        body: JSON.stringify(values),
         headers: {
-          'Content-Type': 'application/json' 
+          'Content-Type': 'application/json'
         }
       });
 
@@ -50,8 +51,11 @@ const TrainerSignup = () => {
       if (res.status === 200) {
         Swal.fire({
           icon: "success",
-          title: "Well Done",
-          text: "You have success full Register ",
+          title: "Congratulations",
+          text: "Your account has been successfully created",
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1500
         });
       }
       else {
@@ -70,126 +74,212 @@ const TrainerSignup = () => {
 
 
   return (
-    <section className="h-100 bg-light">
-      <div className="container py-5 h-100">
-        <div className="row d-flex justify-content-center align-items-center h-100">
-          <div className="col">
-            <div className="card card-registration my-4">
-              <div className="row g-0">
-                <div className="col-xl-6 d-xl-block trainer-bg-img"
-                  style={{ backgroundImage: `url(/images/registerimg.jpg)`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "0.5rem 0 0 0.5rem", }}
-                >
-                  <div className="align-items-center mb-3 mt-5 pb-1">
-                    <img src="/logo/logo-white.png" alt="error"
-                      style={{ height: "50px" }}
-                    />
-                  </div>
-                  <h3 className='text-white'
-                    style={{
-                      color: '#fff', textAlign: 'center', justifyContent: 'center',
-                      fontSize: '50px', fontWeight: '600', letterSpacing: '1px',
-                      marginTop: '100px'
-                    }}>Grow with Digi Coder </h3>
-                  <p style={{ textAlign: 'center', justifyContent: 'center', color: '#fff' }}>
-                    Already have an account?
-                    <a href="/main/login" style={{ color: '#84c7fa', fontWeight: '900', fontSize: '20px', letterSpacing: '1px' }}>Login</a>
-                  </p>
-
-                  {/* add here logo and some content */}
-
-                </div>
-                <div className="col-xl-6">
-                  <div className="card-body p-md-5 text-black">
-                    <h3 className="mb-3 text-uppercase"
-                      style={{ textAlign: 'center', fontWeight: '900', fontSize: '35px' }}
+      <motion.div
+        initial={{ opacity: 0, x: 300 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0.5, x: -300 }}
+        transition={{ type: "spring" }}
+        className="vid-manage-bg"
+      // style={{
+      //   backgroundImage: `url('/images/bg-animation-img1.jpg`,
+      //   height: 1000,
+      //   backgroundSize: "cover",
+      // }}
+      >
+        {/*Student Signup Form*/}
+        <section className="h-100 form my-5 ">
+          <div className="container py-5 h-100">
+            <div className="row d-flex justify-content-center align-items-center h-100">
+              <div className="col-xl-10">
+                <div className="card rounded-7 shadow-4-strong">
+                  <div className="row g-0">
+                    <div
+                      className="col-lg-6 "
+                      style={{
+                        backgroundColor: "#aedff3",
+                        height: 668,
+                        backgroundSize: "cover",
+                        backgroundPosition: "90% 50%",
+                        position: "relative",
+                      }}
                     >
-                      Trainer Registration
-                    </h3>
-                    <form onSubmit={trainersignupForm.handleSubmit}>
-                      <div className="row">
-                        <div className="mb-4">
-                          <div className="">
-                            <input
-                              type="text"
-                              id="firstname"
-                              name='name'
-                              autoComplete='off'
-                              className="form-control form-control-lg"
-                              placeholder='Full Name'
-                              value={trainersignupForm.values.name}
-                              onChange={trainersignupForm.handleChange}
-                            />
-                            <span className='text-danger'>{trainersignupForm.errors.name}</span>
+                      <div className="form px-3 pt-5 mx-md-4">
+                        <h2 className="my-1 text-center">One of us ?</h2>
+                      </div>
+
+                      <div className="form px-5 py-2">
+                        <div className="d-flex flex-row align-items-center">
+                          <div className="flex-fill text-center mb-2">
+                            <p>
+                              Lorem ipsum, dolor sit amet consectetur adipisicing
+                              elit. Recusandae eum consectetur fuga
+                            </p>
                           </div>
                         </div>
-                      </div>
-                      <div className="mb-4">
-                        <input
-                          type="text"
-                          id="trainerskills"
-                          name='skills'
-                          className="form-control form-control-lg"
-                          Placeholder='Enter Skills'
-                          value={trainersignupForm.values.skills}
-                          onChange={trainersignupForm.handleChange}
+                        <div className="d-flex flex-row align-items-center">
+                          <div className="flex-fill text-center mb-2">
+                            <a
+                              href="/main/trainerlogin"
+                              class="btn btn-primary"
+                              id="sign-up-button"
+                              role="button"
+                            >
+                              Sign In
+                            </a>
+                          </div>
+                        </div>
+                        <img
+                          src="/images/register.svg"
+                          className="image"
+                          alt=""
+                          style={{
+                            height: 320,
+                            marginTop: "5%",
+                            marginLeft: "15%",
+                          }}
                         />
-                        <span className='text-danger'>{trainersignupForm.errors.skills}</span>
                       </div>
-                      <div className="mb-4">
-                        <input
-                          type="text"
-                          id="certificate"
-                          className="form-control form-control-lg"
-                          placeholder='Certificate'
-                          value={trainersignupForm.values.certificate}
-                          onChange={trainersignupForm.handleChange}
-                        />
-                        <span className='text-danger'>{trainersignupForm.errors.certificate}</span>
-                      </div>
+                    </div>
 
-                      <div className="mb-4">
-                        <input
-                          type="email"
-                          id="email"
-                          value={trainersignupForm.values.email}
-                          onChange={trainersignupForm.handleChange}
-                          autoComplete='off'
-                          className="form-control form-control-lg"
-                          placeholder='Enter Your Email'
-                        />
+                    <div className="col-lg-6">
+                      <div className="card-body p-md-5">
+                        <div className="text-center mb-5">
+                          <h3 className="my-5" style={{ marginLeft: "8%" }}>
+                            Trainer Signup
+                          </h3>
+                        </div>
+                        <form
+                          className="mx-1 mx-md-4 text-black"
+                          onSubmit={trainersignupForm.handleSubmit}
+                        >
+                          <div className="d-flex flex-row align-items-center mb-4">
+                            <i className="fas fa-user fa-lg me-3 fa-fw" />
+                            <div className="flex-fill mb-0">
+                              <input
+                                type="text"
+                                id="name"
+                                className="form-control form-control-lg"
+                                placeholder='Name'
+                                value={trainersignupForm.values.name}
+                                onChange={trainersignupForm.handleChange}
+                              />
+                              <span className='text-danger'>{trainersignupForm.errors.name}</span>
+                            </div>
+                          </div>
+                          <div className="d-flex flex-row align-items-center mb-4">
+                            <i className="fas fa-envelope fa-lg me-3 fa-fw" />
+                            <div className="flex-fill mb-0">
+                              <input
+                                type="email"
+                                id="email"
+                                autoComplete='off'
+                                className="form-control form-control-lg"
+                                placeholder='Email'
+                                value={trainersignupForm.values.email}
+                                onChange={trainersignupForm.handleChange}
+                              />
+                              <span className='text-danger' >{trainersignupForm.errors.email}</span>
+                            </div>
+                          </div>
+                          <div className="d-flex flex-row align-items-center mb-4">
+                            <i className="fas fa-lock fa-lg me-3 fa-fw" />
+                            <div className="flex-fill mb-0">
+                              <input
+                                type="password"
+                                id="password"
+                                autoComplete='off'
+                                className="form-control form-control-lg"
+                                placeholder='Password'
+                                value={trainersignupForm.values.password}
+                                onChange={trainersignupForm.handleChange}
+                              />
+                              <span className='text-danger'>{trainersignupForm.errors.password}</span>
+                            </div>
+                          </div>
+                          <div className="d-flex flex-row align-items-center mb-4">
+                            <i className="fas fa-gear fa-lg me-3 fa-fw" />
+                            <div className="flex-fill mb-0">
+                              <input
+                                type="text"
+                                id="skills"
+                                autoComplete='off'
+                                className="form-control form-control-lg"
+                                Placeholder='Skills'
+                                value={trainersignupForm.values.skills}
+                                onChange={trainersignupForm.handleChange}
+                              />
+                              <span className='text-danger'>{trainersignupForm.errors.skills}</span>
+                            </div>
+                          </div>
+                          <div className="d-flex flex-row align-items-center mb-4">
+                            <i className="fas fa-award fa-lg me-3 fa-fw" />
+                            <div className="flex-fill mb-0">
+                            <input
+                            type="text"
+                            id="certificate"
+                            autoComplete='off'
+                            className="form-control form-control-lg"
+                            placeholder='Certificate'
+                            value={trainersignupForm.values.certificate}
+                            onChange={trainersignupForm.handleChange}
+                          />
+                          <span className='text-danger'>{trainersignupForm.errors.certificate}</span>
+                            </div>
+                          </div>
+                          <div className="pt-1 mx-4 pb-1 ">
+                            <button
+                              className="btn btn-primary btn-block mb-6"
+                              type="submit"
+                              style={{ borderRadius: "10px" }}
+                            >
+                              Sign Up &nbsp;
+                              <i className="fas fa-arrow-right-to-bracket" />
+                            </button>
+                            {/* Register buttons */}
+                            <div>
+                              <div className="mb-4" style={{ marginLeft: "35%" }}>
+                                <h6>or sign up with :</h6>
+                              </div>
+                              <div className="" style={{ marginLeft: "28%" }}>
+                                <button
+                                  type="button"
+                                  className="btn btn-primary btn-floating mx-1"
+                                >
+                                  <i className="fab fa-facebook-f" />
+                                </button>
+                                <button
+                                  type="button"
+                                  className="btn btn-primary btn-floating mx-1"
+                                >
+                                  <i className="fab fa-google" />
+                                </button>
+                                <button
+                                  type="button"
+                                  className="btn btn-primary btn-floating mx-1"
+                                >
+                                  <i className="fab fa-twitter" />
+                                </button>
+                                <button
+                                  type="button"
+                                  className="btn btn-primary btn-floating mx-1"
+                                >
+                                  <i className="fab fa-github" />
+                                </button>
+                              </div>
+                            </div>
+                            {/* Register buttons */}
+                          </div>
+                        </form>
                       </div>
-                      <div className="mb-4">
-                        <input
-                          type="password"
-                          id="password"
-                          value={trainersignupForm.values.password}
-                          onChange={trainersignupForm.handleChange}
-                          autoComplete='off'
-                          className="form-control form-control-lg"
-                          placeholder='Enter Password'
-                        />
-                        <span className='text-danger'>{trainersignupForm.errors.password}</span>
-                      </div>
-
-
-                      <div className="d-flex justify-content-end pt-3">
-                        <button type="submit" className="btn btn-warning btn-lg m-3 ms-2">
-                          Submit form
-                        </button>
-                        <button type="button" className="btn btn-warning btn-lg m-3">
-                          Reset
-                        </button>
-                      </div>
-                    </form>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section >
-
+        </section>
+        {/*Student Signup Form*/}
+      </motion.div>
   )
 }
 
