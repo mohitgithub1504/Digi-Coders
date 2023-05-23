@@ -59,7 +59,7 @@ const Course = () => {
                                                 src="/images/course1.jpg"
                                                 className="img-fluid"
                                             />
-                                            <a href="/main/chapter">
+                                            <a href="/user/browsechapters">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -112,7 +112,7 @@ const Course = () => {
                                                 src="/images/course2.jpg"
                                                 className="img-fluid"
                                             />
-                                            <a href="/main/chapter">
+                                            <a href="/user/browsechapters">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}

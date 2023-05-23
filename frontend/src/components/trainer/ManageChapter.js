@@ -156,7 +156,7 @@ const ManageChapter = () => {
             {chapterList
               .slice(
                 itemPerPage * (currentPage - 1),
-                itemPerPage * currentPage + itemPerPage
+                itemPerPage * (currentPage - 1) + itemPerPage
               )
               .map((chapter) => (
                 <tr>

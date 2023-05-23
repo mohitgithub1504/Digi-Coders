@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import BlocklyComponent, { Block, Value, Field, Shadow } from "../../Blockly";
+import BlocklyComponent, { Block, Value, Field, Shadow, Mutation } from "../../Blockly";
 
 // import "../../customBlocks";
 import "../../generator";
@@ -18,7 +18,7 @@ const Builder = () => {
   const [chapterData, setChapterData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const {addedBlocks, setAddedBlocks} = useBlockContext();
+  const { addedBlocks, setAddedBlocks } = useBlockContext();
 
   const [xml, setXml] = useState(`<xml xmlns="http://www.w3.org/1999/xhtml">
 <block type="controls_ifelse" x="10" y="10">
@@ -85,7 +85,7 @@ const Builder = () => {
   //     </Block>
   //   ),
   // };
-  
+
   const blockOptions = {
     controls_repeat_ext: {
       type: "controls_repeat_ext",
@@ -115,8 +115,8 @@ const Builder = () => {
     ));
   };
 
-  
-  const chapterUpdateForm = () => {};
+
+  const chapterUpdateForm = () => { };
 
   return (
     <div>
@@ -138,7 +138,7 @@ const Builder = () => {
           }}
           initialXml={xml}
           height="60vh"
-          // blocks={addedBlocks}
+        // blocks={addedBlocks}
         >
           <Block type="controls_repeat_ext">
             <Value name="TIMES">
@@ -154,7 +154,27 @@ const Builder = () => {
               </Block>
             </Value>
           </Block>
+
+          <Value name="COLOUR">
+            <Block type="colour_hue" id="[@5*@t_`=T(C(rX^c;%l">
+              <Mutation colour="#a55b5b" />
+              <Field name="HUE">0</Field>
+            </Block>
+          </Value>
+
+          <Value name="HELPURL">
+            <Block type="text" id="R?.3!qt:L|Eu?Xv/#aea" deletable="false" movable="false">
+              <Field name="TEXT">http://www.w3schools.com/tags/tag_html.asp</Field>
+            </Block>
+          </Value>
         </BlocklyComponent>
+
+        <Value name="TYPE">
+              <Shadow xmlns="http://www.w3.org/1999/xhtml" type="type_null" id="BLj0bOn$fER9KS;#`RU]"></Shadow>
+              <Block type="type_other" id="BI?PU:MKzgPw7A:7Jr@]">
+                <Field name="TYPE">header</Field>
+              </Block>
+            </Value>
       </div>
     </div>
   );
