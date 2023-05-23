@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -162,22 +163,22 @@ const Home = () => {
                                 will set them up for success in the future.</span>
                             </p>
                           </div>
-                          <a
+                          <NavLink
                             className="btn btn-primary py-3 px-5 mb-5 mb-md-3 me-md-2"
-                            href="/main/signup"
+                            to="/main/signup"
                             role="button"
                             aria-controls="#picker-editor"
                           >
                             Get Started
-                          </a>{" "}
-                          <a
+                          </NavLink>{" "}
+                          <NavLink
                             className="btn btn-primary py-3 px-5 mb-5 mb-md-3 me-md-2"
-                            href="/main/about"
+                            to="/main/about"
                             role="button"
                             aria-controls="#picker-editor"
                           >
                             Learn more
-                          </a>
+                          </NavLink>
                         </div>
                       </div>
                     </div>
@@ -212,14 +213,6 @@ const Home = () => {
                   <h5 className="modal-title" id="exampleModalLabel">
                     Feedback Form
                   </h5>
-                  {/* <button
-                    type="button"
-                    className="close"
-                    data-mdb-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <span aria-hidden="true">×</span>
-                  </button> */}
                   <button
                     type="button"
                     className="btn-close"
@@ -392,12 +385,12 @@ const Home = () => {
                         src="/images/course1.jpg"
                         className="img-fluid"
                       />
-                      <a href="/user/browsechapters">
+                      <NavLink to="/user/browsechapters">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                         />
-                      </a>
+                      </NavLink>
                     </div>
                     <div className="card-body">
                       <h6 className="mb-3">
@@ -427,9 +420,9 @@ const Home = () => {
                       {/* Divider here */}
                       <hr class="hr hr-blurry"></hr>
 
-                      <a href="/user/browsechapters" className="btn btn-primary">
+                      <NavLink to="/user/browsechapters" className="btn btn-primary">
                         Read more
-                      </a>
+                      </NavLink>
                     </div>
                   </div>
                 </div>
@@ -445,12 +438,12 @@ const Home = () => {
                         src="/images/course2.jpg"
                         className="img-fluid"
                       />
-                      <a href="/user/browsechapters">
+                      <NavLink to="/user/browsechapters">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                         />
-                      </a>
+                      </NavLink>
                     </div>
                     <div className="card-body">
                       <h6 className="mb-3">
@@ -480,9 +473,9 @@ const Home = () => {
                       {/* Divider here */}
                       <hr class="hr hr-blurry"></hr>
 
-                      <a href="/user/browsechapters" className="btn btn-primary">
+                      <NavLink to="/user/browsechapters" className="btn btn-primary">
                         Read more
-                      </a>
+                      </NavLink>
                     </div>
                   </div>
                 </div>
@@ -498,12 +491,12 @@ const Home = () => {
                         src="/images/course3.jpg"
                         className="img-fluid"
                       />
-                      <a href="/user/browsechapters">
+                      <NavLink to="/user/browsechapters">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                         />
-                      </a>
+                      </NavLink>
                     </div>
                     <div className="card-body">
                       <h6 className="mb-3">
@@ -533,9 +526,9 @@ const Home = () => {
                       {/* Divider here */}
                       <hr class="hr hr-blurry"></hr>
 
-                      <a href="/user/browsechapters" className="btn btn-primary">
+                      <NavLink to="/user/browsechapters" className="btn btn-primary">
                         Read more
-                      </a>
+                      </NavLink>
                     </div>
                   </div>
                 </div>
@@ -554,12 +547,12 @@ const Home = () => {
                         src="/images/course4.jpg"
                         className="img-fluid"
                       />
-                      <a href="/user/browsechapters">
+                      <NavLink href="/user/browsechapters">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                         />
-                      </a>
+                      </NavLink>
                     </div>
                     <div className="card-body">
                       <h6 className="mb-3">
@@ -589,9 +582,9 @@ const Home = () => {
                       {/* Divider here */}
                       <hr class="hr hr-blurry"></hr>
 
-                      <a href="/user/browsechapters" className="btn btn-primary">
+                      <NavLink to="/user/browsechapters" className="btn btn-primary">
                         Read more
-                      </a>
+                      </NavLink>
                     </div>
                   </div>
                 </div>
@@ -607,12 +600,12 @@ const Home = () => {
                         src="/images/course5.jpg"
                         className="img-fluid"
                       />
-                      <a href="/user/browsechapters">
+                      <NavLink to="/user/browsechapters">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                         />
-                      </a>
+                      </NavLink>
                     </div>
                     <div className="card-body">
                       <h6 className="mb-3">
@@ -642,9 +635,9 @@ const Home = () => {
                       {/* Divider here */}
                       <hr class="hr hr-blurry"></hr>
 
-                      <a href="/user/browsechapters" className="btn btn-primary">
+                      <NavLink to="/user/browsechapters" className="btn btn-primary">
                         Read more
-                      </a>
+                      </NavLink>
                     </div>
                   </div>
                 </div>
@@ -660,12 +653,12 @@ const Home = () => {
                         src="/images/course6.jpg"
                         className="img-fluid"
                       />
-                      <a href="/user/browsechapters">
+                      <NavLink to="/user/browsechapters">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                         />
-                      </a>
+                      </NavLink>
                     </div>
                     <div className="card-body">
                       <h6 className="mb-3">
@@ -695,9 +688,9 @@ const Home = () => {
                       {/* Divider here */}
                       <hr class="hr hr-blurry"></hr>
 
-                      <a href="/user/browsechapters" className="btn btn-primary">
+                      <NavLink to="/user/browsechapters" className="btn btn-primary">
                         Read more
-                      </a>
+                      </NavLink>
                     </div>
                   </div>
                 </div>
@@ -752,22 +745,22 @@ const Home = () => {
                                 {/* <span className="">and</span> <br />{" "}
                                 <span className="">make your dreams a reality!&nbsp;</span>{" "} */}
                               </h1>{" "}
-                              <a
+                              <NavLink
                                 className="btn btn-primary py-3 px-5 mb-5 mb-md-3 me-md-2"
-                                href="/main/signup"
+                                to="/main/signup"
                                 role="button"
                                 aria-controls="#picker-editor"
                               >
                                 Get Started
-                              </a>{" "}
-                              <a
+                              </NavLink>{" "}
+                              <NavLink
                                 className="btn btn-primary py-3 px-5 mb-5 mb-md-3 me-md-2"
-                                href="/main/about"
+                                to="/main/about"
                                 role="button"
                                 aria-controls="#picker-editor"
                               >
                                 Learn more
-                              </a>
+                              </NavLink>
                             </div>
                           </div>
                         </div>
@@ -898,7 +891,6 @@ const Home = () => {
       </div>
       {/* Why Coding Is Important */}
 
-      {/* Testimonials */}
       <>
         <div className='mb-10'>
           <div className="" data-draggable="true"
@@ -1091,175 +1083,7 @@ const Home = () => {
         </div>
       </>
       {/* Testimonials */}
-
-      {/* Team Members */}
-      <>
-        <div className="mb-10">
-          <div data-draggable="true" style={{ position: "relative" }}>
-            {/**/}
-            {/**/}
-            <section draggable="false" className="container" data-v-271253ee="">
-              <section className="">
-                <div className='heading'>
-                  <h2 className="mb-3 text-center display-3">
-                    <span>Meet Our Team</span>
-                  </h2>
-                </div>
-                <div className='sub-heading'>
-                  <h4 className="mb-10 text-center">
-                    <span>Faces behind our success</span>
-                  </h4>
-                </div>
-                <div className="row text-center gx-lg-5">
-                  <div className="col-lg-4 mb-10 mb-lg-0 hover-zoom">
-                    <div className="card rounded-7 shadow-2-strong h-100">
-                      <div
-                        className="d-flex justify-content-center"
-                        style={{ marginTop: "-75px" }}
-                      >
-                        {" "}
-                        <img
-                          src="https://mdbootstrap.com/img/new/avatars/6.jpg"
-                          className="rounded-circle shadow-5-strong"
-                          alt=""
-                          style={{ width: 150, height: 150 }}
-                          aria-controls="#picker-editor"
-                        />{" "}
-                      </div>
-                      <div className="card-body">
-                        <h4 className="card-tittle fw-bold mb-3">
-                          <strong>Prince Prajapati</strong>
-                        </h4>
-                        <h6 className="mb-3">Frontend Developer</h6>
-                        {/* icons */}
-                        <div>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-facebook-f" />
-                            </a>
-                          </button>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-instagram" />
-                            </a>
-                          </button>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-linkedin" />
-                            </a>
-                          </button>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-github" />
-                            </a>
-                          </button>
-                        </div>
-                        {/* icons */}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-4 mb-10 mb-lg-0 hover-zoom">
-                    <div className="card rounded-7 shadow-2-strong h-100">
-                      <div
-                        className="d-flex justify-content-center"
-                        style={{ marginTop: "-75px" }}
-                      >
-                        {" "}
-                        <img
-                          src="https://mdbootstrap.com/img/new/avatars/8.jpg"
-                          className="rounded-circle shadow-5-strong"
-                          alt=""
-                          style={{ width: 150, height: 150 }}
-                          aria-controls="#picker-editor"
-                        />{" "}
-                      </div>
-                      <div className="card-body">
-                        <h4 className="card-tittle fw-bold mb-3">
-                          <strong>Mohit Mishra</strong>
-                        </h4>
-                        <h6 className="mb-3">Frontend Developer</h6>
-                        {/* icons */}
-                        <div>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-facebook-f" />
-                            </a>
-                          </button>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-instagram" />
-                            </a>
-                          </button>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-linkedin" />
-                            </a>
-                          </button>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-github" />
-                            </a>
-                          </button>
-                        </div>
-                        {/* icons */}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-4 mb-10 mb-lg-0 hover-zoom">
-                    <div className="card rounded-7 shadow-2-strong h-100">
-                      <div
-                        className="d-flex justify-content-center"
-                        style={{ marginTop: "-75px" }}
-                      >
-                        {" "}
-                        <img
-                          src="https://mdbootstrap.com/img/new/avatars/15.jpg"
-                          className="rounded-circle shadow-5-strong"
-                          alt=""
-                          style={{ width: 150, height: 150 }}
-                          aria-controls="#picker-editor"
-                        />{" "}
-                      </div>
-                      <div className="card-body">
-                        <h4 className="card-tittle fw-bold mb-3">
-                          <strong>Rishabh Agnihotri</strong>
-                        </h4>
-                        <h6 className="mb-3">Frontend Developer</h6>
-                        {/* icons */}
-                        <div>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-facebook-f" />
-                            </a>
-                          </button>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-instagram" />
-                            </a>
-                          </button>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-linkedin" />
-                            </a>
-                          </button>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-github" />
-                            </a>
-                          </button>
-                        </div>
-                        {/* icons */}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </section>
-            {/**/}
-          </div>
-        </div>
-      </>
-      {/* Team Members */}
+      
 
       {/* FAQ */}
       <>
