@@ -10,7 +10,7 @@ const Navbar = () => {
         {/* Container wrapper */}
         <div className="container">
           {/* Navbar brand */}
-          <a className="navbar-brand me-2" to="/main/home">
+          <NavLink className="navbar-brand me-2" to="/main/home">
             <img
               src="/logo/logo.png"
               height={50}
@@ -18,7 +18,7 @@ const Navbar = () => {
               loading="lazy"
               style={{ marginTop: "-1px" }}
             />
-          </a>
+          </NavLink>
           {/* Toggle button */}
           <button
             className="navbar-toggler"

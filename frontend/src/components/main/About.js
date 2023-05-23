@@ -206,10 +206,10 @@ const About = () => {
                       >
                         {" "}
                         <img
-                          src="https://mdbootstrap.com/img/new/avatars/6.jpg"
+                          src="/images/prince-img-2.jpg"
                           className="rounded-circle shadow-5-strong"
                           alt=""
-                          style={{ width: 150, height: 150 }}
+                          style={{ width: 150, height: 150, backgroundPosition: "center", backgroundSize: "cover" }}
                           aria-controls="#picker-editor"
                         />{" "}
                       </div>

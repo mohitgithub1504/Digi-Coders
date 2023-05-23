@@ -200,7 +200,7 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <a href="#!" className="btn btn-primary">
+                                            <a href="/user/BrowseChapters" className="btn btn-primary">
                                                 Read more
                                             </a>
                                         </div>

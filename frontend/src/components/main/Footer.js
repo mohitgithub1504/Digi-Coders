@@ -142,17 +142,17 @@ export const Footer = () => {
                 {/* Links */}
                 <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
                 <p>
-                  <i className="footer-icon fas fa-home me-3" /> New York, NY 10012, US
+                  <i className="footer-icon fas fa-home me-3" /> Hazrat Ganj, Lucknow 226001, UP
                 </p>
                 <p>
                   <i className="footer-icon fas fa-envelope me-3" />
-                  info@example.com
+                  digicoders@gmail.com
                 </p>
                 <p>
-                  <i className="footer-icon fas fa-phone me-3" /> + 01 234 567 88
+                  <i className="footer-icon fas fa-phone me-3" /> +91 8948911871
                 </p>
                 <p>
-                  <i className="footer-icon fas fa-print me-3" /> + 01 234 567 89
+                  <i className="footer-icon fas fa-print me-3" /> +91 9260964544
                 </p>
               </div>
               {/* Grid column */}
