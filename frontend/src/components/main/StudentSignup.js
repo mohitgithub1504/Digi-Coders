@@ -86,9 +86,7 @@ const StudentSignup = () => {
                                         className="col-lg-6 "
                                         style={{
                                             backgroundColor: "#aedff3",
-                                            height: 668,
                                             backgroundSize: "cover",
-                                            backgroundPosition: "90% 50%",
                                             position: "relative",
                                         }}
                                     >
@@ -123,7 +121,6 @@ const StudentSignup = () => {
                                                 alt=""
                                                 style={{
                                                     height: 320,
-                                                    marginTop: "5%",
                                                     marginLeft: "15%",
                                                 }}
                                             />

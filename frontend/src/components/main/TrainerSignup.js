@@ -137,7 +137,7 @@ const TrainerSignup = () => {
                           alt=""
                           style={{
                             height: 320,
-                            marginTop: "5%",
+                            marginTop: "20%",
                             marginLeft: "15%",
                           }}
                         />
@@ -161,7 +161,7 @@ const TrainerSignup = () => {
                               <input
                                 type="text"
                                 id="name"
-                                className="form-control form-control-lg"
+                                className="form-control"
                                 placeholder='Name'
                                 value={trainersignupForm.values.name}
                                 onChange={trainersignupForm.handleChange}
@@ -176,7 +176,7 @@ const TrainerSignup = () => {
                                 type="email"
                                 id="email"
                                 autoComplete='off'
-                                className="form-control form-control-lg"
+                                className="form-control"
                                 placeholder='Email'
                                 value={trainersignupForm.values.email}
                                 onChange={trainersignupForm.handleChange}
@@ -191,7 +191,7 @@ const TrainerSignup = () => {
                                 type="password"
                                 id="password"
                                 autoComplete='off'
-                                className="form-control form-control-lg"
+                                className="form-control"
                                 placeholder='Password'
                                 value={trainersignupForm.values.password}
                                 onChange={trainersignupForm.handleChange}
@@ -206,7 +206,7 @@ const TrainerSignup = () => {
                                 type="text"
                                 id="skills"
                                 autoComplete='off'
-                                className="form-control form-control-lg"
+                                className="form-control"
                                 Placeholder='Skills'
                                 value={trainersignupForm.values.skills}
                                 onChange={trainersignupForm.handleChange}
@@ -221,7 +221,7 @@ const TrainerSignup = () => {
                             type="text"
                             id="certificate"
                             autoComplete='off'
-                            className="form-control form-control-lg"
+                            className="form-control"
                             placeholder='Certificate'
                             value={trainersignupForm.values.certificate}
                             onChange={trainersignupForm.handleChange}
