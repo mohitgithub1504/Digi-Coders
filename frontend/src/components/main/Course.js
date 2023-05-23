@@ -165,7 +165,7 @@ const Course = () => {
                                                 src="/images/course3.jpg"
                                                 className="img-fluid"
                                             />
-                                            <a href="/main/chapter">
+                                            <a href="/user/browsechapters">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -200,7 +200,7 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <a href="#!" className="btn btn-primary">
+                                            <a href="/user/browsechapters" className="btn btn-primary">
                                                 Read more
                                             </a>
                                         </div>
@@ -221,7 +221,7 @@ const Course = () => {
                                                 src="/images/course4.jpg"
                                                 className="img-fluid"
                                             />
-                                            <a href="/main/chapter">
+                                            <a href="/user/browsechapters">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -256,7 +256,7 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <a href="#!" className="btn btn-primary">
+                                            <a href="/user/browsechapters" className="btn btn-primary">
                                                 Read more
                                             </a>
                                         </div>
@@ -274,7 +274,7 @@ const Course = () => {
                                                 src="/images/course5.jpg"
                                                 className="img-fluid"
                                             />
-                                            <a href="/main/chapter">
+                                            <a href="/user/browsechapters">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -309,7 +309,7 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <a href="#!" className="btn btn-primary">
+                                            <a href="/user/browsechapters" className="btn btn-primary">
                                                 Read more
                                             </a>
                                         </div>
@@ -327,7 +327,7 @@ const Course = () => {
                                                 src="/images/course6.jpg"
                                                 className="img-fluid"
                                             />
-                                            <a href="/main/chapter">
+                                            <a href="/user/browsechapters">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -362,7 +362,7 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <a href="#!" className="btn btn-primary">
+                                            <a href="/user/browsechapters" className="btn btn-primary">
                                                 Read more
                                             </a>
                                         </div>
