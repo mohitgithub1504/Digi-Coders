@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const About = () => {
   return (
@@ -217,28 +218,28 @@ const About = () => {
                         <h4 className="card-tittle fw-bold mb-3">
                           <strong>Prince Prajapati</strong>
                         </h4>
-                        <h6 className="mb-3">Frontend Developer</h6>
+                        <h6 className="mb-3">FullStack Developer</h6>
                         {/* icons */}
                         <div>
                           <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
+                            <NavLink to="https://www.facebook.com/profile.php?id=100066912692926" className="me-4 text-reset">
                               <i className="fab fa-facebook-f" />
-                            </a>
+                            </NavLink>
                           </button>
                           <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
+                            <NavLink to="https://www.instagram.com/i_am_prince067/" className="me-4 text-reset">
                               <i className="fab fa-instagram" />
-                            </a>
+                            </NavLink>
                           </button>
                           <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
+                            <NavLink to="https://www.linkedin.com/in/prince-prajapati-18243b1a0/" className="me-4 text-reset">
                               <i className="fab fa-linkedin" />
-                            </a>
+                            </NavLink>
                           </button>
                           <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
+                            <NavLink to="https://github.com/prince8948" className="me-4 text-reset">
                               <i className="fab fa-github" />
-                            </a>
+                            </NavLink>
                           </button>
                         </div>
                         {/* icons */}
@@ -268,22 +269,22 @@ const About = () => {
                         {/* icons */}
                         <div>
                           <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
+                            <a to="" className="me-4 text-reset">
                               <i className="fab fa-facebook-f" />
                             </a>
                           </button>
                           <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
+                            <a to="" className="me-4 text-reset">
                               <i className="fab fa-instagram" />
                             </a>
                           </button>
                           <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
+                            <a to="" className="me-4 text-reset">
                               <i className="fab fa-linkedin" />
                             </a>
                           </button>
                           <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
+                            <a to="" className="me-4 text-reset">
                               <i className="fab fa-github" />
                             </a>
                           </button>
@@ -315,22 +316,22 @@ const About = () => {
                         {/* icons */}
                         <div>
                           <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
+                            <a to="" className="me-4 text-reset">
                               <i className="fab fa-facebook-f" />
                             </a>
                           </button>
                           <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
+                            <a to="" className="me-4 text-reset">
                               <i className="fab fa-instagram" />
                             </a>
                           </button>
                           <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
+                            <a to="" className="me-4 text-reset">
                               <i className="fab fa-linkedin" />
                             </a>
                           </button>
                           <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
+                            <a to="" className="me-4 text-reset">
                               <i className="fab fa-github" />
                             </a>
                           </button>
