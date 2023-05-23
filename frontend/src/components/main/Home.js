@@ -385,7 +385,7 @@ const Home = () => {
                         src="/images/course1.jpg"
                         className="img-fluid"
                       />
-                      <NavLink to="/main/chapter">
+                      <NavLink to="/user/browsechapters">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -420,7 +420,7 @@ const Home = () => {
                       {/* Divider here */}
                       <hr class="hr hr-blurry"></hr>
 
-                      <NavLink to="#!" className="btn btn-primary">
+                      <NavLink to="/user/browsechapters" className="btn btn-primary">
                         Read more
                       </NavLink>
                     </div>
@@ -438,7 +438,7 @@ const Home = () => {
                         src="/images/course2.jpg"
                         className="img-fluid"
                       />
-                      <NavLink to="/main/chapter">
+                      <NavLink to="/user/browsechapters">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -491,7 +491,7 @@ const Home = () => {
                         src="/images/course3.jpg"
                         className="img-fluid"
                       />
-                      <NavLink to="/main/chapter">
+                      <NavLink to="/user/browsechapters">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -526,7 +526,7 @@ const Home = () => {
                       {/* Divider here */}
                       <hr class="hr hr-blurry"></hr>
 
-                      <NavLink to="#!" className="btn btn-primary">
+                      <NavLink to="/user/browsechapters" className="btn btn-primary">
                         Read more
                       </NavLink>
                     </div>
@@ -547,7 +547,7 @@ const Home = () => {
                         src="/images/course4.jpg"
                         className="img-fluid"
                       />
-                      <NavLink to="/main/chapter">
+                      <NavLink href="/user/browsechapters">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -582,7 +582,7 @@ const Home = () => {
                       {/* Divider here */}
                       <hr class="hr hr-blurry"></hr>
 
-                      <NavLink to="#!" className="btn btn-primary">
+                      <NavLink to="/user/browsechapters" className="btn btn-primary">
                         Read more
                       </NavLink>
                     </div>
@@ -600,7 +600,7 @@ const Home = () => {
                         src="/images/course5.jpg"
                         className="img-fluid"
                       />
-                      <NavLink to="/main/chapter">
+                      <NavLink to="/user/browsechapters">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -635,7 +635,7 @@ const Home = () => {
                       {/* Divider here */}
                       <hr class="hr hr-blurry"></hr>
 
-                      <NavLink to="#!" className="btn btn-primary">
+                      <NavLink to="/user/browsechapters" className="btn btn-primary">
                         Read more
                       </NavLink>
                     </div>
@@ -653,7 +653,7 @@ const Home = () => {
                         src="/images/course6.jpg"
                         className="img-fluid"
                       />
-                      <NavLink to="/main/chapter">
+                      <NavLink to="/user/browsechapters">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -688,7 +688,7 @@ const Home = () => {
                       {/* Divider here */}
                       <hr class="hr hr-blurry"></hr>
 
-                      <NavLink to="#!" className="btn btn-primary">
+                      <NavLink to="/user/browsechapters" className="btn btn-primary">
                         Read more
                       </NavLink>
                     </div>
