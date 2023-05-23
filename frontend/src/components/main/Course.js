@@ -202,7 +202,7 @@ const Course = () => {
                                             <hr class="hr hr-blurry"></hr>
 
                                             <NavLink to="/user/browsechapters" className="btn btn-primary">
-                                                Read more
+                                                Learn more
                                             </NavLink>
                                         </div>
                                     </div>

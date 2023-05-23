@@ -208,11 +208,11 @@ const Home = () => {
         <div id="feedback-form-modal">
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title" id="exampleModalLabel">
-                    Feedback Form
-                  </h5>
+              <div className="modal-content ">
+                <div className="modal-header bg-primary">
+                  <h3 className="modal-title text-center text-white" id="">
+                    Online Learning Feedback
+                  </h3>
                   <button
                     type="button"
                     className="btn-close"
@@ -221,81 +221,37 @@ const Home = () => {
                   />
                 </div>
                 <div className="modal-body">
-                  <form>
+                  <form className='m-0'>
+                    <p className='text-center fw-bold'>Share your learning experience and help us improve forthe next course. </p>
                     <div className="form-group">
-                      <label htmlFor="exampleFormControlTextarea1">
-                        How likely you would like to recommand us to your friends?
-                      </label>
-                      <div className="rating-input-wrapper d-flex justify-content-between mt-2">
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">1</span>
-                        </label>
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">2</span>
-                        </label>
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">3</span>
-                        </label>
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">4</span>
-                        </label>
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">5</span>
-                        </label>
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">6</span>
-                        </label>
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">7</span>
-                        </label>
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">8</span>
-                        </label>
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">9</span>
-                        </label>
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">10</span>
-                        </label>
+                      <div className="mb-3">
+                        <input
+                          type="text"
+                          id="name"
+                          className="form-control form-control-lg"
+                          placeholder='Name'
+                          style={{ backgroundColor: 'rgb(220, 220, 222, 0.3)' }}
+                        />
                       </div>
-                      <div className="rating-labels d-flex justify-content-between mt-1">
-                        <label>Very unlikely</label>
-                        <label>Very likely</label>
+                      <div className="mb-3">
+                        <input type="email" id="Email" className="form-control form-control-lg"
+                          placeholder='Email'
+                          style={{ backgroundColor: 'rgb(220, 220, 222, 0.3)' }}
+                        />
                       </div>
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="input-one">
-                        What made you leave us so early?
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="input-one"
-                        placeholder=""
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="input-two">
-                        Would you like to say something?
-                      </label>
-                      <textarea
-                        className="form-control"
-                        id="input-two"
-                        rows={3}
-                        defaultValue={""}
-                      />
+                      <div className="mb-3">
+                        <textarea
+                          className="form-control"
+                          id="message"
+                          placeholder='Message....'
+                          rows={4}
+                          defaultValue={""}
+                          style={{ backgroundColor: 'rgb(220, 220, 222, 0.3)' }}
+                        />
+                      </div>
                     </div>
                   </form>
+
                 </div>
                 <div className="modal-footer">
                   <button
@@ -305,8 +261,7 @@ const Home = () => {
                   >
                     Close
                   </button>
-                  <button type="button" className="btn btn-primary" data-mdb-toggle="modal"
-                    data-mdb-target="#exampleModal1">
+                  <button type="Submit" className="btn btn-primary" >
                     Submit
                   </button>
                 </div>
@@ -315,44 +270,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      <div
-        className="modal fade"
-        id="exampleModal1"
-        tabIndex={-1}
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">
-                Modal title
-              </h5>
-              <button
-                type="button"
-                className="btn-close"
-                data-mdb-dismiss="modal"
-                aria-label="Close"
-              />
-            </div>
-            <div className="modal-body">...</div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-mdb-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" className="btn btn-primary">
-                Save changes
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Feedback Form */}
 
 
@@ -421,7 +338,7 @@ const Home = () => {
                       <hr class="hr hr-blurry"></hr>
 
                       <NavLink to="/user/browsechapters" className="btn btn-primary">
-                        Read more
+                        Learn More
                       </NavLink>
                     </div>
                   </div>
@@ -474,7 +391,7 @@ const Home = () => {
                       <hr class="hr hr-blurry"></hr>
 
                       <NavLink to="/user/browsechapters" className="btn btn-primary">
-                        Read more
+                        Learn More
                       </NavLink>
                     </div>
                   </div>
@@ -527,7 +444,7 @@ const Home = () => {
                       <hr class="hr hr-blurry"></hr>
 
                       <NavLink to="/user/browsechapters" className="btn btn-primary">
-                        Read more
+                        Learn More
                       </NavLink>
                     </div>
                   </div>
@@ -583,7 +500,7 @@ const Home = () => {
                       <hr class="hr hr-blurry"></hr>
 
                       <NavLink to="/user/browsechapters" className="btn btn-primary">
-                        Read more
+                        Learn More
                       </NavLink>
                     </div>
                   </div>
@@ -636,7 +553,7 @@ const Home = () => {
                       <hr class="hr hr-blurry"></hr>
 
                       <NavLink to="/user/browsechapters" className="btn btn-primary">
-                        Read more
+                        Learn More
                       </NavLink>
                     </div>
                   </div>
@@ -689,7 +606,7 @@ const Home = () => {
                       <hr class="hr hr-blurry"></hr>
 
                       <NavLink to="/user/browsechapters" className="btn btn-primary">
-                        Read more
+                        Learn More
                       </NavLink>
                     </div>
                   </div>
@@ -1083,7 +1000,7 @@ const Home = () => {
         </div>
       </>
       {/* Testimonials */}
-      
+
 
       {/* FAQ */}
       <>
@@ -1273,7 +1190,7 @@ const Home = () => {
       </>
       {/* FAQ */}
 
-    </div>
+    </div >
 
   )
 }
