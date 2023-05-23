@@ -77,6 +77,68 @@ const BrowseChapters = () => {
                   className="btn btn-primary"
                   to={"/user/chapterdetails/" + chapter._id}
                 >
+                    <div
+                        className="mask text-white"
+                        style={{ backgroundColor: "rgba(35, 37, 45, 0.7)" }}
+                    >
+                        <div className="container mb-3">
+                            <p className="display-3 fw-bold text-white text-center m-0">
+                                DIGI CODERS
+                            </p>
+                            <p className="lead fw-normal text-white text-center px-5">
+                                DigiCoders is a platform for students to learn and explore new
+                                technologies. We provide a wide range of courses for students to
+                                choose from. We have courses for beginner students.
+                            </p>
+                            <div className="text-center w-50 mx-auto my-4 ">
+                                <input
+                                    type="search"
+                                    id=""
+                                    className="form-control"
+                                    onChange={searchChapterByName}
+                                    placeholder="Search Courses"
+                                    style={{
+                                        fontSize: "20px",
+                                        width: "100%",
+                                        borderRadius: "40px",
+                                        border: "3px solid #29c1fe",
+                                    }}
+                                />
+                            </div>
+                        </div>
+                        
+                        {/* Drop down Buttons */}
+                        <div className="d-flex justify-content-center">
+                            <div className="dropdown mx-2">
+                                    <select onChange={searchChapterByCategory} className=" select form-control-lg" style={{border: "3px solid #29c1fe"}}>
+                                        {
+                                            categoryList.map((category) => (
+                                                <option value={category}>{category}</option>
+
+                                            ))
+                                        }
+                                    </select>
+                            </div>
+
+                        <div className="dropdown mx-2">
+                            <select onChange={searchChapterByName} className="select form-control-lg" style={{border: "3px solid #29c1fe"}}>
+                                {
+                                    trainerList.map((trainer) => (
+                                        <option value={trainer}>{trainer}</option>
+                                    ))
+                                }
+                            </select>
+                        </div>
+
+                        <div className="dropdown mx-2">
+                            <select className="select form-control-lg" style={{border: "3px solid #29c1fe"}}>
+                                <option value="" >A to Z</option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+=======
                   View Details
                 </NavLink>
                 <button className="btn btn-primary mt-2" type="button">
