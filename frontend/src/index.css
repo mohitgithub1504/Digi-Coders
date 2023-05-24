@@ -181,6 +181,7 @@
 
 .info {
   border-color: #2196F3;
+  background-color: transparent;
   color: dodgerblue;
 }
 
@@ -191,6 +192,7 @@
 
 .danger {
   border-color: #f44336;
+  background-color: transparent;
   color: red;
 }
 

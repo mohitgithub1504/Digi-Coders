@@ -3,9 +3,15 @@ import React from 'react'
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
 import { motion } from "framer-motion";
+<<<<<<< HEAD
 import { NavLink } from 'react-router-dom';
+=======
+import app_config from '../../config';
+>>>>>>> 42ca36fdf2d53eb5357ac1332eee4e8f96936ca7
 
 const StudentSignup = () => {
+
+    const { apiUrl } = app_config;
 
     const StudentsignupSchema = Yup.object().shape({
         name: Yup.string()
@@ -31,7 +37,7 @@ const StudentSignup = () => {
         onSubmit: async (values, { setSubmitting }) => {
             console.log(values);
 
-            const res = await fetch('http://localhost:5000/user/add', {
+            const res = await fetch(apiUrl +'/user/add', {
                 method: 'POST',
                 body: JSON.stringify(values),
                 headers: {

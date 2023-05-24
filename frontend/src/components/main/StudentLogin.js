@@ -4,8 +4,10 @@ import Swal from "sweetalert2";
 import { useFormik } from "formik";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+import app_config from "../../config";
 
 const StudentLogin = () => {
+  const { apiUrl } = app_config;
   const studentLogin = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Email is Required"),
     password: Yup.string().required("Required"),
@@ -19,7 +21,7 @@ const StudentLogin = () => {
     onSubmit: async (values, { setSubmitting }) => {
       console.log(values);
 
-      const res = await fetch("http://localhost:5000/user/authenticate", {
+      const res = await fetch(apiUrl +"/user/authenticate", {
         method: "POST",
         body: JSON.stringify(values), // this is used to convert js data in json formate
         headers: {

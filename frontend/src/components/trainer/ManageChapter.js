@@ -14,7 +14,7 @@ const ManageChapter = () => {
   const [chapterList, setChapterList] = useState([]);
 
   const fetchUserData = async () => {
-    const res = await fetch("http://localhost:5000/chapter/getall");
+    const res = await fetch(apiUrl +"/chapter/getall");
     console.log(res.status);
     const data = await res.json();
     console.log(data);
@@ -172,7 +172,8 @@ const ManageChapter = () => {
                     </button>
                   </td>
                   <td className="align-middle">
-                    <button type="button" class="table-btn danger">
+                    <button type="button" class="table-btn danger"
+                    >
                       <i className="far fa-trash-can" />
                     </button>
                   </td>
