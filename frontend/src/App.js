@@ -30,6 +30,7 @@ import TrainerProvider from './context/TrainerContext';
 
 function App() {
   return (
+    
     <BrowserRouter>
     <BlockProvider>
     <UserProvider>
@@ -49,7 +50,7 @@ function App() {
           <Route path='trainerlogin' element={<TrainerLogin />} />
           <Route path='trainersignup' element={<TrainerSignup />} />
           <Route path='forgetpassword' element={<ForgetPassword />} />
-
+{/* <div className="App">*/}
         </Route>
         <Route path='trainer' element={<TrainerAuth><Trainer /> </TrainerAuth>}>
           <Route path='builder' element={<Builder />} />
