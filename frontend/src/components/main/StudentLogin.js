@@ -2,12 +2,17 @@ import React from "react";
 import * as Yup from "yup";
 import Swal from "sweetalert2";
 import { useFormik } from "formik";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import app_config from "../../config";
+import { useUserContext } from "../../context/UserContext";
 
 const StudentLogin = () => {
+
+  const navigate = useNavigate();
   const { apiUrl } = app_config;
+  const {setLoggedIn} = useUserContext();
+
   const studentLogin = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Email is Required"),
     password: Yup.string().required("Required"),
@@ -38,6 +43,13 @@ const StudentLogin = () => {
           showConfirmButton: false,
           timer: 1500
         });
+        
+        const data = await res.json();
+        sessionStorage.setItem("user", JSON.stringify(data));
+        setLoggedIn(true);
+        console.log(data);
+        navigate('/main/course');
+
       } else {
         Swal.fire({
           icon: "error",
@@ -49,6 +61,7 @@ const StudentLogin = () => {
     validationSchema: studentLogin,
   });
 
+
   return (
     <motion.div
       initial={{ opacity: 0, x: 300 }}
@@ -56,9 +69,9 @@ const StudentLogin = () => {
       exit={{ opacity: 0.5, x: -300 }}
       transition={{ type: "spring" }}
       className="vid-manage-bg"
-      style={{
-        backgroundImage: `url('/images/bg-animation-img2.jpg`
-      }}
+      // style={{
+      //   backgroundImage: `url('/images/bg-animation-img2.jpg`
+      // }}
     >
       {/*Student Login Form*/}
       <section className="form"

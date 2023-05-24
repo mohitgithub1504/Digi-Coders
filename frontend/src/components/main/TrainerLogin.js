@@ -6,11 +6,14 @@ import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { motion } from "framer-motion";
 import app_config from '../../config';
+import { useTrainerContext } from "../../context/TrainerContext";
+
 
 const TrainerLogin = () => {
 
   const navigate = useNavigate();
   const { apiUrl } = app_config;
+  const {setLoggedIn} = useTrainerContext();
 
   const trainerlogin = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Email is Required'),
@@ -42,6 +45,7 @@ const TrainerLogin = () => {
         });
         const data = await res.json();
         sessionStorage.setItem('trainer', JSON.stringify(data));
+        setLoggedIn(true);
         console.log(data);
         navigate('/trainer/managechapter');
       }
@@ -65,9 +69,9 @@ const TrainerLogin = () => {
       exit={{ opacity: 0.5, x: -300 }}
       transition={{ type: "spring" }}
       className="vid-manage-bg"
-      style={{
-        backgroundImage: `url('/images/bg-animation-img2.jpg`
-      }}
+      // style={{
+      //   backgroundImage: `url('/images/bg-animation-img2.jpg`
+      // }}
     >
       {/*Student Login Form*/}
       <section className="form"
