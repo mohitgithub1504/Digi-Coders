@@ -145,7 +145,7 @@ const Navbar = () => {
                                             aria-labelledby="navbarDropdownMenuAvatar"
                                         >
                                             <li>
-                                                <NavLink className="dropdown-item" to="#">
+                                                <NavLink className="dropdown-item" to="/trainer/trainerprofile">
                                                     My profile
                                                 </NavLink>
                                             </li>

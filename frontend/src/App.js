@@ -27,6 +27,8 @@ import TrainerAuth from './auth/TrainerAuth';
 import ForgetPassword from './components/main/ForgetPassword';
 import UserProvider from './context/UserContext';
 import TrainerProvider from './context/TrainerContext';
+import TrainerProfile from './components/trainer/TrainerProfile';
+import UserProfile from './components/user/UserProfile';
 
 function App() {
   return (
@@ -54,12 +56,14 @@ function App() {
               </Route>
               <Route path='trainer' element={<TrainerAuth><Trainer /> </TrainerAuth>}>
                 <Route path='builder' element={<Builder />} />
+                <Route path='trainerprofile' element={<TrainerProfile />} />
                 <Route path='designchapter' element={<DesignChapter />} />
                 <Route path='managechapter' element={<ManageChapter />} />
                 <Route path='managecourse' element={<ManageCourse />} />
               </ Route>
 
               <Route path='user' element={<User />}>
+                <Route path='userprofile' element={<UserProfile/>} />
                 <Route path='browsechapters' element={<BrowseChapters />} />
                 <Route path='chapterdetails/:id' element={<ChapterDetails />} />
               </ Route>

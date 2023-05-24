@@ -7,13 +7,13 @@ import app_config from '../../config';
 // import { useParams } from 'react-router-dom';
 
 
-const Profile = () => {
+const TrainerProfile = () => {
     // const { id } = useParams();
 
     // const [userDetails, setuserDetails] = useState(null);
 
     const { apiUrl } = app_config;
-    const userprofileSchema = Yup.object().shape({
+    const trainerprofileSchema = Yup.object().shape({
         name: Yup.string()
             .required('Name is Required'),
         skills: Yup.string()
@@ -23,7 +23,7 @@ const Profile = () => {
         email: Yup.string().email('Invalid email').required('Email is Required'),
     });
 
-    const userprofileForm = useFormik({
+    const trainerprofileForm = useFormik({
         initialValues: {
             name: '',
             skills: '',
@@ -61,7 +61,7 @@ const Profile = () => {
                 });
             }
         },
-        validationSchema: userprofileSchema,
+        validationSchema: trainerprofileSchema,
     });
     // const fetchuserData = async () => {
     //     const res = await fetch(apiUrl + "/user/getbyid/" + id);
@@ -176,7 +176,7 @@ const Profile = () => {
                                         </div>
                                         <form
                                             className="mx-md-5 text-black"
-                                            onSubmit={userprofileForm.handleSubmit}
+                                            onSubmit={trainerprofileForm.handleSubmit}
                                         >
                                             <div className="d-flex flex-row align-items-center mb-4">
                                                 <i className="fas fa-user fa-lg me-3 fa-fw" />
@@ -186,10 +186,10 @@ const Profile = () => {
                                                         id="name"
                                                         className="form-control form-control-lg"
                                                         placeholder='Name'
-                                                        value={userprofileForm.values.name}
-                                                        onChange={userprofileForm.handleChange}
+                                                        value={trainerprofileForm.values.name}
+                                                        onChange={trainerprofileForm.handleChange}
                                                     />
-                                                    <span className='text-danger'>{userprofileForm.errors.name}</span>
+                                                    <span className='text-danger'>{trainerprofileForm.errors.name}</span>
                                                 </div>
                                             </div>
                                             <div className="d-flex flex-row align-items-center mb-4">
@@ -201,10 +201,10 @@ const Profile = () => {
                                                         autoComplete='off'
                                                         className="form-control form-control-lg"
                                                         placeholder='Email'
-                                                        value={userprofileForm.values.email}
-                                                        onChange={userprofileForm.handleChange}
+                                                        value={trainerprofileForm.values.email}
+                                                        onChange={trainerprofileForm.handleChange}
                                                     />
-                                                    <span className='text-danger' >{userprofileForm.errors.email}</span>
+                                                    <span className='text-danger' >{trainerprofileForm.errors.email}</span>
                                                 </div>
                                             </div>
                                             <div className="d-flex flex-row align-items-center mb-4">
@@ -216,10 +216,10 @@ const Profile = () => {
                                                         autoComplete='off'
                                                         className="form-control form-control-lg"
                                                         placeholder='Password'
-                                                        value={userprofileForm.values.password}
-                                                        onChange={userprofileForm.handleChange}
+                                                        value={trainerprofileForm.values.password}
+                                                        onChange={trainerprofileForm.handleChange}
                                                     />
-                                                    <span className='text-danger'>{userprofileForm.errors.password}</span>
+                                                    <span className='text-danger'>{trainerprofileForm.errors.password}</span>
                                                 </div>
                                             </div>
                                             <div className="d-flex flex-row align-items-center mb-4">
@@ -231,10 +231,10 @@ const Profile = () => {
                                                         autoComplete='off'
                                                         className="form-control form-control-lg"
                                                         Placeholder='Skills'
-                                                        value={userprofileForm.values.skills}
-                                                        onChange={userprofileForm.handleChange}
+                                                        value={trainerprofileForm.values.skills}
+                                                        onChange={trainerprofileForm.handleChange}
                                                     />
-                                                    <span className='text-danger'>{userprofileForm.errors.skills}</span>
+                                                    <span className='text-danger'>{trainerprofileForm.errors.skills}</span>
                                                 </div>
 
                                                 <i className="fas fa-award fa-lg mx-3 fa-fw" />
@@ -245,10 +245,10 @@ const Profile = () => {
                                                         autoComplete='off'
                                                         className="form-control form-control-lg"
                                                         placeholder='Certificate'
-                                                        value={userprofileForm.values.certificate}
-                                                        onChange={userprofileForm.handleChange}
+                                                        value={trainerprofileForm.values.certificate}
+                                                        onChange={trainerprofileForm.handleChange}
                                                     />
-                                                    <span className='text-danger'>{userprofileForm.errors.certificate}</span>
+                                                    <span className='text-danger'>{trainerprofileForm.errors.certificate}</span>
                                                 </div>
                                             </div>
                                             <div className="pt-1 mx-4 pb-1 ">
@@ -272,4 +272,4 @@ const Profile = () => {
         }
 
  
-export default Profile
+export default TrainerProfile
