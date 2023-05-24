@@ -65,7 +65,6 @@ function BlocklyComponent(props) {
                 Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(initialXml), primaryWorkspace.current);
             }
         }
-
     }, [primaryWorkspace, toolbox, blocklyDiv, props, addedBlocks]);
 
     console.log(addedBlocks);
@@ -76,13 +75,6 @@ function BlocklyComponent(props) {
             <button onClick={generateCode} className='btn btn-primary'>Convert</button>
             <div ref={blocklyDiv} id="blocklyDiv" style={{ height: props.height, width: '100%' }} />
             <div style={{ display: 'none' }} ref={toolbox} className='bg-danger'>
-                {addedBlocks.map((block) => {
-                    // console.log(p);
-                    const { children, ...props } = block;
-                    props.is = "blockly";
-                    // console.log(React.createElement("block", props, children));
-                    return React.createElement("block", props, children);
-                })}
                 {props.children}
             </div>
         </React.Fragment>);

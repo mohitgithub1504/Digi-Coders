@@ -1,11 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
-import BlocklyComponent, { Block, Value, Field, Shadow } from "../../Blockly";
+import BlocklyComponent, {
+  Block,
+  Value,
+  Field,
+  Shadow,
+  Mutation,
+} from "../../Blockly";
 
 // import "../../customBlocks";
 import "../../generator";
 import { useParams } from "react-router-dom";
 import app_config from "../../config";
 import { useBlockContext } from "../../context/BlockContext";
+import '../../customBlocks';
 
 const Builder = () => {
   const { chapter_id } = useParams();
@@ -18,7 +25,7 @@ const Builder = () => {
   const [chapterData, setChapterData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const {addedBlocks, setAddedBlocks} = useBlockContext();
+  const { addedBlocks, setAddedBlocks } = useBlockContext();
 
   const [xml, setXml] = useState(`<xml xmlns="http://www.w3.org/1999/xhtml">
 <block type="controls_ifelse" x="10" y="10">
@@ -85,16 +92,15 @@ const Builder = () => {
   //     </Block>
   //   ),
   // };
-  
+
   const blockOptions = {
     controls_repeat_ext: {
       type: "controls_repeat_ext",
     },
     text_charAt: {
-      type: "text_charAt"
-    }
+      type: "text_charAt",
+    },
   };
-
 
   const displayBlockOptions = () => {
     return Object.keys(blockOptions).map((block) => (
@@ -115,7 +121,6 @@ const Builder = () => {
     ));
   };
 
-  
   const chapterUpdateForm = () => {};
 
   return (
@@ -147,6 +152,7 @@ const Builder = () => {
               </Shadow>
             </Value>
           </Block>
+          <Block type="logic_compare"></Block>
           <Block type="text_charAt">
             <Value name="VALUE">
               <Block type="variables_get">
@@ -154,6 +160,30 @@ const Builder = () => {
               </Block>
             </Value>
           </Block>
+          <Block type="test_react_field" />
+            <Block type="test_react_date_field" />
+            <Block type="controls_ifelse" />
+            <Block type="logic_compare" />
+            <Block type="logic_operation" />
+            <Block type="controls_repeat_ext">
+              <Value name="TIMES">
+                <Shadow type="math_number">
+                  <Field name="NUM">10</Field>
+                </Shadow>
+              </Value>
+            </Block>
+            <Block type="logic_operation" />
+            <Block type="logic_negate" />
+            <Block type="logic_boolean" />
+            <Block type="logic_null" disabled="true" />
+            <Block type="logic_ternary" />
+            <Block type="text_charAt">
+              <Value name="VALUE">
+                <Block type="variables_get">
+                  <Field name="VAR">text</Field>
+                </Block>
+              </Value>
+            </Block>
         </BlocklyComponent>
       </div>
     </div>
