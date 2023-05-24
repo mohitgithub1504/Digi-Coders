@@ -547,7 +547,7 @@ const Home = () => {
                         src="/images/course4.jpg"
                         className="img-fluid"
                       />
-                      <NavLink href="/user/browsechapters">
+                      <NavLink to="/user/browsechapters">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -1083,7 +1083,7 @@ const Home = () => {
         </div>
       </>
       {/* Testimonials */}
-      
+
 
       {/* FAQ */}
       <>

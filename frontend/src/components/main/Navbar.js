@@ -57,27 +57,27 @@ const Navbar = () => {
                 >
                   Courses
                 </NavLink>
-                {/* Dropdown menu */} 
+                {/* Dropdown menu */}
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a className="dropdown-item" href="/trainer/managechapter">Game Development</a>
+                    <NavLink className="dropdown-item" to="/user/browsechapters">Game Development</NavLink>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="">Web Development</a>
+                    <NavLink className="dropdown-item" to="/user/browsechapters">Web Development</NavLink>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="">App Development</a>
+                    <NavLink className="dropdown-item" to="/user/browsechapters">App Development</NavLink>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="">Artificial Intelligence</a>
+                    <NavLink className="dropdown-item" to="/user/browsechapters">Artificial Intelligence</NavLink>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="">Internet Of Things</a>
+                    <NavLink className="dropdown-item" to="/user/browsechapters">Internet Of Things</NavLink>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="">Python</a>
+                    <NavLink className="dropdown-item" to="/user/browsechapters">Python</NavLink>
                   </li>
-                  
+
                 </ul>
               </li>
 

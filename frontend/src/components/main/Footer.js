@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <>
       {/* Footer */}
-      <footer className="text-center text-lg-start text-white" style={{ backgroundColor: "#000", marginTop: "20px" }}>
+      <footer className="text-center text-lg-start text-white" style={{ backgroundColor: "#000" }}>
         {/* Section: Social media */}
         <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
           {/* Left */}

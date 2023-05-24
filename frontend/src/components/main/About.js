@@ -253,7 +253,7 @@ const About = () => {
                       >
                         {" "}
                         <img
-                          src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                          src="/images/team-img-2.jpg"
                           className="rounded-circle shadow-5-strong"
                           alt=""
                           style={{ width: 150, height: 150 }}

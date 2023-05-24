@@ -2,3 +2,11 @@
     font-size: 18px;
     background-color: #f1f1f1;
 }
+
+.curve{
+    background-color: #aedff3;
+    height: 800px;
+    position: relative;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
