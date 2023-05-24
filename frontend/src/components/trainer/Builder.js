@@ -13,6 +13,7 @@ import { useParams } from "react-router-dom";
 import app_config from "../../config";
 import { useBlockContext } from "../../context/BlockContext";
 import '../../customBlocks';
+import CustomBlock from "../../MyCustomBlocks";
 
 const Builder = () => {
   const { chapter_id } = useParams();
@@ -184,6 +185,7 @@ const Builder = () => {
                 </Block>
               </Value>
             </Block>
+            <Block type="my_custom_field" />
         </BlocklyComponent>
 
         <Value name="TYPE">

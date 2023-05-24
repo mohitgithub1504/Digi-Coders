@@ -39,7 +39,7 @@ class BlocklyReactField extends Blockly.Field {
     // override the static fromJson method.
     return new this(options['text']);
   }
-
+  
   showEditor_() {
     this.div_ = Blockly.DropDownDiv.getContentDiv();
     ReactDOM.render(this.render(),

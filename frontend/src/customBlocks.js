@@ -74,3 +74,17 @@ Blockly.Blocks['test_react_field'] = {
     this.setStyle('loop_blocks');
   }
 };
+
+var myField = {
+  "type": "my_custom_field",
+  "message0": "my custom field",
+  "previousStatement": null,
+  "nextStatement": null,
+};
+
+Blockly.Blocks['my_custom_field'] = {
+  init: function() {
+    this.jsonInit(myField);
+    this.setStyle('loop_blocks');
+  }
+};
