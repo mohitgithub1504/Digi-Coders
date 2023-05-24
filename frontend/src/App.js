@@ -33,58 +33,58 @@ function App() {
   return (
     <BrowserRouter>
       <BlockProvider>
-        <Routes>
-          <Route path='/' element={<Navigate to="/main/home" />} />
-          <Route path='main' element={<Main />} >
-            <Route path='home' element={<Home />} />
-            <Route path='course' element={<Course />} />
-            <Route path='about' element={<About />} />
-            <Route path='contact' element={<Contact />} />
-            <Route path='chapter' element={<Chapter />} />
-            <Route path='login' element={<Login />} />
-            <Route path='signup' element={<Signup />} />
-            <Route path='studentlogin' element={<StudentLogin />} />
-            <Route path='studentsignup' element={<StudentSignup />} />
-            <Route path='trainerlogin' element={<TrainerLogin />} />
-            <Route path='trainersignup' element={<TrainerSignup />} />
-            <Route path='forgetpassword' element={<ForgetPassword />} />
-    <BlockProvider>
-    <UserProvider>
-    <TrainerProvider>
-      <Routes>
-        <Route path='/' element={<Navigate to="/main/home" />} />
-        <Route path='main' element={<Main />} >
-          <Route path='home' element={<Home />} />
-          <Route path='course' element={<Course />} />
-          <Route path='about' element={<About />} />
-          <Route path='contact' element={<Contact />} />
-          <Route path='chapter' element={<Chapter />} />
-          <Route path='login' element={<Login />} />
-          <Route path='signup' element={<Signup />} />
-          <Route path='studentlogin' element={<StudentLogin />} />
-          <Route path='studentsignup' element={<StudentSignup />} />
-          <Route path='trainerlogin' element={<TrainerLogin />} />
-          <Route path='trainersignup' element={<TrainerSignup />} />
-          <Route path='forgetpassword' element={<ForgetPassword />} />
+        <UserProvider>
+          <TrainerProvider>
+            <Routes>
+              <Route path='/' element={<Navigate to="/main/home" />} />
+              <Route path='main' element={<Main />} >
+                <Route path='home' element={<Home />} />
+                <Route path='course' element={<Course />} />
+                <Route path='about' element={<About />} />
+                <Route path='contact' element={<Contact />} />
+                <Route path='chapter' element={<Chapter />} />
+                <Route path='login' element={<Login />} />
+                <Route path='signup' element={<Signup />} />
+                <Route path='studentlogin' element={<StudentLogin />} />
+                <Route path='studentsignup' element={<StudentSignup />} />
+                <Route path='trainerlogin' element={<TrainerLogin />} />
+                <Route path='trainersignup' element={<TrainerSignup />} />
+                <Route path='forgetpassword' element={<ForgetPassword />} />
 
-          </Route>
-          <Route path='trainer' element={<TrainerAuth><Trainer /> </TrainerAuth>}>
-            <Route path='builder' element={<Builder />} />
-            <Route path='designchapter' element={<DesignChapter />} />
-            <Route path='managechapter' element={<ManageChapter />} />
-            <Route path='profile' element={<Profile />} />
-            <Route path='managecourse' element={<ManageCourse />} />
-          </ Route>
+                <Routes>
+                  <Route path='/' element={<Navigate to="/main/home" />} />
+                  <Route path='main' element={<Main />} >
+                    <Route path='home' element={<Home />} />
+                    <Route path='course' element={<Course />} />
+                    <Route path='about' element={<About />} />
+                    <Route path='contact' element={<Contact />} />
+                    <Route path='chapter' element={<Chapter />} />
+                    <Route path='login' element={<Login />} />
+                    <Route path='signup' element={<Signup />} />
+                    <Route path='studentlogin' element={<StudentLogin />} />
+                    <Route path='studentsignup' element={<StudentSignup />} />
+                    <Route path='trainerlogin' element={<TrainerLogin />} />
+                    <Route path='trainersignup' element={<TrainerSignup />} />
+                    <Route path='forgetpassword' element={<ForgetPassword />} />
 
-          <Route path='user' element={<User />}>
-            <Route path='browsechapters' element={<BrowseChapters />} />
-            <Route path='chapterdetails/:id' element={<ChapterDetails />} />
-          </ Route>
+                  </Route>
+                  <Route path='trainer' element={<TrainerAuth><Trainer /> </TrainerAuth>}>
+                    <Route path='builder' element={<Builder />} />
+                    <Route path='designchapter' element={<DesignChapter />} />
+                    <Route path='managechapter' element={<ManageChapter />} />
+                    <Route path='profile' element={<Profile />} />
+                    <Route path='managecourse' element={<ManageCourse />} />
+                  </ Route>
 
-        </Routes>
-      </Routes>
-      </TrainerProvider>
-      </UserProvider>
+                  <Route path='user' element={<User />}>
+                    <Route path='browsechapters' element={<BrowseChapters />} />
+                    <Route path='chapterdetails/:id' element={<ChapterDetails />} />
+                  </ Route>
+
+                </Routes>
+            </Routes>
+          </TrainerProvider>
+        </UserProvider>
       </BlockProvider>
     </BrowserRouter>
   );
