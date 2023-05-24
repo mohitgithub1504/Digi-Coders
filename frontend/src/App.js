@@ -25,19 +25,19 @@ import ViewChapter from './components/user/ViewChapter';
 import ChapterDetails from './components/user/ChapterDetails';
 import TrainerAuth from './auth/TrainerAuth';
 import ForgetPassword from './components/main/ForgetPassword';
-import Profile from './components/trainer/Profile';
 import UserProvider from './context/UserContext';
 import TrainerProvider from './context/TrainerContext';
 
 function App() {
   return (
+
     <BrowserRouter>
       <BlockProvider>
         <UserProvider>
           <TrainerProvider>
             <Routes>
               <Route path='/' element={<Navigate to="/main/home" />} />
-              <Route path='main' element={<Main />} />
+              <Route path='main' element={<Main />} >
                 <Route path='home' element={<Home />} />
                 <Route path='course' element={<Course />} />
                 <Route path='about' element={<About />} />
@@ -51,37 +51,19 @@ function App() {
                 <Route path='trainersignup' element={<TrainerSignup />} />
                 <Route path='forgetpassword' element={<ForgetPassword />} />
 
-                <Routes>
-                  <Route path='/' element={<Navigate to="/main/home" />} />
-                  <Route path='main' element={<Main />} >
-                    <Route path='home' element={<Home />} />
-                    <Route path='course' element={<Course />} />
-                    <Route path='about' element={<About />} />
-                    <Route path='contact' element={<Contact />} />
-                    <Route path='chapter' element={<Chapter />} />
-                    <Route path='login' element={<Login />} />
-                    <Route path='signup' element={<Signup />} />
-                    <Route path='studentlogin' element={<StudentLogin />} />
-                    <Route path='studentsignup' element={<StudentSignup />} />
-                    <Route path='trainerlogin' element={<TrainerLogin />} />
-                    <Route path='trainersignup' element={<TrainerSignup />} />
-                    <Route path='forgetpassword' element={<ForgetPassword />} />
+              </Route>
+              <Route path='trainer' element={<TrainerAuth><Trainer /> </TrainerAuth>}>
+                <Route path='builder' element={<Builder />} />
+                <Route path='designchapter' element={<DesignChapter />} />
+                <Route path='managechapter' element={<ManageChapter />} />
+                <Route path='managecourse' element={<ManageCourse />} />
+              </ Route>
 
-                  </Route>
-                  <Route path='trainer' element={<TrainerAuth><Trainer /> </TrainerAuth>}>
-                    <Route path='builder' element={<Builder />} />
-                    <Route path='designchapter' element={<DesignChapter />} />
-                    <Route path='managechapter' element={<ManageChapter />} />
-                    <Route path='profile' element={<Profile />} />
-                    <Route path='managecourse' element={<ManageCourse />} />
-                  </ Route>
+              <Route path='user' element={<User />}>
+                <Route path='browsechapters' element={<BrowseChapters />} />
+                <Route path='chapterdetails/:id' element={<ChapterDetails />} />
+              </ Route>
 
-                  <Route path='user' element={<User />}>
-                    <Route path='browsechapters' element={<BrowseChapters />} />
-                    <Route path='chapterdetails/:id' element={<ChapterDetails />} />
-                  </ Route>
-
-                </Routes>
             </Routes>
           </TrainerProvider>
         </UserProvider>
