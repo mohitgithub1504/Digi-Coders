@@ -1,7 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { useUserContext } from '../../context/UserContext';
 
 const Navbar = () => {
+
+  const { loggedIn, logout } = useUserContext();
+
   return (
 
     <>
@@ -94,25 +98,67 @@ const Navbar = () => {
 
           {/* Left links */}
           <div className="d-flex align-items-center">
-            <a
-              class="nav-btn btn-link"
-              href="/main/signup"
-            >
-              <i
-                className="fas fa-user fa-lg me-1 fa-fw"
-              />
-              Sign Up
-            </a>
+            {
+              !loggedIn ? (
+                <>
+                  <a
+                    class="nav-btn btn-link"
+                    href="/main/signup"
+                  >
+                    <i
+                      className="fas fa-user fa-lg me-1 fa-fw"
+                    />
+                    Sign Up
+                  </a>
 
-            <a
-              class="nav-btn btn-link"
-              href="/main/login"
-            >
-              <i
-                className="fas fa-right-to-bracket fa-lg me-1 fa-fw"
-              />
-              Login
-            </a>
+                  <a
+                    class="nav-btn btn-link"
+                    href="/main/login"
+                  >
+                    <i
+                      className="fas fa-right-to-bracket fa-lg me-1 fa-fw"
+                    />
+                    Login
+                  </a>
+                </>
+              ) :
+                (
+
+                  <div className="dropdown">
+                    <NavLink
+                      className="dropdown-toggle d-flex align-items-center hidden-arrow"
+                      to="#"
+                      id="navbarDropdownMenuAvatar"
+                      role="button"
+                      data-mdb-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <img
+                        src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                        className="rounded-circle"
+                        height={40}
+                        alt="Black and White Portrait of a Man"
+                        loading="lazy"
+                      />
+                    </NavLink>
+                    <ul
+                      className="dropdown-menu dropdown-menu-end"
+                      aria-labelledby="navbarDropdownMenuAvatar"
+                    >
+                      <li>
+                        <NavLink className="dropdown-item" to="#">
+                          My profile
+                        </NavLink>
+                      </li>
+                      <li>
+                        <a className="dropdown-item" type='button' onClick={logout}>
+                          Logout
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                )
+            }
           </div>
 
         </div>

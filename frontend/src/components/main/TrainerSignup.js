@@ -3,11 +3,12 @@ import React from 'react'
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
 import { motion } from "framer-motion";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import app_config from '../../config';
 
 const TrainerSignup = () => {
 
+  const navigate = useNavigate();
   const { apiUrl } = app_config;
 
   const trainersignupSchema = Yup.object().shape({
@@ -61,6 +62,7 @@ const TrainerSignup = () => {
           showConfirmButton: false,
           timer: 1500
         });
+        navigate('/main/trainerlogin');
       }
       else {
         Swal.fire({
@@ -84,9 +86,9 @@ const TrainerSignup = () => {
       exit={{ opacity: 0.5, x: -300 }}
       transition={{ type: "spring" }}
       className="vid-manage-bg"
-      style={{
-        backgroundImage: `url('/images/bg-animation-img2.jpg`
-      }}
+      // style={{
+      //   backgroundImage: `url('/images/bg-animation-img2.jpg`
+      // }}
     >
       {/*Student Signup Form*/}
       <section className="form"

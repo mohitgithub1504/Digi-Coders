@@ -25,11 +25,15 @@ import ViewChapter from './components/user/ViewChapter';
 import ChapterDetails from './components/user/ChapterDetails';
 import TrainerAuth from './auth/TrainerAuth';
 import ForgetPassword from './components/main/ForgetPassword';
+import UserProvider from './context/UserContext';
+import TrainerProvider from './context/TrainerContext';
 
 function App() {
   return (
     <BrowserRouter>
     <BlockProvider>
+    <UserProvider>
+    <TrainerProvider>
       <Routes>
         <Route path='/' element={<Navigate to="/main/home" />} />
         <Route path='main' element={<Main />} >
@@ -60,6 +64,8 @@ function App() {
         </ Route>
 
       </Routes>
+      </TrainerProvider>
+      </UserProvider>
       </BlockProvider>
     </BrowserRouter>
   );
