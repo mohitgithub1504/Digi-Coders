@@ -3,11 +3,12 @@ import React from 'react'
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
 import { motion } from "framer-motion";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import app_config from '../../config';
 
 const StudentSignup = () => {
 
+    const navigate = useNavigate();
     const { apiUrl } = app_config;
 
     const StudentsignupSchema = Yup.object().shape({
@@ -34,7 +35,7 @@ const StudentSignup = () => {
         onSubmit: async (values, { setSubmitting }) => {
             console.log(values);
 
-            const res = await fetch(apiUrl +'/user/add', {
+            const res = await fetch(apiUrl + '/user/add', {
                 method: 'POST',
                 body: JSON.stringify(values),
                 headers: {
@@ -52,7 +53,8 @@ const StudentSignup = () => {
                     icon: 'success',
                     showConfirmButton: false,
                     timer: 1500
-                })
+                }); 
+                navigate('/main/studentlogin');
             }
             else {
                 Swal.fire({
@@ -73,9 +75,9 @@ const StudentSignup = () => {
             exit={{ opacity: 0.5, x: -300 }}
             transition={{ type: "spring" }}
             className="vid-manage-bg"
-            style={{
-                backgroundImage: `url('/images/bg-animation-img2.jpg`
-            }}
+        // style={{
+        //     backgroundImage: `url('/images/bg-animation-img2.jpg`
+        // }}
         >
             {/*Student Signup Form*/}
             <section className="form"

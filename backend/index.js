@@ -5,7 +5,9 @@ const app = express();
 const userRouter = require('./routers/userRouter');
 const trainerRouter = require('./routers/trainerRouter');
 const chapterRouter = require('./routers/chapterRouter');
+const contactRouter = require('./routers/contactRouter');
 const utilRouter = require('./routers/util');
+
 
 
 const cors = require( 'cors');
@@ -21,6 +23,7 @@ app.use(express.json());
 app.use('/user', userRouter);
 app.use('/trainer', trainerRouter);
 app.use('/chapter', chapterRouter);
+app.use('/contact', contactRouter);
 app.use('/util', utilRouter);
 
 app.use(express.static('./static/uploads'));

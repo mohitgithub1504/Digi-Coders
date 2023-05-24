@@ -1,6 +1,51 @@
- import React from 'react';
+import { useFormik } from 'formik';
+import React from 'react';
+import Swal from 'sweetalert2';
+import app_config from '../../config';
 
 const Contact = () => {
+
+    const { apiUrl } = app_config;
+    const contactForm = useFormik({
+        initialValues: {
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+        },
+        onSubmit: async (values, { setSubmitting }) => {
+            console.log(values);
+
+
+            const res = await fetch(apiUrl + '/contact/add', {
+                method: 'POST',
+                body: JSON.stringify(values),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            console.log(res.status);
+            if (res.status === 200) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Thank You!",
+                    text: "Your message is successfully submitted",
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+            else {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Something went wrong!",
+                });
+            }
+        },
+
+    });
     return (
         <>
             {/*Page Header*/}
@@ -130,15 +175,18 @@ const Contact = () => {
                                                     Write to us
                                                 </h3>
                                             </div>
-                                            <form className="mx-1 mx-md-4 text-black">
+                                            <form className="mx-1 mx-md-4 text-black" onSubmit={contactForm.handleSubmit}>
                                                 <div className="d-flex flex-row align-items-center mb-4">
                                                     <i className="fas fa-user fa-lg me-3 fa-fw" />
                                                     <div className="flex-fill mb-0">
                                                         <input
                                                             type="text"
                                                             id="name"
+                                                            name='name'
                                                             className="form-control"
                                                             placeholder="Enter Full Name"
+                                                            value={contactForm.values.name}
+                                                            onChange={contactForm.handleChange}
                                                         />
                                                     </div>
                                                 </div>
@@ -148,8 +196,11 @@ const Contact = () => {
                                                         <input
                                                             type="email"
                                                             id="email"
+                                                            name='email'
                                                             className="form-control"
                                                             placeholder="Enter Email Address"
+                                                            value={contactForm.values.email}
+                                                            onChange={contactForm.handleChange}
                                                         />
                                                     </div>
                                                 </div>
@@ -159,8 +210,11 @@ const Contact = () => {
                                                         <input
                                                             type="text"
                                                             id="subject"
+                                                            name='subject'
                                                             className="form-control"
                                                             placeholder="Enter Subject"
+                                                            value={contactForm.values.subject}
+                                                            onChange={contactForm.handleChange}
                                                         />
                                                     </div>
                                                 </div>
@@ -169,14 +223,17 @@ const Contact = () => {
                                                     <i class="fas fa-pencil-alt fa-lg me-3 mb-8 fa-fw"></i>
                                                     <div className="flex-fill mb-0">
                                                         <textarea class="form-control" id="textarea" rows="4"
-                                                            placeholder='Enter massege....'
+                                                            placeholder='Enter message....'
+                                                            name='message'
+                                                            value={contactForm.values.message}
+                                                            onChange={contactForm.handleChange}
                                                         ></textarea>
                                                     </div>
                                                 </div>
                                                 <div className="pt-1 mx-4 mb-3 pb-1 ">
                                                     <button
                                                         className="btn btn-primary btn-block mb-3"
-                                                        type="button"
+                                                        type="submit"
                                                         style={{ borderRadius: "10px" }}
                                                     >
                                                         Send &nbsp;
