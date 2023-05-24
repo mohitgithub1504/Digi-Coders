@@ -5,10 +5,12 @@ import { useFormik } from 'formik';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { motion } from "framer-motion";
+import app_config from '../../config';
 
 const TrainerLogin = () => {
 
   const navigate = useNavigate();
+  const { apiUrl } = app_config;
 
   const trainerlogin = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Email is Required'),
@@ -22,7 +24,7 @@ const TrainerLogin = () => {
     },
     onSubmit: async (values, { setSubmitting }) => {
       console.log(values);
-      const res = await fetch('http://localhost:5000/trainer/add', {
+      const res = await fetch(apiUrl + '/trainer/add', {
         method: 'POST',
         body: JSON.stringify(values),  // this is used to convert js data in json formate
         headers: {
@@ -63,139 +65,155 @@ const TrainerLogin = () => {
       exit={{ opacity: 0.5, x: -300 }}
       transition={{ type: "spring" }}
       className="vid-manage-bg"
-    // style={{
-    //   backgroundImage: `url('/images/bg-animation-img1.jpg`,
-    //   height: 1000,
-    //   backgroundSize: "cover",
-    // }}
+      style={{
+        backgroundImage: `url('/images/bg-animation-img2.jpg`
+      }}
     >
       {/*Student Login Form*/}
-      <section className="h-100 form my-5 ">
-        <div className="container py-5 h-100">
-          <div className="row d-flex justify-content-center align-items-center h-100">
-            <div className="col-xl-10">
-              <div className="card rounded-7 shadow-4-strong">
-                <div className="row g-0">
-                  <div className="col-lg-6 "
-                    style={{
-                      backgroundColor: '#aedff3',
-                      height: 668,
-                      backgroundSize: "cover",
-                      backgroundPosition: "90% 50%",
-                      position: "relative",
-                    }}>
-                    <div className="form px-3 pt-5 mx-md-4">
-                      <h2 className="my-1 text-center">New Here?</h2>
-                    </div>
+      <section className="form"
+      >
+        <div className="">
+          <div className="row g-0">
+            <div className="col-lg-6 curve">
+              <div className="pt-5" style={{ marginLeft: "285px", }}>
+                <h2 className="my-1">New Here?</h2>
+              </div>
 
-                    <div className="form px-5 py-2">
-                      <div className="d-flex flex-row align-items-center">
-                        <div className="flex-fill text-center mb-2">
-                          <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae eum consectetur fuga
-                          </p>
-                        </div>
-                      </div>
-                      <div className="d-flex flex-row align-items-center">
-                        <div className="flex-fill text-center mb-2">
-                          <a href="/main/trainersignup" class="btn btn-primary" id="sign-up-button" role="button">Sign Up</a>
-                        </div>
-                      </div>
-                      <img src="/images/login.svg" className="image" alt=""
-                        style={{
-                          height: 320,
-                          marginTop: "5%",
-                          marginLeft: "5%"
-                        }} />
-                    </div>
-                  </div>
-
-                  <div className="col-lg-6">
-                    <div className="card-body p-md-5">
-                      <div className="text-center mb-5">
-                        <h3 className="my-5" style={{ marginLeft: "8%" }}>
-                          Trainer Login
-                        </h3>
-                      </div>
-                      <form className="mx-1 mx-md-4 text-black" onSubmit={Trainerlogin.handleSubmit}>
-                        <div className="d-flex flex-row align-items-center mb-4">
-                          <i className="fas fa-envelope fa-lg me-3 fa-fw" />
-                          <div className="flex-fill mb-0">
-                            <input
-                              type="email"
-                              id="email"
-                              name='email'
-                              autoComplete='off'
-                              className="form-control form-control-lg"
-                              placeholder="Email"
-                              value={Trainerlogin.values.email}
-                              onChange={Trainerlogin.handleChange}
-                            />
-                            <span className='text-danger'>{Trainerlogin.errors.email}</span>
-                          </div>
-                        </div>
-                        <div className="d-flex flex-row align-items-center mb-4">
-                          <i className="fas fa-lock fa-lg me-3 fa-fw" />
-                          <div className="flex-fill mb-0">
-                            <input
-                              type="password"
-                              id="password"
-                              name='password'
-                              autoComplete='off'
-                              className="form-control form-control-lg"
-                              placeholder="Password"
-                              value={Trainerlogin.values.password}
-                              onChange={Trainerlogin.handleChange}
-                            />
-                            <span className='text-danger'>{Trainerlogin.errors.password}</span>
-                          </div>
-                        </div>
-                        <div className='mb-4'>
-                          <NavLink className="nav-link" to='/main/forgetpassword' style={{ marginLeft: "35%" }}>
-                            Forget password?
-                          </NavLink>
-                        </div>
-                        <div className="pt-1 mx-4 pb-1 ">
-                          <button
-                            className="btn btn-primary btn-block mb-6"
-                            type="submit"
-                            style={{ borderRadius: "10px" }}
-                          >
-                            Login &nbsp;
-                            <i className="fas fa-arrow-right-to-bracket" />
-                          </button>
-                          {/* Register buttons */}
-                          <div>
-                            <div className="mb-4" style={{ marginLeft: "35%" }}>
-                              <h6>or sign in with :</h6>
-                            </div>
-                            <div className='' style={{ marginLeft: "26%" }}>
-                              <button type="button" className="btn btn-primary btn-floating mx-1">
-                                <i className="fab fa-facebook-f" />
-                              </button>
-                              <button type="button" className="btn btn-primary btn-floating mx-1">
-                                <i className="fab fa-google" />
-                              </button>
-                              <button type="button" className="btn btn-primary btn-floating mx-1">
-                                <i className="fab fa-twitter" />
-                              </button>
-                              <button type="button" className="btn btn-primary btn-floating mx-1">
-                                <i className="fab fa-github" />
-                              </button>
-                            </div>
-                          </div>
-                          {/* Register buttons */}
-                        </div>
-                      </form>
-                    </div>
+              <div className="py-2" style={{ marginLeft: "100px" }}>
+                <div className="d-flex flex-row align-items-center">
+                  <div className="flex-fill text-center mb-2">
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing
+                      elit. Recusandae eum consectetur fuga
+                    </p>
                   </div>
                 </div>
+                <div className="d-flex flex-row align-items-center">
+                  <div className="flex-fill text-center mb-2">
+                    <NavLink to="/main/trainersignup" className="btn btn-primary">
+                      Sign Up
+                    </NavLink>
+                  </div>
+                </div>
+                <img
+                  src="/images/login.svg"
+                  className="image"
+                  alt=""
+                  style={{
+                    height: 400,
+                    marginTop: "10%",
+                    marginLeft: "-5%",
+                  }}
+                />
+              </div>
+            </div>
+
+            <div className="col-lg-6">
+              <div className="card-body p-md-5 mx-md-5">
+                <div className="text-center mb-5">
+                  <h3 className="my-5" style={{ marginLeft: "5%" }}>
+                    Trainer Login
+                  </h3>
+                </div>
+                <form
+                  className="mx-md-5 text-black"
+                  onSubmit={Trainerlogin.handleSubmit}
+                >
+                  <div className="d-flex flex-row align-items-center mb-4">
+                    <i className="fas fa-envelope fa-lg me-3 fa-fw" />
+                    <div className="flex-fill mb-0">
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autoComplete="off"
+                        className="form-control form-control-lg"
+                        placeholder="Email"
+                        value={Trainerlogin.values.email}
+                        onChange={Trainerlogin.handleChange}
+                      />
+                      <span className="text-danger">
+                        {Trainerlogin.errors.email}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="d-flex flex-row align-items-center mb-4">
+                    <i className="fas fa-lock fa-lg me-3 fa-fw" />
+                    <div className="flex-fill mb-0">
+                      <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        autoComplete="off"
+                        className="form-control form-control-lg"
+                        placeholder="Password"
+                        value={Trainerlogin.values.password}
+                        onChange={Trainerlogin.handleChange}
+                      />
+                      <span className="text-danger">
+                        {Trainerlogin.errors.password}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <NavLink
+                      className="nav-link"
+                      to="/main/forgetpassword"
+                      style={{ marginLeft: "38%" }}
+                    >
+                      Forget password?
+                    </NavLink>
+                  </div>
+                  <div className="pt-1 mx-4 pb-1 ">
+                    <button
+                      className="btn btn-primary btn-block mb-5"
+                      type="submit"
+                      style={{ borderRadius: "10px" }}
+                    >
+                      Login &nbsp;
+                      <i className="fas fa-arrow-right-to-bracket" />
+                    </button>
+
+                    <div>
+                      <div className="mb-4" style={{ marginLeft: "40%" }}>
+                        <h6>or sign in with :</h6>
+                      </div>
+                      <div className="" style={{ marginLeft: "34%" }}>
+                        <button
+                          type="button"
+                          className="btn btn-primary btn-floating mx-1"
+                        >
+                          <i className="fab fa-facebook-f" />
+                        </button>
+                        <button
+                          type="button"
+                          className="btn btn-primary btn-floating mx-1"
+                        >
+                          <i className="fab fa-google" />
+                        </button>
+                        <button
+                          type="button"
+                          className="btn btn-primary btn-floating mx-1"
+                        >
+                          <i className="fab fa-twitter" />
+                        </button>
+                        <button
+                          type="button"
+                          className="btn btn-primary btn-floating mx-1"
+                        >
+                          <i className="fab fa-github" />
+                        </button>
+                      </div>
+                    </div>
+
+                  </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/*Trainer Login Form*/}
+      {/*Student Login Form*/}
     </motion.div>
   )
 }

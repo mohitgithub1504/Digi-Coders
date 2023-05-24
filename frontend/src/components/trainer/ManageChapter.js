@@ -14,7 +14,7 @@ const ManageChapter = () => {
   const [chapterList, setChapterList] = useState([]);
 
   const fetchUserData = async () => {
-    const res = await fetch("http://localhost:5000/chapter/getall");
+    const res = await fetch(apiUrl +"/chapter/getall");
     console.log(res.status);
     const data = await res.json();
     console.log(data);
@@ -156,7 +156,7 @@ const ManageChapter = () => {
             {chapterList
               .slice(
                 itemPerPage * (currentPage - 1),
-                itemPerPage * currentPage + itemPerPage
+                itemPerPage * (currentPage - 1) + itemPerPage
               )
               .map((chapter) => (
                 <tr>
@@ -172,7 +172,8 @@ const ManageChapter = () => {
                     </button>
                   </td>
                   <td className="align-middle">
-                    <button type="button" class="table-btn danger">
+                    <button type="button" class="table-btn danger"
+                    >
                       <i className="far fa-trash-can" />
                     </button>
                   </td>
@@ -187,7 +188,11 @@ const ManageChapter = () => {
             <nav aria-label="...">
               <ul className="pagination mt-3">
                 <li className="page-item me-2">
-                  <a className="page-link">
+                  <a
+                    className="page-link"
+                    type="button"
+                    onClick={(e) => setCurrentPage(currentPage - 1)}
+                  >
                     <i className="fas fa-angles-left" />
                   </a>
                 </li>
@@ -195,9 +200,8 @@ const ManageChapter = () => {
                   .fill(1)
                   .map((item, index) => (
                     <li
-                      className={`page-item ${
-                        currentPage === index + 1 ? "active" : ""
-                      }`}
+                      className={`page-item ${currentPage === index + 1 ? "active" : ""
+                        }`}
                       aria-current="page"
                     >
                       <a
@@ -212,16 +216,16 @@ const ManageChapter = () => {
                   ))}
                 {Math.ceil(chapterList.length / itemPerPage) - currentPage >
                   0 && (
-                  <li className="page-item">
-                    <a
-                      className="page-link"
-                      type="button"
-                      onClick={(e) => setCurrentPage(currentPage + 1)}
-                    >
-                      <i className="fas fa-angles-right" />
-                    </a>
-                  </li>
-                )}
+                    <li className="page-item">
+                      <a
+                        className="page-link"
+                        type="button"
+                        onClick={(e) => setCurrentPage(currentPage + 1)}
+                      >
+                        <i className="fas fa-angles-right" />
+                      </a>
+                    </li>
+                  )}
               </ul>
             </nav>
           </section>

@@ -143,7 +143,7 @@ const Builder = () => {
           }}
           initialXml={xml}
           height="60vh"
-          // blocks={addedBlocks}
+        // blocks={addedBlocks}
         >
           <Block type="controls_repeat_ext">
             <Value name="TIMES">
@@ -185,6 +185,13 @@ const Builder = () => {
               </Value>
             </Block>
         </BlocklyComponent>
+
+        <Value name="TYPE">
+              <Shadow xmlns="http://www.w3.org/1999/xhtml" type="type_null" id="BLj0bOn$fER9KS;#`RU]"></Shadow>
+              <Block type="type_other" id="BI?PU:MKzgPw7A:7Jr@]">
+                <Field name="TYPE">header</Field>
+              </Block>
+            </Value>
       </div>
     </div>
   );

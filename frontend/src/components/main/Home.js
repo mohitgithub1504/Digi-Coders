@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -162,22 +163,22 @@ const Home = () => {
                                 will set them up for success in the future.</span>
                             </p>
                           </div>
-                          <a
+                          <NavLink
                             className="btn btn-primary py-3 px-5 mb-5 mb-md-3 me-md-2"
-                            href="/main/signup"
+                            to="/main/signup"
                             role="button"
                             aria-controls="#picker-editor"
                           >
                             Get Started
-                          </a>{" "}
-                          <a
+                          </NavLink>{" "}
+                          <NavLink
                             className="btn btn-primary py-3 px-5 mb-5 mb-md-3 me-md-2"
-                            href="/main/about"
+                            to="/main/about"
                             role="button"
                             aria-controls="#picker-editor"
                           >
                             Learn more
-                          </a>
+                          </NavLink>
                         </div>
                       </div>
                     </div>
@@ -207,19 +208,11 @@ const Home = () => {
         <div id="feedback-form-modal">
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title" id="exampleModalLabel">
-                    Feedback Form
-                  </h5>
-                  {/* <button
-                    type="button"
-                    className="close"
-                    data-mdb-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <span aria-hidden="true">×</span>
-                  </button> */}
+              <div className="modal-content ">
+                <div className="modal-header" style={{backgroundColor:'#2db9fa'}}>
+                  <h3 className="modal-title text-center text-white" id="">
+                    Online Learning Feedback
+                  </h3>
                   <button
                     type="button"
                     className="btn-close"
@@ -228,81 +221,37 @@ const Home = () => {
                   />
                 </div>
                 <div className="modal-body">
-                  <form>
+                  <form className='m-0'>
+                    <p className='text-center fw-bold'>Share your learning experience and help us improve for the next course. </p>
                     <div className="form-group">
-                      <label htmlFor="exampleFormControlTextarea1">
-                        How likely you would like to recommand us to your friends?
-                      </label>
-                      <div className="rating-input-wrapper d-flex justify-content-between mt-2">
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">1</span>
-                        </label>
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">2</span>
-                        </label>
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">3</span>
-                        </label>
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">4</span>
-                        </label>
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">5</span>
-                        </label>
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">6</span>
-                        </label>
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">7</span>
-                        </label>
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">8</span>
-                        </label>
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">9</span>
-                        </label>
-                        <label>
-                          <input type="radio" name="rating" />
-                          <span className="border rounded px-3 py-2">10</span>
-                        </label>
+                      <div className="mb-3">
+                        <input
+                          type="text"
+                          id="name"
+                          className="form-control form-control-lg"
+                          placeholder='Name'
+                          style={{ backgroundColor: 'rgb(220, 220, 222, 0.3)' }}
+                        />
                       </div>
-                      <div className="rating-labels d-flex justify-content-between mt-1">
-                        <label>Very unlikely</label>
-                        <label>Very likely</label>
+                      <div className="mb-3">
+                        <input type="email" id="Email" className="form-control form-control-lg"
+                          placeholder='Email'
+                          style={{ backgroundColor: 'rgb(220, 220, 222, 0.3)' }}
+                        />
                       </div>
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="input-one">
-                        What made you leave us so early?
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="input-one"
-                        placeholder=""
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="input-two">
-                        Would you like to say something?
-                      </label>
-                      <textarea
-                        className="form-control"
-                        id="input-two"
-                        rows={3}
-                        defaultValue={""}
-                      />
+                      <div className="mb-3">
+                        <textarea
+                          className="form-control"
+                          id="message"
+                          placeholder='Message....'
+                          rows={4}
+                          defaultValue={""}
+                          style={{ backgroundColor: 'rgb(220, 220, 222, 0.3)' }}
+                        />
+                      </div>
                     </div>
                   </form>
+
                 </div>
                 <div className="modal-footer">
                   <button
@@ -312,8 +261,7 @@ const Home = () => {
                   >
                     Close
                   </button>
-                  <button type="button" className="btn btn-primary" data-mdb-toggle="modal"
-                    data-mdb-target="#exampleModal1">
+                  <button type="Submit" className="btn btn-primary" >
                     Submit
                   </button>
                 </div>
@@ -322,44 +270,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      <div
-        className="modal fade"
-        id="exampleModal1"
-        tabIndex={-1}
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">
-                Modal title
-              </h5>
-              <button
-                type="button"
-                className="btn-close"
-                data-mdb-dismiss="modal"
-                aria-label="Close"
-              />
-            </div>
-            <div className="modal-body">...</div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-mdb-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" className="btn btn-primary">
-                Save changes
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Feedback Form */}
 
 
@@ -392,12 +302,12 @@ const Home = () => {
                         src="/images/course1.jpg"
                         className="img-fluid"
                       />
-                      <a href="/main/chapter">
+                      <NavLink to="/user/browsechapters">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                         />
-                      </a>
+                      </NavLink>
                     </div>
                     <div className="card-body">
                       <h6 className="mb-3">
@@ -427,9 +337,9 @@ const Home = () => {
                       {/* Divider here */}
                       <hr class="hr hr-blurry"></hr>
 
-                      <a href="#!" className="btn btn-primary">
-                        Read more
-                      </a>
+                      <NavLink to="/user/browsechapters" className="btn btn-primary">
+                        Learn More
+                      </NavLink>
                     </div>
                   </div>
                 </div>
@@ -445,12 +355,12 @@ const Home = () => {
                         src="/images/course2.jpg"
                         className="img-fluid"
                       />
-                      <a href="/main/chapter">
+                      <NavLink to="/user/browsechapters">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                         />
-                      </a>
+                      </NavLink>
                     </div>
                     <div className="card-body">
                       <h6 className="mb-3">
@@ -480,9 +390,9 @@ const Home = () => {
                       {/* Divider here */}
                       <hr class="hr hr-blurry"></hr>
 
-                      <a href="#!" className="btn btn-primary">
-                        Read more
-                      </a>
+                      <NavLink to="/user/browsechapters" className="btn btn-primary">
+                        Learn More
+                      </NavLink>
                     </div>
                   </div>
                 </div>
@@ -498,12 +408,12 @@ const Home = () => {
                         src="/images/course3.jpg"
                         className="img-fluid"
                       />
-                      <a href="/main/chapter">
+                      <NavLink to="/user/browsechapters">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                         />
-                      </a>
+                      </NavLink>
                     </div>
                     <div className="card-body">
                       <h6 className="mb-3">
@@ -533,9 +443,9 @@ const Home = () => {
                       {/* Divider here */}
                       <hr class="hr hr-blurry"></hr>
 
-                      <a href="#!" className="btn btn-primary">
-                        Read more
-                      </a>
+                      <NavLink to="/user/browsechapters" className="btn btn-primary">
+                        Learn More
+                      </NavLink>
                     </div>
                   </div>
                 </div>
@@ -554,12 +464,12 @@ const Home = () => {
                         src="/images/course4.jpg"
                         className="img-fluid"
                       />
-                      <a href="/main/chapter">
+                      <NavLink to="/user/browsechapters">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                         />
-                      </a>
+                      </NavLink>
                     </div>
                     <div className="card-body">
                       <h6 className="mb-3">
@@ -589,9 +499,9 @@ const Home = () => {
                       {/* Divider here */}
                       <hr class="hr hr-blurry"></hr>
 
-                      <a href="#!" className="btn btn-primary">
-                        Read more
-                      </a>
+                      <NavLink to="/user/browsechapters" className="btn btn-primary">
+                        Learn More
+                      </NavLink>
                     </div>
                   </div>
                 </div>
@@ -607,12 +517,12 @@ const Home = () => {
                         src="/images/course5.jpg"
                         className="img-fluid"
                       />
-                      <a href="/main/chapter">
+                      <NavLink to="/user/browsechapters">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                         />
-                      </a>
+                      </NavLink>
                     </div>
                     <div className="card-body">
                       <h6 className="mb-3">
@@ -642,9 +552,9 @@ const Home = () => {
                       {/* Divider here */}
                       <hr class="hr hr-blurry"></hr>
 
-                      <a href="#!" className="btn btn-primary">
-                        Read more
-                      </a>
+                      <NavLink to="/user/browsechapters" className="btn btn-primary">
+                        Learn More
+                      </NavLink>
                     </div>
                   </div>
                 </div>
@@ -660,12 +570,12 @@ const Home = () => {
                         src="/images/course6.jpg"
                         className="img-fluid"
                       />
-                      <a href="/main/chapter">
+                      <NavLink to="/user/browsechapters">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                         />
-                      </a>
+                      </NavLink>
                     </div>
                     <div className="card-body">
                       <h6 className="mb-3">
@@ -695,9 +605,9 @@ const Home = () => {
                       {/* Divider here */}
                       <hr class="hr hr-blurry"></hr>
 
-                      <a href="#!" className="btn btn-primary">
-                        Read more
-                      </a>
+                      <NavLink to="/user/browsechapters" className="btn btn-primary">
+                        Learn More
+                      </NavLink>
                     </div>
                   </div>
                 </div>
@@ -752,22 +662,22 @@ const Home = () => {
                                 {/* <span className="">and</span> <br />{" "}
                                 <span className="">make your dreams a reality!&nbsp;</span>{" "} */}
                               </h1>{" "}
-                              <a
+                              <NavLink
                                 className="btn btn-primary py-3 px-5 mb-5 mb-md-3 me-md-2"
-                                href="/main/signup"
+                                to="/main/signup"
                                 role="button"
                                 aria-controls="#picker-editor"
                               >
                                 Get Started
-                              </a>{" "}
-                              <a
+                              </NavLink>{" "}
+                              <NavLink
                                 className="btn btn-primary py-3 px-5 mb-5 mb-md-3 me-md-2"
-                                href="/main/about"
+                                to="/main/about"
                                 role="button"
                                 aria-controls="#picker-editor"
                               >
                                 Learn more
-                              </a>
+                              </NavLink>
                             </div>
                           </div>
                         </div>
@@ -898,7 +808,6 @@ const Home = () => {
       </div>
       {/* Why Coding Is Important */}
 
-      {/* Testimonials */}
       <>
         <div className='mb-10'>
           <div className="" data-draggable="true"
@@ -1092,174 +1001,6 @@ const Home = () => {
       </>
       {/* Testimonials */}
 
-      {/* Team Members */}
-      <>
-        <div className="mb-10">
-          <div data-draggable="true" style={{ position: "relative" }}>
-            {/**/}
-            {/**/}
-            <section draggable="false" className="container" data-v-271253ee="">
-              <section className="">
-                <div className='heading'>
-                  <h2 className="mb-3 text-center display-3">
-                    <span>Meet Our Team</span>
-                  </h2>
-                </div>
-                <div className='sub-heading'>
-                  <h4 className="mb-10 text-center">
-                    <span>Faces behind our success</span>
-                  </h4>
-                </div>
-                <div className="row text-center gx-lg-5">
-                  <div className="col-lg-4 mb-10 mb-lg-0 hover-zoom">
-                    <div className="card rounded-7 shadow-2-strong h-100">
-                      <div
-                        className="d-flex justify-content-center"
-                        style={{ marginTop: "-75px" }}
-                      >
-                        {" "}
-                        <img
-                          src="https://mdbootstrap.com/img/new/avatars/6.jpg"
-                          className="rounded-circle shadow-5-strong"
-                          alt=""
-                          style={{ width: 150, height: 150 }}
-                          aria-controls="#picker-editor"
-                        />{" "}
-                      </div>
-                      <div className="card-body">
-                        <h4 className="card-tittle fw-bold mb-3">
-                          <strong>Prince Prajapati</strong>
-                        </h4>
-                        <h6 className="mb-3">Frontend Developer</h6>
-                        {/* icons */}
-                        <div>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-facebook-f" />
-                            </a>
-                          </button>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-instagram" />
-                            </a>
-                          </button>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-linkedin" />
-                            </a>
-                          </button>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-github" />
-                            </a>
-                          </button>
-                        </div>
-                        {/* icons */}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-4 mb-10 mb-lg-0 hover-zoom">
-                    <div className="card rounded-7 shadow-2-strong h-100">
-                      <div
-                        className="d-flex justify-content-center"
-                        style={{ marginTop: "-75px" }}
-                      >
-                        {" "}
-                        <img
-                          src="https://mdbootstrap.com/img/new/avatars/8.jpg"
-                          className="rounded-circle shadow-5-strong"
-                          alt=""
-                          style={{ width: 150, height: 150 }}
-                          aria-controls="#picker-editor"
-                        />{" "}
-                      </div>
-                      <div className="card-body">
-                        <h4 className="card-tittle fw-bold mb-3">
-                          <strong>Mohit Mishra</strong>
-                        </h4>
-                        <h6 className="mb-3">Frontend Developer</h6>
-                        {/* icons */}
-                        <div>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-facebook-f" />
-                            </a>
-                          </button>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-instagram" />
-                            </a>
-                          </button>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-linkedin" />
-                            </a>
-                          </button>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-github" />
-                            </a>
-                          </button>
-                        </div>
-                        {/* icons */}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-4 mb-10 mb-lg-0 hover-zoom">
-                    <div className="card rounded-7 shadow-2-strong h-100">
-                      <div
-                        className="d-flex justify-content-center"
-                        style={{ marginTop: "-75px" }}
-                      >
-                        {" "}
-                        <img
-                          src="https://mdbootstrap.com/img/new/avatars/15.jpg"
-                          className="rounded-circle shadow-5-strong"
-                          alt=""
-                          style={{ width: 150, height: 150 }}
-                          aria-controls="#picker-editor"
-                        />{" "}
-                      </div>
-                      <div className="card-body">
-                        <h4 className="card-tittle fw-bold mb-3">
-                          <strong>Rishabh Agnihotri</strong>
-                        </h4>
-                        <h6 className="mb-3">Frontend Developer</h6>
-                        {/* icons */}
-                        <div>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-facebook-f" />
-                            </a>
-                          </button>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-instagram" />
-                            </a>
-                          </button>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-linkedin" />
-                            </a>
-                          </button>
-                          <button type="button" className="btn btn-floating text-white mx-1">
-                            <a href="" className="me-4 text-reset">
-                              <i className="fab fa-github" />
-                            </a>
-                          </button>
-                        </div>
-                        {/* icons */}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </section>
-            {/**/}
-          </div>
-        </div>
-      </>
-      {/* Team Members */}
 
       {/* FAQ */}
       <>
@@ -1449,7 +1190,7 @@ const Home = () => {
       </>
       {/* FAQ */}
 
-    </div>
+    </div >
 
   )
 }

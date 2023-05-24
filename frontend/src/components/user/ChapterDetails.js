@@ -16,7 +16,7 @@ const ChapterDetails = () => {
   </xml>`);
 
   const fetchChapterData = async () => {
-    const res = await fetch(apiUrl + "/chapter/getbyid/" + id);
+    const res = await fetch( apiUrl+ "/chapter/getbyid/" + id);
     console.log(res.status);
     const data = await res.json();
     console.log(data);
