@@ -3,11 +3,8 @@ import React from 'react'
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
 import { motion } from "framer-motion";
-<<<<<<< HEAD
 import { NavLink } from 'react-router-dom';
-=======
 import app_config from '../../config';
->>>>>>> 42ca36fdf2d53eb5357ac1332eee4e8f96936ca7
 
 const StudentSignup = () => {
 
