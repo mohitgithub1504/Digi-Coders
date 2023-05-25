@@ -17,7 +17,7 @@ const Contact = () => {
             console.log(values);
 
 
-            const res = await fetch(apiUrl + '/user/add', {
+            const res = await fetch(apiUrl + '/contact/add', {
                 method: 'POST',
                 body: JSON.stringify(values),
                 headers: {
