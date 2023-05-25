@@ -301,7 +301,7 @@ const About = () => {
                       >
                         {" "}
                         <img
-                          src="https://mdbootstrap.com/img/new/avatars/15.jpg"
+                          src="/images/rishabh-img.jpg"
                           className="rounded-circle shadow-5-strong"
                           alt=""
                           style={{ width: 150, height: 150 }}
