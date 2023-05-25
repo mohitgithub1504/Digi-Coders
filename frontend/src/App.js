@@ -24,7 +24,6 @@ import BrowseChapters from "./components/user/BrowseChapters";
 import ViewChapter from "./components/user/ViewChapter";
 import ChapterDetails from "./components/user/ChapterDetails";
 import TrainerAuth from "./auth/TrainerAuth";
-import ForgetPassword from "./components/main/ForgetPassword";
 import UserProvider from "./context/UserContext";
 import TrainerProvider from "./context/TrainerContext";
 import TrainerProfile from "./components/trainer/TrainerProfile";
@@ -53,7 +52,7 @@ function App() {
                 <Route path="studentsignup" element={<StudentSignup />} />
                 <Route path="trainerlogin" element={<TrainerLogin />} />
                 <Route path="trainersignup" element={<TrainerSignup />} />
-                <Route path="forgetpassword" element={<ForgetPassword />} />
+                <Route path="resetpassword" element={<ResetPassword />} />
               </Route>
               <Route
                 path="trainer"
