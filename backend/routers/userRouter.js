@@ -28,6 +28,28 @@ router.get('/getall', (req, res) => {
     });
 });
 
+router.get('/getbyemail/:email', (req, res) => {
+    Model.findOne({email : req.params.email})
+    .then((result) => {
+        res.json(result);
+    })
+    .catch((err) => {
+        console.error(err);
+        res.status(500).json(err);
+    });
+});
+
+router.put('/update/:id', (req, res) => {
+    Model.findByIdAndUpdate(req.params.id, req.body)
+    .then((result) => {
+        res.json(result);
+    })
+    .catch((err) => {
+        console.error(err);
+        res.status(500).json(err);
+    });
+});
+
 router.post('/authenticate', (req, res) => {
     console.log(req.body);
     Model.findOne(req.body)

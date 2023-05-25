@@ -30,6 +30,7 @@ import TrainerProvider from "./context/TrainerContext";
 import TrainerProfile from "./components/trainer/TrainerProfile";
 import UserProfile from "./components/user/UserProfile";
 import NewBuilder from "./components/trainer/NewBuilder";
+import ResetPassword from "./components/main/ResetPassword";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
                 <Route path="chapter" element={<Chapter />} />
                 <Route path="login" element={<Login />} />
                 <Route path="signup" element={<Signup />} />
+                <Route path="reset" element={<ResetPassword />} />
                 <Route path="studentlogin" element={<StudentLogin />} />
                 <Route path="studentsignup" element={<StudentSignup />} />
                 <Route path="trainerlogin" element={<TrainerLogin />} />
