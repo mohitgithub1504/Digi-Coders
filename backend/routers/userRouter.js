@@ -33,7 +33,15 @@ router.post('/authenticate', (req, res) => {
     Model.findOne(req.body)
     .then((result) => {
         console.log(result);
-        if(result) res.json(result);
+        if(result) {
+            Model.findByIdAndUpdate(result._id, { lastLogin: new Date(), $inc: { timesLoggedin: 1 } }).then((result) => {
+                console.log(result);
+            }).catch((err) => {
+                console.error(err);
+            });
+            
+            res.json(result);
+        }
         else res.status(401).json({ message: 'Invalid Credentials'});
         
     }).catch((err) => {

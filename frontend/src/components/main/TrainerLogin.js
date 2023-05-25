@@ -27,13 +27,15 @@ const TrainerLogin = () => {
     },
     onSubmit: async (values, { setSubmitting }) => {
       console.log(values);
-      const res = await fetch(apiUrl + '/trainer/add', {
-        method: 'POST',
-        body: JSON.stringify(values),  // this is used to convert js data in json formate
+      
+      const res = await fetch(apiUrl +"/trainer/authenticate", {
+        method: "POST",
+        body: JSON.stringify(values), // this is used to convert js data in json formate
         headers: {
-          'Content-Type': 'application/json' // this used to inform the data in send in the form of json
-        }
+          "Content-Type": "application/json", // this used to inform the data in send in the form of json
+        },
       });
+
       console.log(res.status);
       if (res.status === 200) {
         Swal.fire({
@@ -43,13 +45,14 @@ const TrainerLogin = () => {
           showConfirmButton: false,
           timer: 1500
         });
+        
         const data = await res.json();
-        sessionStorage.setItem('trainer', JSON.stringify(data));
+        sessionStorage.setItem("trainer", JSON.stringify(data));
         setLoggedIn(true);
         console.log(data);
         navigate('/trainer/managechapter');
-      }
-      else {
+
+      } else {
         Swal.fire({
           icon: "error",
           title: "Oops...",

@@ -208,11 +208,8 @@ const Home = () => {
         <div id="feedback-form-modal">
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered">
-              <div className="modal-content ">
-                <div className="modal-header" style={{backgroundColor:'#2db9fa'}}>
-                  <h3 className="modal-title text-center text-white" id="">
-                    Online Learning Feedback
-                  </h3>
+              <div className="modal-content" style={{ backgroundColor: '#f4f4f4' }}>
+                <div className="d-md-flex justify-content-md-end mt-2 me-2">
                   <button
                     type="button"
                     className="btn-close"
@@ -221,49 +218,71 @@ const Home = () => {
                   />
                 </div>
                 <div className="modal-body">
-                  <form className='m-0'>
-                    <p className='text-center fw-bold'>Share your learning experience and help us improve for the next course. </p>
-                    <div className="form-group">
-                      <div className="mb-3">
-                        <input
-                          type="text"
-                          id="name"
-                          className="form-control form-control-lg"
-                          placeholder='Name'
-                          style={{ backgroundColor: 'rgb(220, 220, 222, 0.3)' }}
-                        />
-                      </div>
-                      <div className="mb-3">
-                        <input type="email" id="Email" className="form-control form-control-lg"
-                          placeholder='Email'
-                          style={{ backgroundColor: 'rgb(220, 220, 222, 0.3)' }}
-                        />
-                      </div>
-                      <div className="mb-3">
-                        <textarea
-                          className="form-control"
-                          id="message"
-                          placeholder='Message....'
-                          rows={4}
-                          defaultValue={""}
-                          style={{ backgroundColor: 'rgb(220, 220, 222, 0.3)' }}
-                        />
+                  <form className="feedback-form mx-1 mx-md-4 text-black" >
+                    <div className="d-flex flex-row align-items-center mb-5">
+                      <div className="flex-fill mb-0">
+                        <div className='mb-5'>
+                          <h3>
+                            How helpful was this?
+                          </h3>
+                        </div>
+                        <div className='mb-4'>
+                          <input
+                            type="text"
+                            id="name"
+                            name='name'
+                            className="form-control form-control-lg"
+                            placeholder="Enter Full Name"
+                          />
+                        </div>
+                        <div className='mb-4'>
+                          <input
+                            type="email"
+                            id="email"
+                            name='email'
+                            className="form-control form-control-lg"
+                            placeholder="Enter Email Address"
+                          />
+                        </div>
+                        <div className="d-flex flex-row justify-content-center mb-4">
+                          <img
+                            className="emoji me-4"
+                            src="/images/emoji/angry-emoji.png"
+                          />
+                          <img
+                            className="emoji me-4"
+                            src="/images/emoji/sad-emoji.png"
+                          />
+                          <img
+                            className="emoji me-4"
+                            src="/images/emoji/neutral-emoji.png"
+                          />
+                          <img
+                            className="emoji me-4"
+                            src="/images/emoji/happy-emoji.png"
+                          />
+                          <img
+                            className="emoji"
+                            src="/images/emoji/love-emoji.png" />
+                        </div>
+                        <div className='mb-5'>
+                          {/* Text area fields */}
+                          <textarea class="form-control" id="textarea" rows="4"
+                            placeholder='Enter message....'
+                            name='message'
+                          ></textarea>
+                        </div>
+                        <button
+                          className="btn btn-primary btn-block"
+                          type="submit"
+                          style={{ borderRadius: "10px", marginLeft: '0px' }}
+                        >
+                          Send Your Feedback &nbsp;
+                          <i className="far fa-paper-plane" />
+                        </button>
                       </div>
                     </div>
                   </form>
-
-                </div>
-                <div className="modal-footer">
-                  <button
-                    type="button"
-                    className="btn btn-secondary"
-                    data-mdb-dismiss="modal"
-                  >
-                    Close
-                  </button>
-                  <button type="Submit" className="btn btn-primary" >
-                    Submit
-                  </button>
                 </div>
               </div>
             </div>
@@ -271,7 +290,6 @@ const Home = () => {
         </div>
       </div>
       {/* Feedback Form */}
-
 
       {/* Our Course*/}
       <div className='mb-10'>
