@@ -74,8 +74,7 @@ const StudentLogin = () => {
       // }}
     >
       {/*Student Login Form*/}
-      <section className="form"
-      >
+      <section className="form">
         <div className="">
           <div className="row g-0">
             <div className="col-lg-6 curve">
