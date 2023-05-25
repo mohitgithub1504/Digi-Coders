@@ -13,7 +13,7 @@ const DesignChapter = () => {
 
     const getChapterById =async () => {
         setLoading(true);
-        const response = await fetch(`${apiUrl}/chapter/${chapterId}`);
+        const response = await fetch(`${apiUrl}/chapter/getbyid/${chapterId}`);
         const data = await response.json();
         console.log(data);
         setChapterData(data);   

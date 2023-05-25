@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
 import Swal from "sweetalert2";
 import app_config from "../../config";
+import { NavLink } from "react-router-dom";
 
 const ManageChapter = () => {
   const { apiUrl } = app_config;
@@ -167,9 +168,9 @@ const ManageChapter = () => {
                   <td className="align-middle">{chapter.created_at}</td>
                   <td className="align-middle">{chapter.updated_at}</td>
                   <td className="align-middle">
-                    <button type="button" class="table-btn info">
+                    <NavLink to={"/trainer/designchapter/"+chapter._id} class="table-btn info">
                       <i className="fas fa-pen" />
-                    </button>
+                    </NavLink>
                   </td>
                   <td className="align-middle">
                     <button type="button" class="table-btn danger"

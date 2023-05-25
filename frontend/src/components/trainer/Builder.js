@@ -124,6 +124,16 @@ const Builder = () => {
 
   const chapterUpdateForm = () => {};
 
+  const toolboxCategories = {
+    // Include your custom block type in the desired category
+    category: [
+      {
+        type: 'myCustomBlock',
+        colour: '#A065A1',
+      }
+    ],
+  };
+
   return (
     <div>
       <div className="container-fluid">
@@ -134,8 +144,9 @@ const Builder = () => {
           Update Chapter
         </button>
         <BlocklyComponent
+          toolboxCategories={toolboxCategories} 
           readOnly={false}
-          trashcan={true}
+          trashcan={false}
           media={"media/"}
           move={{
             scrollbars: true,
@@ -185,7 +196,7 @@ const Builder = () => {
                 </Block>
               </Value>
             </Block>
-            <Block type="my_custom_field" />
+
         </BlocklyComponent>
 
         <Value name="TYPE">

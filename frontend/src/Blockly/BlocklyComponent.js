@@ -67,8 +67,8 @@ function BlocklyComponent(props) {
         }
     }, [primaryWorkspace, toolbox, blocklyDiv, props, addedBlocks]);
 
-    console.log(addedBlocks);
-    console.log(props.children);
+    // console.log(addedBlocks);
+    // console.log(props.children);
 
     return (
         <React.Fragment>
