@@ -1,6 +1,6 @@
 import Blockly from 'blockly';
 
-export const getDefaultToolbox = () => {
+export const getJSToolbox = () => {
   return {
     kind: 'categoryToolbox',
     contents: [
@@ -12,8 +12,8 @@ export const getDefaultToolbox = () => {
       },
       {
         kind: 'category',
-        name: 'Lists',
-        colour: 259,
+        name: 'JavaScript Lists',
+        colour: 182,
         contents: [
           {
             kind: 'block',
@@ -556,27 +556,7 @@ export const getDefaultToolbox = () => {
         custom: 'PROCEDURE',
         colour: 290
     },
-    { kind: 'sep' },
-    {
-        kind: 'category',
-        name: 'HTML',
-        colour: 160,
-        contents: [
-          {
-            kind: 'block',
-            blockxml:
-              '    <block type="html_attribute">\n' +
-              '      <field name="ATTRIBUTE">class</field>\n' +
-              '      <value name="VALUE">\n' +
-              '        <block type="text">\n' +
-              '          <field name="text" >my-class</field>\n' +
-              '        </block>\n' +
-              '      </value>\n' +
-              '    </block>\n'
-          },
-          
-        ]
-      },
+    
     ]
   };
 };

@@ -1,7 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import BlocklyComponent, { Block, Value, Field, Shadow } from "../../Blockly";
-import app_config from "../../config";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import app_config from '../../config';
+import { BlocklyWorkspace } from 'react-blockly';
+import { DEFAULT_OPTIONS } from '../blockly/defaults';
+import { getHTMLToolbox } from '../blockly/getHTMLToolbox';
+import '../blockly/htmlBlock';
+
+const toolbox = getHTMLToolbox();
 
 const ChapterDetails = () => {
   const { id } = useParams();
@@ -16,7 +21,7 @@ const ChapterDetails = () => {
   </xml>`);
 
   const fetchChapterData = async () => {
-    const res = await fetch( apiUrl+ "/chapter/getbyid/" + id);
+    const res = await fetch(apiUrl + '/chapter/getbyid/' + id);
     console.log(res.status);
     const data = await res.json();
     console.log(data);
@@ -37,14 +42,8 @@ const ChapterDetails = () => {
               <div className="card-body text-white">
                 <div className="row align-items-center">
                   <div className="col-md-6 col-lg-4 mt-4">
-                    <div
-                      class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-7"
-                      data-mdb-ripple-color="light"
-                    >
-                      <img
-                        src={apiUrl + "/" + chapterDetails.icon}
-                        className="img-fluid"
-                      />
+                    <div class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-7" data-mdb-ripple-color="light">
+                      <img src={apiUrl + '/' + chapterDetails.icon} className="img-fluid" />
                     </div>
                   </div>
                   <div className="content col-md-6 mb-4 mb-md-0 ">
@@ -96,34 +95,24 @@ const ChapterDetails = () => {
     <div>
       {displayChapterDetails()}
       <section>
-        <BlocklyComponent
-          readOnly={false}
-          trashcan={true}
-          media={"media/"}
-          move={{
-            scrollbars: true,
-            drag: true,
-            wheel: true,
-          }}
-          initialXml={xml}
-          height="60vh"
-          // blocks={addedBlocks}
-        >
-          <Block type="controls_repeat_ext">
-            <Value name="TIMES">
-              <Shadow type="math_number">
-                <Field name="NUM">10</Field>
-              </Shadow>
-            </Value>
-          </Block>
-          <Block type="text_charAt">
-            <Value name="VALUE">
-              <Block type="variables_get">
-                <Field name="VAR">text</Field>
-              </Block>
-            </Value>
-          </Block>
-        </BlocklyComponent>
+        <div className="card">
+          <div className="card-header">
+            <h4 className="card-title">Digi Code Editor</h4>
+          </div>
+          <div className="card-body">
+            <BlocklyWorkspace
+              workspaceConfiguration={DEFAULT_OPTIONS}
+              className="blockly-editor"
+              toolboxConfiguration={toolbox}
+              initialXml={`<xml xmlns="http://www.w3.org/1999/xhtml">
+        
+        </xml>`}
+            />
+          </div>
+          <div className="card-footer">
+            <button className="btn btn-primary">Run</button>
+          </div>
+        </div>
       </section>
     </div>
   );
