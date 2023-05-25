@@ -68,7 +68,6 @@ const ResetPassword = () => {
           setCurrentUser(data);
           setShowReset(true);
           sendOTP();
-          // console.log(generateOTP());
         }
       });
   };
