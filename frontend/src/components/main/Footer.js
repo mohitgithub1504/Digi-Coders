@@ -146,7 +146,7 @@ export const Footer = () => {
                 </p>
                 <p>
                   <i className="footer-icon fas fa-envelope me-3" />
-                  digicoders@gmail.com
+                  digicoders12@gmail.com
                 </p>
                 <p>
                   <i className="footer-icon fas fa-phone me-3" /> +91 8948911871
