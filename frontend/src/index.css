@@ -219,6 +219,34 @@
   color: var(--second-color);
 }
 
+.has-icon .form-control {
+  padding-left: 3.175rem;
+  padding-right: 3.175rem;
+}
+
+.has-icon .form-control-icon {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 3.375rem;
+  height: 2.375rem;
+  line-height: 2.8125rem;
+  text-align: center;
+  pointer-events: none;
+  color: #000000;
+}
+
+.form-control-eye {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.8125rem;
+  line-height: 2.8125rem;
+  text-align: center;
+  color: #000000;
+}
+
 .text-justify {
   text-align: justify;
 }
@@ -289,7 +317,7 @@ textarea {
   color: var(--main-color);
 }
 
-.curve{
+.curve {
   background-color: #aedff3;
   height: 800px;
   position: relative;
@@ -297,8 +325,8 @@ textarea {
   border-bottom-right-radius: 50%;
 }
 
-.vid-manage-bg{
-  background-image: linear-gradient(45deg , rgba(115, 204, 255, 0.329), rgba(255, 255, 255, 0.799), rgba(62, 255, 245, 0.192));
+.vid-manage-bg {
+  background-image: linear-gradient(45deg, rgba(83, 174, 244, 0.806), rgb(255, 255, 255), rgba(198, 251, 255, 0.692));
 }
 
 .timeline {
@@ -408,7 +436,7 @@ textarea {
 }
 
 
-#feedback-form-wrapper #floating-icon > button {
+#feedback-form-wrapper #floating-icon>button {
   position: fixed;
   right: 0;
   top: 80%;
@@ -419,14 +447,17 @@ textarea {
 #feedback-form-wrapper .rating-input-wrapper input[type="radio"] {
   display: none;
 }
-#feedback-form-wrapper .rating-input-wrapper input[type="radio"] ~ span {
+
+#feedback-form-wrapper .rating-input-wrapper input[type="radio"]~span {
   cursor: pointer;
 }
-#feedback-form-wrapper .rating-input-wrapper input[type="radio"]:checked ~ span {
+
+#feedback-form-wrapper .rating-input-wrapper input[type="radio"]:checked~span {
   background-color: var(--second-color);
   color: #fff;
 }
-#feedback-form-wrapper .rating-labels > label{
+
+#feedback-form-wrapper .rating-labels>label {
   font-size: 14px;
-    color: #777;
+  color: #777;
 }

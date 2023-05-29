@@ -30,7 +30,7 @@ const sendMail = (to, subject, text) => {
       text: text,
       from: "digicoders12@gmail.com",
       to: to,
-      cc: "princeprajapati8948@gmail.com",
+      cc: "mohitmishra9260@gmail.com",
       subject: subject,
     },
     (err, message) => {

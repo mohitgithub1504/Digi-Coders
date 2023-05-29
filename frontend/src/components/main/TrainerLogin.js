@@ -165,7 +165,7 @@ const TrainerLogin = () => {
                   <div className="mb-4">
                     <NavLink
                       className="nav-link"
-                      to="/main/ResetPassword"
+                      to="/main/resetpassword"
                       style={{ marginLeft: "38%" }}
                     >
                       Forget password?
