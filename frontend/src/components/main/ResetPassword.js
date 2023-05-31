@@ -209,7 +209,7 @@ const ResetPassword = () => {
                               style={{
                                 height: 400,
                                 marginTop: "5%",
-                                marginLeft: "8%",
+                                marginLeft: "5%",
                               }}
                             />
                           </div>
@@ -246,17 +246,17 @@ const ResetPassword = () => {
                                       </div>
                                     </div>
 
-                                    <div id="otp" class="inputs d-flex flex-row justify-content-center mb-4" value={values.otp} onChange={handleChange}>
+                                    {/* <div id="otp" class="inputs d-flex flex-row justify-content-center mb-4" value={values.otp} onChange={handleChange}>
                                     <input class="m-2 text-center form-control rounded" type="text" id="first" maxlength="1" />
                                     <input class="m-2 text-center form-control rounded" type="text" id="second" maxlength="1" />
                                     <input class="m-2 text-center form-control rounded" type="text" id="third" maxlength="1" />
                                     <input class="m-2 text-center form-control rounded" type="text" id="fourth" maxlength="1" />
                                     
-                                  </div>
+                                  </div> */}
 
                                     <div className="form-group has-icon mb-4">
                                       <i className="fas fa-key fa-lg form-control-icon" />
-                                      <div class="d-grid  d-md-flex justify-content-md-end">
+                                      <div class="d-grid d-md-flex justify-content-md-end">
                                         <span
                                           className='form-control-eye'
                                           onClick={handleShow}

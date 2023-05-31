@@ -68,10 +68,7 @@ export const Footer = () => {
                 </a>
                 <p className='text-justify'>
                   Digi Coders is a block-based coding program for kids, where
-                  they can learn the basics of coding while having fun. Through
-                  interactive and engaging activities, kids can develop logical
-                  thinking, problem-solving, and other valuable skills that will
-                  prepare them for the future.
+                  they can learn the basics of coding while having fun. 
                 </p>
               </div>
               {/* Grid column */}
@@ -97,16 +94,6 @@ export const Footer = () => {
                 <p>
                   <a href="#!" className="text-reset custom-link-hover">
                     Python
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset custom-link-hover">
-                    App Development
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset custom-link-hover">
-                    Artificial Intelligence
                   </a>
                 </p>
               </div>
@@ -142,17 +129,16 @@ export const Footer = () => {
                 {/* Links */}
                 <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
                 <p>
-                  <i className="footer-icon fas fa-home me-3" /> Hazrat Ganj, Lucknow 226001, UP
+                  <i className="footer-icon fas fa-home me-3" />Hazrat Ganj, Lucknow 226001, UP
                 </p>
                 <p>
-                  <i className="footer-icon fas fa-envelope me-3" />
-                  digicoders12@gmail.com
+                  <i className="footer-icon fas fa-envelope me-3" />digicoders12@gmail.com
                 </p>
                 <p>
-                  <i className="footer-icon fas fa-phone me-3" /> +91 8948911871
+                  <i className="footer-icon fas fa-phone me-3" />+91 9260964544
                 </p>
                 <p>
-                  <i className="footer-icon fas fa-print me-3" /> +91 9260964544
+                  <i className="footer-icon fas fa-print me-3" />+91 8948911871
                 </p>
               </div>
               {/* Grid column */}

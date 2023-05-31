@@ -86,9 +86,9 @@ const TrainerSignup = () => {
       exit={{ opacity: 0.5, x: -300 }}
       transition={{ type: "spring" }}
       className="vid-manage-bg"
-      // style={{
-      //   backgroundImage: `url('/images/bg-animation-img2.jpg`
-      // }}
+    // style={{
+    //   backgroundImage: `url('/images/bg-animation-img2.jpg`
+    // }}
     >
       {/*Student Signup Form*/}
       <section className="form"
@@ -102,10 +102,9 @@ const TrainerSignup = () => {
 
               <div className="py-2" style={{ marginLeft: "100px" }}>
                 <div className="d-flex flex-row align-items-center">
-                  <div className="flex-fill text-center mb-2">
+                  <div className="flex-fill text-center mb-2 mx-5">
                     <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing
-                      elit. Recusandae eum consectetur fuga
+                      Access your account by signing in and continue where you left off.
                     </p>
                   </div>
                 </div>

@@ -116,7 +116,7 @@ const Contact = () => {
                                                     <i className="form-icon fas fa-phone me-3 mb-4 fa-2x" />
                                                     <div className="flex-fill">
                                                         <p>
-                                                            +91 9458561512
+                                                            +91 9260964544
                                                         </p>
                                                     </div>
                                                 </div>
@@ -124,7 +124,7 @@ const Contact = () => {
                                                     <i className="form-icon fas fa-envelope me-3 mb-4 fa-2x" />
                                                     <div className="flex-fill">
                                                         <p>
-                                                            digicoders@gmail.com
+                                                            digicoders12@gmail.com
                                                         </p>
                                                     </div>
                                                 </div>

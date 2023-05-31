@@ -11,7 +11,7 @@ const StudentLogin = () => {
 
   const navigate = useNavigate();
   const { apiUrl } = app_config;
-  const {setLoggedIn} = useUserContext();
+  const { setLoggedIn } = useUserContext();
 
   const studentLogin = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Email is Required"),
@@ -26,7 +26,7 @@ const StudentLogin = () => {
     onSubmit: async (values, { setSubmitting }) => {
       console.log(values);
 
-      const res = await fetch(apiUrl +"/user/authenticate", {
+      const res = await fetch(apiUrl + "/user/authenticate", {
         method: "POST",
         body: JSON.stringify(values), // this is used to convert js data in json formate
         headers: {
@@ -43,7 +43,7 @@ const StudentLogin = () => {
           showConfirmButton: false,
           timer: 1500
         });
-        
+
         const data = await res.json();
         sessionStorage.setItem("user", JSON.stringify(data));
         setLoggedIn(true);
@@ -69,9 +69,9 @@ const StudentLogin = () => {
       exit={{ opacity: 0.5, x: -300 }}
       transition={{ type: "spring" }}
       className="vid-manage-bg"
-      // style={{
-      //   backgroundImage: `url('/images/bg-animation-img2.jpg`
-      // }}
+    // style={{
+    //   backgroundImage: `url('/images/bg-animation-img2.jpg`
+    // }}
     >
       {/*Student Login Form*/}
       <section className="form">
@@ -84,10 +84,9 @@ const StudentLogin = () => {
 
               <div className="py-2" style={{ marginLeft: "100px" }}>
                 <div className="d-flex flex-row align-items-center">
-                  <div className="flex-fill text-center mb-2">
+                  <div className="flex-fill text-center mb-2 mx-5">
                     <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing
-                      elit. Recusandae eum consectetur fuga
+                      Start your journey with us by signing up and accessing exclusive benefits.
                     </p>
                   </div>
                 </div>

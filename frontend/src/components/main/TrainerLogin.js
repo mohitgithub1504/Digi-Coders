@@ -13,7 +13,7 @@ const TrainerLogin = () => {
 
   const navigate = useNavigate();
   const { apiUrl } = app_config;
-  const {setLoggedIn} = useTrainerContext();
+  const { setLoggedIn } = useTrainerContext();
 
   const trainerlogin = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Email is Required'),
@@ -27,15 +27,15 @@ const TrainerLogin = () => {
     },
     onSubmit: async (values, { setSubmitting }) => {
       console.log(values);
-      
-      const res = await fetch(apiUrl +"/trainer/authenticate", {
+
+      const res = await fetch(apiUrl + "/trainer/authenticate", {
         method: "POST",
         body: JSON.stringify(values), // this is used to convert js data in json formate
         headers: {
           "Content-Type": "application/json", // this used to inform the data in send in the form of json
         },
       });
-// hello f
+      // hello f
       console.log(res.status);
       if (res.status === 200) {
         Swal.fire({
@@ -45,7 +45,7 @@ const TrainerLogin = () => {
           showConfirmButton: false,
           timer: 1500
         });
-        
+
         const data = await res.json();
         sessionStorage.setItem("trainer", JSON.stringify(data));
         setLoggedIn(true);
@@ -72,9 +72,9 @@ const TrainerLogin = () => {
       exit={{ opacity: 0.5, x: -300 }}
       transition={{ type: "spring" }}
       className="vid-manage-bg"
-      // style={{
-      //   backgroundImage: `url('/images/bg-animation-img2.jpg`
-      // }}
+    // style={{
+    //   backgroundImage: `url('/images/bg-animation-img2.jpg`
+    // }}
     >
       {/*Student Login Form*/}
       <section className="form"
@@ -88,10 +88,9 @@ const TrainerLogin = () => {
 
               <div className="py-2" style={{ marginLeft: "100px" }}>
                 <div className="d-flex flex-row align-items-center">
-                  <div className="flex-fill text-center mb-2">
+                  <div className="flex-fill text-center mb-2 mx-5">
                     <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing
-                      elit. Recusandae eum consectetur fuga
+                      Start your journey with us by signing up and unlock a world of opportunities.
                     </p>
                   </div>
                 </div>
