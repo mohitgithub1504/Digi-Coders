@@ -9,6 +9,10 @@ const app_config = {
         fail: 401,
       },
     },
+    courseCategories: [
+      'HTML',
+      'JavaScript',
+    ],
   
     blockData: {
       html: {

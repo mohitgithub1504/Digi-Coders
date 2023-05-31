@@ -5,8 +5,15 @@ import { BlocklyWorkspace } from 'react-blockly';
 import { DEFAULT_OPTIONS } from '../blockly/defaults';
 import { getHTMLToolbox } from '../blockly/getHTMLToolbox';
 import '../blockly/htmlBlock';
+import { getJSToolbox } from '../blockly/getJSToolbox';
 
 const toolbox = getHTMLToolbox();
+
+const getToolbox = (category) => {
+  if(category === 'HTML') return getHTMLToolbox();
+  else if(category === 'JS') return getJSToolbox();
+  else return getHTMLToolbox();
+}
 
 const ChapterDetails = () => {
   const { id } = useParams();
@@ -32,6 +39,8 @@ const ChapterDetails = () => {
   useEffect(() => {
     fetchChapterData();
   }, []);
+
+  
 
   const displayChapterDetails = () => {
     if (chapterDetails !== null) {
@@ -100,14 +109,19 @@ const ChapterDetails = () => {
             <h4 className="card-title">Digi Code Editor</h4>
           </div>
           <div className="card-body">
-            <BlocklyWorkspace
+            {
+              chapterDetails !== null && (
+                <BlocklyWorkspace
               workspaceConfiguration={DEFAULT_OPTIONS}
               className="blockly-editor"
-              toolboxConfiguration={toolbox}
+              toolboxConfiguration={getToolbox(chapterDetails.category)}
               initialXml={`<xml xmlns="http://www.w3.org/1999/xhtml">
         
         </xml>`}
             />
+              )
+            }
+            
           </div>
           <div className="card-footer">
             <button className="btn btn-primary">Run</button>
