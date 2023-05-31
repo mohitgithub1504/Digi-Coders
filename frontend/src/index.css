@@ -47,6 +47,14 @@
   font-size: 18px;
 }
 
+.accordion-button::after{
+  background-image: url("https://static.thenounproject.com/png/261370-200.png");
+}
+
+.accordion-button:not(.collapsed)::after{
+  background-image: url("https://static.vecteezy.com/system/resources/previews/009/267/401/original/minus-sign-icon-free-png.png");
+}
+
 .accordion-button:hover {
   color: var(--second-color);
 }
@@ -315,6 +323,28 @@ textarea {
 
 .signup-name p:hover {
   color: var(--main-color);
+}
+
+.reset-img {
+  background-color: #aedff3;
+  height: 400px;
+  position: relative;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.reset-form h3 {
+  text-transform: uppercase;
+  font-size: 42px;
+  color: var(--main-color);
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.reset-form p {
+  letter-spacing: 2px;
+  color: var(--main-color);
+  text-align: justify;
 }
 
 .curve {

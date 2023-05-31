@@ -1,13 +1,3 @@
-/* .emoji {
-    color: var(--main-color);
-    text-align: center;
-    font-size: 30px;
-    padding: 0 8px;
-  }
- .emoji:hover {
-    color: rgb(209, 209, 84);
-  } */
-
 .emoji {
     height: 50px;
     float: left;
