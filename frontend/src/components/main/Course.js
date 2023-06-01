@@ -60,7 +60,7 @@ const Course = () => {
                                                 src="/images/course1.jpg"
                                                 className="img-fluid"
                                             />
-                                            <NavLink to="/user/browsechapters">
+                                            <NavLink to="/user/browsechapters/HTML">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -95,7 +95,7 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <NavLink to="/user/browsechapters" className="btn btn-primary">
+                                            <NavLink to="/user/browsechapters/HTML" className="btn btn-primary">
                                                 Learn More
                                             </NavLink>
                                         </div>

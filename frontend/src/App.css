@@ -51,4 +51,16 @@
     text-align: justify;
   }
 
+.page-link{
+  color: var(--third-color);
+  background-color: var(--second-color);
+}
+
+.page-link:hover{
+  color: var(--third-color);
+  background-color: var(--main-color);
+}
+
+
+
  

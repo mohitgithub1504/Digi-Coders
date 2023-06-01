@@ -12,6 +12,7 @@ const app_config = {
     courseCategories: [
       'HTML',
       'JavaScript',
+      'Python'
     ],
   
     blockData: {

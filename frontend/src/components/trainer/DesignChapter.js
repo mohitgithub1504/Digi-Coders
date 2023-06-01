@@ -73,17 +73,17 @@ const DesignChapter = () => {
   const displayChapterDetails = () => {
     if (chapterDetails !== null) {
       return (
-        <section className="bg-dark">
-          <div className="container py-5">
-            <div className="">
+        <section className="" style={{backgroundColor: "#29c1fe"}}>
+          <div className="container py-4 px-5">
+            <div className="my-4">
               <div className="card-body text-white">
-                <div className="row align-items-center">
-                  <div className="col-md-6 col-lg-4 mt-4">
-                    <div class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-7" data-mdb-ripple-color="light">
+                <div className="row align-items-center justify-content-center">
+                  <div className="col-md-6 col-lg-4 mx-5">
+                    <div class="bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-7" data-mdb-ripple-color="light">
                       <img src={apiUrl + '/' + chapterDetails.icon} className="img-fluid" />
                     </div>
                   </div>
-                  <div className="content col-md-6 mb-4 mb-md-0 ">
+                  <div className="content col-md-6 mb-4 mb-md-0 text-justify ">
                     <div class="row">
                       <div class="col-4">
                         <h5 className="fw-bold mx-3">

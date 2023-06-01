@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 const ManageChapter = () => {
   const { apiUrl } = app_config;
 
-  const itemPerPage = 5;
+  const itemPerPage = 10;
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -25,19 +25,39 @@ const ManageChapter = () => {
   const displayChapters = () => {
     return (
       <div>
-        <div className="container" style={{ backgroundColor: '#aedff3' }}>
-          {/*Section: Content*/}
-          <section className="d-md-flex justify-content-md-end p-4">
-            {/* <h3 className="font-weight-bold text-white text-uppercase">
-            Chapter Manager
-          </h3> */}
-            <button type="button" className="btn btn-primary btn-rounded" data-mdb-toggle="modal" data-mdb-target="#staticBackdrop1">
-              <i className="fas fa-plus me-2" />
-              Add New Chapters
-            </button>
-          </section>
-          {/*Section: Content*/}
-        </div>
+        <section className="" style={{ backgroundColor: "#aedff3" }}>
+          <div className="container">
+            <div className="">
+              <div className="card-body text-white">
+                <div className="row align-items-center py-4">
+                  <div className="col-md-6 px-5">
+                    <div className="input-group">
+                      <div className="form-group has-icon">
+                        <i className="fas fa-magnifying-glass fa-lg form-control-icon" />
+                        <input
+                          type="search"
+                          id="search"
+                          name="search"
+                          className="form-control form-control-lg"
+                          placeholder="Search"
+                          style={{ paddingRight: "10px", width: "350px" }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className='col-md-6 px-5'>
+                    <div className="d-flex justify-content-end">
+                      <button type="button" className="btn btn-primary btn-rounded" data-mdb-toggle="modal" data-mdb-target="#staticBackdrop1">
+                        <i className="fas fa-plus me-2" />
+                        Add New Chapters
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Modal */}
         <div className="modal fade" id="staticBackdrop1" tabIndex={-1} aria-labelledby="exampleModalLabel1" aria-hidden="true">
@@ -134,14 +154,14 @@ const ManageChapter = () => {
                 <td className="align-middle">{chapter.created_at}</td>
                 <td className="align-middle">{chapter.updated_at}</td>
                 <td className="align-middle">
-                  <NavLink to={'/trainer/designchapter/' + chapter._id} class="table-btn info">
+                  <NavLink to={'/trainer/designchapter/' + chapter._id} >
                     <i className="fas fa-pen" />
                   </NavLink>
                 </td>
                 <td className="align-middle">
-                  <button type="button" class="table-btn danger">
+                  <NavLink to={''} >
                     <i className="far fa-trash-can" />
-                  </button>
+                  </NavLink>
                 </td>
               </tr>
             ))}
@@ -150,27 +170,27 @@ const ManageChapter = () => {
 
         <div className="container" style={{ backgroundColor: '#fff' }}>
           {/*Section: Content*/}
-          <section className="d-md-flex justify-content-md-end">
+          <section className="d-md-flex justify-content-center">
             <nav aria-label="...">
               <ul className="pagination mt-3">
                 <li className="page-item me-2">
-                  <a className="page-link" type="button" onClick={(e) => setCurrentPage(currentPage - 1)}>
-                    <i className="fas fa-angles-left" />
+                  <a className="page-link border" type="button" onClick={(e) => setCurrentPage(currentPage - 1)}>
+                    <i className="fas fa-angles-left" /> Previous
                   </a>
                 </li>
                 {Array(Math.ceil(chapterList.length / itemPerPage))
                   .fill(1)
                   .map((item, index) => (
-                    <li className={`page-item ${currentPage === index + 1 ? 'active' : ''}`} aria-current="page">
-                      <a className="page-link" type="button" onClick={(e) => setCurrentPage(index + 1)}>
+                    <li className={`page-item ${currentPage === index + 1 ? 'active' : ' '}`} aria-current="page">
+                      <a className="page-link border me-2" type="button" onClick={(e) => setCurrentPage(index + 1)}>
                         {index + 1} <span className="visually-hidden">(current)</span>
                       </a>
                     </li>
                   ))}
                 {Math.ceil(chapterList.length / itemPerPage) - currentPage > 0 && (
                   <li className="page-item">
-                    <a className="page-link" type="button" onClick={(e) => setCurrentPage(currentPage + 1)}>
-                      <i className="fas fa-angles-right" />
+                    <a className="page-link border" type="button" onClick={(e) => setCurrentPage(currentPage + 1)}>
+                      Next <i className="fas fa-angles-right" />
                     </a>
                   </li>
                 )}

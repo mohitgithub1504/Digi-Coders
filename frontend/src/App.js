@@ -21,7 +21,6 @@ import StudentLogin from './components/main/StudentLogin';
 import BlockProvider from './context/BlockContext';
 import User from './components/user';
 import BrowseChapters from './components/user/BrowseChapters';
-import ViewChapter from './components/user/ViewChapter';
 import ChapterDetails from './components/user/ChapterDetails';
 import TrainerAuth from './auth/TrainerAuth';
 import UserProvider from './context/UserContext';
@@ -81,6 +80,7 @@ function App() {
               >
                 <Route path="userprofile" element={<UserProfile />} />
                 <Route path="browsechapters" element={<BrowseChapters />} />
+                <Route path="browsechapters/:chaptername" element={<BrowseChapters />} />
                 <Route path="chapterdetails/:id" element={<ChapterDetails />} />
               </Route>
             </Routes>

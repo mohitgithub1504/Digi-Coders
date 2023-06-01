@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import app_config from "../../config";
 
 const BrowseChapters = () => {
   const { apiUrl } = app_config;
+
+  const {chaptername} = useParams();
 
   const [chapterList, setChapterList] = useState([]);
   const [masterList, setMasterList] = useState([]);
@@ -27,7 +29,11 @@ const BrowseChapters = () => {
     console.log(res.status);
     const data = await res.json();
     console.log(data);
-    setChapterList(data);
+    if(chaptername){
+      setChapterList(data.filter((chapter) => chapter.title.toLowerCase() === chaptername.toLowerCase()));
+    }else{
+      setChapterList(data);
+    }
     setMasterList(data);
   };
 
