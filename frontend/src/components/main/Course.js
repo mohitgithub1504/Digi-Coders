@@ -60,7 +60,7 @@ const Course = () => {
                                                 src="/images/course1.jpg"
                                                 className="img-fluid"
                                             />
-                                            <NavLink to="/user/browsechapters/HTML">
+                                            <NavLink to="/user/viewchapters/HTML">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -95,7 +95,7 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <NavLink to="/user/browsechapters/HTML" className="btn btn-primary">
+                                            <NavLink to="/user/viewchapters/HTML" className="btn btn-primary">
                                                 Learn More
                                             </NavLink>
                                         </div>
@@ -113,7 +113,7 @@ const Course = () => {
                                                 src="/images/course2.jpg"
                                                 className="img-fluid"
                                             />
-                                            <NavLink to="/user/browsechapters">
+                                            <NavLink to="/user/viewchapters">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -148,7 +148,7 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <NavLink to="/user/browsechapters" className="btn btn-primary">
+                                            <NavLink to="/user/viewchapters" className="btn btn-primary">
                                                 Learn More
                                             </NavLink>
                                         </div>
@@ -166,7 +166,7 @@ const Course = () => {
                                                 src="/images/course3.jpg"
                                                 className="img-fluid"
                                             />
-                                            <NavLink to="/user/browsechapters">
+                                            <NavLink to="/user/viewchapters">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -201,7 +201,7 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <NavLink to="/user/browsechapters" className="btn btn-primary">
+                                            <NavLink to="/user/viewchapters" className="btn btn-primary">
                                                 Learn more
                                             </NavLink>
                                         </div>
@@ -222,7 +222,7 @@ const Course = () => {
                                                 src="/images/course4.jpg"
                                                 className="img-fluid"
                                             />
-                                            <NavLink to="/user/browsechapters">
+                                            <NavLink to="/user/viewchapters">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -257,7 +257,7 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <NavLink to="/user/browsechapters" className="btn btn-primary">
+                                            <NavLink to="/user/viewchapters" className="btn btn-primary">
                                                 Learn more
                                             </NavLink>
                                         </div>
@@ -275,7 +275,7 @@ const Course = () => {
                                                 src="/images/course5.jpg"
                                                 className="img-fluid"
                                             />
-                                            <NavLink to="/user/browsechapters">
+                                            <NavLink to="/user/viewchapters">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -310,7 +310,7 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <NavLink to="/user/browsechapters" className="btn btn-primary">
+                                            <NavLink to="/user/viewchapters" className="btn btn-primary">
                                                 Learn more
                                             </NavLink>
                                         </div>
@@ -328,7 +328,7 @@ const Course = () => {
                                                 src="/images/course6.jpg"
                                                 className="img-fluid"
                                             />
-                                            <NavLink to="/user/browsechapters">
+                                            <NavLink to="/user/viewchapters">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -363,7 +363,7 @@ const Course = () => {
                                             {/* Divider here */}
                                             <hr class="hr hr-blurry"></hr>
 
-                                            <NavLink to="/user/browsechapters" className="btn btn-primary">
+                                            <NavLink to="/user/viewchapters" className="btn btn-primary">
                                                 Learn more
                                             </NavLink>
                                         </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 export const Footer = () => {
   return (
@@ -103,24 +104,24 @@ export const Footer = () => {
                 {/* Links */}
                 <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
                 <p>
-                  <a href="#!" className="text-reset custom-link-hover">
-                    Pricing
-                  </a>
+                  <NavLink to="/main/home" className="text-reset custom-link-hover">
+                    Home
+                  </NavLink>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset custom-link-hover">
-                    Settings
-                  </a>
+                  <NavLink to="/main/course" className="text-reset custom-link-hover">
+                    Courses
+                  </NavLink>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset custom-link-hover">
-                    Orders
-                  </a>
+                  <NavLink to="/main/about" className="text-reset custom-link-hover">
+                    About
+                  </NavLink>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset custom-link-hover">
-                    Help
-                  </a>
+                  <NavLink to="/main/contact" className="text-reset custom-link-hover">
+                    Contact
+                  </NavLink>
                 </p>
               </div>
               {/* Grid column */}
@@ -153,9 +154,9 @@ export const Footer = () => {
           style={{ backgroundColor: "#1b1b1b" }}
         >
           © 2023 Copyright :&nbsp;
-          <a className="text-reset fw-bold custom-link-hover" href="https://mdbootstrap.com/">
+          <NavLink className="text-reset fw-bold custom-link-hover" to="#">
             DigiCoders.com
-          </a>
+          </NavLink>
         </div>
         {/* Copyright */}
       </footer>

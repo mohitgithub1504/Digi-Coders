@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-import React from 'react'
+import React, { useState } from 'react'
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
 import { motion } from "framer-motion";
@@ -10,6 +10,11 @@ const TrainerSignup = () => {
 
   const navigate = useNavigate();
   const { apiUrl } = app_config;
+
+  const [selImage, setSelImage] = useState(null);
+
+  const [show, setShow] = useState(false);
+  const handleShow = () => setShow(!show);
 
   const trainersignupSchema = Yup.object().shape({
     name: Yup.string()
@@ -36,11 +41,18 @@ const TrainerSignup = () => {
       skills: '',
       certificate: '',
       email: '',
+      mobile_no: '',
       password: '',
       avatar: '',
       createdAt: '',
     },
+
+    // onSubmit: async (values, { setSubmitting }) => {
+    //   values.icon = selImage.name;
+    //   console.log(values);
+
     onSubmit: async (values, { setSubmitting }) => {
+      values.avatar = selImage.name;
       console.log(values);
 
 
@@ -76,6 +88,21 @@ const TrainerSignup = () => {
 
 
   });
+
+  const uploadFile = (e) => {
+    const file = e.target.files[0];
+    const fd = new FormData();
+    setSelImage(file);
+    fd.append('myfile', file);
+    fetch(apiUrl + '/util/uploadfile', {
+      method: 'POST',
+      body: fd
+    }).then((res) => {
+      if (res.status === 200) {
+        console.log('file uploaded');
+      }
+    });
+  };
 
 
 
@@ -131,7 +158,7 @@ const TrainerSignup = () => {
             <div className="col-lg-6">
               <div className="card-body p-md-5 mx-md-5">
                 <div className="text-center mb-5">
-                  <h3 className="my-5" style={{ marginLeft: "5%" }}>
+                  <h3 className="my-2">
                     Trainer Signup
                   </h3>
                 </div>
@@ -139,53 +166,74 @@ const TrainerSignup = () => {
                   className="mx-md-5 text-black"
                   onSubmit={trainersignupForm.handleSubmit}
                 >
-                  <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-user fa-lg me-3 fa-fw" />
-                    <div className="flex-fill mb-0">
-                      <input
-                        type="text"
-                        id="name"
-                        className="form-control form-control-lg"
-                        placeholder='Name'
-                        value={trainersignupForm.values.name}
-                        onChange={trainersignupForm.handleChange}
-                      />
-                      <span className='text-danger'>{trainersignupForm.errors.name}</span>
+                  <div className="form-group has-icon mb-4">
+                    <i className="fas fa-user fa-lg form-control-icon" />
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      className="form-control form-control-lg"
+                      placeholder="Name"
+                      value={trainersignupForm.values.name}
+                      onChange={trainersignupForm.handleChange}
+                    />
+                    <span className='text-danger'>{trainersignupForm.errors.name}</span>
+                  </div>
+
+                  <div className="form-group has-icon mb-4">
+                    <i className="fas fa-envelope fa-lg form-control-icon" />
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      autoComplete="off"
+                      className="form-control form-control-lg"
+                      placeholder="Email"
+                      value={trainersignupForm.values.email}
+                      onChange={trainersignupForm.handleChange}
+                    />
+                    <span className='text-danger' >{trainersignupForm.errors.email}</span>
+                  </div>
+
+                  <div className="form-group has-icon mb-4">
+                    <i className="fas fa-key fa-lg form-control-icon" />
+                    <div class="d-grid d-md-flex justify-content-md-end">
+                      <span
+                        className='form-control-eye'
+                        onClick={handleShow}
+                      >
+                        {show ? <i class="far fa-eye" /> : <i class="far fa-eye-slash" />}
+                      </span>
                     </div>
+                    <input
+                      type={show ? "text" : "password"}
+                      id="password"
+                      name="password"
+                      autoComplete="off"
+                      className="form-control form-control-lg"
+                      placeholder="Password"
+                      value={trainersignupForm.values.password}
+                      onChange={trainersignupForm.handleChange}
+                    />
+                    <span className='text-danger'>{trainersignupForm.errors.password}</span>
+                  </div>
+                  <div className="form-group has-icon mb-4">
+                    <i className="fas fa-mobile-screen-button fa-lg form-control-icon" />
+                    <input
+                      type="text"
+                      id="mobile_no"
+                      name="mobile_no"
+                      className="form-control form-control-lg"
+                      placeholder="Mobile Number"
+                      value={trainersignupForm.values.mobile_no}
+                      onChange={trainersignupForm.handleChange}
+
+                    />
+                    {/* <span className='text-danger'>{studentsignupForm.errors.name}</span> */}
                   </div>
                   <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-envelope fa-lg me-3 fa-fw" />
-                    <div className="flex-fill mb-0">
-                      <input
-                        type="email"
-                        id="email"
-                        autoComplete='off'
-                        className="form-control form-control-lg"
-                        placeholder='Email'
-                        value={trainersignupForm.values.email}
-                        onChange={trainersignupForm.handleChange}
-                      />
-                      <span className='text-danger' >{trainersignupForm.errors.email}</span>
-                    </div>
-                  </div>
-                  <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-lock fa-lg me-3 fa-fw" />
-                    <div className="flex-fill mb-0">
-                      <input
-                        type="password"
-                        id="password"
-                        autoComplete='off'
-                        className="form-control form-control-lg"
-                        placeholder='Password'
-                        value={trainersignupForm.values.password}
-                        onChange={trainersignupForm.handleChange}
-                      />
-                      <span className='text-danger'>{trainersignupForm.errors.password}</span>
-                    </div>
-                  </div>
-                  <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-gear fa-lg ms-1 me-3 fa-fw" />
-                    <div className="flex-fill mb-0">
+                    <div className="form-group has-icon me-2">
+                      <i className="fas fa-gear fa-lg form-control-icon" />
                       <input
                         type="text"
                         id="skills"
@@ -197,9 +245,8 @@ const TrainerSignup = () => {
                       />
                       <span className='text-danger'>{trainersignupForm.errors.skills}</span>
                     </div>
-
-                    <i className="fas fa-award fa-lg mx-3 fa-fw" />
-                    <div className="flex-fill mb-0">
+                    <div className="form-group has-icon ms-2">
+                      <i className="fas fa-award fa-lg form-control-icon" />
                       <input
                         type="text"
                         id="certificate"
@@ -212,21 +259,30 @@ const TrainerSignup = () => {
                       <span className='text-danger'>{trainersignupForm.errors.certificate}</span>
                     </div>
                   </div>
-                  <div className="pt-1 mx-4 pb-1 ">
+
+                  <div className='text-center mb-4'>
+                    <label htmlFor="chapter-img" className="btn btn-primary">
+                      {' '}
+                      <i class="fas fa-upload"></i> Upload Image
+                    </label>
+                    <input type="file" id="chapter-img" hidden onChange={uploadFile} />
+                  </div>
+
+                  <div className="pt-1 pb-1 ">
                     <button
                       className="btn btn-primary btn-block mb-5"
                       type="submit"
-                      style={{ borderRadius: "10px" }}
+                      style={{ borderRadius: "10px", marginLeft: "0px" }}
                     >
                       Signup &nbsp;
                       <i className="fas fa-arrow-right-to-bracket" />
                     </button>
 
                     <div>
-                      <div className="mb-4" style={{ marginLeft: "40%" }}>
+                      <div className="mb-4 text-center">
                         <h6>or sign up with :</h6>
                       </div>
-                      <div className="" style={{ marginLeft: "34%" }}>
+                      <div className="text-center">
                         <button
                           type="button"
                           className="btn btn-primary btn-floating mx-1"

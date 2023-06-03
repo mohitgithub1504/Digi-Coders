@@ -5,6 +5,7 @@ const myschema = new Schema({
     skills : String,
     certifications : String,
     email: String,
+    mobile_no : String,
     password : String,
     avatar: String,
     createdAt : Date,

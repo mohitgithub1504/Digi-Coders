@@ -123,40 +123,45 @@ const Navbar = () => {
                 </>
               ) :
                 (
-
-                  <div className="dropdown">
-                    <NavLink
-                      className="dropdown-toggle d-flex align-items-center hidden-arrow"
-                      to="#"
-                      id="navbarDropdownMenuAvatar"
-                      role="button"
-                      data-mdb-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      <img
-                        src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-                        className="rounded-circle"
-                        height={40}
-                        alt="Black and White Portrait of a Man"
-                        loading="lazy"
-                      />
-                    </NavLink>
-                    <ul
-                      className="dropdown-menu dropdown-menu-end"
-                      aria-labelledby="navbarDropdownMenuAvatar"
-                    >
-                      <li>
-                        <NavLink className="dropdown-item" to="/user/userprofile">
-                          My profile
+                  <>
+                    <img
+                      src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                      className="rounded-circle"
+                      height={40}
+                      alt="Black and White Portrait of a Man"
+                      loading="lazy"
+                    />
+                    <div className="dropdown">
+                      <NavLink
+                        className="dropdown-toggle d-flex align-items-center hidden-arrow"
+                        to="#"
+                        id="navbarDropdownMenuAvatar"
+                        role="button"
+                        data-mdb-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <NavLink className='nav-avatar align-items-center ms-2'>
+                          Mohit Mishra
+                          <i className="fas fa-caret-down ms-2" />
                         </NavLink>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" type='button' onClick={logout}>
-                          Logout
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+                      </NavLink>
+                      <ul
+                        className="dropdown-menu dropdown-menu-end"
+                        aria-labelledby="navbarDropdownMenuAvatar"
+                      >
+                        <li>
+                          <NavLink className="dropdown-item" to="/user/userprofile">
+                            My profile
+                          </NavLink>
+                        </li>
+                        <li>
+                          <a className="dropdown-item" type='button' onClick={logout}>
+                            Logout
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </>
                 )
             }
           </div>

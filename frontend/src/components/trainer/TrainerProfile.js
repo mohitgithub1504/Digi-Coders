@@ -94,77 +94,10 @@ const TrainerProfile = () => {
                             <div className="row g-0">
                                 <div className="col-lg-6 curve">
                                     <div className="pt-5" style={{ marginLeft: "285px", }}>
-                                        <h2 className="my-1">My Profile</h2>
+                                        <h2 className="my-1">Trainer Profile</h2>
                                     </div>
 
-                                    <div className="py-2">
-                                        <div className="d-flex">
-                                            <div className="flex-fill mb-2" style={{ marginLeft: '15rem', marginTop: '5rem' }}>
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <h5 className="fw-bold mx-3">
-                                                            <strong>ID - </strong>
-                                                        </h5>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <p className="text-dark">Hello</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <h5 className="fw-bold mx-3">
-                                                            <strong>Name - </strong>
-                                                        </h5>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <p className="text-dark">hello</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <h5 className="fw-bold mx-3">
-                                                            <strong>Email - </strong>
-                                                        </h5>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <p className="text-dark">hello</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <h5 className="fw-bold mx-3">
-                                                            <strong>Course - </strong>
-                                                        </h5>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <p className="text-dark">hello</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <h5 className="fw-bold mx-3">
-                                                            <strong>Skills - </strong>
-                                                        </h5>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <p className="text-dark">hello</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <h5 className="fw-bold mx-3">
-                                                            <strong>Certificate - </strong>
-                                                        </h5>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <p className="text-dark">hello</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
+                                   
                                 </div>
 
                                 <div className="col-lg-6">

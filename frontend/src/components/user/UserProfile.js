@@ -1,211 +1,245 @@
-import { useFormik } from 'formik';
 import React from 'react'
-import * as Yup from 'yup';
-import Swal from 'sweetalert2';
-import { motion } from "framer-motion";
-import app_config from '../../config';
-// import { useParams } from 'react-router-dom';
-
 
 const UserProfile = () => {
-    // const { id } = useParams();
+    return (
+        <div>
 
-    // const [userDetails, setuserDetails] = useState(null);
-
-    const { apiUrl } = app_config;
-    const userprofileSchema = Yup.object().shape({
-        name: Yup.string()
-            .required('Name is Required'),
-        skills: Yup.string()
-            .required('Skills is Required'),
-        certificate: Yup.string()
-            .required('Certificate is Required'),
-        email: Yup.string().email('Invalid email').required('Email is Required'),
-    });
-
-    const userprofileForm = useFormik({
-        initialValues: {
-            name: '',
-            skills: '',
-            certificate: '',
-            email: '',
-        },
-        onSubmit: async (values, { setSubmitting }) => {
-            console.log(values);
-
-
-            const res = await fetch(apiUrl + '/user/add', {
-                method: 'POST',
-                body: JSON.stringify(values),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-
-            console.log(res.status);
-            if (res.status === 200) {
-                Swal.fire({
-                    icon: "success",
-                    title: "Congratulations",
-                    text: "Profile Updated Successfully",
-                    icon: 'success',
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-            }
-            else {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Something went wrong!",
-                });
-            }
-        },
-        validationSchema: userprofileSchema,
-    });
-    // const fetchuserData = async () => {
-    //     const res = await fetch(apiUrl + "/user/getbyid/" + id);
-    //     console.log(res.status);
-    //     const data = await res.json();
-    //     console.log(data);
-    //     setuserDetails(data);
-    // };
-
-    // useEffect(() => {
-    //     fetchuserData();
-    // }, []);
-    // const displayuserDetails = () => {
-    //     if (userDetails !== null) {
-            return (
-                <motion.div
-                    initial={{ opacity: 0, x: 300 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0.5, x: -300 }}
-                    transition={{ type: "spring" }}
-                    className="vid-manage-bg"
-                    style={{
-                        backgroundImage: `url('/images/bg-animation-img2.jpg`
-                    }}
-                >
-                    {/*Student Signup Form*/}
-                    <section className="form"
-                    >
-                        <div className="">
-                            <div className="row g-0">
-                                <div className="col-lg-6 curve">
-                                    <div className="pt-5" style={{ marginLeft: "285px", }}>
-                                        <h2 className="my-1">My Profile</h2>
+            <div className="container my-5">
+                <div className="row">
+                    <div className="col-md-5 col-xl-4">
+                        <div className="card">
+                            <div className="card-header">
+                                <h5 className="card-title mb-0">Profile Settings</h5>
+                            </div>
+                            <div className="list-group list-group-flush" role="tablist">
+                                <a
+                                    className="list-group-item list-group-item-action active"
+                                    data-toggle="list"
+                                    href="#account"
+                                    role="tab"
+                                >
+                                    User Profile
+                                </a>
+                                <a
+                                    className="list-group-item list-group-item-action"
+                                    data-toggle="list"
+                                    href="#password"
+                                    role="tab"
+                                >
+                                    Change Password
+                                </a>
+                                <a
+                                    className="list-group-item list-group-item-action"
+                                    data-toggle="list"
+                                    href="#"
+                                    role="tab"
+                                >
+                                    Delete account
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-7 col-xl-8">
+                        <div className="tab-content">
+                            <div className="tab-pane fade show active" id="account" role="tabpanel">
+                                <div className="card">
+                                    <div className="card-header">
+                                        <h5 className="card-title mb-0">User Profile</h5>
                                     </div>
+                                    <div className="card-body">
+                                        <div className="row">
+                                            <div className="col-md-4">
+                                                <div className="text-center">
+                                                    <img
+                                                        alt="Andrew Jones"
+                                                        src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                                                        className="rounded-circle img-responsive mt-2"
+                                                        width={128}
+                                                        height={128}
+                                                    />
+                                                    <div className="mt-4">
+                                                        <div className="">
+                                                            <h3 className="">Mohit Mishra</h3>
+                                                            <h5 className="text-danger">Male</h5>
+                                                        </div>
 
-                                    <div className="py-2">
-                                        <div className="d-flex">
-                                            <div className="flex-fill mb-2" style={{ marginLeft: '15rem', marginTop: '5rem' }}>
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <h5 className="fw-bold mx-3">
-                                                            <strong>ID - </strong>
-                                                        </h5>
                                                     </div>
-                                                    <div class="col-8">
-                                                        <p className="text-dark">Hello</p>
-                                                    </div>
+
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <h5 className="fw-bold mx-3">
-                                                            <strong>Name - </strong>
-                                                        </h5>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <p className="text-dark">hello</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <h5 className="fw-bold mx-3">
-                                                            <strong>Email - </strong>
-                                                        </h5>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <p className="text-dark">hello</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <h5 className="fw-bold mx-3">
-                                                            <strong>Course - </strong>
-                                                        </h5>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <p className="text-dark">hello</p>
+                                            </div>
+                                            <div className="col-lg-8">
+
+                                                <div className="card mb-4">
+                                                    <div className="card-body">
+                                                        <div className="row">
+                                                            <div className="col-sm-3">
+                                                                <p className="mb-0">Name -</p>
+                                                            </div>
+                                                            <div className="col-sm-9">
+                                                                <p className="text-muted mb-0">Johnatan Smith</p>
+                                                            </div>
+                                                        </div>
+                                                        <hr />
+                                                        <div className="row">
+                                                            <div className="col-sm-3">
+                                                                <p className="mb-0">Email -</p>
+                                                            </div>
+                                                            <div className="col-sm-9">
+                                                                <p className="text-muted mb-0">example@example.com</p>
+                                                            </div>
+                                                        </div>
+                                                        <hr />
+                                                        <div className="row">
+                                                            <div className="col-sm-3">
+                                                                <p className="mb-0">Phone No. -</p>
+                                                            </div>
+                                                            <div className="col-sm-9">
+                                                                <p className="text-muted mb-0">(097) 234-5678</p>
+                                                            </div>
+                                                        </div>
+                                                        <hr />
+                                                        <div className="row">
+                                                            <div className="col-sm-3">
+                                                                <p className="mb-0">Address -</p>
+                                                            </div>
+                                                            <div className="col-sm-9">
+                                                                <p className="text-muted mb-0">Bay Area, San Francisco, CA</p>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
-
                                     </div>
                                 </div>
-
-                                <div className="col-lg-6">
-                                    <div className="card-body p-md-5 mx-md-5">
-                                        <div className="text-center mb-5">
-                                            <h3 className="my-5" style={{ marginLeft: "5%" }}>
-                                                Update Profile
-                                            </h3>
-                                        </div>
-                                        <form
-                                            className="mx-md-5 text-black"
-                                            onSubmit={userprofileForm.handleSubmit}
-                                        >
-                                            <div className="d-flex flex-row align-items-center mb-4">
-                                                <i className="fas fa-user fa-lg me-3 fa-fw" />
-                                                <div className="flex-fill mb-0">
+                                <div className="card mt-5">
+                                    <div className="card-header">
+                                        <h5 className="card-title mb-0">Update Profile</h5>
+                                    </div>
+                                    <div className="card-body">
+                                        <form>
+                                            <div className="form-row">
+                                                <div className="form-group col-md-6">
+                                                    <label htmlFor="inputFirstName">First name</label>
                                                     <input
                                                         type="text"
-                                                        id="name"
-                                                        className="form-control form-control-lg"
-                                                        placeholder='Name'
-                                                        value={userprofileForm.values.name}
-                                                        onChange={userprofileForm.handleChange}
+                                                        className="form-control"
+                                                        id="inputFirstName"
+                                                        placeholder="First name"
                                                     />
-                                                    <span className='text-danger'>{userprofileForm.errors.name}</span>
                                                 </div>
-                                            </div>
-                                            <div className="d-flex flex-row align-items-center mb-4">
-                                                <i className="fas fa-envelope fa-lg me-3 fa-fw" />
-                                                <div className="flex-fill mb-0">
+                                                <div className="form-group col-md-6">
+                                                    <label htmlFor="inputLastName">Last name</label>
                                                     <input
-                                                        type="email"
-                                                        id="email"
-                                                        autoComplete='off'
-                                                        className="form-control form-control-lg"
-                                                        placeholder='Email'
-                                                        value={userprofileForm.values.email}
-                                                        onChange={userprofileForm.handleChange}
+                                                        type="text"
+                                                        className="form-control"
+                                                        id="inputLastName"
+                                                        placeholder="Last name"
                                                     />
-                                                    <span className='text-danger' >{userprofileForm.errors.email}</span>
                                                 </div>
                                             </div>
-                                            <div className="pt-1 mx-4 pb-1 ">
-                                                <button
-                                                    className="btn btn-primary btn-block mb-5"
-                                                    type="submit"
-                                                    style={{ borderRadius: "10px" }}
-                                                >
-                                                    Update Profile
-                                                </button>
+                                            <div className="form-group">
+                                                <label htmlFor="inputEmail4">Email</label>
+                                                <input
+                                                    type="email"
+                                                    className="form-control"
+                                                    id="inputEmail4"
+                                                    placeholder="Email"
+                                                />
                                             </div>
+                                            <div className="form-group">
+                                                <label htmlFor="inputAddress">Address</label>
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    id="inputAddress"
+                                                    placeholder="1234 Main St"
+                                                />
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="inputAddress2">Address 2</label>
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    id="inputAddress2"
+                                                    placeholder="Apartment, studio, or floor"
+                                                />
+                                            </div>
+                                            <div className="form-row">
+                                                <div className="form-group col-md-6">
+                                                    <label htmlFor="inputCity">City</label>
+                                                    <input
+                                                        type="text"
+                                                        className="form-control"
+                                                        id="inputCity"
+                                                    />
+                                                </div>
+                                                <div className="form-group col-md-4">
+                                                    <label htmlFor="inputState">State</label>
+                                                    <select id="inputState" className="form-control">
+                                                        <option selected="">Choose...</option>
+                                                        <option>...</option>
+                                                    </select>
+                                                </div>
+                                                <div className="form-group col-md-2">
+                                                    <label htmlFor="inputZip">Zip</label>
+                                                    <input type="text" className="form-control" id="inputZip" />
+                                                </div>
+                                            </div>
+                                            <button type="submit" className="btn btn-primary">
+                                                Save changes
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="tab-pane fade" id="password" role="tabpanel">
+                                <div className="card">
+                                    <div className="card-body">
+                                        <h5 className="card-title">Password</h5>
+                                        <form>
+                                            <div className="form-group">
+                                                <label htmlFor="inputPasswordCurrent">Current password</label>
+                                                <input
+                                                    type="password"
+                                                    className="form-control"
+                                                    id="inputPasswordCurrent"
+                                                />
+                                                <small>
+                                                    <a href="#">Forgot your password?</a>
+                                                </small>
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="inputPasswordNew">New password</label>
+                                                <input
+                                                    type="password"
+                                                    className="form-control"
+                                                    id="inputPasswordNew"
+                                                />
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="inputPasswordNew2">Verify password</label>
+                                                <input
+                                                    type="password"
+                                                    className="form-control"
+                                                    id="inputPasswordNew2"
+                                                />
+                                            </div>
+                                            <button type="submit" className="btn btn-primary">
+                                                Save changes
+                                            </button>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </section>
-                    {/*Student Signup Form*/}
-                </motion.div>
-            )
-        }
+                    </div>
+                </div>
+            </div>
 
- 
+
+        </div>
+    )
+}
+
 export default UserProfile

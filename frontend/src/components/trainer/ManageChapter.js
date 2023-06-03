@@ -148,19 +148,25 @@ const ManageChapter = () => {
             {chapterList.slice(itemPerPage * (currentPage - 1), itemPerPage * (currentPage - 1) + itemPerPage).map((chapter) => (
               <tr>
                 <td className="align-middle">{chapter.title}</td>
-                <td className="align-middle">{chapter.icon}</td>
+                <td className="align-middle">
+                  <div className="">
+                    <div class="bg-image hover-overlay ripple shadow-4-strong rounded-7 mx-2 my-2" data-mdb-ripple-color="light">
+                      <img src={apiUrl + '/' + chapter.icon} className="img-fluid" style={{width: "150px", height: "100px"}} />
+                    </div>
+                  </div>
+                </td>
                 <td className="align-middle">{chapter.category}</td>
                 <td className="align-middle">{chapter.description}</td>
                 <td className="align-middle">{chapter.created_at}</td>
                 <td className="align-middle">{chapter.updated_at}</td>
                 <td className="align-middle">
                   <NavLink to={'/trainer/designchapter/' + chapter._id} >
-                    <i className="fas fa-pen" />
+                    <i className="fas fa-pen-to-square fa-lg mx-2" style={{color:"#000fff"}} />
                   </NavLink>
                 </td>
                 <td className="align-middle">
                   <NavLink to={''} >
-                    <i className="far fa-trash-can" />
+                    <i className="fas fa-trash-can fa-lg mx-2" style={{color:"#ff0000"}} />
                   </NavLink>
                 </td>
               </tr>
@@ -170,7 +176,7 @@ const ManageChapter = () => {
 
         <div className="container" style={{ backgroundColor: '#fff' }}>
           {/*Section: Content*/}
-          <section className="d-md-flex justify-content-center">
+          <section className="d-md-flex justify-content-end">
             <nav aria-label="...">
               <ul className="pagination mt-3">
                 <li className="page-item me-2">
