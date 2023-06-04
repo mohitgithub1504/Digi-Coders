@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const UserProfile = () => {
+
+    const [show, setShow] = useState(false);
+    const handleShow = () => setShow(!show);
+
     return (
         <div>
 
@@ -117,79 +121,123 @@ const UserProfile = () => {
                                         <h5 className="card-title mb-0">Update Profile</h5>
                                     </div>
                                     <div className="card-body">
-                                        <form>
-                                            <div className="form-row">
-                                                <div className="form-group col-md-6">
-                                                    <label htmlFor="inputFirstName">First name</label>
-                                                    <input
-                                                        type="text"
-                                                        className="form-control"
-                                                        id="inputFirstName"
-                                                        placeholder="First name"
-                                                    />
-                                                </div>
-                                                <div className="form-group col-md-6">
-                                                    <label htmlFor="inputLastName">Last name</label>
-                                                    <input
-                                                        type="text"
-                                                        className="form-control"
-                                                        id="inputLastName"
-                                                        placeholder="Last name"
-                                                    />
-                                                </div>
+                                    <form
+                                    className="mx-md-5 text-black"
+                                    
+                                >
+                                    <div className="form-group has-icon mb-4">
+                                        <i className="fas fa-user fa-lg form-control-icon" />
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            className="form-control form-control-lg"
+                                            placeholder="Name"
+                                            
+                                        />
+                                        
+                                    </div>
+
+                                    <div className="form-group has-icon mb-4">
+                                        <i className="fas fa-envelope fa-lg form-control-icon" />
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            autoComplete="off"
+                                            className="form-control form-control-lg"
+                                            placeholder="Email"
+                                            
+                                        />
+                                        
+                                    </div>
+
+                                    <div className="form-group has-icon mb-4">
+                                        <i className="fas fa-key fa-lg form-control-icon" />
+                                        <div class="d-grid d-md-flex justify-content-md-end">
+                                            <span
+                                                className='form-control-eye'
+                                                onClick={handleShow}
+                                            >
+                                                {show ? <i class="far fa-eye" /> : <i class="far fa-eye-slash" />}
+                                            </span>
+                                        </div>
+                                        <input
+                                            type={show ? "text" : "password"}
+                                            id="password"
+                                            name="password"
+                                            autoComplete="off"
+                                            className="form-control form-control-lg"
+                                            placeholder="Password"
+                                            
+                                        />
+                                        
+                                    </div>
+                                    <div className="form-group has-icon mb-4">
+                                        <i className="fas fa-mobile-screen-button fa-lg form-control-icon" />
+                                        <input
+                                            type="text"
+                                            id="mobile_no"
+                                            name="mobile_no"
+                                            className="form-control form-control-lg"
+                                            placeholder="Mobile Number"
+                                            
+                                        />
+                                        {/* <span className='text-danger'>{studentsignupForm.errors.name}</span> */}
+                                    </div>
+
+                                    <div className='text-center mb-4'>
+                                        <label htmlFor="chapter-img" className="btn btn-primary">
+                                            {' '}
+                                            <i class="fas fa-upload"></i> Upload Image
+                                        </label>
+                                        <input type="file" id="chapter-img" hidden  />
+                                    </div>
+
+                                    <div className="pt-1 pb-1">
+                                        <button
+                                            className="btn btn-primary btn-block mb-5"
+                                            type="submit"
+                                            style={{ borderRadius: "10px", marginLeft: "0px" }}
+                                        >
+                                            Signup &nbsp;
+                                            <i className="fas fa-arrow-right-to-bracket" />
+                                        </button>
+
+                                        <div>
+                                            <div className="mb-4 text-center">
+                                                <h6>or sign up with :</h6>
                                             </div>
-                                            <div className="form-group">
-                                                <label htmlFor="inputEmail4">Email</label>
-                                                <input
-                                                    type="email"
-                                                    className="form-control"
-                                                    id="inputEmail4"
-                                                    placeholder="Email"
-                                                />
+                                            <div className="text-center">
+                                                <button
+                                                    type="button"
+                                                    className="btn btn-primary btn-floating mx-1"
+                                                >
+                                                    <i className="fab fa-facebook-f" />
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    className="btn btn-primary btn-floating mx-1"
+                                                >
+                                                    <i className="fab fa-google" />
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    className="btn btn-primary btn-floating mx-1"
+                                                >
+                                                    <i className="fab fa-twitter" />
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    className="btn btn-primary btn-floating mx-1"
+                                                >
+                                                    <i className="fab fa-github" />
+                                                </button>
                                             </div>
-                                            <div className="form-group">
-                                                <label htmlFor="inputAddress">Address</label>
-                                                <input
-                                                    type="text"
-                                                    className="form-control"
-                                                    id="inputAddress"
-                                                    placeholder="1234 Main St"
-                                                />
-                                            </div>
-                                            <div className="form-group">
-                                                <label htmlFor="inputAddress2">Address 2</label>
-                                                <input
-                                                    type="text"
-                                                    className="form-control"
-                                                    id="inputAddress2"
-                                                    placeholder="Apartment, studio, or floor"
-                                                />
-                                            </div>
-                                            <div className="form-row">
-                                                <div className="form-group col-md-6">
-                                                    <label htmlFor="inputCity">City</label>
-                                                    <input
-                                                        type="text"
-                                                        className="form-control"
-                                                        id="inputCity"
-                                                    />
-                                                </div>
-                                                <div className="form-group col-md-4">
-                                                    <label htmlFor="inputState">State</label>
-                                                    <select id="inputState" className="form-control">
-                                                        <option selected="">Choose...</option>
-                                                        <option>...</option>
-                                                    </select>
-                                                </div>
-                                                <div className="form-group col-md-2">
-                                                    <label htmlFor="inputZip">Zip</label>
-                                                    <input type="text" className="form-control" id="inputZip" />
-                                                </div>
-                                            </div>
-                                            <button type="submit" className="btn btn-primary">
-                                                Save changes
-                                            </button>
-                                        </form>
+                                        </div>
+
+                                    </div>
+                                </form>
                                     </div>
                                 </div>
                             </div>
