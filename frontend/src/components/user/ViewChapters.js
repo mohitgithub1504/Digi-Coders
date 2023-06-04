@@ -67,34 +67,29 @@ const BrowseChapters = () => {
                   </a>
                 </div>
               </div>
-              <div className="content col-md-6 col-lg-6 col-xl-6">
-                <h5>{chapter.title}</h5>
-
-                <div className="mt-1 mb-0 text-muted small">
+              <div className="content card-tittle col-md-6 col-lg-6 col-xl-6">
+                <h4 className="card-tittle my-2 mx-4">
+                  <strong>{chapter.title}</strong>
+                </h4>
+                <div className="mb-4 mx-4 text-uppercase text-danger">
                   <span>{chapter.category}</span>
                 </div>
-                <p className="text-truncate mb-4 mb-md-0">
+                <p className="mb-4 mx-4">
                   {chapter.description}
                 </p>
               </div>
               <div className="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
-                <div className="d-flex flex-row align-items-center mb-1">
-                  <h4 className="mb-1 me-1">$13.99</h4>
-                  <span className="text-danger">
-                    <s>$20.99</s>
-                  </span>
+                <div className="d-flex flex-row justify-content-end align-items-center mb-1">
+                  <h6 className="text-danger">Designed By : Mohit Mishra</h6>
                 </div>
-                <h6 className="text-success">Free shipping</h6>
-                <div className="d-flex flex-column mt-4">
+                <div className="d-flex flex-column mt-5">
                   <NavLink
                     className="btn btn-primary"
                     to={"/user/chapterdetails/" + chapter._id}
                   >
-                    View Details
+                    Continue &nbsp;
+                    <i className="fas fa-arrow-right-to-bracket" />
                   </NavLink>
-                  <button className="btn btn-primary mt-2" type="button">
-                    Add to wishlist
-                  </button>
                 </div>
               </div>
             </div>
@@ -229,7 +224,7 @@ const BrowseChapters = () => {
 
                     <div class="select">
                       <select class="mySelectArrow" onChange={searchChapterByName}>
-                      <option value="">By Name</option>
+                        <option value="">By Name</option>
                         {
                           trainerList.map((trainer) => (
                             <option value={trainer}>{trainer}</option>
@@ -258,7 +253,7 @@ const BrowseChapters = () => {
 
                     <div class="select">
                       <select class="mySelectArrow">
-                      <option value="">A To Z</option>
+                        <option value="">A To Z</option>
                         <option value=" ">A to Z</option>
                       </select>
                     </div>
