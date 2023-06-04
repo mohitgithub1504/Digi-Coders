@@ -7,13 +7,22 @@ import { getHTMLToolbox } from '../blockly/getHTMLToolbox';
 import '../blockly/htmlBlock';
 import { getJSToolbox } from '../blockly/getJSToolbox';
 import { javascriptGenerator } from 'blockly/javascript';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import HtmlGenerator from '../blockly/htmlGenerator';
 
 const toolbox = getHTMLToolbox();
 
 const getToolbox = (category) => {
   if (category === 'HTML') return getHTMLToolbox();
-  else if (category === 'JS') return getJSToolbox();
+  else if (category.toLowerCase() === 'javascript') return getJSToolbox();
   else return getHTMLToolbox();
+};
+
+const getLangugage = (category) => {
+  if (category === 'HTML') return 'html';
+  else if (category.toLowerCase() === 'javascript') return 'javascript';
+  else return 'javascript';
 };
 
 const ChapterDetails = () => {
@@ -21,7 +30,11 @@ const ChapterDetails = () => {
   const { apiUrl } = app_config;
   const [workspace, setWorkspace] = useState(null);
 
+  const [currentLanguage, setCurrentLanguage] = useState('');
+
   const [chapterDetails, setChapterDetails] = useState(null);
+
+  const [generatedCode, setGeneratedCode] = useState('');
 
   const [xml, setXml] = useState(`<xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="controls_ifelse" x="10" y="10">
@@ -35,6 +48,7 @@ const ChapterDetails = () => {
     const data = await res.json();
     console.log(data);
     setChapterDetails(data);
+    setCurrentLanguage(getLangugage(data.category));
     // setXml(data.data);
   };
 
@@ -100,10 +114,49 @@ const ChapterDetails = () => {
     }
   };
 
-  const generateCode = () => {
+  const generateCode = (workspace) => {
     const code = javascriptGenerator.workspaceToCode(workspace);
     console.log(code);
+    setGeneratedCode(code);
   };
+
+  const executeCode = () => {
+    eval(generatedCode);
+  };
+
+  const generateHtmlCode = (workspace) => {
+    // console.log('function called');
+    const code = [];
+    const blocks = workspace.getAllBlocks();
+    // console.log(blocks);
+    // Iterate through all blocks
+    for (let i = 0; i < blocks.length; i++) {
+      const block = blocks[i];
+      // console.log(block);
+      code.push(`${HtmlGenerator[block.type](block)}`)
+      // console.log(code);
+      // setGeneratedCode(generateCode+code);
+      // Check block type
+     
+      // Add more conditions for other HTML blocks
+
+      // Handle nested blocks recursively (if necessary)
+      // Example:
+      // if (block.type === 'html_container') {
+      //   const innerCode = generateHtmlCode(block.getInputTargetBlock('STACK'));
+      //   code.push(innerCode);
+      // }
+    }
+
+    setGeneratedCode(code.join('\n'));
+  };
+
+  const getGenerator = (language) => {
+    // console.log(language);
+    if(language.toLowerCase() === 'html') return generateHtmlCode;
+    else if(language.toLowerCase() === 'javascript') return generateCode;
+    else return generateCode;
+  }
 
   return (
     <div>
@@ -114,20 +167,40 @@ const ChapterDetails = () => {
             <h4 className="card-title">Digi Code Editor</h4>
           </div>
           <div className="card-body">
-            {chapterDetails !== null && (
-              <BlocklyWorkspace
-                workspaceConfiguration={DEFAULT_OPTIONS}
-                className="blockly-editor"
-                toolboxConfiguration={getToolbox(chapterDetails.category)}
-                initialXml={`<xml xmlns="http://www.w3.org/1999/xhtml">
+            <div className="row">
+              <div className="col-md-9">
+                {chapterDetails !== null && (
+                  <BlocklyWorkspace
+                    workspaceConfiguration={DEFAULT_OPTIONS}
+                    className="blockly-editor"
+                    toolboxConfiguration={getToolbox(chapterDetails.category)}
+                    initialXml={`<xml xmlns="http://www.w3.org/1999/xhtml">
         
         </xml>`}
-                onWorkspaceChange={setWorkspace}
-              />
-            )}
+                    onWorkspaceChange={generateHtmlCode}
+                  />
+                )}
+              </div>
+              <div className="col-md-3">
+                <div className="card" style={{height: '100%'}}>
+                  <div className="card-header">
+                    <h5>Code Output</h5>
+                  </div>
+                  <div className="card-body h5">
+                    {chapterDetails && (
+                      <SyntaxHighlighter language={getLangugage(chapterDetails.category)} style={docco}>
+                        {generatedCode}
+                      </SyntaxHighlighter>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="card-footer">
-            <button className="btn btn-primary" onClick={generateCode}>Run</button>
+            <button className="btn btn-primary" onClick={executeCode}>
+              Run
+            </button>
           </div>
         </div>
       </section>

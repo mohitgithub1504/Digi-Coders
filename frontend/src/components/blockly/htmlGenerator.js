@@ -52,6 +52,8 @@ HtmlGenerator['head'] = function(block) {
   return code;
 };
 
+
+// to solve
 HtmlGenerator['title'] = function(block) {
   var statements_content = HtmlGenerator.statementToCode(block, 'content');
 
@@ -322,3 +324,5 @@ HtmlGenerator['body_attributes'] = function(block) {
   var code = '<body' + value_name + '>\n' + statements_content + '</body>\n';
   return code;
 };
+
+export default HtmlGenerator;
