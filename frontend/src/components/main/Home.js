@@ -201,6 +201,7 @@ const Home = () => {
             className="btn btn-sm rounded-4"
             data-mdb-toggle="modal"
             data-mdb-target="#exampleModal"
+            style={{zIndex : 2}}
           >
             Feedback
           </button>

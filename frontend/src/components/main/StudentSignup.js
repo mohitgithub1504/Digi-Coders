@@ -218,8 +218,9 @@ const StudentSignup = () => {
                                     <div className='text-center mb-4'>
                                         <label htmlFor="chapter-img" className="btn btn-primary">
                                             {' '}
-                                            <i class="fas fa-upload"></i> Upload Image
+                                            <i class="fas fa-upload"></i> Upload Image 
                                         </label>
+                                        {selImage ? selImage.name : 'No Image Selected'}
                                         <input type="file" id="chapter-img" hidden onChange={uploadFile} />
                                     </div>
 

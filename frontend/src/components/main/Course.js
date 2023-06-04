@@ -60,7 +60,7 @@ const Course = () => {
                                                 src="/images/course1.jpg"
                                                 className="img-fluid"
                                             />
-                                            <NavLink to="/user/viewchapters/HTML">
+                                            <NavLink to="/user/viewchapters">
                                                 <div
                                                     className="mask"
                                                     style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
