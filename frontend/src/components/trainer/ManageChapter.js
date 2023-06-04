@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 const ManageChapter = () => {
   const { apiUrl } = app_config;
 
-  const itemPerPage = 10;
+  const itemPerPage = 5;
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -119,7 +119,7 @@ const ManageChapter = () => {
                   </label>
                   <input type="file" id="chapter-img" hidden onChange={uploadFile} />
                   {/* Send button */}
-                  <button className="btn btn-primary btn-block mt-5" type="submit">
+                  <button className="btn btn-primary btn-block mt-5" type="submit" style={{marginLeft: "0px"}}>
                     SUBMIT
                   </button>
                 </form>
@@ -139,7 +139,7 @@ const ManageChapter = () => {
               <th class="th-sm">Description</th>
               <th class="th-sm">Created_at</th>
               <th class="th-sm">Updated_at</th>
-              <th class="th-sm" colSpan={2}>
+              <th class="th-sm" colSpan={3}>
                 Actions
               </th>
             </tr>
@@ -162,6 +162,11 @@ const ManageChapter = () => {
                 <td className="align-middle">
                   <NavLink to={'/trainer/designchapter/' + chapter._id} >
                     <i className="fas fa-pen-to-square fa-lg mx-2" style={{color:"#000fff"}} />
+                  </NavLink>
+                </td>
+                <td className="align-middle">
+                  <NavLink to={''} >
+                    <i className="fas fas fa-pen fa-lg mx-2" style={{color:"#009cff"}} />
                   </NavLink>
                 </td>
                 <td className="align-middle">

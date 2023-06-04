@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
 import { useFormik } from 'formik';
@@ -14,6 +14,9 @@ const TrainerLogin = () => {
   const navigate = useNavigate();
   const { apiUrl } = app_config;
   const { setLoggedIn } = useTrainerContext();
+
+  const [show, setShow] = useState(false);
+  const handleShow = () => setShow(!show);
 
   const trainerlogin = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Email is Required'),
@@ -117,7 +120,7 @@ const TrainerLogin = () => {
             <div className="col-lg-6">
               <div className="card-body p-md-5 mx-md-5">
                 <div className="text-center mb-5">
-                  <h3 className="my-5" style={{ marginLeft: "5%" }}>
+                  <h3 className="my-5 text-center">
                     Trainer Login
                   </h3>
                 </div>
@@ -125,66 +128,70 @@ const TrainerLogin = () => {
                   className="mx-md-5 text-black"
                   onSubmit={Trainerlogin.handleSubmit}
                 >
-                  <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-envelope fa-lg me-3 fa-fw" />
-                    <div className="flex-fill mb-0">
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        autoComplete="off"
-                        className="form-control form-control-lg"
-                        placeholder="Email"
-                        value={Trainerlogin.values.email}
-                        onChange={Trainerlogin.handleChange}
-                      />
-                      <span className="text-danger">
-                        {Trainerlogin.errors.email}
+                  <div className="form-group has-icon mb-4">
+                    <i className="fas fa-envelope fa-lg form-control-icon" />
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      autoComplete="off"
+                      className="form-control form-control-lg"
+                      placeholder="Email"
+                      value={Trainerlogin.values.email}
+                      onChange={Trainerlogin.handleChange}
+                    />
+                    <span className="text-danger">
+                      {Trainerlogin.errors.email}
+                    </span>
+                  </div>
+
+                  <div className="form-group has-icon mb-4">
+                    <i className="fas fa-key fa-lg form-control-icon" />
+                    <div class="d-grid d-md-flex justify-content-md-end">
+                      <span
+                        className='form-control-eye'
+                        onClick={handleShow}
+                      >
+                        {show ? <i class="far fa-eye" /> : <i class="far fa-eye-slash" />}
                       </span>
                     </div>
-                  </div>
-                  <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-lock fa-lg me-3 fa-fw" />
-                    <div className="flex-fill mb-0">
-                      <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        autoComplete="off"
-                        className="form-control form-control-lg"
-                        placeholder="Password"
-                        value={Trainerlogin.values.password}
+                    <input
+                      type={show ? "text" : "password"}
+                      id="password"
+                      name="password"
+                      autoComplete="off"
+                      className="form-control form-control-lg"
+                      placeholder="Password"
+                      value={Trainerlogin.values.password}
                         onChange={Trainerlogin.handleChange}
-                      />
-                      <span className="text-danger">
+                    />
+                    <span className="text-danger">
                         {Trainerlogin.errors.password}
                       </span>
-                    </div>
                   </div>
-                  <div className="mb-4">
+                  <div className="mb-4 text-center">
                     <NavLink
                       className="nav-link"
                       to="/main/resetpassword"
-                      style={{ marginLeft: "38%" }}
                     >
                       Forget password?
                     </NavLink>
                   </div>
-                  <div className="pt-1 mx-4 pb-1 ">
+                  <div className="pt-1 pb-1">
                     <button
                       className="btn btn-primary btn-block mb-5"
                       type="submit"
-                      style={{ borderRadius: "10px" }}
+                      style={{ borderRadius: "10px",  marginLeft: "0px" }}
                     >
                       Login &nbsp;
                       <i className="fas fa-arrow-right-to-bracket" />
                     </button>
 
                     <div>
-                      <div className="mb-4" style={{ marginLeft: "40%" }}>
+                      <div className="mb-4 text-center">
                         <h6>or sign in with :</h6>
                       </div>
-                      <div className="" style={{ marginLeft: "34%" }}>
+                      <div className="text-center">
                         <button
                           type="button"
                           className="btn btn-primary btn-floating mx-1"
