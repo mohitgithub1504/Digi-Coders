@@ -6,18 +6,20 @@ import { DEFAULT_OPTIONS } from '../blockly/defaults';
 import { getHTMLToolbox } from '../blockly/getHTMLToolbox';
 import '../blockly/htmlBlock';
 import { getJSToolbox } from '../blockly/getJSToolbox';
+import { javascriptGenerator } from 'blockly/javascript';
 
 const toolbox = getHTMLToolbox();
 
 const getToolbox = (category) => {
-  if(category === 'HTML') return getHTMLToolbox();
-  else if(category === 'JS') return getJSToolbox();
+  if (category === 'HTML') return getHTMLToolbox();
+  else if (category === 'JS') return getJSToolbox();
   else return getHTMLToolbox();
-}
+};
 
 const ChapterDetails = () => {
   const { id } = useParams();
   const { apiUrl } = app_config;
+  const [workspace, setWorkspace] = useState(null);
 
   const [chapterDetails, setChapterDetails] = useState(null);
 
@@ -39,8 +41,6 @@ const ChapterDetails = () => {
   useEffect(() => {
     fetchChapterData();
   }, []);
-
-  
 
   const displayChapterDetails = () => {
     if (chapterDetails !== null) {
@@ -100,6 +100,11 @@ const ChapterDetails = () => {
     }
   };
 
+  const generateCode = () => {
+    const code = javascriptGenerator.workspaceToCode(workspace);
+    console.log(code);
+  };
+
   return (
     <div>
       {displayChapterDetails()}
@@ -109,22 +114,20 @@ const ChapterDetails = () => {
             <h4 className="card-title">Digi Code Editor</h4>
           </div>
           <div className="card-body">
-            {
-              chapterDetails !== null && (
-                <BlocklyWorkspace
-              workspaceConfiguration={DEFAULT_OPTIONS}
-              className="blockly-editor"
-              toolboxConfiguration={getToolbox(chapterDetails.category)}
-              initialXml={`<xml xmlns="http://www.w3.org/1999/xhtml">
+            {chapterDetails !== null && (
+              <BlocklyWorkspace
+                workspaceConfiguration={DEFAULT_OPTIONS}
+                className="blockly-editor"
+                toolboxConfiguration={getToolbox(chapterDetails.category)}
+                initialXml={`<xml xmlns="http://www.w3.org/1999/xhtml">
         
         </xml>`}
-            />
-              )
-            }
-            
+                onWorkspaceChange={setWorkspace}
+              />
+            )}
           </div>
           <div className="card-footer">
-            <button className="btn btn-primary">Run</button>
+            <button className="btn btn-primary" onClick={generateCode}>Run</button>
           </div>
         </div>
       </section>
