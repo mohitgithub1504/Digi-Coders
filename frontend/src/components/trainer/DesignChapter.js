@@ -6,14 +6,15 @@ import { DEFAULT_OPTIONS } from '../blockly/defaults';
 import { getHTMLToolbox } from '../blockly/getHTMLToolbox';
 import '../blockly/htmlBlock';
 import { getJSToolbox } from '../blockly/getJSToolbox';
+import XMLParser from 'react-xml-parser';
 
 const toolbox = getHTMLToolbox();
 
 const getToolbox = (category) => {
-  if(category === 'HTML') return getHTMLToolbox();
-  else if(category === 'JS') return getJSToolbox();
-  else return getJSToolbox();
-}
+  if (category === 'HTML') return getHTMLToolbox();
+  else if (category === 'JS') return getJSToolbox();
+  else return getHTMLToolbox();
+};
 
 const DesignChapter = () => {
   const { id } = useParams();
@@ -35,12 +36,33 @@ const DesignChapter = () => {
     const data = await res.json();
     console.log(data);
     setChapterDetails(data);
+    console.log(getHTMLToolbox());
+    console.log(getHTMLToolbox().contents[0].contents.map((block) => new XMLParser().parseFromString(block.blockxml).attributes.type));
     // setXml(data.data);
   };
+
+  const updateChapter = async () => {
+    const res = await fetch(apiUrl + '/chapter/update/' + id, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        blockStructure: selBlocks,
+      }),
+    });
+    console.log(res.status);
+    const data = await res.json();
+    console.log(data);
+  }
 
   useEffect(() => {
     fetchChapterData();
   }, []);
+
+  const getBlockType = (block) => {
+    return block.blockxml ? new XMLParser().parseFromString(block.blockxml).attributes.type : '';
+  };
 
   const displayBlockOptions = () => {
     return (
@@ -49,31 +71,47 @@ const DesignChapter = () => {
           <h4 className="card-title">Block Options</h4>
         </div>
         <div className="card-body">
-          {
-            getToolbox(chapterDetails.category).contents[1].contents.map((block) => (
-              <div className="form-check">
-                <input className="form-check-input" type="checkbox" onChange={(e) => {
-                  if(e.target.checked) {
-                    setSelBlocks([...selBlocks, block]);
-                  } else {
-                    // setSelBlocks(selBlocks.filter((b) => b !== block.type));
-                  }
-                }} />
-                <label className="form-check-label">
-                  {block.kind}
-                </label>
-              </div>
-            ))
-          }
+          <div className="row">
+            {getToolbox(chapterDetails.category)
+              .contents.filter((group) => group.kind === 'category' && group.contents)
+              .map((category) => (
+                <div className="col-md-4 mb-4">
+                  <h3>{category.name}</h3>
+                  <ul className="list-group">
+                    {category.contents.map((block) => (
+                      <li className="list-group-item">
+                        <div className="d-flex align-items-center justify-content-between">
+                          <p>{getBlockType(block)}</p>
+                          <div className="form-check">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setSelBlocks([...selBlocks, block]);
+                                  console.log(selBlocks);
+                                } else {
+                                  setSelBlocks(selBlocks.filter((b) => b !== getBlockType(block)));
+                                }
+                              }}
+                            />
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+          </div>
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   const displayChapterDetails = () => {
     if (chapterDetails !== null) {
       return (
-        <section className="" style={{backgroundColor: "#29c1fe"}}>
+        <section className="" style={{ backgroundColor: '#29c1fe' }}>
           <div className="container py-4 px-5">
             <div className="my-4">
               <div className="card-body text-white">
@@ -135,15 +173,9 @@ const DesignChapter = () => {
         <div className="card">
           <div className="card-header">
             <h4 className="card-title">Digi Code Editor</h4>
+            <button className='btn btn-primary' onClick={updateChapter}>Submit</button>
           </div>
-          <div className="card-body">
-            {
-              chapterDetails !== null && (
-                displayBlockOptions()
-              )
-            }
-            
-          </div>
+          <div className="card-body">{chapterDetails !== null && displayBlockOptions()}</div>
           <div className="card-footer">
             <button className="btn btn-primary">Run</button>
           </div>

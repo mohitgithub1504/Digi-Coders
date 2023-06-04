@@ -5,6 +5,7 @@ const schema = new Schema({
   title: {type : String, required : true},
   description: {type : String, required : true},
   category : {type : String, required : true},
+  blockStructure: {type : Array, default : []},
   icon: {type : String},
   data: Object,
   created_at: Date,
