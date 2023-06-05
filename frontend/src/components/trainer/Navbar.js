@@ -39,53 +39,23 @@ const Navbar = () => {
                         {/* Left links */}
                         <ul className="navbar-nav mb-2 mb-lg-0" style={{ fontSize: 18 }}>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/main/home">
+                                <NavLink className="nav-link" to="/trainer/home">
                                     Home
                                 </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/main/about">
+                                <NavLink className="nav-link" to="/trainer/about">
                                     About
                                 </NavLink>
                             </li>
-
-                            {/* Navbar dropdown */}
-                            <li class="nav-item dropdown">
-                                <NavLink
-                                    className="nav-link dropdown"
-                                    to="/main/course"
-                                    id="navbarDropdown"
-                                    role="button"
-                                    aria-expanded="false"
-                                >
-                                    Courses
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/trainer/managechapter">
+                                    Manage Chapter
                                 </NavLink>
-                                {/* Dropdown menu */}
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li>
-                                        <NavLink className="dropdown-item" to="/user/browsechapters">Game Development</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink className="dropdown-item" to="/user/browsechapters">Web Development</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink className="dropdown-item" to="/user/browsechapters">App Development</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink className="dropdown-item" to="/user/browsechapters">Artificial Intelligence</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink className="dropdown-item" to="/user/browsechapters">Internet Of Things</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink className="dropdown-item" to="/user/browsechapters">Python</NavLink>
-                                    </li>
-
-                                </ul>
                             </li>
 
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/main/contact">
+                                <NavLink className="nav-link" to="/trainer/contact">
                                     Contact
                                 </NavLink>
                             </li>

@@ -68,6 +68,9 @@ function App() {
                 <Route path="designchapter/:id" element={<DesignChapter />} />
                 <Route path="managechapter" element={<ManageChapter />} />
                 <Route path="managecourse" element={<ManageCourse />} />
+                <Route path="home" element={<Home />} />
+                <Route path="about" element={<About />} />
+                <Route path="contact" element={<Contact />} />
               </Route>
 
               <Route

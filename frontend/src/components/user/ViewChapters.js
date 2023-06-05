@@ -74,7 +74,7 @@ const BrowseChapters = () => {
                 <div className="mb-4 mx-4 text-uppercase text-danger">
                   <span>{chapter.category}</span>
                 </div>
-                <p className="mb-4 mx-4">
+                <p className="text-truncate mb-4 mx-4">
                   {chapter.description}
                 </p>
               </div>
@@ -278,8 +278,6 @@ const BrowseChapters = () => {
         <section className="d-md-flex justify-content-center">
           <nav aria-label="...">
             <ul className="pagination">
-            {Math.ceil(chapterList.length / maxElements) - currentPage >
-                2 && (
               <li className="page-item">
                 <a
                   className="page-link border"
@@ -289,7 +287,6 @@ const BrowseChapters = () => {
                   <i className="fas fa-angles-left" /> Previous
                 </a>
               </li>
-                )}
               {Array(Math.ceil(chapterList.length / maxElements))
                 .fill(1)
                 .map((item, index) => (

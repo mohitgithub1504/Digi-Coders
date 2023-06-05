@@ -59,55 +59,57 @@ const ChapterDetails = () => {
   const displayChapterDetails = () => {
     if (chapterDetails !== null) {
       return (
-        <section className="bg-dark">
-          <div className="container py-5">
-            <div className="">
-              <div className="card-body text-white">
-                <div className="row align-items-center">
-                  <div className="col-md-6 col-lg-4 mt-4">
-                    <div class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-7" data-mdb-ripple-color="light">
-                      <img src={apiUrl + '/' + chapterDetails.icon} className="img-fluid" />
-                    </div>
-                  </div>
-                  <div className="content col-md-6 mb-4 mb-md-0 ">
-                    <div class="row">
-                      <div class="col-4">
-                        <h5 className="fw-bold mx-3">
-                          <strong>Title - </strong>
-                        </h5>
-                      </div>
-                      <div class="col-8">
-                        <p className="text-white">{chapterDetails.title}</p>
+        <>
+          <section className="" style={{ backgroundColor: '#29c1fe' }}>
+            <div className="container py-4 px-5">
+              <div className="py-2">
+                <div className="card-body text-white">
+                  <div className="row d-flex align-items-center justify-content-center">
+                    <div className="col-md-6 col-lg-4 mx-5">
+                      <div class="bg-image hover-overlay ripple mx-5 shadow-4-strong rounded-7" data-mdb-ripple-color="light" style={{ width: "350px", height: "200px", backgroundSize: "cover" }}>
+                        <img src={apiUrl + '/' + chapterDetails.icon} className="img-fluid" />
                       </div>
                     </div>
+                    <div className="content col-md-6 mb-4 text-justify">
+                      <div class="row">
+                        <div class="col-4">
+                          <h5 className="fw-bold mx-3">
+                            <strong>Title - </strong>
+                          </h5>
+                        </div>
+                        <div class="col-8">
+                          <p className="text-white">{chapterDetails.title}</p>
+                        </div>
+                      </div>
 
-                    <div class="row">
-                      <div class="col-4">
-                        <h5 className="fw-bold mx-3">
-                          <strong>category - </strong>
-                        </h5>
+                      <div class="row">
+                        <div class="col-4">
+                          <h5 className="fw-bold mx-3">
+                            <strong>category - </strong>
+                          </h5>
+                        </div>
+                        <div class="col-8">
+                          <p className="text-white">{chapterDetails.category}</p>
+                        </div>
                       </div>
-                      <div class="col-8">
-                        <p className="text-white">{chapterDetails.category}</p>
-                      </div>
-                    </div>
 
-                    <div class="row">
-                      <div class="col-4">
-                        <h5 className="fw-bold mx-3">
-                          <strong>Description - </strong>
-                        </h5>
-                      </div>
-                      <div class="col-8">
-                        <p className="text-white">{chapterDetails.description}</p>
+                      <div class="row">
+                        <div class="col-4">
+                          <h5 className="fw-bold mx-3">
+                            <strong>Description - </strong>
+                          </h5>
+                        </div>
+                        <div class="col-8">
+                          <p className="text-white">{chapterDetails.description}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </>
       );
     } else {
       return <div>Loading...</div>;
@@ -137,7 +139,7 @@ const ChapterDetails = () => {
       // console.log(code);
       // setGeneratedCode(generateCode+code);
       // Check block type
-     
+
       // Add more conditions for other HTML blocks
 
       // Handle nested blocks recursively (if necessary)
@@ -153,8 +155,8 @@ const ChapterDetails = () => {
 
   const getGenerator = (language) => {
     // console.log(language);
-    if(language.toLowerCase() === 'html') return generateHtmlCode;
-    else if(language.toLowerCase() === 'javascript') return generateCode;
+    if (language.toLowerCase() === 'html') return generateHtmlCode;
+    else if (language.toLowerCase() === 'javascript') return generateCode;
     else return generateCode;
   }
 
@@ -163,9 +165,21 @@ const ChapterDetails = () => {
       {displayChapterDetails()}
       <section>
         <div className="card">
-          <div className="card-header">
-            <h4 className="card-title">Digi Code Editor</h4>
+          <div className="px-3 py-2" style={{ backgroundColor: "#f1f1f1" }}>
+            <div class="row d-flex align-items-center">
+              <div class="col">
+                <h4 className="card-title text-uppercase fw-bold mt-2 mx-4" style={{ fontSize: "30px", letterSpacing: "2px" }}>
+                  <strong>Digi Coders Editor</strong>
+                </h4>
+              </div>
+              <div class="col">
+                <button className="btn btn-danger" onClick={executeCode} style={{ marginLeft: "510px" }}>
+                  <i className="fas fa-play fa-sm me-2" />Run Program
+                </button>
+              </div>
+            </div>
           </div>
+
           <div className="card-body">
             <div className="row">
               <div className="col-md-9">
@@ -182,11 +196,13 @@ const ChapterDetails = () => {
                 )}
               </div>
               <div className="col-md-3">
-                <div className="card" style={{height: '100%'}}>
-                  <div className="card-header">
-                    <h5>Code Output</h5>
+                <div className="card" style={{ height: '100%' }}>
+                  <div className="py-2" style={{ backgroundColor: "#f1f1f1" }}>
+                    <h5 className='text-uppercase text-center fw-bold mt-2 mx-3' style={{ fontSize: "25px", letterSpacing: "2px" }}>
+                      Code Output
+                    </h5>
                   </div>
-                  <div className="card-body h5">
+                  <div className="card-body h6">
                     {chapterDetails && (
                       <SyntaxHighlighter language={getLangugage(chapterDetails.category)} style={docco}>
                         {generatedCode}
@@ -196,11 +212,6 @@ const ChapterDetails = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="card-footer">
-            <button className="btn btn-primary" onClick={executeCode}>
-              Run
-            </button>
           </div>
         </div>
       </section>

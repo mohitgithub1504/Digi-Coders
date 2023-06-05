@@ -113,13 +113,19 @@ const ManageChapter = () => {
                     />
                   </div>
 
-                  <label htmlFor="chapter-img" className="btn btn-dark">
-                    {' '}
-                    <i class="fas fa-upload"></i> Upload Chapter Image
-                  </label>
-                  <input type="file" id="chapter-img" hidden onChange={uploadFile} />
+                  <div className='d-flex flex-row align-items-center mx-1 mb-4'>
+                    <label htmlFor="chapter-img" className="btn btn-primary">
+                      {' '}
+                      <i class="fas fa-upload"></i> Upload Image
+                    </label>
+                    <span className='text-warning mx-3'>
+                      {selImage ? selImage.name : 'No Image Selected'}
+                    </span>
+                    <input type="file" id="chapter-img" hidden onChange={uploadFile} />
+                  </div>
+                  
                   {/* Send button */}
-                  <button className="btn btn-primary btn-block mt-5" type="submit" style={{marginLeft: "0px"}}>
+                  <button className="btn btn-primary btn-block mt-5" type="submit" style={{ marginLeft: "0px" }}>
                     SUBMIT
                   </button>
                 </form>
@@ -139,7 +145,7 @@ const ManageChapter = () => {
               <th class="th-sm">Description</th>
               <th class="th-sm">Created_at</th>
               <th class="th-sm">Updated_at</th>
-              <th class="th-sm" colSpan={3}>
+              <th class="th-sm" colSpan={2}>
                 Actions
               </th>
             </tr>
@@ -150,8 +156,8 @@ const ManageChapter = () => {
                 <td className="align-middle">{chapter.title}</td>
                 <td className="align-middle">
                   <div className="">
-                    <div class="bg-image hover-overlay ripple shadow-4-strong rounded-7 mx-2 my-2" data-mdb-ripple-color="light">
-                      <img src={apiUrl + '/' + chapter.icon} className="img-fluid" style={{width: "150px", height: "100px"}} />
+                    <div class="bg-image hover-overlay ripple shadow-4-strong rounded-7 mx-2 my-2" data-mdb-ripple-color="light" style={{ width: "200px", height: "150px", backgroundSize: "cover"}}>
+                      <img src={apiUrl + '/' + chapter.icon} className="img-fluid"/>
                     </div>
                   </div>
                 </td>
@@ -161,17 +167,12 @@ const ManageChapter = () => {
                 <td className="align-middle">{chapter.updated_at}</td>
                 <td className="align-middle">
                   <NavLink to={'/trainer/designchapter/' + chapter._id} >
-                    <i className="fas fa-pen-to-square fa-lg mx-2" style={{color:"#000fff"}} />
+                    <i className="fas fa-pen-to-square fa-lg mx-2" style={{ color: "#000fff" }} />
                   </NavLink>
                 </td>
                 <td className="align-middle">
                   <NavLink to={''} >
-                    <i className="fas fas fa-pen fa-lg mx-2" style={{color:"#009cff"}} />
-                  </NavLink>
-                </td>
-                <td className="align-middle">
-                  <NavLink to={''} >
-                    <i className="fas fa-trash-can fa-lg mx-2" style={{color:"#ff0000"}} />
+                    <i className="fas fa-trash-can fa-lg mx-2" style={{ color: "#ff0000" }} />
                   </NavLink>
                 </td>
               </tr>

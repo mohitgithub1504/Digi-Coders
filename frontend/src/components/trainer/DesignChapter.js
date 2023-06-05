@@ -67,21 +67,32 @@ const DesignChapter = () => {
   const displayBlockOptions = () => {
     return (
       <div className="card">
-        <div className="card-header">
-          <h4 className="card-title">Block Options</h4>
+        <div className="px-3 py-2" style={{ backgroundColor: "#f1f1f1" }}>
+          <div class="row d-flex align-items-center">
+            <div class="col">
+              <h4 className="card-title text-uppercase fw-bold mt-2 mx-2" style={{ fontSize: "30px", letterSpacing: "2px" }}>
+                <strong>Block Options</strong>
+              </h4>
+            </div>
+            <div class="col">
+              <button className="btn btn-danger" onClick={updateChapter} style={{ marginLeft: "575px" }}>
+                Submit
+              </button>
+            </div>
+          </div>
         </div>
         <div className="card-body">
           <div className="row">
             {getToolbox(chapterDetails.category)
               .contents.filter((group) => group.kind === 'category' && group.contents)
               .map((category) => (
-                <div className="col-md-4 mb-4">
-                  <h3>{category.name}</h3>
+                <div className="col-md-4 mb-5">
+                  <h4 className='mx-2 text-uppercase'>{category.name}</h4>
                   <ul className="list-group">
                     {category.contents.map((block) => (
                       <li className="list-group-item">
                         <div className="d-flex align-items-center justify-content-between">
-                          <p>{getBlockType(block)}</p>
+                          <p  className='text-black mt-2'>{getBlockType(block)}</p>
                           <div className="form-check">
                             <input
                               className="form-check-input"
@@ -111,55 +122,57 @@ const DesignChapter = () => {
   const displayChapterDetails = () => {
     if (chapterDetails !== null) {
       return (
-        <section className="" style={{ backgroundColor: '#29c1fe' }}>
-          <div className="container py-4 px-5">
-            <div className="my-4">
-              <div className="card-body text-white">
-                <div className="row align-items-center justify-content-center">
-                  <div className="col-md-6 col-lg-4 mx-5">
-                    <div class="bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-7" data-mdb-ripple-color="light">
-                      <img src={apiUrl + '/' + chapterDetails.icon} className="img-fluid" />
-                    </div>
-                  </div>
-                  <div className="content col-md-6 mb-4 mb-md-0 text-justify ">
-                    <div class="row">
-                      <div class="col-4">
-                        <h5 className="fw-bold mx-3">
-                          <strong>Title - </strong>
-                        </h5>
-                      </div>
-                      <div class="col-8">
-                        <p className="text-white">{chapterDetails.title}</p>
+        <>
+          <section className="" style={{ backgroundColor: '#29c1fe' }}>
+            <div className="container py-4 px-5">
+              <div className="py-2">
+                <div className="card-body text-white">
+                  <div className="row d-flex align-items-center justify-content-center">
+                    <div className="col-md-6 col-lg-4 mx-5">
+                      <div class="bg-image hover-overlay ripple mx-5 shadow-4-strong rounded-7" data-mdb-ripple-color="light" style={{ width: "350px", height: "200px", backgroundSize: "cover" }}>
+                        <img src={apiUrl + '/' + chapterDetails.icon} className="img-fluid" />
                       </div>
                     </div>
+                    <div className="content col-md-6 mb-4 text-justify">
+                      <div class="row">
+                        <div class="col-4">
+                          <h5 className="fw-bold mx-3">
+                            <strong>Title - </strong>
+                          </h5>
+                        </div>
+                        <div class="col-8">
+                          <p className="text-white">{chapterDetails.title}</p>
+                        </div>
+                      </div>
 
-                    <div class="row">
-                      <div class="col-4">
-                        <h5 className="fw-bold mx-3">
-                          <strong>category - </strong>
-                        </h5>
+                      <div class="row">
+                        <div class="col-4">
+                          <h5 className="fw-bold mx-3">
+                            <strong>category - </strong>
+                          </h5>
+                        </div>
+                        <div class="col-8">
+                          <p className="text-white">{chapterDetails.category}</p>
+                        </div>
                       </div>
-                      <div class="col-8">
-                        <p className="text-white">{chapterDetails.category}</p>
-                      </div>
-                    </div>
 
-                    <div class="row">
-                      <div class="col-4">
-                        <h5 className="fw-bold mx-3">
-                          <strong>Description - </strong>
-                        </h5>
-                      </div>
-                      <div class="col-8">
-                        <p className="text-white">{chapterDetails.description}</p>
+                      <div class="row">
+                        <div class="col-4">
+                          <h5 className="fw-bold mx-3">
+                            <strong>Description - </strong>
+                          </h5>
+                        </div>
+                        <div class="col-8">
+                          <p className="text-white">{chapterDetails.description}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </>
       );
     } else {
       return <div>Loading...</div>;
@@ -171,14 +184,12 @@ const DesignChapter = () => {
       {displayChapterDetails()}
       <section>
         <div className="card">
-          <div className="card-header">
-            <h4 className="card-title">Digi Code Editor</h4>
-            <button className='btn btn-primary' onClick={updateChapter}>Submit</button>
+          <div className="px-3 py-2" style={{ backgroundColor: "#000" }}>
+            <h4 className="card-title text-white text-center text-uppercase fw-bold mt-2 mx-4" style={{ fontSize: "40px", letterSpacing: "2px" }}>
+              <strong>Design Chapter</strong>
+            </h4>
           </div>
           <div className="card-body">{chapterDetails !== null && displayBlockOptions()}</div>
-          <div className="card-footer">
-            <button className="btn btn-primary">Run</button>
-          </div>
         </div>
       </section>
     </div>

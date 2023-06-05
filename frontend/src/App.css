@@ -11,6 +11,14 @@
   color: var(--main-color);
 }
 
+.btn-danger{
+  background-color: #ec0000;
+}
+
+.btn-danger:hover{
+  background-color: var(--main-color);
+}
+
 
 
 

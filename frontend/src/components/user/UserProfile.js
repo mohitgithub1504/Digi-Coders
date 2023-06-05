@@ -1,9 +1,30 @@
 import React, { useState } from 'react'
+import app_config from '../../config';
 
 const UserProfile = () => {
 
+    const { apiUrl } = app_config;
+
+    const [selImage, setSelImage] = useState(null);
+
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(!show);
+
+    const uploadFile = (e) => {
+        const file = e.target.files[0];
+        const fd = new FormData();
+        setSelImage(file);
+        fd.append('myfile', file);
+        fetch(apiUrl + '/util/uploadfile', {
+          method: 'POST',
+          body: fd
+        }).then((res) => {
+          if (res.status === 200) {
+            console.log('file uploaded');
+          }
+        });
+      };
+
 
     return (
         <div>
@@ -27,7 +48,7 @@ const UserProfile = () => {
                                 <a
                                     className="list-group-item list-group-item-action"
                                     data-toggle="list"
-                                    href="#password"
+                                    href="/main/resetpassword"
                                     role="tab"
                                 >
                                     Change Password
@@ -121,165 +142,98 @@ const UserProfile = () => {
                                         <h5 className="card-title mb-0">Update Profile</h5>
                                     </div>
                                     <div className="card-body">
-                                    <form
-                                    className="mx-md-5 text-black"
-                                    
-                                >
-                                    <div className="form-group has-icon mb-4">
-                                        <i className="fas fa-user fa-lg form-control-icon" />
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            name="name"
-                                            className="form-control form-control-lg"
-                                            placeholder="Name"
-                                            
-                                        />
-                                        
-                                    </div>
+                                        <form
+                                            className="mx-md-5 text-black"
 
-                                    <div className="form-group has-icon mb-4">
-                                        <i className="fas fa-envelope fa-lg form-control-icon" />
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            name="email"
-                                            autoComplete="off"
-                                            className="form-control form-control-lg"
-                                            placeholder="Email"
-                                            
-                                        />
-                                        
-                                    </div>
-
-                                    <div className="form-group has-icon mb-4">
-                                        <i className="fas fa-key fa-lg form-control-icon" />
-                                        <div class="d-grid d-md-flex justify-content-md-end">
-                                            <span
-                                                className='form-control-eye'
-                                                onClick={handleShow}
-                                            >
-                                                {show ? <i class="far fa-eye" /> : <i class="far fa-eye-slash" />}
-                                            </span>
-                                        </div>
-                                        <input
-                                            type={show ? "text" : "password"}
-                                            id="password"
-                                            name="password"
-                                            autoComplete="off"
-                                            className="form-control form-control-lg"
-                                            placeholder="Password"
-                                            
-                                        />
-                                        
-                                    </div>
-                                    <div className="form-group has-icon mb-4">
-                                        <i className="fas fa-mobile-screen-button fa-lg form-control-icon" />
-                                        <input
-                                            type="text"
-                                            id="mobile_no"
-                                            name="mobile_no"
-                                            className="form-control form-control-lg"
-                                            placeholder="Mobile Number"
-                                            
-                                        />
-                                        {/* <span className='text-danger'>{studentsignupForm.errors.name}</span> */}
-                                    </div>
-
-                                    <div className='text-center mb-4'>
-                                        <label htmlFor="chapter-img" className="btn btn-primary">
-                                            {' '}
-                                            <i class="fas fa-upload"></i> Upload Image
-                                        </label>
-                                        <input type="file" id="chapter-img" hidden  />
-                                    </div>
-
-                                    <div className="pt-1 pb-1">
-                                        <button
-                                            className="btn btn-primary btn-block mb-5"
-                                            type="submit"
-                                            style={{ borderRadius: "10px", marginLeft: "0px" }}
                                         >
-                                            Signup &nbsp;
-                                            <i className="fas fa-arrow-right-to-bracket" />
-                                        </button>
+                                            <div className="form-group has-icon mb-4">
+                                                <i className="fas fa-user fa-lg form-control-icon" />
+                                                <input
+                                                    type="text"
+                                                    id="name"
+                                                    name="name"
+                                                    className="form-control form-control-lg"
+                                                    placeholder="Name"
 
-                                        <div>
-                                            <div className="mb-4 text-center">
-                                                <h6>or sign up with :</h6>
-                                            </div>
-                                            <div className="text-center">
-                                                <button
-                                                    type="button"
-                                                    className="btn btn-primary btn-floating mx-1"
-                                                >
-                                                    <i className="fab fa-facebook-f" />
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    className="btn btn-primary btn-floating mx-1"
-                                                >
-                                                    <i className="fab fa-google" />
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    className="btn btn-primary btn-floating mx-1"
-                                                >
-                                                    <i className="fab fa-twitter" />
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    className="btn btn-primary btn-floating mx-1"
-                                                >
-                                                    <i className="fab fa-github" />
-                                                </button>
-                                            </div>
-                                        </div>
+                                                />
 
-                                    </div>
-                                </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="tab-pane fade" id="password" role="tabpanel">
-                                <div className="card">
-                                    <div className="card-body">
-                                        <h5 className="card-title">Password</h5>
-                                        <form>
-                                            <div className="form-group">
-                                                <label htmlFor="inputPasswordCurrent">Current password</label>
-                                                <input
-                                                    type="password"
-                                                    className="form-control"
-                                                    id="inputPasswordCurrent"
-                                                />
-                                                <small>
-                                                    <a href="#">Forgot your password?</a>
-                                                </small>
                                             </div>
-                                            <div className="form-group">
-                                                <label htmlFor="inputPasswordNew">New password</label>
+
+                                            <div className="form-group has-icon mb-4">
+                                                <i className="fas fa-envelope fa-lg form-control-icon" />
                                                 <input
-                                                    type="password"
-                                                    className="form-control"
-                                                    id="inputPasswordNew"
+                                                    type="email"
+                                                    id="email"
+                                                    name="email"
+                                                    autoComplete="off"
+                                                    className="form-control form-control-lg"
+                                                    placeholder="Email"
+
                                                 />
+
                                             </div>
-                                            <div className="form-group">
-                                                <label htmlFor="inputPasswordNew2">Verify password</label>
+
+                                            <div className="form-group has-icon mb-4">
+                                                <i className="fas fa-key fa-lg form-control-icon" />
+                                                <div class="d-grid d-md-flex justify-content-md-end">
+                                                    <span
+                                                        className='form-control-eye'
+                                                        onClick={handleShow}
+                                                    >
+                                                        {show ? <i class="far fa-eye" /> : <i class="far fa-eye-slash" />}
+                                                    </span>
+                                                </div>
                                                 <input
-                                                    type="password"
-                                                    className="form-control"
-                                                    id="inputPasswordNew2"
+                                                    type={show ? "text" : "password"}
+                                                    id="password"
+                                                    name="password"
+                                                    autoComplete="off"
+                                                    className="form-control form-control-lg"
+                                                    placeholder="Password"
+
                                                 />
+
                                             </div>
-                                            <button type="submit" className="btn btn-primary">
-                                                Save changes
-                                            </button>
+                                            <div className="form-group has-icon mb-4">
+                                                <i className="fas fa-mobile-screen-button fa-lg form-control-icon" />
+                                                <input
+                                                    type="text"
+                                                    id="mobile_no"
+                                                    name="mobile_no"
+                                                    className="form-control form-control-lg"
+                                                    placeholder="Mobile Number"
+
+                                                />
+                                                {/* <span className='text-danger'>{studentsignupForm.errors.name}</span> */}
+                                            </div>
+
+                                            <div className='d-flex flex-row align-items-center mx-1 mb-4'>
+                                                <label htmlFor="chapter-img" className="btn btn-primary">
+                                                    {' '}
+                                                    <i class="fas fa-upload"></i> Upload Image
+                                                </label>
+                                                <span className='text-warning mx-3'>
+                                                    {selImage ? selImage.name : 'No Image Selected'}
+                                                </span>
+                                                <input type="file" id="chapter-img" hidden onChange={uploadFile} />
+                                            </div>
+
+                                            <div className="pt-1 pb-1">
+                                                <button
+                                                    className="btn btn-primary btn-block mb-5"
+                                                    type="submit"
+                                                    style={{ borderRadius: "10px", marginLeft: "0px" }}
+                                                >
+                                                    Update Changes &nbsp;
+                                                    <i className="fas fa-arrow-right-to-bracket" />
+                                                </button>
+
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>

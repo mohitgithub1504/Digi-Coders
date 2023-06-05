@@ -455,6 +455,22 @@ color: var(--third-color);
 background-color: var(--main-color);
 }
 
+.nav-avatar{
+  color: var(--second-color);
+}
+
+.nav-avatar:hover{
+  color: var(--main-color);
+}
+
+.btn-danger{
+  background-color: #ec0000;
+}
+
+.btn-danger:hover{
+  background-color: var(--main-color);
+}
+
 .timeline {
   position: relative;
   list-style: none;
