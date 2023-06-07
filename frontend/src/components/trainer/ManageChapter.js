@@ -3,15 +3,16 @@ import React, { useEffect, useState } from 'react';
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
 import app_config from '../../config';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 
 const ManageChapter = () => {
   const { apiUrl } = app_config;
+  const { chaptername } = useParams();
 
   const itemPerPage = 5;
 
   const [currentPage, setCurrentPage] = useState(1);
-
+  const [masterList, setMasterList] = useState([]);
   const [chapterList, setChapterList] = useState([]);
 
   const fetchUserData = async () => {
@@ -19,7 +20,12 @@ const ManageChapter = () => {
     console.log(res.status);
     const data = await res.json();
     console.log(data);
-    setChapterList(data);
+    if (chaptername) {
+      setChapterList(data.filter((chapter) => chapter.title.toLowerCase() === chaptername.toLowerCase()));
+    } else {
+      setChapterList(data);
+    }
+    setMasterList(data);
   };
 
   const deleteChapter = async (id) => {
@@ -44,6 +50,14 @@ const ManageChapter = () => {
     }
   }
 
+  const searchChapterByName = (e) => {
+    const val = e.target.value;
+    setChapterList(
+      masterList.filter((chapter) => (chapter.title.toLowerCase().includes(val.toLowerCase())))
+    )
+    setCurrentPage(1);
+  }
+
   const displayChapters = () => {
     return (
       <div>
@@ -62,6 +76,7 @@ const ManageChapter = () => {
                           name="search"
                           className="form-control form-control-lg"
                           placeholder="Search"
+                          onChange={searchChapterByName}
                           style={{ paddingRight: "10px", width: "350px" }}
                         />
                       </div>
@@ -185,8 +200,8 @@ const ManageChapter = () => {
                 </td>
                 <td className="align-middle">{chapter.category}</td>
                 <td className="align-middle">{chapter.description}</td>
-                {/* <td className="align-middle">{new Date(chapter.created_at).toLocaleDateString()}</td>
-                <td className="align-middle">{new Date(chapter.updated_at).toLocaleDateString()}</td> */}
+                <td className="align-middle">{new Date(chapter.created_at).toLocaleDateString()}</td>
+                <td className="align-middle">{new Date(chapter.updated_at).toLocaleDateString()}</td>
                 <td className="align-middle">
                   <NavLink to={'/trainer/designchapter/' + chapter._id} >
                     <i className="fas fa-pen-to-square fa-lg mx-2" style={{ color: "#000fff" }} />
