@@ -11,6 +11,8 @@ const UserProfile = () => {
 
     const [selImage, setSelImage] = useState(null);
 
+    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(!show);
 
@@ -20,7 +22,7 @@ const UserProfile = () => {
         phone: Yup.string().required('Phone Number is Required'),
     });
 
-    const UserProfile = useFormik({
+    const userProfileForm = useFormik({
         initialValues: {
             name: '',
             email: '',
@@ -28,8 +30,8 @@ const UserProfile = () => {
     },
     onSubmit: async (values, { setSubmitting }) => {
         console.log(values);
-        const res = await fetch(apiUrl + "/user/updateprofile", {
-            method: "POST",
+        const res = await fetch(apiUrl + "/user/update/"+currentUser._id, {
+            method: "PUT",
             body: JSON.stringify(values), // this is used to convert js data in json formate
             headers: {
                 "Content-Type": "application/json", // this used to inform the data in send in the form of json
@@ -37,6 +39,10 @@ const UserProfile = () => {
         });
         console.log(res.status);
         if (res.status === 200) {
+            const data = await res.json();
+            console.log(data);
+            sessionStorage.setItem("user", JSON.stringify(data));
+            setCurrentUser(data);
             Swal.fire({
                 icon: "success",
                 title: "Well Done!!",
@@ -178,7 +184,7 @@ const UserProfile = () => {
                                         <h6 className="mb-0">
                                             Name
                                         </h6>
-                                        <span className="text-secondary">Mohit Mishra</span>
+                                        <span className="text-secondary">{currentUser.name}</span>
                                     </li>
                                     <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                         <h6 className="mb-0">
@@ -206,7 +212,7 @@ const UserProfile = () => {
                             <div className="card-body">
                                 <form
                                     className="mx-md-5 text-black"
-                                    onSubmit={UserProfile.handleSubmit}
+                                    onSubmit={userProfileForm.handleSubmit}
                                 >
                                     <div className="form-group has-icon mb-4">
                                         <i className="fas fa-user fa-lg form-control-icon" />
@@ -216,9 +222,9 @@ const UserProfile = () => {
                                             name="name"
                                             className="form-control form-control-lg"
                                             placeholder="Name"
-                                            value={UserProfile.values.name}
-                                            onChange={UserProfile.handleChange}/>
-                                             <span className='text-danger'>{UserProfile.errors.name}</span>
+                                            value={userProfileForm.values.name}
+                                            onChange={userProfileForm.handleChange}/>
+                                             <span className='text-danger'>{userProfileForm.errors.name}</span>
                                     </div>
 
                                     <div className="form-group has-icon mb-4">
@@ -230,10 +236,10 @@ const UserProfile = () => {
                                             autoComplete="off"
                                             className="form-control form-control-lg"
                                             placeholder="Email"
-                                            value={UserProfile.values.email}
-                                            onChange={UserProfile.handleChange}
+                                            value={userProfileForm.values.email}
+                                            onChange={userProfileForm.handleChange}
                                         />
-                                        <span className='text-danger' >{UserProfile.errors.email}</span>
+                                        <span className='text-danger' >{userProfileForm.errors.email}</span>
                                     </div>
 
                                     <div className="form-group has-icon mb-4">
@@ -253,10 +259,10 @@ const UserProfile = () => {
                                             autoComplete="off"
                                             className="form-control form-control-lg"
                                             placeholder="Password"
-                                          value={UserProfile.values.password}
-                                          onChange={UserProfile.handleChange}
+                                          value={userProfileForm.values.password}
+                                          onChange={userProfileForm.handleChange}
                                         />
-                                        <span className='text-danger'>{UserProfile.errors.password}</span>
+                                        <span className='text-danger'>{userProfileForm.errors.password}</span>
                                     </div>
                                     <div className="form-group has-icon mb-4">
                                         <i className="fas fa-mobile-screen-button fa-lg form-control-icon" />
@@ -266,10 +272,10 @@ const UserProfile = () => {
                                             name="mobile_no"
                                             className="form-control form-control-lg"
                                             placeholder="Mobile Number"
-                                          value={UserProfile.values.mobile_no}
-                                          onChange={UserProfile.handleChange}
+                                          value={userProfileForm.values.mobile_no}
+                                          onChange={userProfileForm.handleChange}
                                         /> 
-                                        <span className='text-danger'>{UserProfile.errors.name}</span>
+                                        <span className='text-danger'>{userProfileForm.errors.name}</span>
                                     </div>
 
                                     {/* <div className='d-flex flex-row align-items-center mx-1 mb-4'>

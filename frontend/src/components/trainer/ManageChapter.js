@@ -22,6 +22,28 @@ const ManageChapter = () => {
     setChapterList(data);
   };
 
+  const deleteChapter = async (id) => {
+    const res = await fetch(apiUrl + '/chapter/delete/' + id, {
+      method: 'DELETE',
+    });
+    const data = await res.json();
+    console.log(data);
+    if (data) {
+      Swal.fire({
+        title: 'Chapter Deleted Successfully',
+        icon: 'success',
+        timer: 2000,
+      });
+      fetchUserData();
+    } else {
+      Swal.fire({
+        title: 'Chapter Deletion Failed',
+        icon: 'error',
+        timer: 2000,
+      });
+    }
+  }
+
   const displayChapters = () => {
     return (
       <div>
@@ -163,17 +185,17 @@ const ManageChapter = () => {
                 </td>
                 <td className="align-middle">{chapter.category}</td>
                 <td className="align-middle">{chapter.description}</td>
-                <td className="align-middle">{chapter.created_at}</td>
-                <td className="align-middle">{chapter.updated_at}</td>
+                {/* <td className="align-middle">{new Date(chapter.created_at).toLocaleDateString()}</td>
+                <td className="align-middle">{new Date(chapter.updated_at).toLocaleDateString()}</td> */}
                 <td className="align-middle">
                   <NavLink to={'/trainer/designchapter/' + chapter._id} >
                     <i className="fas fa-pen-to-square fa-lg mx-2" style={{ color: "#000fff" }} />
                   </NavLink>
                 </td>
                 <td className="align-middle">
-                  <NavLink to={''} >
+                  <button onClick={e => deleteChapter(chapter._id)}>
                     <i className="fas fa-trash-can fa-lg mx-2" style={{ color: "#ff0000" }} />
-                  </NavLink>
+                  </button>
                 </td>
               </tr>
             ))}
@@ -237,7 +259,9 @@ const ManageChapter = () => {
       title: '',
       description: '',
       category: app_config.courseCategories[0],
-      icon: ''
+      icon: '',
+      created_at: new Date(),
+      updated_at: new Date()
     },
 
     onSubmit: async (values, { setSubmitting }) => {
