@@ -3,24 +3,40 @@ import React, { useEffect, useState } from 'react';
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
 import app_config from '../../config';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 
 const ManageChapter = () => {
   const { apiUrl } = app_config;
 
+  const { chaptername } = useParams();
+
   const itemPerPage = 5;
 
   const [currentPage, setCurrentPage] = useState(1);
-
   const [chapterList, setChapterList] = useState([]);
+  const [masterList, setMasterList] = useState([]);
 
   const fetchUserData = async () => {
     const res = await fetch(apiUrl + '/chapter/getall');
     console.log(res.status);
     const data = await res.json();
     console.log(data);
-    setChapterList(data);
+    // setChapterList(data);
+    if (chaptername) {
+      setChapterList(data.filter((chapter) => chapter.title.toLowerCase() === chaptername.toLowerCase()));
+    } else {
+      setChapterList(data);
+    }
+    setMasterList(data);
   };
+
+  const searchChapterByName = (e) => {
+    const val = e.target.value;
+    setChapterList(
+      masterList.filter((chapter) => (chapter.title.toLowerCase().includes(val.toLowerCase())))
+    )
+    setCurrentPage(1);
+  }
 
   const displayChapters = () => {
     return (
@@ -40,6 +56,7 @@ const ManageChapter = () => {
                           name="search"
                           className="form-control form-control-lg"
                           placeholder="Search"
+                          onChange={searchChapterByName}
                           style={{ paddingRight: "10px", width: "350px" }}
                         />
                       </div>
