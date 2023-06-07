@@ -336,6 +336,22 @@ export const getHTMLToolbox = () => {
           },
         ]
       },
+      { kind: 'sep' },
+      {
+        kind: 'category',
+        name: 'Script',
+        colour: '#a5a55b',
+        contents: [
+          {
+            kind: 'block',
+            blockxml: `<block type="script"></block>`
+          },
+          {
+            kind: 'block',
+            blockxml: `<block type="onclick"></block>`
+          },
+        ]
+      },
 
 
 
