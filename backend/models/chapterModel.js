@@ -8,8 +8,8 @@ const schema = new Schema({
   blockStructure: {type : Array, default : []},
   icon: {type : String},
   data: Object,
-  created_at: Date,
-  updated_at: Date,
+  created_at: {type : Date, default: new Date()},
+  updated_at: {type : Date, default : new Date()},
 });
 
 module.exports = model("chapters", schema);

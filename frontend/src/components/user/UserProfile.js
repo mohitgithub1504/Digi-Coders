@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import app_config from '../../config';
 import { NavLink } from 'react-router-dom';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import Swal from 'sweetalert2';
 
 const UserProfile = () => {
 
@@ -8,8 +11,61 @@ const UserProfile = () => {
 
     const [selImage, setSelImage] = useState(null);
 
+    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(!show);
+
+    const userprofile = Yup.object().shape({
+        name: Yup.string().required('Name is Required'),
+        email: Yup.string().email('Invalid email').required('Email is Required'),
+        phone: Yup.string().required('Phone Number is Required'),
+    });
+
+    const userProfileForm = useFormik({
+        initialValues: {
+            name: '',
+            email: '',
+            phone: '',
+    },
+    onSubmit: async (values, { setSubmitting }) => {
+        console.log(values);
+        const res = await fetch(apiUrl + "/user/update/"+currentUser._id, {
+            method: "PUT",
+            body: JSON.stringify(values), // this is used to convert js data in json formate
+            headers: {
+                "Content-Type": "application/json", // this used to inform the data in send in the form of json
+            },
+        });
+        console.log(res.status);
+        if (res.status === 200) {
+            const data = await res.json();
+            console.log(data);
+            sessionStorage.setItem("user", JSON.stringify(data));
+            setCurrentUser(data);
+            Swal.fire({
+                icon: "success",
+                title: "Well Done!!",
+                text: "Profile Updated successfully",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        } else {
+            Swal.fire({
+                icon: "error",
+                title: "Success!",
+                text: "Profile Updated successfully",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+    }
+});
+
+
+
+
+
 
     const uploadFile = (e) => {
         const file = e.target.files[0];
@@ -25,6 +81,9 @@ const UserProfile = () => {
           }
         });
       };
+
+
+
 
 
     return (
@@ -125,7 +184,7 @@ const UserProfile = () => {
                                         <h6 className="mb-0">
                                             Name
                                         </h6>
-                                        <span className="text-secondary">Mohit Mishra</span>
+                                        <span className="text-secondary">{currentUser.name}</span>
                                     </li>
                                     <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                         <h6 className="mb-0">
@@ -153,7 +212,7 @@ const UserProfile = () => {
                             <div className="card-body">
                                 <form
                                     className="mx-md-5 text-black"
-                                //   onSubmit={trainersignupForm.handleSubmit}
+                                    onSubmit={userProfileForm.handleSubmit}
                                 >
                                     <div className="form-group has-icon mb-4">
                                         <i className="fas fa-user fa-lg form-control-icon" />
@@ -163,10 +222,9 @@ const UserProfile = () => {
                                             name="name"
                                             className="form-control form-control-lg"
                                             placeholder="Name"
-                                        //   value={trainersignupForm.values.name}
-                                        //   onChange={trainersignupForm.handleChange}
-                                        />
-                                        {/* <span className='text-danger'>{trainersignupForm.errors.name}</span> */}
+                                            value={userProfileForm.values.name}
+                                            onChange={userProfileForm.handleChange}/>
+                                             <span className='text-danger'>{userProfileForm.errors.name}</span>
                                     </div>
 
                                     <div className="form-group has-icon mb-4">
@@ -178,10 +236,10 @@ const UserProfile = () => {
                                             autoComplete="off"
                                             className="form-control form-control-lg"
                                             placeholder="Email"
-                                        //   value={trainersignupForm.values.email}
-                                        //   onChange={trainersignupForm.handleChange}
+                                            value={userProfileForm.values.email}
+                                            onChange={userProfileForm.handleChange}
                                         />
-                                        {/* <span className='text-danger' >{trainersignupForm.errors.email}</span> */}
+                                        <span className='text-danger' >{userProfileForm.errors.email}</span>
                                     </div>
 
                                     <div className="form-group has-icon mb-4">
@@ -201,10 +259,10 @@ const UserProfile = () => {
                                             autoComplete="off"
                                             className="form-control form-control-lg"
                                             placeholder="Password"
-                                        //   value={trainersignupForm.values.password}
-                                        //   onChange={trainersignupForm.handleChange}
+                                          value={userProfileForm.values.password}
+                                          onChange={userProfileForm.handleChange}
                                         />
-                                        {/* <span className='text-danger'>{trainersignupForm.errors.password}</span> */}
+                                        <span className='text-danger'>{userProfileForm.errors.password}</span>
                                     </div>
                                     <div className="form-group has-icon mb-4">
                                         <i className="fas fa-mobile-screen-button fa-lg form-control-icon" />
@@ -214,11 +272,10 @@ const UserProfile = () => {
                                             name="mobile_no"
                                             className="form-control form-control-lg"
                                             placeholder="Mobile Number"
-                                        //   value={trainersignupForm.values.mobile_no}
-                                        //   onChange={trainersignupForm.handleChange}
-
-                                        />
-                                        {/* <span className='text-danger'>{studentsignupForm.errors.name}</span> */}
+                                          value={userProfileForm.values.mobile_no}
+                                          onChange={userProfileForm.handleChange}
+                                        /> 
+                                        <span className='text-danger'>{userProfileForm.errors.name}</span>
                                     </div>
 
                                     {/* <div className='d-flex flex-row align-items-center mx-1 mb-4'>

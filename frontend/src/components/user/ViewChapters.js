@@ -24,6 +24,11 @@ const BrowseChapters = () => {
 
   const categoryList = ["HTML5", "Python", "CSS", "Web", "Animation", "JavaScript"];
 
+  const sortArray = () => {
+    const sortedArray = [...chapterList].sort((a, b) => a.title.localeCompare(b.title));
+    setChapterList(sortedArray);
+  };
+
   const fetchUserData = async () => {
     const res = await fetch("http://localhost:5000/chapter/getall");
     console.log(res.status);
@@ -253,7 +258,7 @@ const BrowseChapters = () => {
 
                     <div class="select">
                       <select class="mySelectArrow">
-                        <option value="">A To Z</option>
+                        <option value="" onClick={sortArray}>A To Z</option>
                         <option value=" ">A to Z</option>
                       </select>
                     </div>
