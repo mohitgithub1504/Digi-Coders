@@ -186,7 +186,7 @@ const StudentSignup = () => {
                                                 className='form-control-eye'
                                                 onClick={handleShow}
                                             >
-                                                {show ? <i class="far fa-eye" /> : <i class="far fa-eye-slash" />}
+                                                {show ? <i class="far fa-eye" style={{color: "#c5c5c5"}} /> : <i class="far fa-eye-slash" style={{color: "#c5c5c5"}} />}
                                             </span>
                                         </div>
                                         <input

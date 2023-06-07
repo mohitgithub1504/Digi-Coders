@@ -125,9 +125,9 @@ const Navbar = () => {
                 (
                   <>
                     <img
-                      src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                      src="https://bootdey.com/img/Content/avatar/avatar6.png"
                       className="rounded-circle"
-                      height={40}
+                      style={{ width: "50px", backgroundSize: "cover" }}
                       alt="Black and White Portrait of a Man"
                       loading="lazy"
                     />

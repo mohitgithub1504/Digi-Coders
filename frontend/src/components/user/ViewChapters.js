@@ -52,7 +52,7 @@ const BrowseChapters = () => {
               <div className="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
                 <div
                   class="bg-image hover-overlay ripple shadow-4-strong rounded-7"
-                  data-mdb-ripple-color="light"
+                  data-mdb-ripple-color="light" style={{ width: "320px", height: "200px", backgroundSize: "cover" }}
                 >
                   <img
                     src={apiUrl + "/" + chapter.icon}
@@ -68,13 +68,13 @@ const BrowseChapters = () => {
                 </div>
               </div>
               <div className="content card-tittle col-md-6 col-lg-6 col-xl-6">
-                <h4 className="card-tittle my-2 mx-4">
+                <h4 className="card-tittle my-2 mx-5">
                   <strong>{chapter.title}</strong>
                 </h4>
-                <div className="mb-4 mx-4 text-uppercase text-danger">
+                <div className="mb-4 mx-5 text-uppercase text-danger">
                   <span>{chapter.category}</span>
                 </div>
-                <p className="text-truncate mb-4 mx-4">
+                <p className="text-truncate mb-4 mx-5">
                   {chapter.description}
                 </p>
               </div>

@@ -6,20 +6,16 @@ export const getHTMLToolbox = () => {
     contents: [
       {
         kind: 'category',
-        name: 'HTML Blocks',
+        name: 'Base Frame',
         colour: '#a55b5b',
         contents: [
           {
             kind: 'block',
+            blockxml: '<block type="html">\n' + '      <statement name="content">\n' + '    <block type="head">\n' + '    <statement name="content">\n' + '  <block type="title">\n' + '      <statement name="content">\n' + '      <block type="plaintext">\n' + '      <field name="content">\n' + '    </field>\n' + '   </block>\n' + '   </statement>\n' + '    </block>\n' + '   </statement>\n' + '  <next>\n' + '  <block type="body">\n' + '  </block>\n' + '  </next>\n' + '  </block>\n' + '  </statement>\n' + '  </block>\n'
+          },
+          {
+            kind: 'block',
             blockxml: `<block type="html"></block>`
-          },
-          {
-            kind: 'block',
-            blockxml: `<block type="head"></block>`
-          },
-          {
-            kind: 'block',
-            blockxml: `<block type="title"></block>`
           },
           {
             kind: 'block',
@@ -31,68 +27,103 @@ export const getHTMLToolbox = () => {
           },
           {
             kind: 'block',
-            blockxml: `<block type="plaintext"></block>`
+            blockxml: `<block type="head"></block>`
+          },
+          {
+            kind: 'block',
+            blockxml: '<block type="title">\n' + '      <statement name="content">\n' + '     <block type="plaintext">\n' + '      <field name="content">\n' + '    </field>\n' + '   </block>\n' + '   </statement>\n' + '    </block>\n'
           },
         ]
       },
-      { kind: 'sep' },
-      {
-        kind: 'category',
-        name: 'Colour',
-        colour: 19,
-        contents: [
-          {
-            kind: 'block',
-            blockxml: '    <block type="colour_picker">\n' + '      <field name="COLOUR">#ff0000</field>\n' + '    </block>\n'
-          },
-          {
-            kind: 'block',
-            type: 'colour_random'
-          },
-          {
-            kind: 'block',
-            blockxml:
-              '    <block type="colour_rgb">\n' +
-              '      <value name="RED">\n' +
-              '        <shadow type="math_number">\n' +
-              '          <field name="NUM">100</field>\n' +
-              '        </shadow>\n' +
-              '      </value>\n' +
-              '      <value name="GREEN">\n' +
-              '        <shadow type="math_number">\n' +
-              '          <field name="NUM">50</field>\n' +
-              '        </shadow>\n' +
-              '      </value>\n' +
-              '      <value name="BLUE">\n' +
-              '        <shadow type="math_number">\n' +
-              '          <field name="NUM">0</field>\n' +
-              '        </shadow>\n' +
-              '      </value>\n' +
-              '    </block>\n'
-          },
-          {
-            kind: 'block',
-            blockxml:
-              '    <block type="colour_blend">\n' +
-              '      <value name="COLOUR1">\n' +
-              '        <shadow type="colour_picker">\n' +
-              '          <field name="COLOUR">#ff0000</field>\n' +
-              '        </shadow>\n' +
-              '      </value>\n' +
-              '      <value name="COLOUR2">\n' +
-              '        <shadow type="colour_picker">\n' +
-              '          <field name="COLOUR">#3333ff</field>\n' +
-              '        </shadow>\n' +
-              '      </value>\n' +
-              '      <value name="RATIO">\n' +
-              '        <shadow type="math_number">\n' +
-              '          <field name="NUM">0.5</field>\n' +
-              '        </shadow>\n' +
-              '      </value>\n' +
-              '    </block>\n'
-          }
-        ]
-      },
+      // {
+      //   kind: 'category',F
+      //   name: 'HTML Blocks',
+      //   colour: '#a55b5b',
+      //   contents: [
+      //     {
+      //       kind: 'block',
+      //       blockxml: `<block type="html"></block>`
+      //     },
+      //     {
+      //       kind: 'block',
+      //       blockxml: `<block type="head"></block>`
+      //     },
+      //     {
+      //       kind: 'block',
+      //       blockxml: `<block type="title"></block>`
+      //     },
+      //     {
+      //       kind: 'block',
+      //       blockxml: `<block type="body"></block>`
+      //     },
+      //     {
+      //       kind: 'block',
+      //       blockxml: `<block type="body_attributes"></block>`
+      //     },
+      //     {
+      //       kind: 'block',
+      //       blockxml: `<block type="plaintext"></block>`
+      //     },
+      //   ]
+      // },
+      // { kind: 'sep' },
+      // {
+      //   kind: 'category',
+      //   name: 'Colour',
+      //   colour: 19,
+      //   contents: [
+      //     {
+      //       kind: 'block',
+      //       blockxml: '    <block type="colour_picker">\n' + '      <field name="COLOUR">#ff0000</field>\n' + '    </block>\n'
+      //     },
+      //     {
+      //       kind: 'block',
+      //       type: 'colour_random'
+      //     },
+      //     {
+      //       kind: 'block',
+      //       blockxml:
+      //         '    <block type="colour_rgb">\n' +
+      //         '      <value name="RED">\n' +
+      //         '        <shadow type="math_number">\n' +
+      //         '          <field name="NUM">100</field>\n' +
+      //         '        </shadow>\n' +
+      //         '      </value>\n' +
+      //         '      <value name="GREEN">\n' +
+      //         '        <shadow type="math_number">\n' +
+      //         '          <field name="NUM">50</field>\n' +
+      //         '        </shadow>\n' +
+      //         '      </value>\n' +
+      //         '      <value name="BLUE">\n' +
+      //         '        <shadow type="math_number">\n' +
+      //         '          <field name="NUM">0</field>\n' +
+      //         '        </shadow>\n' +
+      //         '      </value>\n' +
+      //         '    </block>\n'
+      //     },
+      //     {
+      //       kind: 'block',
+      //       blockxml:
+      //         '    <block type="colour_blend">\n' +
+      //         '      <value name="COLOUR1">\n' +
+      //         '        <shadow type="colour_picker">\n' +
+      //         '          <field name="COLOUR">#ff0000</field>\n' +
+      //         '        </shadow>\n' +
+      //         '      </value>\n' +
+      //         '      <value name="COLOUR2">\n' +
+      //         '        <shadow type="colour_picker">\n' +
+      //         '          <field name="COLOUR">#3333ff</field>\n' +
+      //         '        </shadow>\n' +
+      //         '      </value>\n' +
+      //         '      <value name="RATIO">\n' +
+      //         '        <shadow type="math_number">\n' +
+      //         '          <field name="NUM">0.5</field>\n' +
+      //         '        </shadow>\n' +
+      //         '      </value>\n' +
+      //         '    </block>\n'
+      //     }
+      //   ]
+      // },
       { kind: 'sep' },
       {
         kind: 'category',

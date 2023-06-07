@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import app_config from '../../config';
+import { NavLink } from 'react-router-dom';
 
 const UserProfile = () => {
 
@@ -28,218 +29,225 @@ const UserProfile = () => {
 
     return (
         <div>
-
-            <div className="container my-5">
-                <div className="row">
-                    <div className="col-md-5 col-xl-4">
+            <div className="container-xl px-5 my-5">
+                <div className="row d-flex justify-content-center ">
+                    <div className="col-lg-4 mx-2" style={{ width: "36.5%" }}>
                         <div className="card">
-                            <div className="card-header">
-                                <h5 className="card-title mb-0">Profile Settings</h5>
-                            </div>
-                            <div className="list-group list-group-flush" role="tablist">
-                                <a
-                                    className="list-group-item list-group-item-action active"
-                                    data-toggle="list"
-                                    href="#account"
-                                    role="tab"
-                                >
-                                    User Profile
-                                </a>
-                                <a
-                                    className="list-group-item list-group-item-action"
-                                    data-toggle="list"
-                                    href="/main/resetpassword"
-                                    role="tab"
-                                >
-                                    Change Password
-                                </a>
-                                <a
-                                    className="list-group-item list-group-item-action"
-                                    data-toggle="list"
-                                    href="#"
-                                    role="tab"
-                                >
-                                    Delete account
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-7 col-xl-8">
-                        <div className="tab-content">
-                            <div className="tab-pane fade show active" id="account" role="tabpanel">
-                                <div className="card">
-                                    <div className="card-header">
-                                        <h5 className="card-title mb-0">User Profile</h5>
-                                    </div>
-                                    <div className="card-body">
-                                        <div className="row">
-                                            <div className="col-md-4">
-                                                <div className="text-center">
-                                                    <img
-                                                        alt="Andrew Jones"
-                                                        src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                                                        className="rounded-circle img-responsive mt-2"
-                                                        width={128}
-                                                        height={128}
-                                                    />
-                                                    <div className="mt-4">
-                                                        <div className="">
-                                                            <h3 className="">Mohit Mishra</h3>
-                                                            <h5 className="text-danger">Male</h5>
-                                                        </div>
-
+                            <div className="card-body">
+                                <div className="d-flex flex-column align-items-center text-center">
+                                    <div
+                                        class="bg-image profile-picture-container hover-overlay ripple"
+                                        data-mdb-ripple-color="light"
+                                    >
+                                        <img
+                                            src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                                            alt="Admin"
+                                            className="rounded-circle p-1 bg-primary"
+                                            style={{ width: "180px", backgroundSize: "cover" }}
+                                        />
+                                        <div className="camera-icon">
+                                            <i className="fas fa-camera fa-lg" />
+                                        </div>
+                                        <NavLink to="">
+                                            <div
+                                                className="mask"
+                                                data-mdb-toggle="modal"
+                                                data-mdb-target="#staticBackdrop4"
+                                                style={{ borderRadius: "50%", backgroundColor: "rgb(0 0 0 / 30%)" }}
+                                            />
+                                        </NavLink>
+                                        {/* Modal */}
+                                        <div
+                                            className="modal fade"
+                                            id="staticBackdrop4"
+                                            tabIndex={-1}
+                                            aria-labelledby="exampleModalLabel4"
+                                            aria-hidden="true"
+                                        >
+                                            <div className="modal-dialog modal-lg d-flex justify-content-center">
+                                                <div className="modal-content w-75">
+                                                    <div className="modal-header">
+                                                        <h3 className="modal-title text-uppercase" id="exampleModalLabel4">
+                                                            Update Profile Picture
+                                                        </h3>
+                                                        <button
+                                                            type="button"
+                                                            className="btn-close"
+                                                            data-mdb-dismiss="modal"
+                                                            aria-label="Close"
+                                                        />
                                                     </div>
-
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-8">
-
-                                                <div className="card mb-4">
-                                                    <div className="card-body">
-                                                        <div className="row">
-                                                            <div className="col-sm-3">
-                                                                <p className="mb-0">Name -</p>
+                                                    <div className="modal-body">
+                                                        <form>
+                                                            <div className='d-flex flex-row align-items-center justify-content-center mb-3'>
+                                                                <label htmlFor="chapter-img" className="btn mx-2" style={{ backgroundColor: "#ec0000" }}>
+                                                                    {' '}
+                                                                    <i class="fas fa-upload"></i> Upload Image
+                                                                </label>
+                                                                <span className='text-secondary mx-2'>
+                                                                    {selImage ? selImage.name : 'No Image Selected'}
+                                                                </span>
+                                                                <input type="file" id="chapter-img" hidden onChange={uploadFile} />
                                                             </div>
-                                                            <div className="col-sm-9">
-                                                                <p className="text-muted mb-0">Johnatan Smith</p>
+                                                            <div className="modal-footer">
+                                                                <button
+                                                                    type="button"
+                                                                    className="btn btn-primary"
+                                                                    data-mdb-dismiss="modal"
+                                                                    style={{ borderRadius: "10px", marginLeft: "0px" }}
+                                                                >
+                                                                    Close
+                                                                </button>
+                                                                <button
+                                                                    className="btn btn-primary"
+                                                                    type="submit"
+                                                                    style={{ borderRadius: "10px", marginLeft: "10px" }}
+                                                                >
+                                                                    Save
+                                                                    {/* <i className="fas fa-arrow-right-to-bracket" /> */}
+                                                                </button>
                                                             </div>
-                                                        </div>
-                                                        <hr />
-                                                        <div className="row">
-                                                            <div className="col-sm-3">
-                                                                <p className="mb-0">Email -</p>
-                                                            </div>
-                                                            <div className="col-sm-9">
-                                                                <p className="text-muted mb-0">example@example.com</p>
-                                                            </div>
-                                                        </div>
-                                                        <hr />
-                                                        <div className="row">
-                                                            <div className="col-sm-3">
-                                                                <p className="mb-0">Phone No. -</p>
-                                                            </div>
-                                                            <div className="col-sm-9">
-                                                                <p className="text-muted mb-0">(097) 234-5678</p>
-                                                            </div>
-                                                        </div>
-                                                        <hr />
-                                                        <div className="row">
-                                                            <div className="col-sm-3">
-                                                                <p className="mb-0">Address -</p>
-                                                            </div>
-                                                            <div className="col-sm-9">
-                                                                <p className="text-muted mb-0">Bay Area, San Francisco, CA</p>
-                                                            </div>
-                                                        </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        {/* Modal */}
+                                    </div>
+                                    <div className="mt-3">
+                                        <h4>Mohit Mishra</h4>
+                                        <p className="text-secondary">Full Stack Developer</p>
                                     </div>
                                 </div>
-                                <div className="card mt-5">
-                                    <div className="card-header">
-                                        <h5 className="card-title mb-0">Update Profile</h5>
-                                    </div>
-                                    <div className="card-body">
-                                        <form
-                                            className="mx-md-5 text-black"
-
-                                        >
-                                            <div className="form-group has-icon mb-4">
-                                                <i className="fas fa-user fa-lg form-control-icon" />
-                                                <input
-                                                    type="text"
-                                                    id="name"
-                                                    name="name"
-                                                    className="form-control form-control-lg"
-                                                    placeholder="Name"
-
-                                                />
-
-                                            </div>
-
-                                            <div className="form-group has-icon mb-4">
-                                                <i className="fas fa-envelope fa-lg form-control-icon" />
-                                                <input
-                                                    type="email"
-                                                    id="email"
-                                                    name="email"
-                                                    autoComplete="off"
-                                                    className="form-control form-control-lg"
-                                                    placeholder="Email"
-
-                                                />
-
-                                            </div>
-
-                                            <div className="form-group has-icon mb-4">
-                                                <i className="fas fa-key fa-lg form-control-icon" />
-                                                <div class="d-grid d-md-flex justify-content-md-end">
-                                                    <span
-                                                        className='form-control-eye'
-                                                        onClick={handleShow}
-                                                    >
-                                                        {show ? <i class="far fa-eye" /> : <i class="far fa-eye-slash" />}
-                                                    </span>
-                                                </div>
-                                                <input
-                                                    type={show ? "text" : "password"}
-                                                    id="password"
-                                                    name="password"
-                                                    autoComplete="off"
-                                                    className="form-control form-control-lg"
-                                                    placeholder="Password"
-
-                                                />
-
-                                            </div>
-                                            <div className="form-group has-icon mb-4">
-                                                <i className="fas fa-mobile-screen-button fa-lg form-control-icon" />
-                                                <input
-                                                    type="text"
-                                                    id="mobile_no"
-                                                    name="mobile_no"
-                                                    className="form-control form-control-lg"
-                                                    placeholder="Mobile Number"
-
-                                                />
-                                                {/* <span className='text-danger'>{studentsignupForm.errors.name}</span> */}
-                                            </div>
-
-                                            <div className='d-flex flex-row align-items-center mx-1 mb-4'>
-                                                <label htmlFor="chapter-img" className="btn btn-primary">
-                                                    {' '}
-                                                    <i class="fas fa-upload"></i> Upload Image
-                                                </label>
-                                                <span className='text-warning mx-3'>
-                                                    {selImage ? selImage.name : 'No Image Selected'}
-                                                </span>
-                                                <input type="file" id="chapter-img" hidden onChange={uploadFile} />
-                                            </div>
-
-                                            <div className="pt-1 pb-1">
-                                                <button
-                                                    className="btn btn-primary btn-block mb-5"
-                                                    type="submit"
-                                                    style={{ borderRadius: "10px", marginLeft: "0px" }}
-                                                >
-                                                    Update Changes &nbsp;
-                                                    <i className="fas fa-arrow-right-to-bracket" />
-                                                </button>
-
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+                                <hr className="my-4" />
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                        <h6 className="mb-0">
+                                            Name
+                                        </h6>
+                                        <span className="text-secondary">Mohit Mishra</span>
+                                    </li>
+                                    <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                        <h6 className="mb-0">
+                                            Email
+                                        </h6>
+                                        <span className="text-secondary">mohit@gmail.com</span>
+                                    </li>
+                                    <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                        <h6 className="mb-0">
+                                            Mobile No.
+                                        </h6>
+                                        <span className="text-secondary">+91 9260964544</span>
+                                    </li>
+                                </ul>
                             </div>
-                            
+                        </div>
+                    </div>
+
+                    <div className="col-xl-7 mx-2">
+                        {/* Account details card*/}
+                        <div className="card mb-4">
+                            <div className="card-header text-center fw-bold text-uppercase mb-4" style={{ fontSize: "30px", letterSpacing: "2px" }}>
+                                Update Your Profile
+                            </div>
+                            <div className="card-body">
+                                <form
+                                    className="mx-md-5 text-black"
+                                //   onSubmit={trainersignupForm.handleSubmit}
+                                >
+                                    <div className="form-group has-icon mb-4">
+                                        <i className="fas fa-user fa-lg form-control-icon" />
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            className="form-control form-control-lg"
+                                            placeholder="Name"
+                                        //   value={trainersignupForm.values.name}
+                                        //   onChange={trainersignupForm.handleChange}
+                                        />
+                                        {/* <span className='text-danger'>{trainersignupForm.errors.name}</span> */}
+                                    </div>
+
+                                    <div className="form-group has-icon mb-4">
+                                        <i className="fas fa-envelope fa-lg form-control-icon" />
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            autoComplete="off"
+                                            className="form-control form-control-lg"
+                                            placeholder="Email"
+                                        //   value={trainersignupForm.values.email}
+                                        //   onChange={trainersignupForm.handleChange}
+                                        />
+                                        {/* <span className='text-danger' >{trainersignupForm.errors.email}</span> */}
+                                    </div>
+
+                                    <div className="form-group has-icon mb-4">
+                                        <i className="fas fa-key fa-lg form-control-icon" />
+                                        <div class="d-grid d-md-flex justify-content-md-end">
+                                            <span
+                                                className='form-control-eye'
+                                                onClick={handleShow}
+                                            >
+                                                {show ? <i class="far fa-eye" style={{ color: "#c5c5c5" }} /> : <i class="far fa-eye-slash" style={{ color: "#c5c5c5" }} />}
+                                            </span>
+                                        </div>
+                                        <input
+                                            type={show ? "text" : "password"}
+                                            id="password"
+                                            name="password"
+                                            autoComplete="off"
+                                            className="form-control form-control-lg"
+                                            placeholder="Password"
+                                        //   value={trainersignupForm.values.password}
+                                        //   onChange={trainersignupForm.handleChange}
+                                        />
+                                        {/* <span className='text-danger'>{trainersignupForm.errors.password}</span> */}
+                                    </div>
+                                    <div className="form-group has-icon mb-4">
+                                        <i className="fas fa-mobile-screen-button fa-lg form-control-icon" />
+                                        <input
+                                            type="text"
+                                            id="mobile_no"
+                                            name="mobile_no"
+                                            className="form-control form-control-lg"
+                                            placeholder="Mobile Number"
+                                        //   value={trainersignupForm.values.mobile_no}
+                                        //   onChange={trainersignupForm.handleChange}
+
+                                        />
+                                        {/* <span className='text-danger'>{studentsignupForm.errors.name}</span> */}
+                                    </div>
+
+                                    {/* <div className='d-flex flex-row align-items-center mx-1 mb-4'>
+                                        <label htmlFor="chapter-img" className="btn btn-primary">
+                                            {' '}
+                                            <i class="fas fa-upload"></i> Upload Image
+                                        </label>
+                                        <span className='text-warning mx-3'>
+                                            {selImage ? selImage.name : 'No Image Selected'}
+                                        </span>
+                                        <input type="file" id="chapter-img" hidden onChange={uploadFile} />
+                                    </div> */}
+
+                                    <div className="pt-1 pb-1 ">
+                                        <button
+                                            className="btn btn-primary btn-block mb-4"
+                                            type="submit"
+                                            style={{ borderRadius: "10px", marginLeft: "0px" }}
+                                        >
+                                            Update &nbsp;
+                                            <i className="fas fa-arrow-right-to-bracket" />
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
     )
 }

@@ -61,45 +61,45 @@ const ChapterDetails = () => {
       return (
         <>
           <section className="" style={{ backgroundColor: '#29c1fe' }}>
-            <div className="container py-4 px-5">
-              <div className="py-2">
+            <div className="container">
+              <div className="py-5">
                 <div className="card-body text-white">
                   <div className="row d-flex align-items-center justify-content-center">
-                    <div className="col-md-6 col-lg-4 mx-5">
-                      <div class="bg-image hover-overlay ripple mx-5 shadow-4-strong rounded-7" data-mdb-ripple-color="light" style={{ width: "350px", height: "200px", backgroundSize: "cover" }}>
+                    <div className="col-md-6 col-lg-4 mx-4" style={{width: "26%"}}>
+                      <div class="bg-image hover-overlay ripple shadow-4-strong rounded-7" data-mdb-ripple-color="light" style={{ width: "320px", height: "200px", backgroundSize: "cover" }}>
                         <img src={apiUrl + '/' + chapterDetails.icon} className="img-fluid" />
                       </div>
                     </div>
-                    <div className="content col-md-6 mb-4 text-justify">
-                      <div class="row">
-                        <div class="col-4">
-                          <h5 className="fw-bold mx-3">
+                    <div className="content col-md-6 text-justify mx-4">
+                      <div class="row mt-3">
+                        <div class="col-md-3" style={{marginTop: "3px"}}>
+                          <h5 className="fw-bold">
                             <strong>Title - </strong>
                           </h5>
                         </div>
-                        <div class="col-8">
+                        <div class="col-md-9">
                           <p className="text-white">{chapterDetails.title}</p>
                         </div>
                       </div>
 
                       <div class="row">
-                        <div class="col-4">
-                          <h5 className="fw-bold mx-3">
+                        <div class="col-md-3" style={{marginTop: "3px"}}>
+                          <h5 className="fw-bold">
                             <strong>category - </strong>
                           </h5>
                         </div>
-                        <div class="col-8">
+                        <div class="col-md-9">
                           <p className="text-white">{chapterDetails.category}</p>
                         </div>
                       </div>
 
                       <div class="row">
-                        <div class="col-4">
-                          <h5 className="fw-bold mx-3">
+                        <div class="col-md-3" style={{marginTop: "3px"}}>
+                          <h5 className="fw-bold">
                             <strong>Description - </strong>
                           </h5>
                         </div>
-                        <div class="col-8">
+                        <div class="col-md-9">
                           <p className="text-white">{chapterDetails.description}</p>
                         </div>
                       </div>

@@ -117,7 +117,7 @@ const TrainerSignup = () => {
     //   backgroundImage: `url('/images/bg-animation-img2.jpg`
     // }}
     >
-      {/*Student Signup Form*/}
+      {/*Trainer Signup Form*/}
       <section className="form"
       >
         <div className="">
@@ -202,7 +202,7 @@ const TrainerSignup = () => {
                         className='form-control-eye'
                         onClick={handleShow}
                       >
-                        {show ? <i class="far fa-eye" /> : <i class="far fa-eye-slash" />}
+                        {show ? <i class="far fa-eye" style={{color: "#c5c5c5"}} /> : <i class="far fa-eye-slash" style={{color: "#c5c5c5"}} />}
                       </span>
                     </div>
                     <input
@@ -320,7 +320,7 @@ const TrainerSignup = () => {
           </div>
         </div>
       </section>
-      {/*Student Signup Form*/}
+      {/*Trainer Signup Form*/}
     </motion.div>
   )
 }
