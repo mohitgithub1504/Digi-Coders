@@ -188,7 +188,8 @@ const UserProfile = () => {
                                             className="form-control form-control-lg"
                                             placeholder="Name"
                                             value={userProfileForm.values.name}
-                                            onChange={userProfileForm.handleChange} />
+                                            onChange={userProfileForm.handleChange} 
+                                            />
                                         <span className='text-danger'>{userProfileForm.errors.name}</span>
                                     </div>
 
