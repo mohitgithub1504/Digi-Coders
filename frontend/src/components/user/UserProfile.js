@@ -26,7 +26,7 @@ const UserProfile = () => {
         initialValues: {
             name: '',
             email: '',
-            phone: '',
+            mobile_no: '',
     },
     onSubmit: async (values, { setSubmitting }) => {
         console.log(values);
@@ -174,7 +174,7 @@ const UserProfile = () => {
                                         {/* Modal */}
                                     </div>
                                     <div className="mt-3">
-                                        <h4>Mohit Mishra</h4>
+                                        <h4>{currentUser.name}</h4>
                                         <p className="text-secondary">Full Stack Developer</p>
                                     </div>
                                 </div>
@@ -190,13 +190,13 @@ const UserProfile = () => {
                                         <h6 className="mb-0">
                                             Email
                                         </h6>
-                                        <span className="text-secondary">mohit@gmail.com</span>
+                                        <span className="text-secondary">{currentUser.email}</span>
                                     </li>
                                     <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                         <h6 className="mb-0">
                                             Mobile No.
                                         </h6>
-                                        <span className="text-secondary">+91 9260964544</span>
+                                        <span className="text-secondary">{currentUser.mobile_no}</span>
                                     </li>
                                 </ul>
                             </div>

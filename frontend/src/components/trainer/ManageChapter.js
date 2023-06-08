@@ -87,7 +87,7 @@ const ManageChapter = () => {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel1">
-                  Manage Chapter
+                   Create New Chapter
                 </h5>
                 <button type="button" className="btn-close" data-mdb-dismiss="modal" aria-label="Close" />
               </div>
@@ -194,7 +194,7 @@ const ManageChapter = () => {
                 </td>
                 <td className="align-middle">
                   <button onClick={e => deleteChapter(chapter._id)}>
-                    <i className="fas fa-trash-can fa-lg mx-2" style={{ color: "#ff0000" }} />
+                    <i className="fas fa-trash-can fa-lg mx-2" style={{ color: "#ff0000"}} />
                   </button>
                 </td>
               </tr>
