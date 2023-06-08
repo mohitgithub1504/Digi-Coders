@@ -13,59 +13,52 @@ const UserProfile = () => {
 
     const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
-    const [show, setShow] = useState(false);
-    const handleShow = () => setShow(!show);
-
-    const userprofile = Yup.object().shape({
+    const usersignupSchema = Yup.object().shape({
         name: Yup.string().required('Name is Required'),
         email: Yup.string().email('Invalid email').required('Email is Required'),
-        phone: Yup.string().required('Phone Number is Required'),
+        mobile_no: Yup.string().required('Mobile Number is Required'),
     });
 
     const userProfileForm = useFormik({
         initialValues: {
             name: '',
             email: '',
-            phone: '',
-    },
-    onSubmit: async (values, { setSubmitting }) => {
-        console.log(values);
-        const res = await fetch(apiUrl + "/user/update/"+currentUser._id, {
-            method: "PUT",
-            body: JSON.stringify(values), // this is used to convert js data in json formate
-            headers: {
-                "Content-Type": "application/json", // this used to inform the data in send in the form of json
-            },
-        });
-        console.log(res.status);
-        if (res.status === 200) {
-            const data = await res.json();
-            console.log(data);
-            sessionStorage.setItem("user", JSON.stringify(data));
-            setCurrentUser(data);
-            Swal.fire({
-                icon: "success",
-                title: "Well Done!!",
-                text: "Profile Updated successfully",
-                showConfirmButton: false,
-                timer: 1500
+            mobile_no: '',
+        },
+        onSubmit: async (values, { setSubmitting }) => {
+            console.log(values);
+            const res = await fetch(apiUrl + "/user/update/" + currentUser._id, {
+                method: "PUT",
+                body: JSON.stringify(values), // this is used to convert js data in json formate
+                headers: {
+                    "Content-Type": "application/json", // this used to inform the data in send in the form of json
+                },
             });
-        } else {
-            Swal.fire({
-                icon: "error",
-                title: "Success!",
-                text: "Profile Updated successfully",
-                showConfirmButton: false,
-                timer: 1500
-            });
-        }
-    }
-});
-
-
-
-
-
+            console.log(res.status);
+            if (res.status === 200) {
+                const data = await res.json();
+                console.log(data);
+                sessionStorage.setItem("user", JSON.stringify(data));
+                setCurrentUser(data);
+                Swal.fire({
+                    icon: "success",
+                    title: "Well Done!!",
+                    text: "Profile Updated Successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "OOPS!",
+                    text: "Profile Not Updated",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        },
+        validationSchema: usersignupSchema,
+    });
 
     const uploadFile = (e) => {
         const file = e.target.files[0];
@@ -73,18 +66,14 @@ const UserProfile = () => {
         setSelImage(file);
         fd.append('myfile', file);
         fetch(apiUrl + '/util/uploadfile', {
-          method: 'POST',
-          body: fd
+            method: 'POST',
+            body: fd
         }).then((res) => {
-          if (res.status === 200) {
-            console.log('file uploaded');
-          }
+            if (res.status === 200) {
+                console.log('file uploaded');
+            }
         });
-      };
-
-
-
-
+    };
 
     return (
         <div>
@@ -174,12 +163,18 @@ const UserProfile = () => {
                                         {/* Modal */}
                                     </div>
                                     <div className="mt-3">
-                                        <h4>Mohit Mishra</h4>
-                                        <p className="text-secondary">Full Stack Developer</p>
+                                        <h4>{currentUser.name}</h4>
+                                        <p className="text-secondary">Student</p>
                                     </div>
                                 </div>
                                 <hr className="my-4" />
                                 <ul className="list-group list-group-flush">
+                                <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                        <h6 className="mb-0">
+                                            Student Id
+                                        </h6>
+                                        <span className="text-secondary">{currentUser._id}</span>
+                                    </li>
                                     <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                         <h6 className="mb-0">
                                             Name
@@ -190,13 +185,19 @@ const UserProfile = () => {
                                         <h6 className="mb-0">
                                             Email
                                         </h6>
-                                        <span className="text-secondary">mohit@gmail.com</span>
+                                        <span className="text-secondary">{currentUser.email}</span>
+                                    </li>
+                                    <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                        <h6 className="mb-0">
+                                            Password
+                                        </h6>
+                                        <span className="text-secondary">{currentUser.password}</span>
                                     </li>
                                     <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                         <h6 className="mb-0">
                                             Mobile No.
                                         </h6>
-                                        <span className="text-secondary">+91 9260964544</span>
+                                        <span className="text-secondary">+91 {currentUser.mobile_no}</span>
                                     </li>
                                 </ul>
                             </div>
@@ -223,8 +224,8 @@ const UserProfile = () => {
                                             className="form-control form-control-lg"
                                             placeholder="Name"
                                             value={userProfileForm.values.name}
-                                            onChange={userProfileForm.handleChange}/>
-                                             <span className='text-danger'>{userProfileForm.errors.name}</span>
+                                            onChange={userProfileForm.handleChange} />
+                                        <span className='text-danger'>{userProfileForm.errors.name}</span>
                                     </div>
 
                                     <div className="form-group has-icon mb-4">
@@ -243,28 +244,6 @@ const UserProfile = () => {
                                     </div>
 
                                     <div className="form-group has-icon mb-4">
-                                        <i className="fas fa-key fa-lg form-control-icon" />
-                                        <div class="d-grid d-md-flex justify-content-md-end">
-                                            <span
-                                                className='form-control-eye'
-                                                onClick={handleShow}
-                                            >
-                                                {show ? <i class="far fa-eye" style={{ color: "#c5c5c5" }} /> : <i class="far fa-eye-slash" style={{ color: "#c5c5c5" }} />}
-                                            </span>
-                                        </div>
-                                        <input
-                                            type={show ? "text" : "password"}
-                                            id="password"
-                                            name="password"
-                                            autoComplete="off"
-                                            className="form-control form-control-lg"
-                                            placeholder="Password"
-                                          value={userProfileForm.values.password}
-                                          onChange={userProfileForm.handleChange}
-                                        />
-                                        <span className='text-danger'>{userProfileForm.errors.password}</span>
-                                    </div>
-                                    <div className="form-group has-icon mb-4">
                                         <i className="fas fa-mobile-screen-button fa-lg form-control-icon" />
                                         <input
                                             type="text"
@@ -272,10 +251,10 @@ const UserProfile = () => {
                                             name="mobile_no"
                                             className="form-control form-control-lg"
                                             placeholder="Mobile Number"
-                                          value={userProfileForm.values.mobile_no}
-                                          onChange={userProfileForm.handleChange}
-                                        /> 
-                                        <span className='text-danger'>{userProfileForm.errors.name}</span>
+                                            value={userProfileForm.values.mobile_no}
+                                            onChange={userProfileForm.handleChange}
+                                        />
+                                        <span className='text-danger'>{userProfileForm.errors.mobile_no}</span>
                                     </div>
 
                                     {/* <div className='d-flex flex-row align-items-center mx-1 mb-4'>

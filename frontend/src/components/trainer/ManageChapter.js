@@ -208,8 +208,8 @@ const ManageChapter = () => {
                   </NavLink>
                 </td>
                 <td className="align-middle">
-                  <button onClick={e => deleteChapter(chapter._id)}>
-                    <i className="fas fa-trash-can fa-lg mx-2" style={{ color: "#ff0000" }} />
+                  <button className='' onClick={e => deleteChapter(chapter._id)} style={{border: "none", background: "none"}}>
+                    <i className="fas fa-trash-can fa-lg mx-2" style={{ color: "#ff0000"}} />
                   </button>
                 </td>
               </tr>
