@@ -62,8 +62,8 @@ const UserProfile = () => {
             } else {
                 Swal.fire({
                     icon: "error",
-                    title: "OOPS!",
-                    text: "Profile Not Updated",
+                    title: "Oops...",
+                    text: "Something went wrong!",
                     showConfirmButton: false,
                     timer: 1500
                 });
@@ -170,8 +170,8 @@ const UserProfile = () => {
 
                     <div className="col-xl-7 mx-2">
                         {/* Account details card*/}
-                        <div className="card mb-4">
-                            <div className="card-header text-center fw-bold text-uppercase mb-4" style={{ fontSize: "30px", letterSpacing: "2px" }}>
+                        <div className="card h-100 mb-4">
+                            <div className="card-header text-center fw-bold text-uppercase mb-5" style={{ fontSize: "30px", letterSpacing: "2px", backgroundColor: "#f1f1f1" }}>
                                 Update Your Profile
                             </div>
                             <div className="card-body">
@@ -208,7 +208,7 @@ const UserProfile = () => {
                                         <span className='text-danger' >{userProfileForm.errors.email}</span>
                                     </div>
 
-                                    <div className="form-group has-icon mb-4">
+                                    <div className="form-group has-icon mb-5">
                                         <i className="fas fa-mobile-screen-button fa-lg form-control-icon" />
                                         <input
                                             type="text"
@@ -235,7 +235,7 @@ const UserProfile = () => {
 
                                     <div className="pt-1 pb-1 ">
                                         <button
-                                            className="btn btn-primary btn-block mb-4"
+                                            className="btn btn-primary btn-block"
                                             type="submit"
                                             style={{ borderRadius: "10px", marginLeft: "0px" }}
                                         >

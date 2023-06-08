@@ -115,7 +115,7 @@ const TrainerProfile = () => {
                                             />
                                         ) : (
                                             <img
-                                                src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                                                src="https://bootdey.com/img/Content/avatar/avatar1.png"
                                                 alt="Admin"
                                                 className="img-fluid rounded-circle p-1 bg-primary"
                                                 style={{ width: "180px", height: "180px", backgroundSize: "cover" }}
@@ -184,8 +184,8 @@ const TrainerProfile = () => {
 
                     <div className="col-xl-7 mx-2">
                         {/* Account details card*/}
-                        <div className="card mb-4">
-                            <div className="card-header text-center fw-bold text-uppercase mb-4" style={{ fontSize: "30px", letterSpacing: "2px" }}>
+                        <div className="card h-100 mb-4">
+                            <div className="card-header text-center fw-bold text-uppercase mb-4" style={{ fontSize: "30px", letterSpacing: "2px", backgroundColor: "#f1f1f1"}}>
                                 Update Your Profile
                             </div>
                             <div className="card-body">
@@ -237,7 +237,7 @@ const TrainerProfile = () => {
                                         />
                                         <span className='text-danger'>{trainerProfileForm.errors.mobile_no}</span>
                                     </div>
-                                    <div className="d-flex flex-row align-items-center mb-4">
+                                    <div className="d-flex flex-row align-items-center mb-5">
                                         <div className="form-group has-icon me-2">
                                             <i className="fas fa-gear fa-lg form-control-icon" />
                                             <input
@@ -279,7 +279,7 @@ const TrainerProfile = () => {
 
                                     <div className="pt-1 pb-1 ">
                                         <button
-                                            className="btn btn-primary btn-block mb-4"
+                                            className="btn btn-primary btn-block"
                                             type="submit"
                                             style={{ borderRadius: "10px", marginLeft: "0px" }}
                                         >

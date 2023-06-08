@@ -51,7 +51,7 @@ const ResetPassword = () => {
       if (res.status === 200) {
         Swal.fire({
           icon: 'success',
-          title: 'success',
+          title: 'Successful!!',
           text: 'OTP Sent Successfully'
         });
       }
@@ -89,7 +89,7 @@ const ResetPassword = () => {
       console.log('otp not matched');
       Swal.fire({
         icon: 'error',
-        title: 'failed',
+        title: 'Failed',
         text: 'Enter Correct OTP'
       });
     }
@@ -106,7 +106,7 @@ const ResetPassword = () => {
         if (res.status === 200)
           Swal.fire({
             icon: 'success',
-            title: 'Password Reset Success!!'
+            title: 'Password Reset Successfully!!'
           }).then(() => {
             navigate('/main/login');
           });
