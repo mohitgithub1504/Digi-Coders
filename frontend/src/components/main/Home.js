@@ -1,7 +1,53 @@
 import React from 'react'
+import { useFormik } from 'formik';
+import Swal from 'sweetalert2';
 import { NavLink } from 'react-router-dom'
+import app_config from '../../config';
 
 const Home = () => {
+
+  const { apiUrl } = app_config;
+  const feedbackForm = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      emoji: "",
+      message: "",
+    },
+    onSubmit: async (values, { setSubmitting }) => {
+      console.log(values);
+
+
+      const res = await fetch(apiUrl + '/contact/add', {
+        method: 'POST',
+        body: JSON.stringify(values),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+      console.log(res.status);
+      if (res.status === 200) {
+        Swal.fire({
+          icon: "success",
+          title: "Thank You!",
+          text: "Your feedback is successfully submitted",
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+      else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
+      }
+    },
+
+  });
+
   return (
 
     <div>
@@ -201,7 +247,7 @@ const Home = () => {
             className="btn btn-sm rounded-4"
             data-mdb-toggle="modal"
             data-mdb-target="#exampleModal"
-            style={{zIndex : 2}}
+            style={{ zIndex: 2 }}
           >
             Feedback
           </button>
@@ -219,7 +265,7 @@ const Home = () => {
                   />
                 </div>
                 <div className="modal-body">
-                  <form className="feedback-form mx-1 mx-md-4 text-black" >
+                  <form className="feedback-form mx-1 mx-md-4 text-black" onSubmit={feedbackForm.handleSubmit}>
                     <div className="d-flex flex-row align-items-center mb-5">
                       <div className="flex-fill mb-0">
                         <div className='mb-5'>
@@ -234,6 +280,8 @@ const Home = () => {
                             name='name'
                             className="form-control form-control-lg"
                             placeholder="Enter Full Name"
+                            value={feedbackForm.values.name}
+                            onChange={feedbackForm.handleChange}
                           />
                         </div>
                         <div className='mb-4'>
@@ -243,34 +291,49 @@ const Home = () => {
                             name='email'
                             className="form-control form-control-lg"
                             placeholder="Enter Email Address"
+                            value={feedbackForm.values.email}
+                            onChange={feedbackForm.handleChange}
                           />
                         </div>
                         <div className="d-flex flex-row justify-content-center mb-4">
                           <img
                             className="emoji me-4"
                             src="/images/emoji/angry-emoji.png"
+                            value={feedbackForm.values.emoji}
+                            onChange={feedbackForm.handleChange}
                           />
                           <img
                             className="emoji me-4"
                             src="/images/emoji/sad-emoji.png"
+                            value={feedbackForm.values.emoji}
+                            onChange={feedbackForm.handleChange}
                           />
                           <img
                             className="emoji me-4"
                             src="/images/emoji/neutral-emoji.png"
+                            value={feedbackForm.values.emoji}
+                            onChange={feedbackForm.handleChange}
                           />
                           <img
                             className="emoji me-4"
                             src="/images/emoji/happy-emoji.png"
+                            value={feedbackForm.values.emoji}
+                            onChange={feedbackForm.handleChange}
                           />
                           <img
                             className="emoji"
-                            src="/images/emoji/love-emoji.png" />
+                            src="/images/emoji/love-emoji.png"
+                            value={feedbackForm.values.emoji}
+                            onChange={feedbackForm.handleChange}
+                          />
                         </div>
                         <div className='mb-5'>
                           {/* Text area fields */}
                           <textarea class="form-control" id="textarea" rows="4"
                             placeholder='Enter message....'
                             name='message'
+                            value={feedbackForm.values.message}
+                            onChange={feedbackForm.handleChange}
                           ></textarea>
                         </div>
                         <button

@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import app_config from '../../config';
-import { NavLink } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
@@ -12,6 +11,19 @@ const UserProfile = () => {
     const [selImage, setSelImage] = useState(null);
 
     const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+
+    const inputRef = useRef(null);
+    const [image, setImage] = useState('');
+
+    const handleImageClick = () => {
+        inputRef.current.click();
+    };
+
+    const handleImageChange = (event) => {
+        const file = event.target.files[0];
+        console.log(file);
+        setImage(event.target.files[0]);
+    };
 
     const usersignupSchema = Yup.object().shape({
         name: Yup.string().required('Name is Required'),
@@ -86,95 +98,47 @@ const UserProfile = () => {
                                     <div
                                         class="bg-image profile-picture-container hover-overlay ripple"
                                         data-mdb-ripple-color="light"
+                                        onClick={handleImageClick}
                                     >
-                                        <img
+                                        {image ? (
+                                            <img
+                                                src={URL.createObjectURL(image)}
+                                                alt="Admin"
+                                                className="img-fluid rounded-circle p-1 bg-primary"
+                                                style={{ width: "180px", height: "180px", backgroundSize: "cover", }}
+                                            />
+                                        ) : (
+                                            <img
+                                                src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                                                alt="Admin"
+                                                className="img-fluid rounded-circle p-1 bg-primary"
+                                                style={{ width: "180px", height: "180px", backgroundSize: "cover" }}
+                                            />
+                                        )}
+                                        {/* <img
                                             src="https://bootdey.com/img/Content/avatar/avatar6.png"
                                             alt="Admin"
-                                            className="rounded-circle p-1 bg-primary"
+                                            className="img-fluid rounded-circle p-1 bg-primary"
                                             style={{ width: "180px", backgroundSize: "cover" }}
-                                        />
+                                        /> */}
+                                        <input type="file" ref={inputRef} onChange={handleImageChange} style={{ display: "none" }} />
                                         <div className="camera-icon">
                                             <i className="fas fa-camera fa-lg" />
                                         </div>
-                                        <NavLink to="">
-                                            <div
-                                                className="mask"
-                                                data-mdb-toggle="modal"
-                                                data-mdb-target="#staticBackdrop4"
-                                                style={{ borderRadius: "50%", backgroundColor: "rgb(0 0 0 / 30%)" }}
-                                            />
-                                        </NavLink>
-                                        {/* Modal */}
+
                                         <div
-                                            className="modal fade"
-                                            id="staticBackdrop4"
-                                            tabIndex={-1}
-                                            aria-labelledby="exampleModalLabel4"
-                                            aria-hidden="true"
-                                        >
-                                            <div className="modal-dialog modal-lg d-flex justify-content-center">
-                                                <div className="modal-content w-75">
-                                                    <div className="modal-header">
-                                                        <h3 className="modal-title text-uppercase" id="exampleModalLabel4">
-                                                            Update Profile Picture
-                                                        </h3>
-                                                        <button
-                                                            type="button"
-                                                            className="btn-close"
-                                                            data-mdb-dismiss="modal"
-                                                            aria-label="Close"
-                                                        />
-                                                    </div>
-                                                    <div className="modal-body">
-                                                        <form>
-                                                            <div className='d-flex flex-row align-items-center justify-content-center mb-3'>
-                                                                <label htmlFor="chapter-img" className="btn mx-2" style={{ backgroundColor: "#ec0000" }}>
-                                                                    {' '}
-                                                                    <i class="fas fa-upload"></i> Upload Image
-                                                                </label>
-                                                                <span className='text-secondary mx-2'>
-                                                                    {selImage ? selImage.name : 'No Image Selected'}
-                                                                </span>
-                                                                <input type="file" id="chapter-img" hidden onChange={uploadFile} />
-                                                            </div>
-                                                            <div className="modal-footer">
-                                                                <button
-                                                                    type="button"
-                                                                    className="btn btn-primary"
-                                                                    data-mdb-dismiss="modal"
-                                                                    style={{ borderRadius: "10px", marginLeft: "0px" }}
-                                                                >
-                                                                    Close
-                                                                </button>
-                                                                <button
-                                                                    className="btn btn-primary"
-                                                                    type="submit"
-                                                                    style={{ borderRadius: "10px", marginLeft: "10px" }}
-                                                                >
-                                                                    Save
-                                                                    {/* <i className="fas fa-arrow-right-to-bracket" /> */}
-                                                                </button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* Modal */}
+                                            className="mask"
+                                            style={{ borderRadius: "50%", backgroundColor: "rgb(0 0 0 / 30%)" }}
+                                        />
                                     </div>
-                                    <div className="mt-3">
+                                    <button className="btn btn-primary mt-3">Upload Image</button>
+                                    {/* <div className="mt-3">
                                         <h4>{currentUser.name}</h4>
                                         <p className="text-secondary">Student</p>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <hr className="my-4" />
                                 <ul className="list-group list-group-flush">
-                                <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                        <h6 className="mb-0">
-                                            Student Id
-                                        </h6>
-                                        <span className="text-secondary">{currentUser._id}</span>
-                                    </li>
                                     <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                         <h6 className="mb-0">
                                             Name
