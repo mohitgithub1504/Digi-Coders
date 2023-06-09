@@ -65,14 +65,18 @@ const ChapterDetails = () => {
               <div className="py-5">
                 <div className="card-body text-white">
                   <div className="row d-flex align-items-center justify-content-center">
-                    <div className="col-md-6 col-lg-4 mx-4" style={{width: "26%"}}>
-                      <div class="bg-image hover-overlay ripple shadow-4-strong rounded-7" data-mdb-ripple-color="light" style={{ width: "320px", height: "200px", backgroundSize: "cover" }}>
+                    <div className="col-md-6 col-lg-4 mx-4" style={{ width: '26%' }}>
+                      <div
+                        class="bg-image hover-overlay ripple shadow-4-strong rounded-7"
+                        data-mdb-ripple-color="light"
+                        style={{ width: '320px', height: '200px', backgroundSize: 'cover' }}
+                      >
                         <img src={apiUrl + '/' + chapterDetails.icon} className="img-fluid" />
                       </div>
                     </div>
                     <div className="content col-md-6 text-justify mx-4">
                       <div class="row mt-3">
-                        <div class="col-md-3" style={{marginTop: "3px"}}>
+                        <div class="col-md-3" style={{ marginTop: '3px' }}>
                           <h5 className="fw-bold">
                             <strong>Title - </strong>
                           </h5>
@@ -83,7 +87,7 @@ const ChapterDetails = () => {
                       </div>
 
                       <div class="row">
-                        <div class="col-md-3" style={{marginTop: "3px"}}>
+                        <div class="col-md-3" style={{ marginTop: '3px' }}>
                           <h5 className="fw-bold">
                             <strong>category - </strong>
                           </h5>
@@ -94,7 +98,7 @@ const ChapterDetails = () => {
                       </div>
 
                       <div class="row">
-                        <div class="col-md-3" style={{marginTop: "3px"}}>
+                        <div class="col-md-3" style={{ marginTop: '3px' }}>
                           <h5 className="fw-bold">
                             <strong>Description - </strong>
                           </h5>
@@ -135,7 +139,8 @@ const ChapterDetails = () => {
     for (let i = 0; i < blocks.length; i++) {
       const block = blocks[i];
       // console.log(block);
-      code.push(`${HtmlGenerator[block.type](block)}`)
+      console.log(HtmlGenerator[block.type](block));
+      code.push(`${HtmlGenerator[block.type](block)}`);
       // console.log(code);
       // setGeneratedCode(generateCode+code);
       // Check block type
@@ -158,23 +163,24 @@ const ChapterDetails = () => {
     if (language.toLowerCase() === 'html') return generateHtmlCode;
     else if (language.toLowerCase() === 'javascript') return generateCode;
     else return generateCode;
-  }
+  };
 
   return (
     <div>
       {displayChapterDetails()}
       <section>
         <div className="card">
-          <div className="px-3 py-2" style={{ backgroundColor: "#f1f1f1" }}>
+          <div className="px-3 py-2" style={{ backgroundColor: '#f1f1f1' }}>
             <div class="row d-flex align-items-center">
               <div class="col">
-                <h4 className="card-title text-uppercase fw-bold mt-2 mx-4" style={{ fontSize: "30px", letterSpacing: "2px" }}>
+                <h4 className="card-title text-uppercase fw-bold mt-2 mx-4" style={{ fontSize: '30px', letterSpacing: '2px' }}>
                   <strong>Digi Coders Editor</strong>
                 </h4>
               </div>
               <div class="col">
-                <button className="btn btn-danger" onClick={executeCode} style={{ marginLeft: "510px" }}>
-                  <i className="fas fa-play fa-sm me-2" />Run Program
+                <button className="btn btn-danger" onClick={executeCode} style={{ marginLeft: '510px' }}>
+                  <i className="fas fa-play fa-sm me-2" />
+                  Run Program
                 </button>
               </div>
             </div>
@@ -196,19 +202,27 @@ const ChapterDetails = () => {
                 )}
               </div>
               <div className="col-md-3">
-                <div className="card" style={{ height: '100%' }}>
-                  <div className="py-2" style={{ backgroundColor: "#f1f1f1" }}>
-                    <h5 className='text-uppercase text-center fw-bold mt-2 mx-3' style={{ fontSize: "25px", letterSpacing: "2px" }}>
+                <div className="card">
+                  <div className="py-2" style={{ backgroundColor: '#f1f1f1' }}>
+                    <h5 className="text-uppercase text-center fw-bold mt-2 mx-3" style={{ fontSize: '25px', letterSpacing: '2px' }}>
                       Code Output
                     </h5>
                   </div>
-                  <div className="card-body h6">
+                  <div className="card-body h6" style={{ height: '300px', overflow: 'auto' }}>
                     {chapterDetails && (
                       <SyntaxHighlighter language={getLangugage(chapterDetails.category)} style={docco}>
                         {generatedCode}
                       </SyntaxHighlighter>
                     )}
                   </div>
+                </div>
+                <div className="card mt-4">
+                  <div className="py-2" style={{ backgroundColor: '#f1f1f1' }}>
+                    <h5 className="text-uppercase text-center fw-bold mt-2 mx-3" style={{ fontSize: '25px', letterSpacing: '2px' }}>
+                      Code Output
+                    </h5>
+                  </div>
+                  <div className="card-body h6" style={{ height: '400px', overflow: 'auto' }} dangerouslySetInnerHTML={{ __html: generatedCode }}></div>
                 </div>
               </div>
             </div>
