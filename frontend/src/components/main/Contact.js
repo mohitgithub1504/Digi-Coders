@@ -29,7 +29,7 @@ const Contact = () => {
             if (res.status === 200) {
                 Swal.fire({
                     icon: "success",
-                    title: "Thank You!",
+                    title: "Thank You!!",
                     text: "Your message is successfully submitted",
                     icon: 'success',
                     showConfirmButton: false,

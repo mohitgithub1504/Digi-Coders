@@ -200,15 +200,15 @@ const About = () => {
                 </div>
                 <div className="row text-center gx-lg-5">
                   <div className="col-lg-4 mb-10 mb-lg-0 hover-zoom">
-                    <div className="card rounded-7 shadow-2-strong h-100">
+                    <div className="card rounded-7 shadow-4-strong h-100">
                       <div
                         className="d-flex justify-content-center"
                         style={{ marginTop: "-75px" }}
                       >
                         {" "}
                         <img
-                          src="/images/prince-img-2.jpg"
-                          className="rounded-circle shadow-5-strong"
+                          src="/images/team-member-1.png"
+                          className="rounded-circle shadow-4-strong"
                           alt=""
                           style={{ width: 150, height: 150, backgroundPosition: "center", backgroundSize: "cover" }}
                           aria-controls="#picker-editor"
@@ -247,15 +247,15 @@ const About = () => {
                     </div>
                   </div>
                   <div className="col-lg-4 mb-10 mb-lg-0 hover-zoom">
-                    <div className="card rounded-7 shadow-2-strong h-100">
+                    <div className="card rounded-7 shadow-4-strong h-100">
                       <div
                         className="d-flex justify-content-center"
                         style={{ marginTop: "-75px" }}
                       >
                         {" "}
                         <img
-                          src="/images/team-img-2.jpg"
-                          className="rounded-circle shadow-5-strong"
+                          src="/images/team-member-2.png"
+                          className="rounded-circle shadow-4-strong"
                           alt=""
                           style={{ width: 150, height: 150 }}
                           aria-controls="#picker-editor"
@@ -294,15 +294,15 @@ const About = () => {
                     </div>
                   </div>
                   <div className="col-lg-4 mb-10 mb-lg-0 hover-zoom">
-                    <div className="card rounded-7 shadow-2-strong h-100">
+                    <div className="card rounded-7 shadow-4-strong h-100">
                       <div
                         className="d-flex justify-content-center"
                         style={{ marginTop: "-75px" }}
                       >
                         {" "}
                         <img
-                          src="/images/rishabh-img.jpg"
-                          className="rounded-circle shadow-5-strong"
+                          src="/images/team-member-3.png"
+                          className="rounded-circle shadow-4-strong"
                           alt=""
                           style={{ width: 150, height: 150 }}
                           aria-controls="#picker-editor"
