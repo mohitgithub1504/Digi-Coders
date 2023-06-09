@@ -51,7 +51,7 @@ const Navbar = () => {
               </li>
 
               {/* Navbar dropdown */}
-              <li class="nav-item dropdown">
+              <li class="dropdown">
                 <NavLink
                   className="nav-link dropdown"
                   to="/main/course"
