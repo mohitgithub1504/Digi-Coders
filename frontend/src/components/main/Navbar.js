@@ -145,6 +145,7 @@ const Navbar = () => {
                             ? localStorage.getItem('username')
                             : {currentUser.user}
                             } */}
+                            Mohit Mishra
                           <i className="fas fa-caret-down ms-2" />
                         </NavLink>
                       </NavLink>
