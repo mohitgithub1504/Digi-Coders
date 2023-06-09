@@ -318,10 +318,10 @@ const Home = () => {
                       data-mdb-ripple-color="light"
                     >
                       <img
-                        src="/images/course1.jpg"
+                        src="/images/course-html.jpg"
                         className="img-fluid"
                       />
-                      <NavLink to="/user/browsechapters">
+                      <NavLink to="/trainer/managechapter">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -329,34 +329,22 @@ const Home = () => {
                       </NavLink>
                     </div>
                     <div className="card-body">
-                      <h6 className="mb-3">
-                        Age 6+
-                      </h6>
-                      <h4 className="card-tittle mb-3">
-                        <strong>Game Development</strong>
+                      <h4 className="card-tittle my-3" style={{backgroundColor : "#f1f1f1", fontSize : "32px", letterSpacing : "1px"}}>
+                        <strong>HTML</strong>
                       </h4>
-                      <ul className="list-unstyled d-flex justify-content-center text-warning">
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="far fa-star fa-sm" />
-                        </li>
-                      </ul>
-
+                      <h5 className="mb-3">
+                        <strong>26 Classes</strong>
+                      </h5>
+                      <h6 className="mb-3">
+                        Duration : <strong>2 Weeks</strong>
+                      </h6>
                       {/* Divider here */}
-                      <hr class="hr hr-blurry"></hr>
+                      <hr class="hr hr-blurry" />
 
-                      <NavLink to="/user/browsechapters" className="btn btn-primary">
+                      <p className="card-text">
+                        An ideal course to help kids quickly grasp the basics of html programming and start writing code using blocks.
+                      </p>
+                      <NavLink to="/trainer/managechapter" className="btn btn-primary my-3">
                         Learn More
                       </NavLink>
                     </div>
@@ -371,10 +359,10 @@ const Home = () => {
                       data-mdb-ripple-color="light"
                     >
                       <img
-                        src="/images/course2.jpg"
+                        src="/images/course-js.jpg"
                         className="img-fluid"
                       />
-                      <NavLink to="/user/browsechapters">
+                      <NavLink to="/trainer/managechapter">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -382,34 +370,23 @@ const Home = () => {
                       </NavLink>
                     </div>
                     <div className="card-body">
-                      <h6 className="mb-3">
-                        Age 6+
-                      </h6>
-                      <h4 className="card-tittle fw-bold mb-3">
-                        <strong>Web Development</strong>
+                      <h4 className="card-tittle my-3" style={{backgroundColor : "#f1f1f1", fontSize : "32px", letterSpacing : "1px"}}>
+                        <strong>JavaScript</strong>
                       </h4>
-                      <ul className="list-unstyled d-flex justify-content-center text-warning">
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="far fa-star fa-sm" />
-                        </li>
-                      </ul>
-
+                      <h5 className="mb-3">
+                        <strong>26 Classes</strong>
+                      </h5>
+                      <h6 className="mb-3">
+                        Duration : <strong>2 Weeks</strong>
+                      </h6>
                       {/* Divider here */}
-                      <hr class="hr hr-blurry"></hr>
+                      <hr class="hr hr-blurry" />
 
-                      <NavLink to="/user/browsechapters" className="btn btn-primary">
+                      <p className="card-text">
+                        An ideal course to help kids quickly grasp the basics of javascript programming and start writing code using blocks.
+                      </p>
+
+                      <NavLink to="/trainer/managechapter" className="btn btn-primary my-3">
                         Learn More
                       </NavLink>
                     </div>
@@ -424,10 +401,10 @@ const Home = () => {
                       data-mdb-ripple-color="light"
                     >
                       <img
-                        src="/images/course3.jpg"
+                        src="/images/course-python.jpg"
                         className="img-fluid"
                       />
-                      <NavLink to="/user/browsechapters">
+                      <NavLink to="/trainer/managechapter">
                         <div
                           className="mask"
                           style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -435,196 +412,23 @@ const Home = () => {
                       </NavLink>
                     </div>
                     <div className="card-body">
-                      <h6 className="mb-3">
-                        Age 6+
-                      </h6>
-                      <h4 className="card-tittle fw-bold mb-3">
-                        <strong>App Development</strong>
-                      </h4>
-                      <ul className="list-unstyled d-flex justify-content-center text-warning">
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="far fa-star fa-sm" />
-                        </li>
-                      </ul>
-
-                      {/* Divider here */}
-                      <hr class="hr hr-blurry"></hr>
-
-                      <NavLink to="/user/browsechapters" className="btn btn-primary">
-                        Learn More
-                      </NavLink>
-                    </div>
-                  </div>
-                </div>
-                {/* Third column */}
-              </div>
-
-              <div className="row text-center gx-lg-5">
-                {/* First column */}
-                <div className="col-lg-4 col-md-12 mb-lg-0 hover-zoom">
-                  <div className="card">
-                    <div
-                      class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
-                      data-mdb-ripple-color="light"
-                    >
-                      <img
-                        src="/images/course4.jpg"
-                        className="img-fluid"
-                      />
-                      <NavLink to="/user/browsechapters">
-                        <div
-                          className="mask"
-                          style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-                        />
-                      </NavLink>
-                    </div>
-                    <div className="card-body">
-                      <h6 className="mb-3">
-                        Age 6+
-                      </h6>
-                      <h4 className="card-tittle fw-bold mb-3">
-                        <strong>Artificial Intelligence</strong>
-                      </h4>
-                      <ul className="list-unstyled d-flex justify-content-center text-warning">
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="far fa-star fa-sm" />
-                        </li>
-                      </ul>
-
-                      {/* Divider here */}
-                      <hr class="hr hr-blurry"></hr>
-
-                      <NavLink to="/user/browsechapters" className="btn btn-primary">
-                        Learn More
-                      </NavLink>
-                    </div>
-                  </div>
-                </div>
-                {/* First column */}
-                {/* Second column */}
-                <div className="col-lg-4 col-md-12 mb-lg-0 hover-zoom">
-                  <div className="card">
-                    <div
-                      class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
-                      data-mdb-ripple-color="light"
-                    >
-                      <img
-                        src="/images/course5.jpg"
-                        className="img-fluid"
-                      />
-                      <NavLink to="/user/browsechapters">
-                        <div
-                          className="mask"
-                          style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-                        />
-                      </NavLink>
-                    </div>
-                    <div className="card-body">
-                      <h6 className="mb-3">
-                        Age 6+
-                      </h6>
-                      <h4 className="card-tittle fw-bold mb-3">
-                        <strong>Internet Of Things</strong>
-                      </h4>
-                      <ul className="list-unstyled d-flex justify-content-center text-warning">
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="far fa-star fa-sm" />
-                        </li>
-                      </ul>
-
-                      {/* Divider here */}
-                      <hr class="hr hr-blurry"></hr>
-
-                      <NavLink to="/user/browsechapters" className="btn btn-primary">
-                        Learn More
-                      </NavLink>
-                    </div>
-                  </div>
-                </div>
-                {/* Second column */}
-                {/* Third column */}
-                <div className="col-lg-4 col-md-12 mb-lg-0 hover-zoom">
-                  <div className="card">
-                    <div
-                      class="mt-n3 bg-image hover-overlay ripple mx-3 shadow-4-strong rounded-6"
-                      data-mdb-ripple-color="light"
-                    >
-                      <img
-                        src="/images/course6.jpg"
-                        className="img-fluid"
-                      />
-                      <NavLink to="/user/browsechapters">
-                        <div
-                          className="mask"
-                          style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-                        />
-                      </NavLink>
-                    </div>
-                    <div className="card-body">
-                      <h6 className="mb-3">
-                        Age 6+
-                      </h6>
-                      <h4 className="card-tittle fw-bold mb-3">
+                      <h4 className="card-tittle my-3" style={{backgroundColor : "#f1f1f1", fontSize : "32px", letterSpacing : "1px"}}>
                         <strong>Python</strong>
                       </h4>
-                      <ul className="list-unstyled d-flex justify-content-center text-warning">
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="fas fa-star fa-sm" />
-                        </li>
-                        <li>
-                          <i className="far fa-star fa-sm" />
-                        </li>
-                      </ul>
-
+                      <h5 className="mb-3">
+                        <strong>26 Classes</strong>
+                      </h5>
+                      <h6 className="mb-3">
+                        Duration : <strong>2 Weeks</strong>
+                      </h6>
                       {/* Divider here */}
-                      <hr class="hr hr-blurry"></hr>
+                      <hr class="hr hr-blurry" />
 
-                      <NavLink to="/user/browsechapters" className="btn btn-primary">
+                      <p className="card-text">
+                        An ideal course to help kids quickly grasp the basics of python programming and start writing code using blocks.
+                      </p>
+                      
+                      <NavLink to="/user/viewchapters" className="btn btn-primary my-3">
                         Learn More
                       </NavLink>
                     </div>

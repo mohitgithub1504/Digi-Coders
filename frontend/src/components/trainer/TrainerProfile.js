@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react'
 import app_config from '../../config';
-import { NavLink } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
@@ -131,13 +130,13 @@ const TrainerProfile = () => {
                                         <div className="camera-icon">
                                             <i className="fas fa-camera fa-lg" />
                                         </div>
-                                        
-                                            <div
-                                                className="mask"
-                                                style={{ borderRadius: "50%", backgroundColor: "rgb(0 0 0 / 30%)" }}
-                                            />
-                                        
-                                        
+
+                                        <div
+                                            className="mask"
+                                            style={{ borderRadius: "50%", backgroundColor: "rgb(0 0 0 / 30%)" }}
+                                        />
+
+
                                     </div>
                                     <button className="btn btn-primary mt-3">Upload Image</button>
                                     {/* <div className="mt-3">
@@ -185,7 +184,7 @@ const TrainerProfile = () => {
                     <div className="col-xl-7 mx-2">
                         {/* Account details card*/}
                         <div className="card h-100 mb-4">
-                            <div className="card-header text-center fw-bold text-uppercase mb-4" style={{ fontSize: "30px", letterSpacing: "2px", backgroundColor: "#f1f1f1"}}>
+                            <div className="card-header text-center fw-bold text-uppercase mb-4" style={{ fontSize: "30px", letterSpacing: "2px", backgroundColor: "#f1f1f1" }}>
                                 Update Your Profile
                             </div>
                             <div className="card-body">
@@ -202,8 +201,8 @@ const TrainerProfile = () => {
                                             className="form-control form-control-lg"
                                             placeholder="Name"
                                             value={trainerProfileForm.values.name}
-                                            onChange={trainerProfileForm.handleChange} 
-                                            />
+                                            onChange={trainerProfileForm.handleChange}
+                                        />
                                         <span className='text-danger'>{trainerProfileForm.errors.name}</span>
                                     </div>
 
@@ -216,13 +215,13 @@ const TrainerProfile = () => {
                                             autoComplete="off"
                                             className="form-control form-control-lg"
                                             placeholder="Email"
-                                          value={trainerProfileForm.values.email}
-                                          onChange={trainerProfileForm.handleChange}
+                                            value={trainerProfileForm.values.email}
+                                            onChange={trainerProfileForm.handleChange}
                                         />
                                         <span className='text-danger' >{trainerProfileForm.errors.email}</span>
                                     </div>
 
-                                    
+
                                     <div className="form-group has-icon mb-4">
                                         <i className="fas fa-mobile-screen-button fa-lg form-control-icon" />
                                         <input
@@ -231,8 +230,8 @@ const TrainerProfile = () => {
                                             name="mobile_no"
                                             className="form-control form-control-lg"
                                             placeholder="Mobile Number"
-                                          value={trainerProfileForm.values.mobile_no}
-                                          onChange={trainerProfileForm.handleChange}
+                                            value={trainerProfileForm.values.mobile_no}
+                                            onChange={trainerProfileForm.handleChange}
 
                                         />
                                         <span className='text-danger'>{trainerProfileForm.errors.mobile_no}</span>
@@ -246,8 +245,8 @@ const TrainerProfile = () => {
                                                 autoComplete='off'
                                                 className="form-control form-control-lg"
                                                 Placeholder='Skills'
-                                            value={trainerProfileForm.values.skills}
-                                            onChange={trainerProfileForm.handleChange}
+                                                value={trainerProfileForm.values.skills}
+                                                onChange={trainerProfileForm.handleChange}
                                             />
                                             <span className='text-danger'>{trainerProfileForm.errors.skills}</span>
                                         </div>
@@ -259,8 +258,8 @@ const TrainerProfile = () => {
                                                 autoComplete='off'
                                                 className="form-control form-control-lg"
                                                 placeholder='Certificate'
-                                            value={trainerProfileForm.values.certifications}
-                                            onChange={trainerProfileForm.handleChange}
+                                                value={trainerProfileForm.values.certifications}
+                                                onChange={trainerProfileForm.handleChange}
                                             />
                                             <span className='text-danger'>{trainerProfileForm.errors.certifications}</span>
                                         </div>

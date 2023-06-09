@@ -188,7 +188,7 @@ const ChapterDetails = () => {
 
           <div className="card-body">
             <div className="row">
-              <div className="col-md-9">
+              <div className="col-md-8">
                 {chapterDetails !== null && (
                   <BlocklyWorkspace
                     workspaceConfiguration={DEFAULT_OPTIONS}
@@ -201,11 +201,11 @@ const ChapterDetails = () => {
                   />
                 )}
               </div>
-              <div className="col-md-3">
+              <div className="col-md-4">
                 <div className="card">
                   <div className="py-2" style={{ backgroundColor: '#f1f1f1' }}>
                     <h5 className="text-uppercase text-center fw-bold mt-2 mx-3" style={{ fontSize: '25px', letterSpacing: '2px' }}>
-                      Code Output
+                      Code
                     </h5>
                   </div>
                   <div className="card-body h6" style={{ height: '300px', overflow: 'auto' }}>
@@ -219,7 +219,7 @@ const ChapterDetails = () => {
                 <div className="card mt-4">
                   <div className="py-2" style={{ backgroundColor: '#f1f1f1' }}>
                     <h5 className="text-uppercase text-center fw-bold mt-2 mx-3" style={{ fontSize: '25px', letterSpacing: '2px' }}>
-                      Code Output
+                      Output
                     </h5>
                   </div>
                   <div className="card-body h6" style={{ height: '400px', overflow: 'auto' }} dangerouslySetInnerHTML={{ __html: generatedCode }}></div>

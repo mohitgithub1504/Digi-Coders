@@ -62,24 +62,24 @@ const Navbar = () => {
                   Courses
                 </NavLink>
                 {/* Dropdown menu */}
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown" >
                   <li>
-                    <NavLink className="dropdown-item" to="/user/browsechapters">Game Development</NavLink>
+                    <NavLink className="dropdown-item" to="/user/viewchapters">HTML</NavLink>
                   </li>
                   <li>
-                    <NavLink className="dropdown-item" to="/user/browsechapters">Web Development</NavLink>
+                    <NavLink className="dropdown-item" to="/user/viewchapters">JavaScript</NavLink>
                   </li>
                   <li>
-                    <NavLink className="dropdown-item" to="/user/browsechapters">App Development</NavLink>
+                    <NavLink className="dropdown-item" to="/user/viewchapters">Python</NavLink>
                   </li>
                   <li>
-                    <NavLink className="dropdown-item" to="/user/browsechapters">Artificial Intelligence</NavLink>
+                    <NavLink className="dropdown-item" to="/user/viewchapters">Game Development</NavLink>
                   </li>
                   <li>
-                    <NavLink className="dropdown-item" to="/user/browsechapters">Internet Of Things</NavLink>
+                    <NavLink className="dropdown-item" to="/user/viewchapters">Web Development</NavLink>
                   </li>
                   <li>
-                    <NavLink className="dropdown-item" to="/user/browsechapters">Python</NavLink>
+                    <NavLink className="dropdown-item" to="/user/viewchapters">Roblox</NavLink>
                   </li>
 
                 </ul>
@@ -123,9 +123,10 @@ const Navbar = () => {
                 </>
               ) :
                 (
+
                   <>
                     <img
-                      src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                      src="https://www.bootdey.com/img/Content/avatar/avatar6.png"
                       className="rounded-circle"
                       style={{ width: "50px", backgroundSize: "cover" }}
                       alt="Black and White Portrait of a Man"
@@ -141,11 +142,7 @@ const Navbar = () => {
                         aria-expanded="false"
                       >
                         <NavLink className='nav-avatar align-items-center ms-2'>
-                          {/* {localStorage.getItem('username')
-                            ? localStorage.getItem('username')
-                            : {currentUser.user}
-                            } */}
-                            Mohit Mishra
+                          Mohit Mishra
                           <i className="fas fa-caret-down ms-2" />
                         </NavLink>
                       </NavLink>
