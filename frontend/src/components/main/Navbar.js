@@ -62,7 +62,7 @@ const Navbar = () => {
                   Courses
                 </NavLink>
                 {/* Dropdown menu */}
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown" >
                   <li>
                     <NavLink className="dropdown-item" to="/user/viewchapters">HTML</NavLink>
                   </li>
@@ -123,9 +123,10 @@ const Navbar = () => {
                 </>
               ) :
                 (
+
                   <>
                     <img
-                      src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                      src="https://www.bootdey.com/img/Content/avatar/avatar6.png"
                       className="rounded-circle"
                       style={{ width: "50px", backgroundSize: "cover" }}
                       alt="Black and White Portrait of a Man"
@@ -141,10 +142,7 @@ const Navbar = () => {
                         aria-expanded="false"
                       >
                         <NavLink className='nav-avatar align-items-center ms-2'>
-                          {/* {localStorage.getItem('username')
-                            ? localStorage.getItem('username')
-                            : {currentUser.user}
-                            } */}
+                          Mohit Mishra
                           <i className="fas fa-caret-down ms-2" />
                         </NavLink>
                       </NavLink>

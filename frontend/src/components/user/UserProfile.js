@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import app_config from '../../config';
-import { NavLink } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
+import { NavLink } from 'react-router-dom';
 
 const UserProfile = () => {
 
@@ -13,10 +13,20 @@ const UserProfile = () => {
 
     const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
-    const [show, setShow] = useState(false);
-    const handleShow = () => setShow(!show);
+    const inputRef = useRef(null);
+    const [image, setImage] = useState('');
 
-    const userprofile = Yup.object().shape({
+    const handleImageClick = () => {
+        inputRef.current.click();
+    };
+
+    const handleImageChange = (event) => {
+        const file = event.target.files[0];
+        console.log(file);
+        setImage(event.target.files[0]);
+    };
+
+    const usersignupSchema = Yup.object().shape({
         name: Yup.string().required('Name is Required'),
         email: Yup.string().email('Invalid email').required('Email is Required'),
         phone: Yup.string().required('Phone Number is Required'),
@@ -53,19 +63,15 @@ const UserProfile = () => {
             } else {
                 Swal.fire({
                     icon: "error",
-                    title: "Success!",
-                    text: "Profile Updated successfully",
+                    title: "OOPS!",
+                    text: "Profile Not Updated",
                     showConfirmButton: false,
                     timer: 1500
                 });
             }
-        }
+        },
+        validationSchema: usersignupSchema,
     });
-
-
-
-
-
 
     const uploadFile = (e) => {
         const file = e.target.files[0];
@@ -83,12 +89,9 @@ const UserProfile = () => {
     };
 
 
-
-
-
     return (
         <div>
-            <div className="container-xl px-5 my-5">
+            <div className="container-xl px-5 mb-8 mt-5">
                 <div className="row d-flex justify-content-center ">
                     <div className="col-lg-4 mx-2" style={{ width: "36.5%" }}>
                         <div className="card">
@@ -97,90 +100,49 @@ const UserProfile = () => {
                                     <div
                                         class="bg-image profile-picture-container hover-overlay ripple"
                                         data-mdb-ripple-color="light"
+                                        onClick={handleImageClick}
                                     >
-                                        <img
+                                        {image ? (
+                                            <img
+                                                src={URL.createObjectURL(image)}
+                                                alt="Admin"
+                                                className="img-fluid rounded-circle p-1 bg-primary"
+                                                style={{ width: "180px", height: "180px", backgroundSize: "cover", }}
+                                            />
+                                        ) : (
+                                            <img
+                                                src="https://www.bootdey.com/img/Content/avatar/avatar6.png"
+                                                alt="Admin"
+                                                className="img-fluid rounded-circle p-1 bg-primary"
+                                                style={{ width: "180px", height: "180px", backgroundSize: "cover" }}
+                                            />
+                                        )}
+                                        {/* <img
                                             src="https://bootdey.com/img/Content/avatar/avatar6.png"
                                             alt="Admin"
                                             className="rounded-circle p-1 bg-primary"
                                             style={{ width: "180px", backgroundSize: "cover" }}
-                                        />
+                                        /> */}
+                                        <input type="file" ref={inputRef} onChange={handleImageChange} style={{ display: "none" }} />
                                         <div className="camera-icon">
                                             <i className="fas fa-camera fa-lg" />
                                         </div>
-                                        <NavLink to="">
-                                            <div
-                                                className="mask"
-                                                data-mdb-toggle="modal"
-                                                data-mdb-target="#staticBackdrop4"
-                                                style={{ borderRadius: "50%", backgroundColor: "rgb(0 0 0 / 30%)" }}
-                                            />
-                                        </NavLink>
-                                        {/* Modal */}
-                                        <div
-                                            className="modal fade"
-                                            id="staticBackdrop4"
-                                            tabIndex={-1}
-                                            aria-labelledby="exampleModalLabel4"
-                                            aria-hidden="true"
-                                        >
-                                            <div className="modal-dialog modal-lg d-flex justify-content-center">
-                                                <div className="modal-content w-75">
-                                                    <div className="modal-header">
-                                                        <h3 className="modal-title text-uppercase" id="exampleModalLabel4">
-                                                            Update Profile Picture
-                                                        </h3>
-                                                        <button
-                                                            type="button"
-                                                            className="btn-close"
-                                                            data-mdb-dismiss="modal"
-                                                            aria-label="Close"
-                                                        />
-                                                    </div>
-                                                    <div className="modal-body">
-                                                        <form>
-                                                            <div className='d-flex flex-row align-items-center justify-content-center mb-3'>
-                                                                <label htmlFor="chapter-img" className="btn mx-2" style={{ backgroundColor: "#ec0000" }}>
-                                                                    {' '}
-                                                                    <i class="fas fa-upload"></i> Upload Image
-                                                                </label>
-                                                                <span className='text-secondary mx-2'>
-                                                                    {selImage ? selImage.name : 'No Image Selected'}
-                                                                </span>
-                                                                <input type="file" id="chapter-img" hidden onChange={uploadFile} />
-                                                            </div>
-                                                            <div className="modal-footer">
-                                                                <button
-                                                                    type="button"
-                                                                    className="btn btn-primary"
-                                                                    data-mdb-dismiss="modal"
-                                                                    style={{ borderRadius: "10px", marginLeft: "0px" }}
-                                                                >
-                                                                    Close
-                                                                </button>
-                                                                <button
-                                                                    className="btn btn-primary"
-                                                                    type="submit"
-                                                                    style={{ borderRadius: "10px", marginLeft: "10px" }}
-                                                                >
-                                                                    Save
-                                                                    {/* <i className="fas fa-arrow-right-to-bracket" /> */}
-                                                                </button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* Modal */}
-                                    </div>
 
-                                    <div className="mt-3">
+                                        <div
+                                            className="mask"
+                                            style={{ borderRadius: "50%", backgroundColor: "rgb(0 0 0 / 30%)" }}
+                                        />
+
+
+                                    </div>
+                                    <button className="btn btn-primary my-4">Upload Image</button>
+                                    {/* <div className="mt-3">
                                         <h4>{currentUser.name}</h4>
                                         <p className="text-secondary">Full Stack Developer</p>
-                                    </div>
+                                    </div> */}
                                 </div>
 
-                                <hr className="my-4" />
+                                <hr className="my-3" />
                                 <ul className="list-group list-group-flush">
                                     <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                         <h6 className="mb-0">
@@ -198,7 +160,7 @@ const UserProfile = () => {
                                         <h6 className="mb-0">
                                             Mobile No.
                                         </h6>
-                                        <span className="text-secondary">{currentUser.mobile_no}</span>
+                                        <span className="text-secondary">+91 {currentUser.mobile_no}</span>
                                     </li>
                                 </ul>
                             </div>
@@ -207,8 +169,8 @@ const UserProfile = () => {
 
                     <div className="col-xl-7 mx-2">
                         {/* Account details card*/}
-                        <div className="card mb-4">
-                            <div className="card-header text-center fw-bold text-uppercase mb-4" style={{ fontSize: "30px", letterSpacing: "2px" }}>
+                        <div className="card h-100 mb-4">
+                            <div className="card-header text-center fw-bold text-uppercase mb-5" style={{ fontSize: "30px", letterSpacing: "2px", backgroundColor: "#f1f1f1" }}>
                                 Update Your Profile
                             </div>
                             <div className="card-body">
@@ -225,7 +187,8 @@ const UserProfile = () => {
                                             className="form-control form-control-lg"
                                             placeholder="Name"
                                             value={userProfileForm.values.name}
-                                            onChange={userProfileForm.handleChange} />
+                                            onChange={userProfileForm.handleChange}
+                                        />
                                         <span className='text-danger'>{userProfileForm.errors.name}</span>
                                     </div>
 
@@ -244,29 +207,7 @@ const UserProfile = () => {
                                         <span className='text-danger' >{userProfileForm.errors.email}</span>
                                     </div>
 
-                                    <div className="form-group has-icon mb-4">
-                                        <i className="fas fa-key fa-lg form-control-icon" />
-                                        <div class="d-grid d-md-flex justify-content-md-end">
-                                            <span
-                                                className='form-control-eye'
-                                                onClick={handleShow}
-                                            >
-                                                {show ? <i class="far fa-eye" style={{ color: "#c5c5c5" }} /> : <i class="far fa-eye-slash" style={{ color: "#c5c5c5" }} />}
-                                            </span>
-                                        </div>
-                                        <input
-                                            type={show ? "text" : "password"}
-                                            id="password"
-                                            name="password"
-                                            autoComplete="off"
-                                            className="form-control form-control-lg"
-                                            placeholder="Password"
-                                            value={userProfileForm.values.password}
-                                            onChange={userProfileForm.handleChange}
-                                        />
-                                        <span className='text-danger'>{userProfileForm.errors.password}</span>
-                                    </div>
-                                    <div className="form-group has-icon mb-4">
+                                    <div className="form-group has-icon mb-5">
                                         <i className="fas fa-mobile-screen-button fa-lg form-control-icon" />
                                         <input
                                             type="text"
@@ -293,7 +234,7 @@ const UserProfile = () => {
 
                                     <div className="pt-1 pb-1 ">
                                         <button
-                                            className="btn btn-primary btn-block mb-4"
+                                            className="btn btn-primary btn-block mb-2"
                                             type="submit"
                                             style={{ borderRadius: "10px", marginLeft: "0px" }}
                                         >
@@ -307,6 +248,19 @@ const UserProfile = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Copyright */}
+            <div
+                className="text-center text-white p-4"
+                style={{ backgroundColor: "#1b1b1b" }}
+            >
+                © 2023 Copyright :&nbsp;
+                <NavLink className="text-reset fw-bold custom-link-hover" to="#">
+                    DigiCoders.com
+                </NavLink>
+            </div>
+            {/* Copyright */}
+
         </div>
     )
 }

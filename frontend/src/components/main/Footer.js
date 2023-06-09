@@ -78,24 +78,24 @@ export const Footer = () => {
                 {/* Links */}
                 <h6 className="text-uppercase fw-bold mb-4">Courses</h6>
                 <p>
-                  <a href="#!" className="text-reset custom-link-hover">
-                    Game Development
-                  </a>
+                  <NavLink to="/user/viewchapters" className="text-reset custom-link-hover">
+                    HTML
+                  </NavLink>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset custom-link-hover">
-                    Web Development
-                  </a>
+                  <NavLink to="/user/viewchapters" className="text-reset custom-link-hover">
+                    JavaScript
+                  </NavLink>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset custom-link-hover">
-                    Internet Of Things
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset custom-link-hover">
+                  <NavLink to="/user/viewchapters" className="text-reset custom-link-hover">
                     Python
-                  </a>
+                  </NavLink>
+                </p>
+                <p>
+                  <NavLink to="/main/course" className="text-reset custom-link-hover">
+                    Upcoming Courses
+                  </NavLink>
                 </p>
               </div>
               {/* Grid column */}

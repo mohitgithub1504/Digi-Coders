@@ -428,7 +428,7 @@ const Home = () => {
                         An ideal course to help kids quickly grasp the basics of python programming and start writing code using blocks.
                       </p>
                       
-                      <NavLink to="/trainer/managechapter" className="btn btn-primary my-3">
+                      <NavLink to="/user/viewchapters" className="btn btn-primary my-3">
                         Learn More
                       </NavLink>
                     </div>

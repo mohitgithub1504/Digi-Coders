@@ -182,7 +182,7 @@ const Course = () => {
             </div>
             {/* Our Course*/}
 
-            {/* Our Upcomming Course*/}
+            {/* Our Upcoming Course*/}
             <div className='mb-8'>
                 <div data-draggable="true">
                     {/**/}
@@ -191,7 +191,7 @@ const Course = () => {
                         <section>
                             <div className='heading'>
                                 <h2 className="mb-3 text-center display-3">
-                                    <span>Our Upcomming Courses</span>
+                                    <span>Our Upcoming Courses</span>
                                 </h2>
                             </div>
                             <div className='sub-heading'>
@@ -331,7 +331,7 @@ const Course = () => {
                     {/**/}
                 </div>
             </div>
-            {/* Our Upcomming Course*/}
+            {/* Our Upcoming Course*/}
         </div>
     )
 }
