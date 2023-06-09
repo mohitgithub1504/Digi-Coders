@@ -14,7 +14,6 @@ import Chapter from './components/main/Chapter';
 import Builder from './components/trainer/Builder';
 import DesignChapter from './components/trainer/DesignChapter';
 import Trainer from './components/trainer';
-import ManageCourse from './components/trainer/ManageCourse';
 import ManageChapter from './components/trainer/ManageChapter';
 import StudentSignup from './components/main/StudentSignup';
 import StudentLogin from './components/main/StudentLogin';
@@ -67,7 +66,6 @@ function App() {
                 <Route path="trainerprofile" element={<TrainerProfile />} />
                 <Route path="designchapter/:id" element={<DesignChapter />} />
                 <Route path="managechapter" element={<ManageChapter />} />
-                <Route path="managecourse" element={<ManageCourse />} />
                 <Route path="home" element={<Home />} />
                 <Route path="about" element={<About />} />
                 <Route path="contact" element={<Contact />} />
