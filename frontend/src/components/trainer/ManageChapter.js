@@ -102,7 +102,7 @@ const ManageChapter = () => {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel1">
-                  Manage Chapter
+                   Create New Chapter
                 </h5>
                 <button type="button" className="btn-close" data-mdb-dismiss="modal" aria-label="Close" />
               </div>
