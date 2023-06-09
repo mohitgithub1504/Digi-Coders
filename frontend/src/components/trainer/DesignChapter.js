@@ -7,6 +7,7 @@ import { getHTMLToolbox } from '../blockly/getHTMLToolbox';
 import '../blockly/htmlBlock';
 import { getJSToolbox } from '../blockly/getJSToolbox';
 import XMLParser from 'react-xml-parser';
+import Swal from 'sweetalert2';
 
 const toolbox = getHTMLToolbox();
 
@@ -35,6 +36,7 @@ const DesignChapter = () => {
     console.log(res.status);
     const data = await res.json();
     console.log(data);
+    setSelBlocks(data.blockStructure);
     setChapterDetails(data);
     console.log(getHTMLToolbox());
     console.log(getHTMLToolbox().contents[0].contents.map((block) => new XMLParser().parseFromString(block.blockxml).attributes.type));
@@ -42,6 +44,10 @@ const DesignChapter = () => {
   };
 
   const updateChapter = async () => {
+
+    console.log(selBlocks);
+    // return;
+
     const res = await fetch(apiUrl + '/chapter/update/' + id, {
       method: 'PUT',
       headers: {
@@ -52,6 +58,16 @@ const DesignChapter = () => {
       }),
     });
     console.log(res.status);
+
+    if(res.status === 200){
+      Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: 'Chapter Updated Successfully',
+      });
+      
+    }
+
     const data = await res.json();
     console.log(data);
   }
@@ -97,12 +113,13 @@ const DesignChapter = () => {
                             <input
                               className="form-check-input"
                               type="checkbox"
+                              checked={selBlocks.find(b => getBlockType(b) === getBlockType(block))}
                               onChange={(e) => {
                                 if (e.target.checked) {
                                   setSelBlocks([...selBlocks, block]);
                                   console.log(selBlocks);
                                 } else {
-                                  setSelBlocks(selBlocks.filter((b) => b !== getBlockType(block)));
+                                  setSelBlocks(selBlocks.filter((b) => getBlockType(b) !== getBlockType(block)));
                                 }
                               }}
                             />

@@ -36,7 +36,7 @@ export const getHTMLToolbox = () => {
         ]
       },
       // {
-      //   kind: 'category',F
+      //   kind: 'category',
       //   name: 'HTML Blocks',
       //   colour: '#a55b5b',
       //   contents: [

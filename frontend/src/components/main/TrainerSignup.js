@@ -25,7 +25,7 @@ const TrainerSignup = () => {
       .min(2, 'Too Short!')
       .max(50, 'Too Long!')
       .required('Skills is Required'),
-    certificate: Yup.string()
+    certifications: Yup.string()
       .min(5, 'Too Short!')
       .max(50, 'Too Long!')
       .required('Certificate is Required'),
@@ -39,7 +39,7 @@ const TrainerSignup = () => {
     initialValues: {
       name: '',
       skills: '',
-      certificate: '',
+      certifications: '',
       email: '',
       mobile_no: '',
       password: '',
@@ -202,7 +202,7 @@ const TrainerSignup = () => {
                         className='form-control-eye'
                         onClick={handleShow}
                       >
-                        {show ? <i class="far fa-eye" style={{color: "#c5c5c5"}} /> : <i class="far fa-eye-slash" style={{color: "#c5c5c5"}} />}
+                        {show ? <i class="far fa-eye" style={{ color: "#c5c5c5" }} /> : <i class="far fa-eye-slash" style={{ color: "#c5c5c5" }} />}
                       </span>
                     </div>
                     <input
@@ -249,26 +249,26 @@ const TrainerSignup = () => {
                       <i className="fas fa-award fa-lg form-control-icon" />
                       <input
                         type="text"
-                        id="certificate"
+                        id="certifications"
                         autoComplete='off'
                         className="form-control form-control-lg"
                         placeholder='Certificate'
-                        value={trainersignupForm.values.certificate}
+                        value={trainersignupForm.values.certifications}
                         onChange={trainersignupForm.handleChange}
                       />
-                      <span className='text-danger'>{trainersignupForm.errors.certificate}</span>
+                      <span className='text-danger'>{trainersignupForm.errors.certifications}</span>
                     </div>
                   </div>
 
                   <div className='d-flex flex-row align-items-center mx-1 mb-4'>
-                    <label htmlFor="chapter-img" className="btn btn-primary">
+                    <label htmlFor="avatar-img" className="btn btn-primary">
                       {' '}
                       <i class="fas fa-upload"></i> Upload Image
                     </label>
                     <span className='text-warning mx-3'>
                       {selImage ? selImage.name : 'No Image Selected'}
                     </span>
-                    <input type="file" id="chapter-img" hidden onChange={uploadFile} />
+                    <input type="file" id="avatar-img" hidden onChange={uploadFile} />
                   </div>
 
                   <div className="pt-1 pb-1 ">

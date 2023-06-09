@@ -40,6 +40,7 @@ const StudentSignup = () => {
             createdAt: '',
         },
         onSubmit: async (values, { setSubmitting }) => {
+            values.avatar = selImage.name;
             console.log(values);
 
             const res = await fetch(apiUrl + '/user/add', {
@@ -216,14 +217,14 @@ const StudentSignup = () => {
                                     </div>
 
                                     <div className='d-flex flex-row align-items-center mx-1 mb-4'>
-                                        <label htmlFor="chapter-img" className="btn btn-primary">
+                                        <label htmlFor="avatar-img" className="btn btn-primary">
                                             {' '}
                                             <i class="fas fa-upload"></i> Upload Image 
                                         </label>
                                         <span className='text-warning mx-3'>
                                         {selImage ? selImage.name : 'No Image Selected'}
                                         </span>
-                                        <input type="file" id="chapter-img" hidden onChange={uploadFile} />
+                                        <input type="file" id="avatar-img" hidden onChange={uploadFile} />
                                     </div>
 
                                     <div className="pt-1 pb-1">
