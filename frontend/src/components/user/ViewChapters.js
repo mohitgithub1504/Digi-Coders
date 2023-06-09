@@ -72,22 +72,17 @@ const BrowseChapters = () => {
                   </a>
                 </div>
               </div>
-              <div className="content card-tittle col-md-6 col-lg-6 col-xl-6">
+              <div className="content card-tittle col-md-9 col-lg-9 col-xl-9">
                 <h4 className="card-tittle my-2 mx-5">
                   <strong>{chapter.title}</strong>
                 </h4>
-                <div className="mb-4 mx-5 text-uppercase text-danger">
-                  <span>{chapter.category}</span>
-                </div>
-                <p className="text-truncate mb-4 mx-5">
+                <h5 className="mb-3 mx-5 text-uppercase text-danger">
+                  <strong>{chapter.category}</strong>
+                </h5>
+                <p className=" mb-3 mx-5 text-truncate">
                   {chapter.description}
                 </p>
-              </div>
-              <div className="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
-                <div className="d-flex flex-row justify-content-end align-items-center mb-1">
-                  <h6 className="text-danger">Designed By : Mohit Mishra</h6>
-                </div>
-                <div className="d-flex flex-column mt-5">
+                <div className="d-flex justify-content-end mx-5">
                   <NavLink
                     className="btn btn-primary"
                     to={"/user/chapterdetails/" + chapter._id}

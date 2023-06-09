@@ -158,7 +158,7 @@ const ManageChapter = () => {
                     <span className='text-warning mx-3'>
                       {selImage ? selImage.name : 'No Image Selected'}
                     </span>
-                    <input type="file" id="chapter-img" hidden onChange={uploadFile} />
+                    <input type="file" accept=".jpg,.jpeg,.png" id="chapter-img" hidden onChange={uploadFile} />
                   </div>
                   
                   {/* Send button */}
