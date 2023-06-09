@@ -27,40 +27,40 @@ const UserProfile = () => {
             name: '',
             email: '',
             mobile_no: '',
-    },
-    onSubmit: async (values, { setSubmitting }) => {
-        console.log(values);
-        const res = await fetch(apiUrl + "/user/update/"+currentUser._id, {
-            method: "PUT",
-            body: JSON.stringify(values), // this is used to convert js data in json formate
-            headers: {
-                "Content-Type": "application/json", // this used to inform the data in send in the form of json
-            },
-        });
-        console.log(res.status);
-        if (res.status === 200) {
-            const data = await res.json();
-            console.log(data);
-            sessionStorage.setItem("user", JSON.stringify(data));
-            setCurrentUser(data);
-            Swal.fire({
-                icon: "success",
-                title: "Well Done!!",
-                text: "Profile Updated successfully",
-                showConfirmButton: false,
-                timer: 1500
+        },
+        onSubmit: async (values, { setSubmitting }) => {
+            console.log(values);
+            const res = await fetch(apiUrl + "/user/update/" + currentUser._id, {
+                method: "PUT",
+                body: JSON.stringify(values), // this is used to convert js data in json formate
+                headers: {
+                    "Content-Type": "application/json", // this used to inform the data in send in the form of json
+                },
             });
-        } else {
-            Swal.fire({
-                icon: "error",
-                title: "Success!",
-                text: "Profile Updated successfully",
-                showConfirmButton: false,
-                timer: 1500
-            });
+            console.log(res.status);
+            if (res.status === 200) {
+                const data = await res.json();
+                console.log(data);
+                sessionStorage.setItem("user", JSON.stringify(data));
+                setCurrentUser(data);
+                Swal.fire({
+                    icon: "success",
+                    title: "Well Done!!",
+                    text: "Profile Updated successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "Success!",
+                    text: "Profile Updated successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
         }
-    }
-});
+    });
 
 
 
@@ -73,14 +73,14 @@ const UserProfile = () => {
         setSelImage(file);
         fd.append('myfile', file);
         fetch(apiUrl + '/util/uploadfile', {
-          method: 'POST',
-          body: fd
+            method: 'POST',
+            body: fd
         }).then((res) => {
-          if (res.status === 200) {
-            console.log('file uploaded');
-          }
+            if (res.status === 200) {
+                console.log('file uploaded');
+            }
         });
-      };
+    };
 
 
 
@@ -173,11 +173,13 @@ const UserProfile = () => {
                                         </div>
                                         {/* Modal */}
                                     </div>
+
                                     <div className="mt-3">
                                         <h4>{currentUser.name}</h4>
                                         <p className="text-secondary">Full Stack Developer</p>
                                     </div>
                                 </div>
+
                                 <hr className="my-4" />
                                 <ul className="list-group list-group-flush">
                                     <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
@@ -223,8 +225,8 @@ const UserProfile = () => {
                                             className="form-control form-control-lg"
                                             placeholder="Name"
                                             value={userProfileForm.values.name}
-                                            onChange={userProfileForm.handleChange}/>
-                                             <span className='text-danger'>{userProfileForm.errors.name}</span>
+                                            onChange={userProfileForm.handleChange} />
+                                        <span className='text-danger'>{userProfileForm.errors.name}</span>
                                     </div>
 
                                     <div className="form-group has-icon mb-4">
@@ -259,8 +261,8 @@ const UserProfile = () => {
                                             autoComplete="off"
                                             className="form-control form-control-lg"
                                             placeholder="Password"
-                                          value={userProfileForm.values.password}
-                                          onChange={userProfileForm.handleChange}
+                                            value={userProfileForm.values.password}
+                                            onChange={userProfileForm.handleChange}
                                         />
                                         <span className='text-danger'>{userProfileForm.errors.password}</span>
                                     </div>
@@ -272,9 +274,9 @@ const UserProfile = () => {
                                             name="mobile_no"
                                             className="form-control form-control-lg"
                                             placeholder="Mobile Number"
-                                          value={userProfileForm.values.mobile_no}
-                                          onChange={userProfileForm.handleChange}
-                                        /> 
+                                            value={userProfileForm.values.mobile_no}
+                                            onChange={userProfileForm.handleChange}
+                                        />
                                         <span className='text-danger'>{userProfileForm.errors.name}</span>
                                     </div>
 
