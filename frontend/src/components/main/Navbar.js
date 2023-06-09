@@ -141,7 +141,10 @@ const Navbar = () => {
                         aria-expanded="false"
                       >
                         <NavLink className='nav-avatar align-items-center ms-2'>
-                          Mohit Mishra
+                          {/* {localStorage.getItem('username')
+                            ? localStorage.getItem('username')
+                            : {currentUser.user}
+                            } */}
                           <i className="fas fa-caret-down ms-2" />
                         </NavLink>
                       </NavLink>
