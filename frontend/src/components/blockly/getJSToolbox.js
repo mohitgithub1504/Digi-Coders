@@ -6,13 +6,7 @@ export const getJSToolbox = () => {
     contents: [
       {
         kind: 'category',
-        name: 'VisualCal',
-        colour: 120,
-        contents: []
-      },
-      {
-        kind: 'category',
-        name: 'JavaScript Lists',
+        name: 'Lists',
         colour: 182,
         contents: [
           {

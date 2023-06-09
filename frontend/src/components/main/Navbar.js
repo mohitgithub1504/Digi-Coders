@@ -64,22 +64,22 @@ const Navbar = () => {
                 {/* Dropdown menu */}
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <NavLink className="dropdown-item" to="/user/browsechapters">Game Development</NavLink>
+                    <NavLink className="dropdown-item" to="/user/viewchapters">HTML</NavLink>
                   </li>
                   <li>
-                    <NavLink className="dropdown-item" to="/user/browsechapters">Web Development</NavLink>
+                    <NavLink className="dropdown-item" to="/user/viewchapters">JavaScript</NavLink>
                   </li>
                   <li>
-                    <NavLink className="dropdown-item" to="/user/browsechapters">App Development</NavLink>
+                    <NavLink className="dropdown-item" to="/user/viewchapters">Python</NavLink>
                   </li>
                   <li>
-                    <NavLink className="dropdown-item" to="/user/browsechapters">Artificial Intelligence</NavLink>
+                    <NavLink className="dropdown-item" to="/user/viewchapters">Game Development</NavLink>
                   </li>
                   <li>
-                    <NavLink className="dropdown-item" to="/user/browsechapters">Internet Of Things</NavLink>
+                    <NavLink className="dropdown-item" to="/user/viewchapters">Web Development</NavLink>
                   </li>
                   <li>
-                    <NavLink className="dropdown-item" to="/user/browsechapters">Python</NavLink>
+                    <NavLink className="dropdown-item" to="/user/viewchapters">Roblox</NavLink>
                   </li>
 
                 </ul>
