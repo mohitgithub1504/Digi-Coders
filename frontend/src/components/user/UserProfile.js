@@ -52,7 +52,7 @@ const UserProfile = () => {
                 const data = await res.json();
                 console.log(data);
                 sessionStorage.setItem("user", JSON.stringify(data));
-                setCurrentUser(data);
+                setCurrentUser(values);
                 Swal.fire({
                     icon: "success",
                     title: "Well Done!!",

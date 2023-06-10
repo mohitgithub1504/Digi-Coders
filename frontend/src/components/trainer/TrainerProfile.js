@@ -55,7 +55,7 @@ const TrainerProfile = () => {
                 const data = await res.json();
                 console.log(data);
                 sessionStorage.setItem("trainer", JSON.stringify(data));
-                setCurrentTrainer(data);
+                setCurrentTrainer(values);
                 Swal.fire({
                     icon: "success",
                     title: "Well Done!!",
