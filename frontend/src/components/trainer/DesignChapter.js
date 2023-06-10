@@ -146,7 +146,7 @@ const DesignChapter = () => {
                 <div className="card-body text-white">
                   <div className="row d-flex align-items-center justify-content-center">
                     <div className="col-md-6 col-lg-4 mx-4" style={{width: "26%"}}>
-                      <div class="bg-image hover-overlay ripple shadow-4-strong rounded-7" data-mdb-ripple-color="light" style={{ width: "320px", height: "200px", backgroundSize: "cover" }}>
+                      <div class="bg-image hover-overlay ripple shadow-4-strong rounded-7" data-mdb-ripple-color="light" style={{ width: "320px", backgroundSize: "cover", backgroundColor: "#e0e0e0" }}>
                         <img src={apiUrl + '/' + chapterDetails.icon} className="img-fluid" />
                       </div>
                     </div>
