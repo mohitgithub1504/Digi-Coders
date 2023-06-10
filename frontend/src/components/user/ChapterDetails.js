@@ -69,7 +69,7 @@ const ChapterDetails = () => {
                       <div
                         class="bg-image hover-overlay ripple shadow-4-strong rounded-7"
                         data-mdb-ripple-color="light"
-                        style={{ width: '320px', backgroundSize: 'cover', backgroundColor: "#e0e0e0" }}
+                        style={{ width: '320px', height: '175px', backgroundSize: 'cover', backgroundColor: "#e0e0e0" }}
                       >
                         <img src={apiUrl + '/' + chapterDetails.icon} className="img-fluid" />
                       </div>

@@ -193,7 +193,7 @@ const ManageChapter = () => {
                 <td className="align-middle">{chapter.title}</td>
                 <td className="align-middle">
                   <div className="">
-                    <div class="bg-image hover-overlay ripple shadow-4-strong rounded-7 mx-2 my-2" data-mdb-ripple-color="light" style={{ width: "200px", backgroundSize: "cover", backgroundColor: "#e0e0e0"}}>
+                    <div class="bg-image hover-overlay ripple shadow-4-strong rounded-7 mx-2 my-2" data-mdb-ripple-color="light" style={{ width: "200px", height: "110px", backgroundSize: "cover", backgroundColor: "#e0e0e0"}}>
                       <img src={apiUrl + '/' + chapter.icon} className="img-fluid"/>
                     </div>
                   </div>

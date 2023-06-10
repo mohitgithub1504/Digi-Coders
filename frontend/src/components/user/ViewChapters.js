@@ -57,7 +57,7 @@ const BrowseChapters = () => {
               <div className="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
                 <div
                   class="bg-image hover-overlay ripple shadow-4-strong rounded-7"
-                  data-mdb-ripple-color="light" style={{ width: "320px", backgroundSize: "cover", backgroundColor: "#e0e0e0" }}
+                  data-mdb-ripple-color="light" style={{ width: "320px", height: "175px", backgroundSize: "cover", backgroundColor: "#e0e0e0" }}
                 >
                   <img
                     src={apiUrl + "/" + chapter.icon}
