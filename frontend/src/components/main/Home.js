@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useFormik } from 'formik';
 import Swal from 'sweetalert2';
 import { NavLink } from 'react-router-dom'
@@ -7,6 +7,13 @@ import app_config from '../../config';
 const Home = () => {
 
   const { apiUrl } = app_config;
+
+  const [selectedEmoji, setSelectedEmoji] = useState('');
+
+  const handleEmojiSelect = (emoji) => {
+    setSelectedEmoji(emoji);
+  };
+
   const feedbackForm = useFormik({
     initialValues: {
       name: "",
@@ -14,7 +21,8 @@ const Home = () => {
       emoji: "",
       message: "",
     },
-    onSubmit: async (values, { setSubmitting }) => {
+    onSubmit: async (values, { setSubmitting, resetForm }) => {
+      values.emoji = selectedEmoji;
       console.log(values);
 
 
@@ -36,6 +44,8 @@ const Home = () => {
           showConfirmButton: false,
           timer: 1500
         });
+        resetForm();
+        setSelectedEmoji('');
       }
       else {
         Swal.fire({
@@ -296,36 +306,76 @@ const Home = () => {
                           />
                         </div>
                         <div className="d-flex flex-row justify-content-center mb-4">
-                          <img
-                            className="emoji me-4"
-                            src="/images/emoji/angry-emoji.png"
-                            value={feedbackForm.values.emoji}
-                            onChange={feedbackForm.handleChange}
-                          />
-                          <img
-                            className="emoji me-4"
-                            src="/images/emoji/sad-emoji.png"
-                            value={feedbackForm.values.emoji}
-                            onChange={feedbackForm.handleChange}
-                          />
-                          <img
-                            className="emoji me-4"
-                            src="/images/emoji/neutral-emoji.png"
-                            value={feedbackForm.values.emoji}
-                            onChange={feedbackForm.handleChange}
-                          />
-                          <img
-                            className="emoji me-4"
-                            src="/images/emoji/happy-emoji.png"
-                            value={feedbackForm.values.emoji}
-                            onChange={feedbackForm.handleChange}
-                          />
-                          <img
-                            className="emoji"
-                            src="/images/emoji/love-emoji.png"
-                            value={feedbackForm.values.emoji}
-                            onChange={feedbackForm.handleChange}
-                          />
+                          <div className="item">
+                            <label for="0">
+                              <input
+                                className="radio"
+                                type="radio"
+                                name="emoji"
+                                id="0"
+                                value="🤬"
+                                checked={selectedEmoji === '🤬'}
+                                onChange={() => handleEmojiSelect('🤬')}
+                              />
+                              <span>🤬</span>
+                            </label>
+                          </div>
+                          <div className="item">
+                            <label for="1">
+                              <input
+                                className="radio"
+                                type="radio"
+                                name="emoji"
+                                id="1"
+                                value="🙁"
+                                checked={selectedEmoji === '🙁'}
+                                onChange={() => handleEmojiSelect('🙁')}
+                              />
+                              <span>🙁</span>
+                            </label>
+                          </div>
+                          <div className="item">
+                            <label for="2">
+                              <input
+                                className="radio"
+                                type="radio"
+                                name="emoji"
+                                id="2"
+                                value="😶"
+                                checked={selectedEmoji === '😶'}
+                                onChange={() => handleEmojiSelect('😶')}
+                              />
+                              <span>😶</span>
+                            </label>
+                          </div>
+                          <div className="item">
+                            <label for="3">
+                              <input
+                                className="radio"
+                                type="radio"
+                                name="emoji"
+                                id="3"
+                                value="😁"
+                                checked={selectedEmoji === '😁'}
+                                onChange={() => handleEmojiSelect('😁')}
+                              />
+                              <span>😁</span>
+                            </label>
+                          </div>
+                          <div className="item">
+                            <label for="4">
+                              <input
+                                className="radio"
+                                type="radio"
+                                name="emoji"
+                                id="4"
+                                value="😍"
+                                checked={selectedEmoji === '😍'}
+                                onChange={() => handleEmojiSelect('😍')}
+                              />
+                              <span>😍</span>
+                            </label>
+                          </div>
                         </div>
                         <div className='mb-5'>
                           {/* Text area fields */}
@@ -392,7 +442,7 @@ const Home = () => {
                       </NavLink>
                     </div>
                     <div className="card-body">
-                      <h4 className="card-tittle my-3" style={{backgroundColor : "#f1f1f1", fontSize : "32px", letterSpacing : "1px"}}>
+                      <h4 className="card-tittle my-3" style={{ backgroundColor: "#f1f1f1", fontSize: "32px", letterSpacing: "1px" }}>
                         <strong>HTML</strong>
                       </h4>
                       <h5 className="mb-3">
@@ -433,7 +483,7 @@ const Home = () => {
                       </NavLink>
                     </div>
                     <div className="card-body">
-                      <h4 className="card-tittle my-3" style={{backgroundColor : "#f1f1f1", fontSize : "32px", letterSpacing : "1px"}}>
+                      <h4 className="card-tittle my-3" style={{ backgroundColor: "#f1f1f1", fontSize: "32px", letterSpacing: "1px" }}>
                         <strong>JavaScript</strong>
                       </h4>
                       <h5 className="mb-3">
@@ -475,7 +525,7 @@ const Home = () => {
                       </NavLink>
                     </div>
                     <div className="card-body">
-                      <h4 className="card-tittle my-3" style={{backgroundColor : "#f1f1f1", fontSize : "32px", letterSpacing : "1px"}}>
+                      <h4 className="card-tittle my-3" style={{ backgroundColor: "#f1f1f1", fontSize: "32px", letterSpacing: "1px" }}>
                         <strong>Python</strong>
                       </h4>
                       <h5 className="mb-3">
@@ -490,7 +540,7 @@ const Home = () => {
                       <p className="card-text">
                         An ideal course to help kids quickly grasp the basics of python programming and start writing code using blocks.
                       </p>
-                      
+
                       <NavLink to="/user/viewchapters" className="btn btn-primary my-3">
                         Learn More
                       </NavLink>
