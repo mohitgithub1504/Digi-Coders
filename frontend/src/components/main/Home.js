@@ -283,7 +283,8 @@ const Home = () => {
                             How helpful was this?
                           </h3>
                         </div>
-                        <div className='mb-4'>
+                        <div className='form-group has-icon mb-4'>
+                          <i className="fas fa-user fa-lg form-control-icon" />
                           <input
                             type="text"
                             id="name"
@@ -294,7 +295,8 @@ const Home = () => {
                             onChange={feedbackForm.handleChange}
                           />
                         </div>
-                        <div className='mb-4'>
+                        <div className='form-group has-icon mb-4'>
+                          <i className="fas fa-envelope fa-lg form-control-icon" />
                           <input
                             type="email"
                             id="email"
@@ -377,7 +379,8 @@ const Home = () => {
                             </label>
                           </div>
                         </div>
-                        <div className='mb-5'>
+                        <div className='form-group has-icon mb-5'>
+                          <i className="fas fa-pencil-alt fa-lg form-control-icon" />
                           {/* Text area fields */}
                           <textarea class="form-control" id="textarea" rows="4"
                             placeholder='Enter message....'

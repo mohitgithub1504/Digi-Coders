@@ -54,27 +54,7 @@
 
 
 
-.item {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  user-select: none;
-}
-.radio {
-  display: none;
-}
-.radio ~ span {
-  font-size: 3rem;
-  filter: grayscale(100);
-  cursor: pointer;
-  transition: 0.3s;
-}
 
-.radio:checked ~ span {
-  filter: grayscale(0);
-  font-size: 4rem;
-}
 
 
 
