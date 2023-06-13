@@ -33,11 +33,17 @@ const ChapterDetails = () => {
   const { apiUrl } = app_config;
   const [workspace, setWorkspace] = useState(null);
 
+  const [showOutputCard, setShowOutputCard] = useState(false);
+
   const [currentLanguage, setCurrentLanguage] = useState('');
 
   const [chapterDetails, setChapterDetails] = useState(null);
 
   const [generatedCode, setGeneratedCode] = useState('');
+
+  const showOutput = () => {
+    setShowOutputCard(!showOutputCard);
+  };
 
   const [xml, setXml] = useState(`<xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="controls_ifelse" x="10" y="10">
@@ -123,6 +129,9 @@ const ChapterDetails = () => {
     }
   };
 
+  const showRunButton = currentLanguage.toLowerCase() !== 'html';
+  const showOutputButton = currentLanguage.toLowerCase() == 'html';
+
   const generateCode = (workspace) => {
     const code = javascriptGenerator.workspaceToCode(workspace);
     console.log(code);
@@ -182,12 +191,21 @@ const ChapterDetails = () => {
                   <strong>Digi Coders Editor</strong>
                 </h4>
               </div>
+              {showRunButton && (
+                <div class="col">
+                  <button className="btn btn-danger" onClick={executeCode} style={{ marginLeft: '510px' }}>
+                    <i className="fas fa-play fa-sm me-2" />
+                    Run Program
+                  </button>
+                </div>
+              )}
+              {showOutputButton && (
               <div class="col">
-                <button className="btn btn-danger" onClick={executeCode} style={{ marginLeft: '510px' }}>
-                  <i className="fas fa-play fa-sm me-2" />
-                  Run Program
+                <button className="btn btn-danger" onClick={showOutput} style={{ marginLeft: '530px' }}>
+                  {showOutputCard ? 'Hide Output' : 'Show Output'}
                 </button>
               </div>
+              )}
             </div>
           </div>
 
@@ -224,14 +242,16 @@ const ChapterDetails = () => {
 
               </div>
             </div>
-            <div className="card mt-4">
-              <div className="py-2" style={{ backgroundColor: '#f1f1f1' }}>
-                <h5 className="text-uppercase text-center fw-bold mt-2 mx-3" style={{ fontSize: '25px', letterSpacing: '2px' }}>
-                  Output
-                </h5>
+            {showOutputCard && (
+              <div className="card mt-4">
+                <div className="py-2" style={{ backgroundColor: '#f1f1f1' }}>
+                  <h5 className="text-uppercase text-center fw-bold mt-2 mx-3" style={{ fontSize: '25px', letterSpacing: '2px' }}>
+                    Output
+                  </h5>
+                </div>
+                <div className="card-body h6" style={{ height: '100vh', overflow: 'auto' }} dangerouslySetInnerHTML={{ __html: generatedCode }}></div>
               </div>
-              <div className="card-body h6" style={{ height: '100vh', overflow: 'auto' }} dangerouslySetInnerHTML={{ __html: generatedCode }}></div>
-            </div>
+            )}
           </div>
         </div>
       </section>

@@ -554,8 +554,8 @@ export const getJSToolbox = () => {
         name: 'Functions',
         custom: 'PROCEDURE',
         colour: 290
-    },
-    
+      },
+
     ]
   };
 };

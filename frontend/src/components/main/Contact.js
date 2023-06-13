@@ -170,48 +170,48 @@ const Contact = () => {
                                     <div className="col-lg-6">
                                         <div className="card-body p-md-5 mx-md-4">
                                             <div className="text-center mb-5">
-                                                <h3 className="my-5">
+                                                <h3 className="my-4">
                                                     <i className="fas fa-envelope pr-2 mr-1" />&nbsp;
                                                     Write to us
                                                 </h3>
                                             </div>
                                             <form className="mx-1 mx-md-4 text-black" onSubmit={contactForm.handleSubmit}>
-                                                <div className="d-flex flex-row align-items-center mb-4">
-                                                    <i className="fas fa-user fa-lg me-3 fa-fw" />
+                                                <div className='form-group has-icon mb-4'>
+                                                    <i className="fas fa-user fa-lg form-control-icon" />
                                                     <div className="flex-fill mb-0">
                                                         <input
                                                             type="text"
                                                             id="name"
                                                             name='name'
-                                                            className="form-control"
+                                                            className="form-control form-control-lg"
                                                             placeholder="Enter Full Name"
                                                             value={contactForm.values.name}
                                                             onChange={contactForm.handleChange}
                                                         />
                                                     </div>
                                                 </div>
-                                                <div className="d-flex flex-row align-items-center mb-4">
-                                                    <i className="fas fa-envelope fa-lg me-3 fa-fw" />
+                                                <div className='form-group has-icon mb-4'>
+                                                    <i className="fas fa-envelope fa-lg form-control-icon" />
                                                     <div className="flex-fill mb-0">
                                                         <input
                                                             type="email"
                                                             id="email"
                                                             name='email'
-                                                            className="form-control"
+                                                            className="form-control form-control-lg"
                                                             placeholder="Enter Email Address"
                                                             value={contactForm.values.email}
                                                             onChange={contactForm.handleChange}
                                                         />
                                                     </div>
                                                 </div>
-                                                <div className="d-flex flex-row align-items-center mb-4">
-                                                    <i class="fas fa-tag fa-lg me-3 fa-fw"></i>
+                                                <div className='form-group has-icon mb-4'>
+                                                    <i className="fas fa-tag fa-lg form-control-icon" />
                                                     <div className="flex-fill mb-0">
                                                         <input
                                                             type="text"
                                                             id="subject"
                                                             name='subject'
-                                                            className="form-control"
+                                                            className="form-control form-control-lg"
                                                             placeholder="Enter Subject"
                                                             value={contactForm.values.subject}
                                                             onChange={contactForm.handleChange}
@@ -219,10 +219,10 @@ const Contact = () => {
                                                     </div>
                                                 </div>
                                                 {/* Text area fields */}
-                                                <div className="d-flex flex-row align-items-center mb-5">
-                                                    <i class="fas fa-pencil-alt fa-lg me-3 mb-8 fa-fw"></i>
+                                                <div className='form-group has-icon mb-4'>
+                                                    <i className="fas fa-pencil-alt fa-lg form-control-icon" />
                                                     <div className="flex-fill mb-0">
-                                                        <textarea class="form-control" id="textarea" rows="4"
+                                                        <textarea class="form-control form-control-lg" id="textarea" rows="4"
                                                             placeholder='Enter message....'
                                                             name='message'
                                                             value={contactForm.values.message}
@@ -230,11 +230,11 @@ const Contact = () => {
                                                         ></textarea>
                                                     </div>
                                                 </div>
-                                                <div className="pt-1 mx-4 mb-3 pb-1 ">
+                                                <div className="pt-1 pb-1">
                                                     <button
-                                                        className="btn btn-primary btn-block mb-3"
+                                                        className="btn btn-primary btn-block"
                                                         type="submit"
-                                                        style={{ borderRadius: "10px" }}
+                                                        style={{ borderRadius: "10px", marginLeft: "0px" }}
                                                     >
                                                         Send &nbsp;
                                                         <i className="far fa-paper-plane ml-2" />

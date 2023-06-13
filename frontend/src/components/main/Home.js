@@ -382,7 +382,7 @@ const Home = () => {
                         <div className='form-group has-icon mb-5'>
                           <i className="fas fa-pencil-alt fa-lg form-control-icon" />
                           {/* Text area fields */}
-                          <textarea class="form-control" id="textarea" rows="4"
+                          <textarea class="form-control form-control-lg" id="textarea" rows="4"
                             placeholder='Enter message....'
                             name='message'
                             value={feedbackForm.values.message}
