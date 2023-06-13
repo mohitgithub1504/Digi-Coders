@@ -6,6 +6,11 @@ export const getPythonToolbox = () => {
     contents: [
       {
         kind: 'category',
+        name: 'Python Blocks',
+      },
+      { kind: 'sep' },
+      {
+        kind: 'category',
         name: 'Logic',
         colour: '#5C81A6',
         contents: [

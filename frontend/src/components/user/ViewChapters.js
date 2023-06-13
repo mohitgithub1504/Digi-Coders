@@ -22,7 +22,7 @@ const BrowseChapters = () => {
     "Rishabh Agnihotri"
   ];
 
-  const categoryList = ["HTML5", "Python", "CSS", "Web", "Animation", "JavaScript"];
+  const categoryList = ["HTML", "JavaScript", "Python"];
 
   const sortChaptersAtoZ = () => {
     const sortedArray = [...chapterList].sort((a, b) => a.title.localeCompare(b.title));
@@ -266,7 +266,7 @@ const BrowseChapters = () => {
                           sortChaptersZtoA();
                         }
                       }}>
-                        <option value="">Sort</option>
+                        <option value="">By Sort</option>
                         <option value="A to Z">A To Z</option>
                         <option value="Z to A">Z to A</option>
                       </select>

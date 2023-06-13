@@ -6,6 +6,11 @@ export const getJSToolbox = () => {
     contents: [
       {
         kind: 'category',
+        name: 'JavaScript Blocks',
+      },
+      { kind: 'sep' },
+      {
+        kind: 'category',
         name: 'Lists',
         colour: '#745CA6',
         contents: [

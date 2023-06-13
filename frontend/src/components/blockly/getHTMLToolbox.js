@@ -6,6 +6,11 @@ export const getHTMLToolbox = () => {
     contents: [
       {
         kind: 'category',
+        name: 'HTML Blocks',
+      },
+      { kind: 'sep' },  
+      {
+        kind: 'category',
         name: 'Base Frame',
         colour: '#a55b5b',
         contents: [
@@ -124,7 +129,6 @@ export const getHTMLToolbox = () => {
       //     }
       //   ]
       // },
-      { kind: 'sep' },
       {
         kind: 'category',
         name: 'Text Structure',
@@ -164,7 +168,6 @@ export const getHTMLToolbox = () => {
           },
         ]
       },
-      { kind: 'sep' },
       {
         kind: 'category',
         name: 'Text Markup',
@@ -224,7 +227,6 @@ export const getHTMLToolbox = () => {
           },
         ]
       },
-      { kind: 'sep' },
       {
         kind: 'category',
         name: 'Style',
@@ -268,7 +270,6 @@ export const getHTMLToolbox = () => {
           },
         ]
       },
-      { kind: 'sep' },
       {
         kind: 'category',
         name: 'Enumeration',
@@ -288,7 +289,6 @@ export const getHTMLToolbox = () => {
           },
         ]
       },
-      { kind: 'sep' },
       {
         kind: 'category',
         name: 'Tables',
@@ -312,7 +312,6 @@ export const getHTMLToolbox = () => {
           },
         ]
       },
-      { kind: 'sep' },
       {
         kind: 'category',
         name: 'Form',
@@ -352,10 +351,6 @@ export const getHTMLToolbox = () => {
       //     },
       //   ]
       // },
-
-
-
-
     ]
   };
 };

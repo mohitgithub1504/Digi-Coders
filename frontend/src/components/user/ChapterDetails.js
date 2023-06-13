@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import app_config from '../../config';
 import { BlocklyWorkspace } from 'react-blockly';
 import { DEFAULT_OPTIONS } from '../blockly/defaults';
@@ -141,7 +141,7 @@ const ChapterDetails = () => {
     // Iterate through all blocks
     const l = blocks.length ? 1 : 0;
     console.log(l);
-    for (let i = 0; i < l ; i++) {
+    for (let i = 0; i < l; i++) {
       const block = blocks[i];
       // console.log(block);
       // console.log(HtmlGenerator[block.type](block));
@@ -201,7 +201,7 @@ const ChapterDetails = () => {
                     toolboxConfiguration={getToolbox(chapterDetails.category)}
                     initialXml={`<xml xmlns="http://www.w3.org/1999/xhtml">
         
-        </xml>`}
+                    </xml>`}
                     onWorkspaceChange={generateHtmlCode}
                   />
                 )}
@@ -213,7 +213,7 @@ const ChapterDetails = () => {
                       Code
                     </h5>
                   </div>
-                  <div className="card-body h6" style={{ height: '300px', overflow: 'auto' }}>
+                  <div className="card-body h6" style={{ height: '80vh', overflow: 'auto' }}>
                     {chapterDetails && (
                       <SyntaxHighlighter language={getLangugage(chapterDetails.category)} style={docco}>
                         {generatedCode}
@@ -221,19 +221,31 @@ const ChapterDetails = () => {
                     )}
                   </div>
                 </div>
-                <div className="card mt-4">
-                  <div className="py-2" style={{ backgroundColor: '#f1f1f1' }}>
-                    <h5 className="text-uppercase text-center fw-bold mt-2 mx-3" style={{ fontSize: '25px', letterSpacing: '2px' }}>
-                      Output
-                    </h5>
-                  </div>
-                  <div className="card-body h6" style={{ height: '400px', overflow: 'auto' }} dangerouslySetInnerHTML={{ __html: generatedCode }}></div>
-                </div>
+
               </div>
+            </div>
+            <div className="card mt-4">
+              <div className="py-2" style={{ backgroundColor: '#f1f1f1' }}>
+                <h5 className="text-uppercase text-center fw-bold mt-2 mx-3" style={{ fontSize: '25px', letterSpacing: '2px' }}>
+                  Output
+                </h5>
+              </div>
+              <div className="card-body h6" style={{ height: '100vh', overflow: 'auto' }} dangerouslySetInnerHTML={{ __html: generatedCode }}></div>
             </div>
           </div>
         </div>
       </section>
+      {/* Copyright */}
+      <div
+        className="text-center text-white p-4"
+        style={{ backgroundColor: "#1b1b1b" }}
+      >
+        © 2023 Copyright :&nbsp;
+        <NavLink className="text-reset fw-bold custom-link-hover" to="#">
+          DigiCoders.com
+        </NavLink>
+      </div>
+      {/* Copyright */}
     </div>
   );
 };
