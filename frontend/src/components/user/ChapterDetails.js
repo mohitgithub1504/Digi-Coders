@@ -10,18 +10,21 @@ import { javascriptGenerator } from 'blockly/javascript';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import HtmlGenerator from '../blockly/htmlGenerator';
+import { getPythonToolbox } from '../blockly/getPythonToolbox';
 
 const toolbox = getHTMLToolbox();
 
 const getToolbox = (category) => {
   if (category === 'HTML') return getHTMLToolbox();
   else if (category.toLowerCase() === 'javascript') return getJSToolbox();
+  else if (category.toLowerCase() === 'python') return getPythonToolbox();
   else return getHTMLToolbox();
 };
 
 const getLangugage = (category) => {
   if (category === 'HTML') return 'html';
   else if (category.toLowerCase() === 'javascript') return 'javascript';
+  else if (category.toLowerCase() === 'python') return 'python';
   else return 'javascript';
 };
 

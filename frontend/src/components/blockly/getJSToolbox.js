@@ -7,7 +7,7 @@ export const getJSToolbox = () => {
       {
         kind: 'category',
         name: 'Lists',
-        colour: 182,
+        colour: '#745CA6',
         contents: [
           {
             kind: 'block',
@@ -539,7 +539,7 @@ export const getJSToolbox = () => {
       // },
       { kind: 'sep' },
       {
-          kind: 'category',
+        kind: 'category',
         name: 'Variables',
         custom: 'VARIABLE',
         colour: 200
