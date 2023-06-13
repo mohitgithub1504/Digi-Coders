@@ -134,12 +134,14 @@ const ChapterDetails = () => {
     // console.log('function called');
     const code = [];
     const blocks = workspace.getAllBlocks();
-    // console.log(blocks);
+    // console.log([`${HtmlGenerator[blocks[0].type](blocks[0])}`]);
     // Iterate through all blocks
-    for (let i = 0; i < blocks.length; i++) {
+    const l = blocks.length ? 1 : 0;
+    console.log(l);
+    for (let i = 0; i < l ; i++) {
       const block = blocks[i];
       // console.log(block);
-      console.log(HtmlGenerator[block.type](block));
+      // console.log(HtmlGenerator[block.type](block));
       code.push(`${HtmlGenerator[block.type](block)}`);
       // console.log(code);
       // setGeneratedCode(generateCode+code);

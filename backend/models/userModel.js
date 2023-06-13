@@ -10,6 +10,7 @@ const myschema = new Schema({
     regid: String,
     timesLoggedin: {type : Number, default: 0},
     lastLogin: Date,
+    type: {type: String, default: 'normal'},
 });
 
 module.exports = model('students', myschema);

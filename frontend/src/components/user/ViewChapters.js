@@ -24,8 +24,15 @@ const BrowseChapters = () => {
 
   const categoryList = ["HTML5", "Python", "CSS", "Web", "Animation", "JavaScript"];
 
-  const sortArray = () => {
+  const sortChaptersAtoZ = () => {
     const sortedArray = [...chapterList].sort((a, b) => a.title.localeCompare(b.title));
+    console.log(sortedArray);
+    setChapterList(sortedArray);
+  };
+  
+  const sortChaptersZtoA = () => {
+    const sortedArray = [...chapterList].sort((a, b) => b.title.localeCompare(a.title));
+    console.log(sortedArray);
     setChapterList(sortedArray);
   };
 
@@ -252,9 +259,16 @@ const BrowseChapters = () => {
                     </select> */}
 
                     <div class="select">
-                      <select class="mySelectArrow">
-                        <option value="" onClick={sortArray}>A To Z</option>
-                        <option value=" ">A to Z</option>
+                      <select class="mySelectArrow" onChange={e => {
+                        if (e.target.value === "A to Z") {
+                          sortChaptersAtoZ();
+                        } else if (e.target.value === "Z to A") {
+                          sortChaptersZtoA();
+                        }
+                      }}>
+                        <option value="">Sort</option>
+                        <option value="A to Z">A To Z</option>
+                        <option value="Z to A">Z to A</option>
                       </select>
                     </div>
 

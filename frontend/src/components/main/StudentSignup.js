@@ -1,10 +1,12 @@
 import { useFormik } from 'formik';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
 import { motion } from "framer-motion";
 import { NavLink, useNavigate } from 'react-router-dom';
 import app_config from '../../config';
+import jwt_decode from "jwt-decode";
+import { useUserContext } from '../../context/UserContext';
 
 const StudentSignup = () => {
 
@@ -15,6 +17,12 @@ const StudentSignup = () => {
 
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(!show);
+
+    const [user, setUser] = useState({});
+    const [avatar, setAvatar] = useState('');
+
+    const { loggedIn, setLoggedIn } = useUserContext();
+    
 
     const StudentsignupSchema = Yup.object().shape({
         name: Yup.string()
@@ -90,6 +98,73 @@ const StudentSignup = () => {
           }
         });
       };
+
+
+      const handleSignOut = (event) => {
+        setUser({});
+        document.getElementById("signInDiv").hidden = false;
+      };
+    
+      const saveGoogleUser = async (googleObj) => {
+        setAvatar(googleObj.picture);
+        const response = await fetch(apiUrl + "/user/add", {
+          method: "POST",
+          body: JSON.stringify({
+            username: googleObj.name,
+            email: googleObj.email,
+            avatar: googleObj.picture,
+            createdAt: new Date(),
+            type: "google",
+          }),
+          headers: { "Content-Type": "application/json" },
+        });
+
+        console.log(response.status);
+
+        if (response.status === 200) {
+            const data = await response.json();
+            sessionStorage.setItem("user", JSON.stringify(data));
+            setLoggedIn(true);
+            navigate("/");
+        }
+      };
+    
+      const handleCallbackResponse = async (response) => {
+        // console.log("Encoded jwt id token:" + response.credential);
+        var userObject = jwt_decode(response.credential);
+        // console.log(userObject);
+        setUser(userObject);
+        // setAvatar(userObject.picture);
+        //after signin the button of "signin with google" hides
+        document.getElementById("signInDiv").hidden = true;
+        sessionStorage.setItem("user", JSON.stringify(userObject));
+
+        navigate('/main/course');
+    
+        // const res = await fetch(url + "/user/checkemail/" + userObject.email);
+        // if (res.status === 200) {
+        //   const data = await res.json();
+        //   sessionStorage.setItem("user", JSON.stringify(data));
+        //   setLoggedIn(true);
+        //   navigate("/");
+        // } else {
+        //   saveGoogleUser(userObject);
+        // }
+      };
+    
+      useEffect(() => {
+        /*global google*/
+        google.accounts.id.initialize({
+          client_id:
+            "941149713723-22urp8pss6cdudmhnf9007ak61t6t68j.apps.googleusercontent.com",
+          callback: handleCallbackResponse, //token visible
+        });
+        google.accounts.id.renderButton(document.getElementById("signInDiv"), {
+          theme: "outline",
+          size: "large",
+        });
+        google.accounts.id.prompt(); //enable prompt
+      }, []);
 
     return (
         <motion.div
@@ -241,32 +316,15 @@ const StudentSignup = () => {
                                             <div className="mb-4 text-center">
                                                 <h6>or sign up with :</h6>
                                             </div>
-                                            <div className="text-center">
-                                                <button
-                                                    type="button"
-                                                    className="btn btn-primary btn-floating mx-1"
-                                                >
-                                                    <i className="fab fa-facebook-f" />
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    className="btn btn-primary btn-floating mx-1"
-                                                >
-                                                    <i className="fab fa-google" />
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    className="btn btn-primary btn-floating mx-1"
-                                                >
-                                                    <i className="fab fa-twitter" />
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    className="btn btn-primary btn-floating mx-1"
-                                                >
-                                                    <i className="fab fa-github" />
-                                                </button>
-                                            </div>
+                                            <div style={{ with: "100%" }} role="button" id="signInDiv">
+                  <i
+                    className="fab fa-google"
+                    style={{ marginLeft: "6px" }}
+                  ></i>
+                </div>
+                {Object.keys(user).length !== 0 && (
+                  <button onClick={(e) => handleSignOut(e)}>Signout</button>
+                )}
                                         </div>
 
                                     </div>
