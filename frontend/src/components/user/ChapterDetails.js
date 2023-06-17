@@ -14,10 +14,37 @@ import HtmlGenerator from '../blockly/htmlGenerator';
 const toolbox = getHTMLToolbox();
 
 const getToolbox = (category) => {
+  // console.log(category);
+  
   if (category === 'HTML') return getHTMLToolbox();
   else if (category.toLowerCase() === 'javascript') return getJSToolbox();
   else return getHTMLToolbox();
 };
+
+const initBlocks = (data) => {
+  let tempToolbox = getToolbox(data.category);
+  let myToolBox = {
+    contents: [],
+    kind : 'categoryToolbox'
+  };
+  console.log(tempToolbox);
+  let preparedBlockStructure = {};
+  data.blockStructure.forEach(obj => {
+    if(preparedBlockStructure[obj.category] === undefined) preparedBlockStructure[obj.category] = [];
+    preparedBlockStructure[obj.category] = [...preparedBlockStructure[obj.category], ...obj.blocks];
+    
+  });
+  console.log(preparedBlockStructure);
+  tempToolbox.contents.forEach((obj, index) => {
+    if(obj.name in preparedBlockStructure){
+      let temp = obj;
+      temp.contents = preparedBlockStructure[obj.name];
+      myToolBox.contents.push(temp);
+    }
+  })
+  console.log(myToolBox);
+  return myToolBox;
+}
 
 const getLangugage = (category) => {
   if (category === 'HTML') return 'html';
@@ -25,35 +52,39 @@ const getLangugage = (category) => {
   else return 'javascript';
 };
 
+
 const ChapterDetails = () => {
   const { id } = useParams();
   const { apiUrl } = app_config;
   const [workspace, setWorkspace] = useState(null);
-
+  
   const [currentLanguage, setCurrentLanguage] = useState('');
-
+  
   const [chapterDetails, setChapterDetails] = useState(null);
 
   const [generatedCode, setGeneratedCode] = useState('');
-
+  
   const [xml, setXml] = useState(`<xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="controls_ifelse" x="10" y="10">
   
   </block>
   </xml>`);
-
+  
+  
   const fetchChapterData = async () => {
     const res = await fetch(apiUrl + '/chapter/getbyid/' + id);
     console.log(res.status);
     const data = await res.json();
     console.log(data);
     setChapterDetails(data);
+    // initBlocks(data);
     setCurrentLanguage(getLangugage(data.category));
     // setXml(data.data);
   };
 
   useEffect(() => {
     fetchChapterData();
+    
   }, []);
 
   const displayChapterDetails = () => {
@@ -121,6 +152,7 @@ const ChapterDetails = () => {
   };
 
   const generateCode = (workspace) => {
+    console.log('return js generator');
     const code = javascriptGenerator.workspaceToCode(workspace);
     console.log(code);
     setGeneratedCode(code);
@@ -131,7 +163,7 @@ const ChapterDetails = () => {
   };
 
   const generateHtmlCode = (workspace) => {
-    // console.log('function called');
+    console.log('return html generator');
     const code = [];
     const blocks = workspace.getAllBlocks();
     // console.log([`${HtmlGenerator[blocks[0].type](blocks[0])}`]);
@@ -160,10 +192,15 @@ const ChapterDetails = () => {
     setGeneratedCode(code.join('\n'));
   };
 
-  const getGenerator = (language) => {
-    // console.log(language);
-    if (language.toLowerCase() === 'html') return generateHtmlCode;
-    else if (language.toLowerCase() === 'javascript') return generateCode;
+  const codeGenerators = {
+    html: generateHtmlCode,
+    javascript: generateCode,
+  }
+
+  const getGenerator = () => {
+    console.log(chapterDetails.category.toLowerCase());
+    if (chapterDetails.category.toLowerCase() === 'html') return generateHtmlCode;
+    else if (chapterDetails.category.toLowerCase() === 'javascript') return generateCode;
     else return generateCode;
   };
 
@@ -195,11 +232,11 @@ const ChapterDetails = () => {
                   <BlocklyWorkspace
                     workspaceConfiguration={DEFAULT_OPTIONS}
                     className="blockly-editor"
-                    toolboxConfiguration={getToolbox(chapterDetails.category)}
+                    toolboxConfiguration={initBlocks(chapterDetails)}
                     initialXml={`<xml xmlns="http://www.w3.org/1999/xhtml">
         
         </xml>`}
-                    onWorkspaceChange={generateHtmlCode}
+                    onWorkspaceChange={codeGenerators[chapterDetails.category.toLowerCase()]}
                   />
                 )}
               </div>
