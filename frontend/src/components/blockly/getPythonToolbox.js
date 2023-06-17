@@ -6,14 +6,13 @@ export const getPythonToolbox = () => {
     contents: [
       {
         kind: 'category',
-        name: 'VisualCal',
-        colour: 120,
-        contents: []
+        name: 'Python Blocks',
       },
+      { kind: 'sep' },
       {
         kind: 'category',
-        name: 'JavaScript Lists',
-        colour: 182,
+        name: 'Lists',
+        colour: '#745CA6',
         contents: [
           {
             kind: 'block',
@@ -545,7 +544,7 @@ export const getPythonToolbox = () => {
       // },
       { kind: 'sep' },
       {
-          kind: 'category',
+        kind: 'category',
         name: 'Variables',
         custom: 'VARIABLE',
         colour: 200
@@ -555,28 +554,7 @@ export const getPythonToolbox = () => {
         name: 'Functions',
         custom: 'PROCEDURE',
         colour: 290
-    },
-    { kind: 'sep' },
-    {
-        kind: 'category',
-        name: 'HTML',
-        colour: 160,
-        contents: [
-          {
-            kind: 'block',
-            blockxml:
-              '    <block type="html">\n' +
-              '    </block>\n'
-          },
-          {
-            kind: 'block',
-            blockxml:
-              '    <block type="html">\n' +
-              '    </block>\n'
-          },
-          
-        ]
-      },
+    }, 
     ]
   };
 };

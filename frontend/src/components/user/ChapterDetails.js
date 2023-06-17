@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import app_config from '../../config';
 import { BlocklyWorkspace } from 'react-blockly';
 import { DEFAULT_OPTIONS } from '../blockly/defaults';
@@ -10,6 +10,7 @@ import { javascriptGenerator } from 'blockly/javascript';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import HtmlGenerator from '../blockly/htmlGenerator';
+import { getPythonToolbox } from '../blockly/getPythonToolbox';
 
 const toolbox = getHTMLToolbox();
 
@@ -18,6 +19,7 @@ const getToolbox = (category) => {
   
   if (category === 'HTML') return getHTMLToolbox();
   else if (category.toLowerCase() === 'javascript') return getJSToolbox();
+  else if (category.toLowerCase() === 'python') return getPythonToolbox();
   else return getHTMLToolbox();
 };
 
@@ -49,6 +51,7 @@ const initBlocks = (data) => {
 const getLangugage = (category) => {
   if (category === 'HTML') return 'html';
   else if (category.toLowerCase() === 'javascript') return 'javascript';
+  else if (category.toLowerCase() === 'python') return 'python';
   else return 'javascript';
 };
 
@@ -57,13 +60,19 @@ const ChapterDetails = () => {
   const { id } = useParams();
   const { apiUrl } = app_config;
   const [workspace, setWorkspace] = useState(null);
-  
+
+  const [showOutputCard, setShowOutputCard] = useState(false);
+
   const [currentLanguage, setCurrentLanguage] = useState('');
   
   const [chapterDetails, setChapterDetails] = useState(null);
 
   const [generatedCode, setGeneratedCode] = useState('');
-  
+
+  const showOutput = () => {
+    setShowOutputCard(!showOutputCard);
+  };
+
   const [xml, setXml] = useState(`<xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="controls_ifelse" x="10" y="10">
   
@@ -151,6 +160,9 @@ const ChapterDetails = () => {
     }
   };
 
+  const showRunButton = currentLanguage.toLowerCase() !== 'html';
+  const showOutputButton = currentLanguage.toLowerCase() == 'html';
+
   const generateCode = (workspace) => {
     console.log('return js generator');
     const code = javascriptGenerator.workspaceToCode(workspace);
@@ -170,7 +182,7 @@ const ChapterDetails = () => {
     // Iterate through all blocks
     const l = blocks.length ? 1 : 0;
     console.log(l);
-    for (let i = 0; i < l ; i++) {
+    for (let i = 0; i < l; i++) {
       const block = blocks[i];
       // console.log(block);
       // console.log(HtmlGenerator[block.type](block));
@@ -216,12 +228,21 @@ const ChapterDetails = () => {
                   <strong>Digi Coders Editor</strong>
                 </h4>
               </div>
+              {showRunButton && (
+                <div class="col">
+                  <button className="btn btn-danger" onClick={executeCode} style={{ marginLeft: '510px' }}>
+                    <i className="fas fa-play fa-sm me-2" />
+                    Run Program
+                  </button>
+                </div>
+              )}
+              {showOutputButton && (
               <div class="col">
-                <button className="btn btn-danger" onClick={executeCode} style={{ marginLeft: '510px' }}>
-                  <i className="fas fa-play fa-sm me-2" />
-                  Run Program
+                <button className="btn btn-danger" onClick={showOutput} style={{ marginLeft: '530px' }}>
+                  {showOutputCard ? 'Hide Output' : 'Show Output'}
                 </button>
               </div>
+              )}
             </div>
           </div>
 
@@ -247,7 +268,7 @@ const ChapterDetails = () => {
                       Code
                     </h5>
                   </div>
-                  <div className="card-body h6" style={{ height: '300px', overflow: 'auto' }}>
+                  <div className="card-body h6" style={{ height: '80vh', overflow: 'auto' }}>
                     {chapterDetails && (
                       <SyntaxHighlighter language={getLangugage(chapterDetails.category)} style={docco}>
                         {generatedCode}
@@ -255,19 +276,33 @@ const ChapterDetails = () => {
                     )}
                   </div>
                 </div>
-                <div className="card mt-4">
-                  <div className="py-2" style={{ backgroundColor: '#f1f1f1' }}>
-                    <h5 className="text-uppercase text-center fw-bold mt-2 mx-3" style={{ fontSize: '25px', letterSpacing: '2px' }}>
-                      Output
-                    </h5>
-                  </div>
-                  <div className="card-body h6" style={{ height: '400px', overflow: 'auto' }} dangerouslySetInnerHTML={{ __html: generatedCode }}></div>
-                </div>
+
               </div>
             </div>
+            {showOutputCard && (
+              <div className="card mt-4">
+                <div className="py-2" style={{ backgroundColor: '#f1f1f1' }}>
+                  <h5 className="text-uppercase text-center fw-bold mt-2 mx-3" style={{ fontSize: '25px', letterSpacing: '2px' }}>
+                    Output
+                  </h5>
+                </div>
+                <div className="card-body h6" style={{ height: '100vh', overflow: 'auto' }} dangerouslySetInnerHTML={{ __html: generatedCode }}></div>
+              </div>
+            )}
           </div>
         </div>
       </section>
+      {/* Copyright */}
+      <div
+        className="text-center text-white p-4"
+        style={{ backgroundColor: "#1b1b1b" }}
+      >
+        © 2023 Copyright :&nbsp;
+        <NavLink className="text-reset fw-bold custom-link-hover" to="#">
+          DigiCoders.com
+        </NavLink>
+      </div>
+      {/* Copyright */}
     </div>
   );
 };

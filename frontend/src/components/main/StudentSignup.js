@@ -22,7 +22,7 @@ const StudentSignup = () => {
     const [avatar, setAvatar] = useState('');
 
     const { loggedIn, setLoggedIn } = useUserContext();
-    
+
 
     const StudentsignupSchema = Yup.object().shape({
         name: Yup.string()
@@ -90,33 +90,33 @@ const StudentSignup = () => {
         setSelImage(file);
         fd.append('myfile', file);
         fetch(apiUrl + '/util/uploadfile', {
-          method: 'POST',
-          body: fd
+            method: 'POST',
+            body: fd
         }).then((res) => {
-          if (res.status === 200) {
-            console.log('file uploaded');
-          }
+            if (res.status === 200) {
+                console.log('file uploaded');
+            }
         });
-      };
+    };
 
 
-      const handleSignOut = (event) => {
+    const handleSignOut = (event) => {
         setUser({});
         document.getElementById("signInDiv").hidden = false;
-      };
-    
-      const saveGoogleUser = async (googleObj) => {
+    };
+
+    const saveGoogleUser = async (googleObj) => {
         setAvatar(googleObj.picture);
         const response = await fetch(apiUrl + "/user/add", {
-          method: "POST",
-          body: JSON.stringify({
-            username: googleObj.name,
-            email: googleObj.email,
-            avatar: googleObj.picture,
-            createdAt: new Date(),
-            type: "google",
-          }),
-          headers: { "Content-Type": "application/json" },
+            method: "POST",
+            body: JSON.stringify({
+                username: googleObj.name,
+                email: googleObj.email,
+                avatar: googleObj.picture,
+                createdAt: new Date(),
+                type: "google",
+            }),
+            headers: { "Content-Type": "application/json" },
         });
 
         console.log(response.status);
@@ -127,9 +127,9 @@ const StudentSignup = () => {
             setLoggedIn(true);
             navigate("/");
         }
-      };
-    
-      const handleCallbackResponse = async (response) => {
+    };
+
+    const handleCallbackResponse = async (response) => {
         // console.log("Encoded jwt id token:" + response.credential);
         var userObject = jwt_decode(response.credential);
         // console.log(userObject);
@@ -140,7 +140,7 @@ const StudentSignup = () => {
         sessionStorage.setItem("user", JSON.stringify(userObject));
 
         navigate('/main/course');
-    
+
         // const res = await fetch(url + "/user/checkemail/" + userObject.email);
         // if (res.status === 200) {
         //   const data = await res.json();
@@ -150,21 +150,21 @@ const StudentSignup = () => {
         // } else {
         //   saveGoogleUser(userObject);
         // }
-      };
-    
-      useEffect(() => {
+    };
+
+    useEffect(() => {
         /*global google*/
         google.accounts.id.initialize({
-          client_id:
-            "941149713723-22urp8pss6cdudmhnf9007ak61t6t68j.apps.googleusercontent.com",
-          callback: handleCallbackResponse, //token visible
+            client_id:
+                "941149713723-22urp8pss6cdudmhnf9007ak61t6t68j.apps.googleusercontent.com",
+            callback: handleCallbackResponse, //token visible
         });
         google.accounts.id.renderButton(document.getElementById("signInDiv"), {
-          theme: "outline",
-          size: "large",
+            theme: "outline",
+            size: "large",
         });
         google.accounts.id.prompt(); //enable prompt
-      }, []);
+    }, []);
 
     return (
         <motion.div
@@ -262,7 +262,7 @@ const StudentSignup = () => {
                                                 className='form-control-eye'
                                                 onClick={handleShow}
                                             >
-                                                {show ? <i class="far fa-eye" style={{color: "#c5c5c5"}} /> : <i class="far fa-eye-slash" style={{color: "#c5c5c5"}} />}
+                                                {show ? <i class="far fa-eye" style={{ color: "#c5c5c5" }} /> : <i class="far fa-eye-slash" style={{ color: "#c5c5c5" }} />}
                                             </span>
                                         </div>
                                         <input
@@ -294,10 +294,10 @@ const StudentSignup = () => {
                                     <div className='d-flex flex-row align-items-center mx-1 mb-4'>
                                         <label htmlFor="avatar-img" className="btn btn-primary">
                                             {' '}
-                                            <i class="fas fa-upload"></i> Upload Image 
+                                            <i class="fas fa-upload"></i> Upload Image
                                         </label>
                                         <span className='text-warning mx-3'>
-                                        {selImage ? selImage.name : 'No Image Selected'}
+                                            {selImage ? selImage.name : 'No Image Selected'}
                                         </span>
                                         <input type="file" id="avatar-img" hidden onChange={uploadFile} />
                                     </div>
@@ -316,15 +316,15 @@ const StudentSignup = () => {
                                             <div className="mb-4 text-center">
                                                 <h6>or sign up with :</h6>
                                             </div>
-                                            <div style={{ with: "100%" }} role="button" id="signInDiv">
-                  <i
-                    className="fab fa-google"
-                    style={{ marginLeft: "6px" }}
-                  ></i>
-                </div>
-                {Object.keys(user).length !== 0 && (
-                  <button onClick={(e) => handleSignOut(e)}>Signout</button>
-                )}
+                                            <div style={{ width: "100%" }} role="button" id="signInDiv">
+                                                <i
+                                                    className="fab fa-google"
+                                                    style={{ marginLeft: "6px" }}
+                                                ></i>
+                                            </div>
+                                            {Object.keys(user).length !== 0 && (
+                                                <button onClick={(e) => handleSignOut(e)}>Signout</button>
+                                            )}
                                         </div>
 
                                     </div>
