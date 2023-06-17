@@ -8,6 +8,7 @@ import '../blockly/htmlBlock';
 import { getJSToolbox } from '../blockly/getJSToolbox';
 import XMLParser from 'react-xml-parser';
 import Swal from 'sweetalert2';
+import { getPythonToolbox } from '../blockly/getPythonToolbox';
 
 const toolbox = getHTMLToolbox();
 
@@ -15,6 +16,7 @@ const getToolbox = (category) => {
   console.log(getJSToolbox());
   if (category === 'HTML') return getHTMLToolbox();
   else if (category === 'JS' || category.toLowerCase() === 'JavaScript'.toLowerCase()) return getJSToolbox();
+  else if (category === 'PYTHON' || category.toLowerCase() === 'Python'.toLowerCase()) return getPythonToolbox();
   else return getHTMLToolbox();
 };
 
