@@ -449,10 +449,10 @@ const Home = () => {
                         <strong>HTML</strong>
                       </h4>
                       <h5 className="mb-3">
-                        <strong>26 Classes</strong>
+                        <strong>20 Classes</strong>
                       </h5>
                       <h6 className="mb-3">
-                        Duration : <strong>2 Weeks</strong>
+                        Duration : <strong>2 Months</strong>
                       </h6>
                       {/* Divider here */}
                       <hr class="hr hr-blurry" />
@@ -490,10 +490,10 @@ const Home = () => {
                         <strong>JavaScript</strong>
                       </h4>
                       <h5 className="mb-3">
-                        <strong>26 Classes</strong>
+                        <strong>30 Classes</strong>
                       </h5>
                       <h6 className="mb-3">
-                        Duration : <strong>2 Weeks</strong>
+                        Duration : <strong>3 Months</strong>
                       </h6>
                       {/* Divider here */}
                       <hr class="hr hr-blurry" />
@@ -532,10 +532,10 @@ const Home = () => {
                         <strong>Python</strong>
                       </h4>
                       <h5 className="mb-3">
-                        <strong>26 Classes</strong>
+                        <strong>25 Classes</strong>
                       </h5>
                       <h6 className="mb-3">
-                        Duration : <strong>2 Weeks</strong>
+                        Duration : <strong>3 Months</strong>
                       </h6>
                       {/* Divider here */}
                       <hr class="hr hr-blurry" />

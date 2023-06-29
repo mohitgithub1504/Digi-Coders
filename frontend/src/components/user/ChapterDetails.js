@@ -56,7 +56,6 @@ const getLangugage = (category) => {
   else return 'javascript';
 };
 
-
 const ChapterDetails = () => {
   const { id } = useParams();
   const { apiUrl } = app_config;
