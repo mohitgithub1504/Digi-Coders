@@ -100,12 +100,17 @@ const ManageChapter = () => {
         <div className="modal fade" id="staticBackdrop1" tabIndex={-1} aria-labelledby="exampleModalLabel1" aria-hidden="true">
           <div className="modal-dialog modal-dialog-centered modal-lg">
             <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel1">
+            <div className="d-md-flex justify-content-md-end mt-2 me-2">
+                  <button
+                    type="button"
+                    className="btn-close"
+                    data-mdb-dismiss="modal"
+                    aria-label="Close"
+                  />
+                </div>
+                <h3 className="modal-title text-uppercase text-center fw-bold" id="exampleModalLabel1">
                    Create New Chapter
-                </h5>
-                <button type="button" className="btn-close" data-mdb-dismiss="modal" aria-label="Close" />
-              </div>
+                </h3>
               <div className="modal-body p-4">
                 <form className="text-center" action="#!" onSubmit={managechapterForm.handleSubmit}>
                   {/* Name */}
@@ -150,7 +155,7 @@ const ManageChapter = () => {
                     />
                   </div>
 
-                  <div className='d-flex flex-row align-items-center mx-1 mb-4'>
+                  <div className='d-flex flex-row align-items-center justify-content-center mx-1 mb-4'>
                     <label htmlFor="chapter-img" className="btn btn-primary">
                       {' '}
                       <i class="fas fa-upload"></i> Upload Image

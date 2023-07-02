@@ -51,7 +51,7 @@ const Navbar = () => {
               </li>
 
               {/* Navbar dropdown */}
-              <li class="dropdown">
+              <li class="dropdown nav-item">
                 <NavLink
                   className="nav-link dropdown"
                   to="/main/course"
@@ -152,11 +152,17 @@ const Navbar = () => {
                       >
                         <li>
                           <NavLink className="dropdown-item" to="/user/userprofile">
-                            My profile
+                            <i
+                              className="far fa-user me-2 fa-fw"
+                            />
+                            Profile
                           </NavLink>
                         </li>
                         <li>
                           <a className="dropdown-item" type='button' onClick={logout}>
+                            <i
+                              className="fas fa-power-off me-2 fa-fw"
+                            />
                             Logout
                           </a>
                         </li>
