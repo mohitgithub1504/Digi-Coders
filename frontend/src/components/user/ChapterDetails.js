@@ -7,6 +7,7 @@ import { getHTMLToolbox } from '../blockly/getHTMLToolbox';
 import '../blockly/htmlBlock';
 import { getJSToolbox } from '../blockly/getJSToolbox';
 import { javascriptGenerator } from 'blockly/javascript';
+import { pythonGenerator } from 'blockly/python';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import HtmlGenerator from '../blockly/htmlGenerator';
@@ -15,11 +16,38 @@ import { getPythonToolbox } from '../blockly/getPythonToolbox';
 const toolbox = getHTMLToolbox();
 
 const getToolbox = (category) => {
+  // console.log(category);
+  
   if (category === 'HTML') return getHTMLToolbox();
   else if (category.toLowerCase() === 'javascript') return getJSToolbox();
   else if (category.toLowerCase() === 'python') return getPythonToolbox();
   else return getHTMLToolbox();
 };
+
+const initBlocks = (data) => {
+  let tempToolbox = getToolbox(data.category);
+  let myToolBox = {
+    contents: [],
+    kind : 'categoryToolbox'
+  };
+  console.log(tempToolbox);
+  let preparedBlockStructure = {};
+  data.blockStructure.forEach(obj => {
+    if(preparedBlockStructure[obj.category] === undefined) preparedBlockStructure[obj.category] = [];
+    preparedBlockStructure[obj.category] = [...preparedBlockStructure[obj.category], ...obj.blocks];
+    
+  });
+  console.log(preparedBlockStructure);
+  tempToolbox.contents.forEach((obj, index) => {
+    if(obj.name in preparedBlockStructure){
+      let temp = obj;
+      temp.contents = preparedBlockStructure[obj.name];
+      myToolBox.contents.push(temp);
+    }
+  })
+  console.log(myToolBox);
+  return myToolBox;
+}
 
 const getLangugage = (category) => {
   if (category === 'HTML') return 'html';
@@ -36,7 +64,7 @@ const ChapterDetails = () => {
   const [showOutputCard, setShowOutputCard] = useState(false);
 
   const [currentLanguage, setCurrentLanguage] = useState('');
-
+  
   const [chapterDetails, setChapterDetails] = useState(null);
 
   const [generatedCode, setGeneratedCode] = useState('');
@@ -50,19 +78,22 @@ const ChapterDetails = () => {
   
   </block>
   </xml>`);
-
+  
+  
   const fetchChapterData = async () => {
     const res = await fetch(apiUrl + '/chapter/getbyid/' + id);
     console.log(res.status);
     const data = await res.json();
     console.log(data);
     setChapterDetails(data);
+    // initBlocks(data);
     setCurrentLanguage(getLangugage(data.category));
     // setXml(data.data);
   };
 
   useEffect(() => {
     fetchChapterData();
+    
   }, []);
 
   const displayChapterDetails = () => {
@@ -133,7 +164,15 @@ const ChapterDetails = () => {
   const showOutputButton = currentLanguage.toLowerCase() == 'html';
 
   const generateCode = (workspace) => {
+    console.log('return js generator');
     const code = javascriptGenerator.workspaceToCode(workspace);
+    console.log(code);
+    setGeneratedCode(code);
+  };
+
+  const generatePythonCode = (workspace) => {
+    console.log('return python generator');
+    const code = pythonGenerator.workspaceToCode(workspace);
     console.log(code);
     setGeneratedCode(code);
   };
@@ -143,7 +182,7 @@ const ChapterDetails = () => {
   };
 
   const generateHtmlCode = (workspace) => {
-    // console.log('function called');
+    console.log('return html generator');
     const code = [];
     const blocks = workspace.getAllBlocks();
     // console.log([`${HtmlGenerator[blocks[0].type](blocks[0])}`]);
@@ -172,10 +211,17 @@ const ChapterDetails = () => {
     setGeneratedCode(code.join('\n'));
   };
 
-  const getGenerator = (language) => {
-    // console.log(language);
-    if (language.toLowerCase() === 'html') return generateHtmlCode;
-    else if (language.toLowerCase() === 'javascript') return generateCode;
+  const codeGenerators = {
+    html: generateHtmlCode,
+    javascript: generateCode,
+    python: generatePythonCode,
+  }
+
+  const getGenerator = () => {
+    console.log(chapterDetails.category.toLowerCase());
+    if (chapterDetails.category.toLowerCase() === 'html') return generateHtmlCode;
+    else if (chapterDetails.category.toLowerCase() === 'javascript') return generateCode;
+    else if (chapterDetails.category.toLowerCase() === 'python') return generatePythonCode;
     else return generateCode;
   };
 
@@ -216,11 +262,11 @@ const ChapterDetails = () => {
                   <BlocklyWorkspace
                     workspaceConfiguration={DEFAULT_OPTIONS}
                     className="blockly-editor"
-                    toolboxConfiguration={getToolbox(chapterDetails.category)}
+                    toolboxConfiguration={initBlocks(chapterDetails)}
                     initialXml={`<xml xmlns="http://www.w3.org/1999/xhtml">
         
-                    </xml>`}
-                    onWorkspaceChange={generateHtmlCode}
+        </xml>`}
+                    onWorkspaceChange={codeGenerators[chapterDetails.category.toLowerCase()]}
                   />
                 )}
               </div>

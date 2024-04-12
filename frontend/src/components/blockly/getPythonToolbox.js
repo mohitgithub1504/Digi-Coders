@@ -41,13 +41,21 @@ export const getPythonToolbox = () => {
               '      </value>\n' +
               '    </block>\n'
           },
+          // {
+          //   kind: 'block',
+          //   type: 'lists_length'
+          // },
+          // {
+          //   kind: 'block',
+          //   type: 'lists_isEmpty'
+          // },
           {
             kind: 'block',
-            type: 'lists_length'
+            blockxml: '    <block type="lists_length">\n' + '     </block>\n'
           },
           {
             kind: 'block',
-            type: 'lists_isEmpty'
+            blockxml: '    <block type="lists_isEmpty">\n' + '     </block>\n'
           },
           {
             kind: 'block',
@@ -119,9 +127,13 @@ export const getPythonToolbox = () => {
         name: 'Logic',
         colour: 210,
         contents: [
+          // {
+          //   kind: 'block',
+          //   type: 'controls_if'
+          // },
           {
             kind: 'block',
-            type: 'controls_if'
+            blockxml: '    <block type="controls_if">\n' + '     </block>\n'
           },
           {
             kind: 'block',
@@ -131,21 +143,33 @@ export const getPythonToolbox = () => {
             kind: 'block',
             blockxml: '<block type="logic_operation"><field name="OP">AND</field></block>'
           },
+          // {
+          //   kind: 'block',
+          //   type: 'logic_negate'
+          // },
           {
             kind: 'block',
-            type: 'logic_negate'
+            blockxml: '    <block type="logic_negate">\n' + '     </block>\n'
           },
           {
             kind: 'block',
             blockxml: '<block type="logic_boolean"><field name="BOOL">TRUE</field></block>'
           },
+          // {
+          //   kind: 'block',
+          //   type: 'logic_null'
+          // },
+          // {
+          //   kind: 'block',
+          //   type: 'logic_ternary'
+          // },
           {
             kind: 'block',
-            type: 'logic_null'
+            blockxml: '    <block type="logic_null">\n' + '     </block>\n'
           },
           {
             kind: 'block',
-            type: 'logic_ternary'
+            blockxml: '    <block type="logic_ternary">\n' + '     </block>\n'
           }
         ]
       },
@@ -337,9 +361,13 @@ export const getPythonToolbox = () => {
               '      </value>\n' +
               '    </block>\n'
           },
+          // {
+          //   kind: 'block',
+          //   type: 'math_random_float'
+          // },
           {
             kind: 'block',
-            type: 'math_random_float'
+            blockxml: '    <block type="math_random_float">\n' + '     </block>\n'
           }
         ]
       },
@@ -547,14 +575,27 @@ export const getPythonToolbox = () => {
         kind: 'category',
         name: 'Variables',
         custom: 'VARIABLE',
-        colour: 200
+        colour: 200,
+        contents: [
+          {
+            kind: 'block',
+            blockxml: '    <block type="custom_variable">\n' + '     </block>\n'
+          },
+        ]
       },
       {
         kind: 'category',
         name: 'Functions',
         custom: 'PROCEDURE',
-        colour: 290
-    }, 
+        colour: 290,
+        contents: [
+          {
+            kind: 'block',
+            blockxml: '    <block type="custom_function">\n' + '     </block>\n'
+          },
+        ]
+      },
+
     ]
   };
 };

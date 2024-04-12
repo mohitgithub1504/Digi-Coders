@@ -121,11 +121,17 @@ const Navbar = () => {
                                             >
                                                 <li>
                                                     <NavLink className="dropdown-item" to="/trainer/trainerprofile">
-                                                        My profile
+                                                        <i
+                                                            className="far fa-user me-2 fa-fw"
+                                                        />
+                                                        Profile
                                                     </NavLink>
                                                 </li>
                                                 <li>
                                                     <a className="dropdown-item" type='button' onClick={logout}>
+                                                        <i
+                                                            className="fas fa-power-off me-2 fa-fw"
+                                                        />
                                                         Logout
                                                     </a>
                                                 </li>

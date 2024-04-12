@@ -8,12 +8,15 @@ import '../blockly/htmlBlock';
 import { getJSToolbox } from '../blockly/getJSToolbox';
 import XMLParser from 'react-xml-parser';
 import Swal from 'sweetalert2';
+import { getPythonToolbox } from '../blockly/getPythonToolbox';
 
 const toolbox = getHTMLToolbox();
 
 const getToolbox = (category) => {
+  console.log(getJSToolbox());
   if (category === 'HTML') return getHTMLToolbox();
-  else if (category === 'JS') return getJSToolbox();
+  else if (category === 'JS' || category.toLowerCase() === 'JavaScript'.toLowerCase()) return getJSToolbox();
+  else if (category === 'PYTHON' || category.toLowerCase() === 'Python'.toLowerCase()) return getPythonToolbox();
   else return getHTMLToolbox();
 };
 
@@ -23,7 +26,7 @@ const DesignChapter = () => {
 
   const [chapterDetails, setChapterDetails] = useState(null);
 
-  const [selBlocks, setSelBlocks] = useState([]);
+  const [selBlocks, setSelBlocks] = useState({});
 
   const [xml, setXml] = useState(`<xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="controls_ifelse" x="10" y="10">
@@ -72,6 +75,40 @@ const DesignChapter = () => {
     console.log(data);
   }
 
+  const updateSelBlocks = (block, category) => {
+    let obj = {};
+    if(selBlocks[category] === undefined){
+      obj = {
+        category : category,
+        blocks : [block]
+      }
+    }else if( selBlocks[category].find(b => getBlockType(b) === getBlockType(block)) === undefined ){
+      obj = {
+        category : category,
+        blocks : [...selBlocks[category], block]
+      }
+    }
+
+    setSelBlocks([...selBlocks, obj]);
+  }
+
+  const removeBlock = (block, category) => {
+    let obj = {};
+    if(selBlocks[category] === undefined){
+      obj = {
+        category : category,
+        blocks : [block]
+      }
+    }else{
+      obj = {
+        category : category,
+        blocks : [...selBlocks[category], block]
+      }
+    }
+
+    setSelBlocks([...selBlocks, obj]);
+  }
+
   useEffect(() => {
     fetchChapterData();
   }, []);
@@ -116,10 +153,13 @@ const DesignChapter = () => {
                               checked={selBlocks.find(b => getBlockType(b) === getBlockType(block))}
                               onChange={(e) => {
                                 if (e.target.checked) {
-                                  setSelBlocks([...selBlocks, block]);
+                                  updateSelBlocks(block, category.name);
+                                  // setSelBlocks([...selBlocks, block]);
                                   console.log(selBlocks);
                                 } else {
-                                  setSelBlocks(selBlocks.filter((b) => getBlockType(b) !== getBlockType(block)));
+                                  // setSelBlocks(selBlocks.filter((b) => getBlockType(b) !== getBlockType(block)));
+                                  removeBlock(block, category.name);
+                                  console.log(selBlocks);
                                 }
                               }}
                             />

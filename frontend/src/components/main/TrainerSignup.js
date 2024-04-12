@@ -30,9 +30,11 @@ const TrainerSignup = () => {
       .max(50, 'Too Long!')
       .required('Certificate is Required'),
     email: Yup.string().email('Invalid email').required('Email is Required'),
-    password: Yup
-      .string()
-      .required('Please Enter your password'),
+    password: Yup.string().required('Please Enter your password')
+      .matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+        "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+      ),
   });
 
   const trainersignupForm = useFormik({
