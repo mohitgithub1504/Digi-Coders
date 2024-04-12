@@ -1,10 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { useUserContext } from '../../context/UserContext';
+import UserProvider, { useUserContext } from '../../context/UserContext';
 
 const Navbar = () => {
 
   const { loggedIn, logout } = useUserContext();
+  // const { currentUser } = useUserContext();
 
   return (
 
@@ -142,7 +143,7 @@ const Navbar = () => {
                         aria-expanded="false"
                       >
                         <NavLink className='nav-avatar align-items-center ms-2'>
-                          Mohit Mishra
+                          {/* <span className="text-dark">{currentUser.name}</span> */}
                           <i className="fas fa-caret-down ms-2" />
                         </NavLink>
                       </NavLink>

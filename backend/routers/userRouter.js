@@ -6,7 +6,6 @@ const router = Router();
 router.post('/add', (req, res) => {
     console.log(req.body);
    // res.send('Respond from User Router');
-
     new Model(req.body).save()
     .then((result) => {
         res.json(result);

@@ -15,6 +15,8 @@ const myStorage = multer({ storage: storage });
 router.post("/uploadfile", myStorage.single("myfile"), (req, res) => {
   res.status(200).json({ status: "success" });
 });
+
+
 const initMail = () => {
   return new SMTPClient({
     user: "digicoders12@gmail.com",

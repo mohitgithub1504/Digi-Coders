@@ -239,9 +239,9 @@ const ChapterDetails = () => {
                     )}
                   </div>
                 </div>
-
               </div>
             </div>
+            
             {showOutputCard && (
               <div className="card mt-4">
                 <div className="py-2" style={{ backgroundColor: '#f1f1f1' }}>
